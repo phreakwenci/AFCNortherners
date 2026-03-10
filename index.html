@@ -11,6 +11,84 @@
         href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:wght@400;700&family=Caveat:wght@400;700&family=Kalam:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
+        /* ── Custom Fonts from GitHub ── */
+        @font-face {
+            font-family: 'NFLRedZone';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/NFL%20RedZone.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'MatrixBold';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/MatrixBold.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Gunplay';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/gunplay%20rg.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NFLBengals';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/NFL%20Cincinnati%20Bengals.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NFLBrowns';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/NFL_Browns_2015.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Freshman';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/Freshman.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'VersaVersa';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/Versa-Versa.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* ── Font utility classes ── */
+        .font-redzone {
+            font-family: 'NFLRedZone', 'Anton', sans-serif;
+        }
+
+        .font-ravens {
+            font-family: 'MatrixBold', 'Anton', sans-serif;
+        }
+
+        .font-steelers {
+            font-family: 'Gunplay', 'Anton', sans-serif;
+        }
+
+        .font-bengals {
+            font-family: 'NFLBengals', 'Anton', sans-serif;
+        }
+
+        .font-browns {
+            font-family: 'NFLBrowns', 'Anton', sans-serif;
+        }
+
         :root {
             --primary-black: #0B0B0C;
             --primary-white: #F4F4F5;
@@ -210,7 +288,7 @@
                 <img
                 src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20NOTHERNERS%20YT%20LOGO%20(With%20Rob-Bengal).png"
                 alt="AFC Northerners Logo"
-                class="h-10 w-auto object-contain"
+                class="h-10 w-auto object-contain rounded-full"
                 onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='flex';"
             />
                 <div id="logo-fallback" class="w-10 h-10 rounded-full bg-gray-800 items-center justify-content-center"
@@ -222,8 +300,8 @@
                         </div>
                     </div>
                 </div>
-                <h1
-                    class="anton-font text-xl md:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 via-orange-500 to-purple-700">
+                <h1 class="font-redzone text-lg md:text-xl bg-clip-text text-transparent"
+                    style="background-image: linear-gradient(to right, #C9A100 0%, #C9A100 20%, #F15025 40%, #EB5A2A 60%, #4B2E83 85%, #4B2E83 100%);">
                     AFC NORTHERNERS</h1>
             </div>
             <nav class="hidden md:flex space-x-6">
@@ -738,58 +816,62 @@
                     <i class="fas fa-arrow-right ml-2"></i></a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Browns -->
                 <div
                     class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
                     <div class="h-2 bg-orange-500"></div>
                     <div class="p-6 text-center">
-                        <div
-                            class="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-700 overflow-hidden border-4 border-gray-700">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Dave Green" class="w-full h-full object-cover">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-500"
+                            style="background:#FF6B00;">
+                            <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/DGBG%20-%20Browns.png" alt="Dave Green" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
                         </div>
-                        <h3 class="anton-font text-2xl text-white mb-1">DAVE GREEN</h3>
-                        <p class="text-sm text-orange-400 mb-2 font-bold">Browns Guy</p>
+                        <h3 class="font-browns text-2xl text-white mb-1">DAVE GREEN</h3>
+                        <p class="text-sm text-orange-400 mb-2 font-bold font-browns tracking-wide">Browns Guy</p>
                         <p class="text-gray-300 text-sm leading-relaxed">Lifelong Browns fan since '99. Will debate
                             Myles Garrett vs. TJ Watt until the beer runs cold.</p>
                     </div>
                 </div>
+                <!-- Steelers -->
                 <div
                     class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
                     <div class="h-2 bg-yellow-600"></div>
                     <div class="p-6 text-center">
-                        <div
-                            class="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-700 overflow-hidden border-4 border-gray-700">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face" alt="Chris Adkins" class="w-full h-full object-cover">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-yellow-600"
+                            style="background:#FFD700;">
+                            <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Chris%20-%20Steelers.png" alt="Chris Adkins" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
                         </div>
-                        <h3 class="anton-font text-2xl text-white mb-1">CHRIS ADKINS</h3>
-                        <p class="text-sm text-yellow-400 mb-2 font-bold">Steelers Guy</p>
+                        <h3 class="font-steelers text-2xl text-white mb-1">CHRIS ADKINS</h3>
+                        <p class="text-sm text-yellow-400 mb-2 font-bold font-steelers tracking-wide">Steelers Guy</p>
                         <p class="text-gray-300 text-sm leading-relaxed">Six rings and counting. Defensive football
                             purist who bleeds black and gold every Sunday.</p>
                     </div>
                 </div>
+                <!-- Bengals -->
                 <div
                     class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
                     <div class="h-2 bg-orange-600"></div>
                     <div class="p-6 text-center">
-                        <div
-                            class="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-700 overflow-hidden border-4 border-gray-700">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Rob Gressis" class="w-full h-full object-cover">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-600"
+                            style="background:#F15025;">
+                            <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Rob%20-%20Bengals.png" alt="Rob Gressis" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
                         </div>
-                        <h3 class="anton-font text-2xl text-white mb-1">ROB GRESSIS</h3>
-                        <p class="text-sm text-orange-400 mb-2 font-bold">Bengals Guy</p>
+                        <h3 class="font-bengals text-2xl text-white mb-1">ROB GRESSIS</h3>
+                        <p class="text-sm text-orange-400 mb-2 font-bold font-bengals tracking-wide">Bengals Guy</p>
                         <p class="text-gray-300 text-sm leading-relaxed">Who Dey since the dark ages. Optimistic about
                             Burrow's arm and Higgins' hands this season.</p>
                     </div>
                 </div>
+                <!-- Ravens -->
                 <div
                     class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
                     <div class="h-2 bg-purple-700"></div>
                     <div class="p-6 text-center">
-                        <div
-                            class="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-700 overflow-hidden border-4 border-gray-700">
-                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=face" alt="Jan-David Soutar" class="w-full h-full object-cover">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-700"
+                            style="background:#9B6FD4;">
+                            <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Jan%20-%20Ravens.png" alt="Jan-David Soutar" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
                         </div>
-                        <h3 class="anton-font text-2xl text-white mb-1">JAN-DAVID SOUTAR</h3>
-                        <p class="text-sm text-purple-400 mb-2 font-bold">Ravens Guy</p>
+                        <h3 class="font-ravens text-2xl text-white mb-1">JAN-DAVID SOUTAR</h3>
+                        <p class="text-sm text-purple-400 mb-2 font-bold font-ravens tracking-wide">Ravens Guy</p>
                         <p class="text-gray-300 text-sm leading-relaxed">Lamar apologist and defensive scheme junkie.
                             Flock mentality runs deep since the Baltimore move.</p>
                     </div>
@@ -853,10 +935,22 @@
                                 clips — straight to your inbox.</p>
                             <div class="flex justify-center md:justify-start">
                                 <div class="flex -space-x-2">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="" class="w-10 h-10 rounded-full border-2 border-black object-cover">
-                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="" class="w-10 h-10 rounded-full border-2 border-black object-cover">
-                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="" class="w-10 h-10 rounded-full border-2 border-black object-cover">
-                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face" alt="" class="w-10 h-10 rounded-full border-2 border-black object-cover">
+                                    <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
+                                        style="background:#FF6B00;">
+                                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/DGBG%20-%20Browns.png" alt="Dave" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
+                                        style="background:#FFD700;">
+                                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Chris%20-%20Steelers.png" alt="Chris" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
+                                        style="background:#F15025;">
+                                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Rob%20-%20Bengals.png" alt="Rob" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
+                                        style="background:#9B6FD4;">
+                                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Jan%20-%20Ravens.png" alt="Jan-David" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -948,22 +1042,47 @@
     <!-- ═══════════════════════════════════════
      SPONSORS
 ═══════════════════════════════════════ -->
-    <section class="py-16 bg-zinc-900">
+    <section id="sponsors" class="py-16 bg-zinc-900">
         <div class="container mx-auto px-4">
-            <h2 class="anton-font text-3xl md:text-4xl text-white mb-12 text-center">OUR PARTNERS</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="flex items-center justify-center p-4 bg-zinc-800 rounded-lg h-24 border border-zinc-700">
-                    <img src="https://via.placeholder.com/160x80?text=SPONSOR+1" alt="Sponsor 1" class="max-h-12"></div>
-                <div class="flex items-center justify-center p-4 bg-zinc-800 rounded-lg h-24 border border-zinc-700">
-                    <img src="https://via.placeholder.com/160x80?text=SPONSOR+2" alt="Sponsor 2" class="max-h-12"></div>
-                <div class="flex items-center justify-center p-4 bg-zinc-800 rounded-lg h-24 border border-zinc-700">
-                    <img src="https://via.placeholder.com/160x80?text=SPONSOR+3" alt="Sponsor 3" class="max-h-12"></div>
-                <div class="flex items-center justify-center p-4 bg-zinc-800 rounded-lg h-24 border border-zinc-700">
-                    <img src="https://via.placeholder.com/160x80?text=SPONSOR+4" alt="Sponsor 4" class="max-h-12"></div>
+            <div class="text-center mb-12">
+                <h2 class="anton-font text-3xl md:text-4xl text-white mb-3">OUR PARTNERS</h2>
+                <p class="text-gray-400 text-sm">Brands that back the North</p>
             </div>
-            <div class="mt-12 text-center">
-                <a href="#" class="inline-flex items-center text-yellow-500 hover:text-yellow-400 font-medium">BECOME A
-                    SPONSOR <i class="fas fa-arrow-right ml-2"></i></a>
+            <!-- Placeholder slots — replace with real logos when sponsors come in -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
+                    onclick="openSponsorModal()">
+                    <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
+                </div>
+                <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
+                    onclick="openSponsorModal()">
+                    <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
+                </div>
+                <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
+                    onclick="openSponsorModal()">
+                    <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
+                </div>
+                <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
+                    onclick="openSponsorModal()">
+                    <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
+                </div>
+            </div>
+            <!-- Sponsor pitch banner -->
+            <div
+                class="max-w-3xl mx-auto bg-gradient-to-r from-yellow-900/40 to-zinc-800 rounded-2xl border border-yellow-600/30 p-8 flex flex-col md:flex-row items-center gap-6">
+                <div class="flex-1">
+                    <h3 class="anton-font text-2xl text-yellow-400 mb-2">REACH THE AFC NORTH FAITHFUL</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">We talk to the most passionate football fans in the
+                        AFC — Browns, Steelers, Bengals, and Ravens die-hards every week. Get your brand in front of
+                        them.</p>
+                </div>
+                <button onclick="openSponsorModal()" class="flex-shrink-0 bg-yellow-600 hover:bg-yellow-500 text-black font-bold px-8 py-4 rounded-lg transition shadow-[0_0_20px_rgba(201,161,0,0.3)] hover:shadow-[0_0_30px_rgba(201,161,0,0.5)] whitespace-nowrap anton-font text-lg">
+                BECOME A SPONSOR
+            </button>
             </div>
         </div>
     </section>
@@ -979,22 +1098,23 @@
                         <img
                         src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20NOTHERNERS%20YT%20LOGO%20(With%20Rob-Bengal).png"
                         alt="AFC Northerners Logo"
-                        class="h-10 w-auto object-contain"
-                        onerror="this.style.display='none';"
+                        class="h-10 w-auto object-contain rounded-full"
                     />
-                        <h3 class="anton-font text-xl text-white">AFC NORTHERNERS</h3>
+                        <h3 class="font-redzone text-sm text-white">AFC NORTHERNERS</h3>
                     </div>
                     <p class="text-gray-400 text-sm">Four AFC North superfans arguing ball at the bar. Zero filters, all
                         passion.</p>
                     <div class="flex space-x-4 mt-4">
-                        <a href="https://www.youtube.com/@afcnorthernersshow"
+                        <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" title="YouTube"
                             class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
-                        <a href="#"
-                            class="text-gray-400 hover:text-yellow-500 transition"><i class="fab fa-twitter text-xl"></i></a>
-                        <a href="#"
-                            class="text-gray-400 hover:text-yellow-500 transition"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#"
-                            class="text-gray-400 hover:text-yellow-500 transition"><i class="fab fa-discord text-xl"></i></a>
+                        <a href="https://x.com/afcnortherners" target="_blank" title="X / Twitter"
+                            class="text-gray-400 hover:text-white transition"><i class="fab fa-x-twitter text-xl"></i></a>
+                        <a href="https://www.instagram.com/afcnortherners" target="_blank" title="Instagram"
+                            class="text-gray-400 hover:text-pink-500 transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.tiktok.com/@AFC_Northerners" target="_blank" title="TikTok"
+                            class="text-gray-400 hover:text-cyan-400 transition"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="https://www.reddit.com/r/afcnortherners" target="_blank" title="Reddit"
+                            class="text-gray-400 hover:text-orange-500 transition"><i class="fab fa-reddit text-xl"></i></a>
                     </div>
                 </div>
                 <div>
@@ -1003,7 +1123,8 @@
                         <li><a href="#episodes" class="text-gray-400 hover:text-white transition">Latest Episodes</a>
                         </li>
                         <li><a href="#live" class="text-gray-400 hover:text-white transition">Live Shows</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Highlight Clips</a></li>
+                        <li><a href="https://www.youtube.com/@afcnorthernersshow/shorts" target="_blank"
+                                class="text-gray-400 hover:text-white transition">Highlight Clips</a></li>
                     </ul>
                 </div>
                 <div>
@@ -1011,16 +1132,20 @@
                     <ul class="space-y-2">
                         <li><a href="#newsletter" class="text-gray-400 hover:text-white transition">North Bar
                                 Newsletter</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Discord Server</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Weekly Polls</a></li>
+                        <li><a href="https://www.reddit.com/r/afcnortherners" target="_blank"
+                                class="text-gray-400 hover:text-white transition">Reddit Community</a></li>
+                        <li><button onclick="openHotTake()" class="text-gray-400 hover:text-yellow-400 transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">🔥 Hot Take Meter</button>
+                        </li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="anton-font text-lg text-white mb-4">ABOUT</h4>
                     <ul class="space-y-2">
                         <li><a href="#hosts" class="text-gray-400 hover:text-white transition">Meet the Hosts</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sponsors</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><button onclick="openSponsorModal()" class="text-gray-400 hover:text-yellow-400 transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">Become a Sponsor</button>
+                        </li>
+                        <li><button onclick="openContactModal()" class="text-gray-400 hover:text-white transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">Contact Us</button>
+                        </li>
                         <li><button onclick="openStandings()" class="text-gray-400 hover:text-yellow-400 transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">2025 Standings</button>
                         </li>
                     </ul>
@@ -1029,8 +1154,8 @@
             <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2026 AFC Northerners. All rights reserved.</p>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-500 hover:text-gray-400 text-sm">Terms</a>
-                    <a href="#" class="text-gray-500 hover:text-gray-400 text-sm">Privacy</a>
+                    <button onclick="openTermsModal()" class="text-gray-500 hover:text-gray-400 text-sm bg-transparent border-0" style="font-family:'Archivo Narrow',sans-serif;">Terms</button>
+                    <button onclick="openPrivacyModal()" class="text-gray-500 hover:text-gray-400 text-sm bg-transparent border-0" style="font-family:'Archivo Narrow',sans-serif;">Privacy</button>
                 </div>
             </div>
         </div>
@@ -1523,6 +1648,567 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
     setTimeout(()=>resizeCanvas(),100);
     let rt; window.addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>{ const s=JSON.parse(JSON.stringify(elements)); resizeCanvas(); elements=s; redraw(); },250); });
 })();
+    </script>
+
+    <!-- ═══════════════════════════════════════
+     MODAL STYLES (shared)
+═══════════════════════════════════════ -->
+    <style>
+        .an-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(6px);
+            overflow-y: auto;
+        }
+
+        .an-modal.open {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .an-panel {
+            background: #111113;
+            border: 1px solid #2a2a2e;
+            border-radius: 16px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(201, 161, 0, 0.1);
+        }
+
+        .an-header {
+            background: linear-gradient(135deg, #1a1200 0%, #0f0a20 100%);
+            border-bottom: 2px solid #C9A100;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .an-close {
+            color: #9ca3af;
+            font-size: 2rem;
+            line-height: 1;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color .2s;
+        }
+
+        .an-close:hover {
+            color: #fff;
+        }
+
+        .an-input {
+            width: 100%;
+            padding: .75rem 1rem;
+            background: #1c1c1f;
+            border: 1px solid #3f3f46;
+            border-radius: .5rem;
+            color: #fff;
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: .95rem;
+            transition: border-color .2s;
+            outline: none;
+        }
+
+        .an-input:focus {
+            border-color: #C9A100;
+        }
+
+        .an-label {
+            display: block;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin-bottom: .4rem;
+        }
+
+        .an-btn-gold {
+            background: #C9A100;
+            color: #000;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            padding: .75rem 2rem;
+            border-radius: .5rem;
+            border: none;
+            cursor: pointer;
+            transition: background .2s, box-shadow .2s;
+        }
+
+        .an-btn-gold:hover {
+            background: #e6b800;
+            box-shadow: 0 0 20px rgba(201, 161, 0, 0.4);
+        }
+
+        .an-btn-ghost {
+            background: transparent;
+            color: #9ca3af;
+            border: 1px solid #3f3f46;
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: .9rem;
+            padding: .6rem 1.5rem;
+            border-radius: .5rem;
+            cursor: pointer;
+            transition: all .2s;
+        }
+
+        .an-btn-ghost:hover {
+            border-color: #9ca3af;
+            color: #fff;
+        }
+
+        .an-success {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        /* Hot Take Meter */
+        .ht-bar-wrap {
+            background: #27272a;
+            border-radius: 999px;
+            height: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ht-bar {
+            height: 100%;
+            border-radius: 999px;
+            transition: width 1s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .ht-vote-btn {
+            flex: 1;
+            padding: .6rem;
+            border-radius: .5rem;
+            border: none;
+            cursor: pointer;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            font-size: .85rem;
+            transition: all .2s;
+        }
+    </style>
+
+    <!-- ═══════════════════════════════════════
+     SPONSOR MODAL
+═══════════════════════════════════════ -->
+    <div id="sponsor-modal" class="an-modal" onclick="closeModalIfOutside(event,'sponsor-modal')">
+        <div class="an-panel" style="max-width:600px;">
+            <div class="an-header">
+                <div>
+                    <div class="anton-font text-2xl text-white tracking-widest">BECOME A SPONSOR</div>
+                    <div class="text-yellow-500 text-xs mt-1 tracking-widest">REACH THE AFC NORTH FAITHFUL</div>
+                </div>
+                <button class="an-close" onclick="closeModal('sponsor-modal')">&times;</button>
+            </div>
+            <div class="p-6 md:p-8" id="sponsor-form-wrap">
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">We reach passionate AFC North fans every week
+                    across YouTube, Twitch, and social. Fill out the form below and we'll be in touch about partnership
+                    opportunities.</p>
+                <div class="space-y-4">
+                    <div>
+                        <label class="an-label">Your Name *</label>
+                        <input id="sp-name" class="an-input" type="text" placeholder="John Smith">
+                    </div>
+                    <div>
+                        <label class="an-label">Company / Brand *</label>
+                        <input id="sp-company" class="an-input" type="text" placeholder="Acme Brewing Co.">
+                    </div>
+                    <div>
+                        <label class="an-label">Email Address *</label>
+                        <input id="sp-email" class="an-input" type="email" placeholder="you@company.com">
+                    </div>
+                    <div>
+                        <label class="an-label">Monthly Budget</label>
+                        <select id="sp-budget" class="an-input">
+                        <option value="">Select a range</option>
+                        <option>Under $250</option>
+                        <option>$250 – $500</option>
+                        <option>$500 – $1,000</option>
+                        <option>$1,000 – $2,500</option>
+                        <option>$2,500+</option>
+                    </select>
+                    </div>
+                    <div>
+                        <label class="an-label">Tell us about your brand</label>
+                        <textarea id="sp-message" class="an-input" rows="3" placeholder="What you do, who you're trying to reach, anything else..."></textarea>
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button class="an-btn-gold" onclick="submitSponsor()">SEND INQUIRY</button>
+                        <button class="an-btn-ghost" onclick="closeModal('sponsor-modal')">Cancel</button>
+                    </div>
+                    <p id="sp-error" class="text-red-400 text-xs hidden">Please fill in all required fields.</p>
+                </div>
+            </div>
+            <div class="an-success" id="sponsor-success">
+                <i class="fas fa-handshake text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="anton-font text-2xl text-white mb-2">WE'LL BE IN TOUCH!</h3>
+                <p class="text-gray-400 text-sm">Thanks for reaching out. We'll review your inquiry and get back to you
+                    within 2 business days.</p>
+                <button class="an-btn-gold mt-6" onclick="closeModal('sponsor-modal')">CLOSE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+     CONTACT MODAL
+═══════════════════════════════════════ -->
+    <div id="contact-modal" class="an-modal" onclick="closeModalIfOutside(event,'contact-modal')">
+        <div class="an-panel" style="max-width:540px;">
+            <div class="an-header">
+                <div>
+                    <div class="anton-font text-2xl text-white tracking-widest">CONTACT US</div>
+                    <div class="text-yellow-500 text-xs mt-1 tracking-widest">WE READ EVERY MESSAGE</div>
+                </div>
+                <button class="an-close" onclick="closeModal('contact-modal')">&times;</button>
+            </div>
+            <div class="p-6 md:p-8" id="contact-form-wrap">
+                <div class="flex items-center gap-3 mb-6 p-3 bg-zinc-800 rounded-lg border border-zinc-700">
+                    <i class="fas fa-envelope text-yellow-500"></i>
+                    <a href="mailto:afcnortherners@gmail.com"
+                        class="text-yellow-400 hover:text-yellow-300 text-sm transition">afcnortherners@gmail.com</a>
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="an-label">Name *</label>
+                            <input id="ct-name" class="an-input" type="text" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="an-label">Email *</label>
+                            <input id="ct-email" class="an-input" type="email" placeholder="you@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="an-label">Subject</label>
+                        <select id="ct-subject" class="an-input">
+                        <option>General question</option>
+                        <option>Guest appearance</option>
+                        <option>Sponsorship inquiry</option>
+                        <option>Press / Media</option>
+                        <option>Fan mail 🍺</option>
+                        <option>Other</option>
+                    </select>
+                    </div>
+                    <div>
+                        <label class="an-label">Message *</label>
+                        <textarea id="ct-message" class="an-input" rows="4" placeholder="What's on your mind?"></textarea>
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button class="an-btn-gold" onclick="submitContact()">SEND MESSAGE</button>
+                        <button class="an-btn-ghost" onclick="closeModal('contact-modal')">Cancel</button>
+                    </div>
+                    <p id="ct-error" class="text-red-400 text-xs hidden">Please fill in all required fields.</p>
+                </div>
+            </div>
+            <div class="an-success" id="contact-success">
+                <i class="fas fa-paper-plane text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="anton-font text-2xl text-white mb-2">MESSAGE SENT!</h3>
+                <p class="text-gray-400 text-sm">We'll get back to you at the email you provided. Go Browns. Or whatever
+                    your team is.</p>
+                <button class="an-btn-gold mt-6" onclick="closeModal('contact-modal')">CLOSE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+     HOT TAKE METER MODAL
+═══════════════════════════════════════ -->
+    <div id="hottake-modal" class="an-modal" onclick="closeModalIfOutside(event,'hottake-modal')">
+        <div class="an-panel" style="max-width:580px;">
+            <div class="an-header">
+                <div>
+                    <div class="anton-font text-2xl text-white tracking-widest">🔥 HOT TAKE METER</div>
+                    <div class="text-yellow-500 text-xs mt-1 tracking-widest">VOTE ON THE WEEK'S SPICIEST AFC NORTH
+                        TAKES</div>
+                </div>
+                <button class="an-close" onclick="closeModal('hottake-modal')">&times;</button>
+            </div>
+            <div class="p-6 md:p-8 space-y-6" id="ht-takes">
+                <!-- Takes injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+     TERMS MODAL
+═══════════════════════════════════════ -->
+    <div id="terms-modal" class="an-modal" onclick="closeModalIfOutside(event,'terms-modal')">
+        <div class="an-panel" style="max-width:680px;">
+            <div class="an-header">
+                <div class="anton-font text-2xl text-white tracking-widest">TERMS OF USE</div>
+                <button class="an-close" onclick="closeModal('terms-modal')">&times;</button>
+            </div>
+            <div class="p-6 md:p-8 max-h-[70vh] overflow-y-auto text-gray-300 text-sm leading-relaxed space-y-5">
+                <p class="text-gray-500 text-xs">Last updated: January 2026</p>
+                <p>Welcome to AFC Northerners. By accessing or using this website, you agree to be bound by these Terms
+                    of Use. Please read them carefully.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">1. USE OF THE SITE</h4>
+                <p>This site is provided for entertainment and informational purposes only. You agree to use it only for
+                    lawful purposes and in a way that does not infringe the rights of others. You must not misuse this
+                    site by introducing viruses or other harmful material, or attempting to gain unauthorized access to
+                    any part of the site.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">2. INTELLECTUAL PROPERTY</h4>
+                <p>All content on this site — including logos, graphics, show names, episode content, and text — is the
+                    property of AFC Northerners or its content suppliers. You may not reproduce, distribute, or create
+                    derivative works from any content without express written permission.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">3. DISCLAIMER</h4>
+                <p>AFC Northerners is a fan-produced sports talk show. Nothing on this site constitutes professional
+                    sports betting advice, financial advice, or endorsement of any team or organization. All opinions
+                    expressed are those of the individual hosts and do not reflect the views of the NFL or any of its
+                    affiliated teams.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">4. THIRD-PARTY LINKS</h4>
+                <p>This site contains links to third-party websites (YouTube, Twitch, Reddit, etc.). We have no control
+                    over the content or practices of those sites and accept no responsibility for them. Visiting any
+                    third-party site is at your own risk.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">5. LIMITATION OF LIABILITY</h4>
+                <p>To the fullest extent permitted by law, AFC Northerners shall not be liable for any indirect,
+                    incidental, or consequential damages arising from your use of this site or its content.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">6. CHANGES TO THESE TERMS</h4>
+                <p>We reserve the right to modify these Terms at any time. Continued use of the site after changes are
+                    posted constitutes acceptance of the updated Terms.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">7. CONTACT</h4>
+                <p>Questions about these Terms? Email us at <a href="mailto:afcnortherners@gmail.com"
+                        class="text-yellow-400 hover:text-yellow-300">afcnortherners@gmail.com</a>.</p>
+            </div>
+            <div class="p-4 border-t border-zinc-800 flex justify-end">
+                <button class="an-btn-gold" onclick="closeModal('terms-modal')">GOT IT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+     PRIVACY MODAL
+═══════════════════════════════════════ -->
+    <div id="privacy-modal" class="an-modal" onclick="closeModalIfOutside(event,'privacy-modal')">
+        <div class="an-panel" style="max-width:680px;">
+            <div class="an-header">
+                <div class="anton-font text-2xl text-white tracking-widest">PRIVACY POLICY</div>
+                <button class="an-close" onclick="closeModal('privacy-modal')">&times;</button>
+            </div>
+            <div class="p-6 md:p-8 max-h-[70vh] overflow-y-auto text-gray-300 text-sm leading-relaxed space-y-5">
+                <p class="text-gray-500 text-xs">Last updated: January 2026</p>
+                <p>AFC Northerners ("we", "us") respects your privacy. This policy explains what information we collect,
+                    how we use it, and your rights regarding it.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">1. INFORMATION WE COLLECT</h4>
+                <p>We may collect the following information when you interact with this site: your name and email
+                    address when you sign up for our newsletter or submit a contact/sponsor form; usage data such as
+                    pages visited and time on site (via embedded analytics); and information voluntarily submitted
+                    through any form on this site.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">2. HOW WE USE YOUR INFORMATION</h4>
+                <p>We use collected information to: send our "6-Pack Friday" newsletter to subscribers who opt in;
+                    respond to contact and sponsorship inquiries; and improve the website experience. We do not sell,
+                    trade, or rent your personal information to third parties.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">3. NEWSLETTER & EMAIL</h4>
+                <p>If you subscribe to our newsletter, you can unsubscribe at any time using the link included in every
+                    email. We will only contact you for purposes directly related to the show and community.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">4. THIRD-PARTY SERVICES</h4>
+                <p>This site embeds content from YouTube and Twitch. Those platforms may set their own cookies and
+                    collect data in accordance with their own privacy policies. We encourage you to review those
+                    policies. We are not responsible for third-party data practices.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">5. COOKIES</h4>
+                <p>This site may use basic cookies to improve your experience. We do not use cookies for advertising or
+                    tracking purposes beyond standard analytics. You can disable cookies in your browser settings at any
+                    time.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">6. DATA RETENTION</h4>
+                <p>We retain your contact information only as long as necessary to respond to your inquiry or maintain
+                    your newsletter subscription. You may request deletion of your data at any time by emailing us.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">7. YOUR RIGHTS</h4>
+                <p>You have the right to access, correct, or request deletion of any personal data we hold about you. To
+                    exercise these rights, contact us at <a href="mailto:afcnortherners@gmail.com"
+                        class="text-yellow-400 hover:text-yellow-300">afcnortherners@gmail.com</a>.</p>
+
+                <h4 class="anton-font text-white text-lg tracking-wide">8. CHANGES TO THIS POLICY</h4>
+                <p>We may update this Privacy Policy from time to time. The "last updated" date at the top will reflect
+                    any changes. Continued use of the site constitutes acceptance of the updated policy.</p>
+            </div>
+            <div class="p-4 border-t border-zinc-800 flex justify-end">
+                <button class="an-btn-gold" onclick="closeModal('privacy-modal')">GOT IT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+     MODAL SCRIPTS
+═══════════════════════════════════════ -->
+    <script>
+        // ── Generic modal helpers ─────────────────────────────────────────────────────
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+function closeModalIfOutside(e, id) { if (e.target === document.getElementById(id)) closeModal(id); }
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        ['sponsor-modal','contact-modal','hottake-modal','terms-modal','privacy-modal'].forEach(closeModal);
+    }
+});
+function openSponsorModal() { openModal('sponsor-modal'); }
+function openContactModal() { openModal('contact-modal'); }
+function openTermsModal()   { openModal('terms-modal'); }
+function openPrivacyModal() { openModal('privacy-modal'); }
+
+// ── Sponsor form ──────────────────────────────────────────────────────────────
+async function submitSponsor() {
+    const name    = document.getElementById('sp-name').value.trim();
+    const company = document.getElementById('sp-company').value.trim();
+    const email   = document.getElementById('sp-email').value.trim();
+    const budget  = document.getElementById('sp-budget').value;
+    const message = document.getElementById('sp-message').value.trim();
+    const err     = document.getElementById('sp-error');
+    const btn     = document.querySelector('#sponsor-form-wrap .an-btn-gold');
+    if (!name || !company || !email) { err.classList.remove('hidden'); return; }
+    err.classList.add('hidden');
+    btn.textContent = 'SENDING…'; btn.disabled = true;
+    try {
+        const res = await fetch('https://formspree.io/f/mzdjepkq', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, company, email, budget: budget||'Not specified', message })
+        });
+        const data = await res.json();
+        console.log('Formspree sponsor response:', res.status, data);
+        if (res.ok) {
+            document.getElementById('sponsor-form-wrap').style.display = 'none';
+            document.getElementById('sponsor-success').style.display = 'flex';
+        } else {
+            const msg = data.errors ? data.errors.map(e=>e.message).join(', ') : 'Something went wrong.';
+            err.textContent = msg + ' — or email us at afcnortherners@gmail.com';
+            err.classList.remove('hidden');
+            btn.textContent = 'SEND INQUIRY'; btn.disabled = false;
+        }
+    } catch(e) {
+        console.error('Formspree sponsor error:', e);
+        err.textContent = 'Network error: ' + e.message + ' — please email afcnortherners@gmail.com';
+        err.classList.remove('hidden');
+        btn.textContent = 'SEND INQUIRY'; btn.disabled = false;
+    }
+}
+
+// ── Contact form ──────────────────────────────────────────────────────────────
+async function submitContact() {
+    const name    = document.getElementById('ct-name').value.trim();
+    const email   = document.getElementById('ct-email').value.trim();
+    const subject = document.getElementById('ct-subject').value;
+    const message = document.getElementById('ct-message').value.trim();
+    const err     = document.getElementById('ct-error');
+    const btn     = document.querySelector('#contact-form-wrap .an-btn-gold');
+    if (!name || !email || !message) { err.classList.remove('hidden'); return; }
+    err.classList.add('hidden');
+    btn.textContent = 'SENDING…'; btn.disabled = true;
+    try {
+        const res = await fetch('https://formspree.io/f/xjgaybjr', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, subject, message })
+        });
+        const data = await res.json();
+        console.log('Formspree contact response:', res.status, data);
+        if (res.ok) {
+            document.getElementById('contact-form-wrap').style.display = 'none';
+            document.getElementById('contact-success').style.display = 'flex';
+        } else {
+            const msg = data.errors ? data.errors.map(e=>e.message).join(', ') : 'Something went wrong.';
+            err.textContent = msg + ' — or email us at afcnortherners@gmail.com';
+            err.classList.remove('hidden');
+            btn.textContent = 'SEND MESSAGE'; btn.disabled = false;
+        }
+    } catch(e) {
+        console.error('Formspree contact error:', e);
+        err.textContent = 'Network error: ' + e.message + ' — please email afcnortherners@gmail.com';
+        err.classList.remove('hidden');
+        btn.textContent = 'SEND MESSAGE'; btn.disabled = false;
+    }
+}
+
+// ── Hot Take Meter ────────────────────────────────────────────────────────────
+const HOT_TAKES = [
+    { id:'ht1', text:'The Steelers are a playoff team in 2026.', yes:0, no:0 },
+    { id:'ht2', text:'Lamar Jackson is the best QB in the AFC North — and it\'s not close.', yes:0, no:0 },
+    { id:'ht3', text:'The Browns will finally have a winning season in 2026.', yes:0, no:0 },
+    { id:'ht4', text:'Joe Burrow will win a Super Bowl before he retires.', yes:0, no:0 },
+    { id:'ht5', text:'The AFC North is the toughest division in football.', yes:0, no:0 },
+];
+const htVoted = {};
+
+function openHotTake() {
+    renderHotTakes();
+    openModal('hottake-modal');
+}
+
+function renderHotTakes() {
+    const container = document.getElementById('ht-takes');
+    container.innerHTML = HOT_TAKES.map(take => {
+        const total = take.yes + take.no;
+        const yesPct = total ? Math.round(take.yes / total * 100) : 50;
+        const noPct = 100 - yesPct;
+        const voted = htVoted[take.id];
+        return `
+        <div class="bg-zinc-800 rounded-xl p-4 border border-zinc-700">
+            <p class="text-white font-bold mb-3 leading-snug">${take.text}</p>
+            <div class="ht-bar-wrap mb-2">
+                <div class="ht-bar" id="bar-${take.id}"
+                    style="width:${yesPct}%;background:linear-gradient(90deg,#16a34a,#22c55e)"></div>
+            </div>
+            <div class="flex justify-between text-xs text-gray-400 mb-3">
+                <span class="text-green-400 font-bold">${yesPct}% 🔥 Fire</span>
+                <span>${total} vote${total!==1?'s':''}</span>
+                <span class="text-zinc-500 font-bold">${noPct}% ❄️ Cap</span>
+            </div>
+            ${voted ? `<p class="text-xs text-center text-gray-500">You voted: <span class="${voted==='yes'?'text-green-400':'text-blue-400'} font-bold">${voted==='yes'?'🔥 FIRE':'❄️ CAP'}</span></p>`
+            : `<div class="flex gap-2">
+                <button class="ht-vote-btn" style="background:#16a34a;color:#fff;" onclick="htVote('${take.id}','yes')">🔥 FIRE</button>
+                <button class="ht-vote-btn" style="background:#1d4ed8;color:#fff;" onclick="htVote('${take.id}','no')">❄️ CAP</button>
+            </div>`}
+        </div>`;
+    }).join('');
+}
+
+function htVote(id, vote) {
+    if (htVoted[id]) return;
+    htVoted[id] = vote;
+    const take = HOT_TAKES.find(t => t.id === id);
+    if (!take) return;
+    take[vote === 'yes' ? 'yes' : 'no']++;
+    renderHotTakes();
+    // Animate bar
+    const total = take.yes + take.no;
+    const yesPct = Math.round(take.yes / total * 100);
+    setTimeout(() => {
+        const bar = document.getElementById('bar-' + id);
+        if (bar) bar.style.width = yesPct + '%';
+    }, 50);
+}
     </script>
 </body>
 
