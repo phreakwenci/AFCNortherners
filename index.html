@@ -367,7 +367,7 @@
         <!-- YouTube video background -->
         <div class="absolute inset-0 z-0">
             <iframe id="hero-video" class="w-full h-full"
-                src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbRD219Q6PwovRxQp8hdiviV&index=1&autoplay=1&mute=1"
+                src="https://www.youtube.com/embed/izfj0GMiV9s?autoplay=1&mute=1&loop=1&playlist=izfj0GMiV9s&controls=0&rel=0&modestbranding=1"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
@@ -385,6 +385,9 @@
                         class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-md text-lg font-bold transition flex items-center justify-center shadow-[0_0_20px_rgba(229,57,57,0.4)]">
                         <i class="fab fa-youtube mr-3 text-xl"></i> WATCH LATEST EPISODE
                     </a>
+                    <button onclick="openHotTake()" class="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-md text-lg font-bold transition flex items-center justify-center border border-zinc-700">
+                    🔥 HOT TAKE METER
+                </button>
                     <a href="#newsletter"
                         class="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-md text-lg font-bold transition flex items-center justify-center border border-zinc-700">
                         <i class="fas fa-beer mr-3 text-xl"></i> JOIN THE NORTH BAR
@@ -833,7 +836,7 @@
                         </div>
                         <h3 class="font-browns text-2xl text-white mb-1">DAVE GREEN</h3>
                         <p class="text-sm text-orange-400 mb-2 font-bold font-browns tracking-wide">Browns Guy</p>
-                        <p class="text-gray-300 text-sm leading-relaxed">Lifelong Browns fan since '99. Will debate
+                        <p class="text-gray-300 text-sm leading-relaxed">Lifelong Browns fan since '79. Will debate
                             Myles Garrett vs. TJ Watt until the beer runs cold.</p>
                     </div>
                 </div>
@@ -1013,9 +1016,9 @@
                             <div class="flex items-center text-purple-400 mb-2">
                                 <i class="fab fa-twitch mr-2"></i><span>twitch.tv/afcnortherners</span></div>
                             <div class="flex items-center text-yellow-500 mb-2">
-                                <i class="far fa-calendar-alt mr-2"></i><span>Every Wednesday</span></div>
+                                <i class="far fa-calendar-alt mr-2"></i><span>Every Tuesday</span></div>
                             <div class="flex items-center text-yellow-500">
-                                <i class="far fa-clock mr-2"></i><span>8:00 PM EST</span></div>
+                                <i class="far fa-clock mr-2"></i><span>6:00 PM Pacific Time</span></div>
                         </div>
                         <div class="grid grid-cols-4 gap-2 mb-8">
                             <div class="countdown-box flex flex-col items-center justify-center py-3 rounded">
@@ -1032,12 +1035,12 @@
                             </div>
                         </div>
                         <div class="space-y-4">
-                            <a href="https://www.twitch.tv/afcnortherners" target="_blank"
-                                class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center"><i class="fab fa-twitch mr-2"></i>
-                                FOLLOW ON TWITCH</a>
                             <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank"
                                 class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center"><i class="fab fa-youtube mr-2"></i>
                                 SUBSCRIBE ON YOUTUBE</a>
+                            <a href="https://www.twitch.tv/afcnortherners" target="_blank"
+                                class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center"><i class="fab fa-twitch mr-2"></i>
+                                FOLLOW ON TWITCH</a>
                         </div>
                     </div>
                 </div>
@@ -1380,9 +1383,9 @@
 function updateCountdown() {
     const now = new Date();
     const t = new Date();
-    const daysUntil = (3 + 7 - t.getDay()) % 7 || 7;
+    const daysUntil = (2 + 7 - t.getDay()) % 7 || 7;
     t.setDate(t.getDate() + daysUntil);
-    t.setHours(20,0,0,0);
+    t.setHours(18,0,0,0);
     const diff = t - now;
     const d = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000),
           m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
@@ -1651,15 +1654,24 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
     const OC='#ef4444', DC='#3b82f6', AC='#fbbf24', ZC='rgba(251,191,36,0.22)';
 
     const OForms = {
-        'spread-gun-3x1': [{x:.5,y:.78},{x:.5,y:.68},{x:.15,y:.68},{x:.35,y:.68},{x:.65,y:.68},{x:.85,y:.68},{x:.42,y:.58},{x:.5,y:.58},{x:.58,y:.58}],
-        'spread-gun-2x2': [{x:.5,y:.78},{x:.5,y:.68},{x:.15,y:.68},{x:.35,y:.68},{x:.65,y:.68},{x:.85,y:.68},{x:.38,y:.58},{x:.5,y:.58},{x:.62,y:.58}],
-        'i-formation':    [{x:.5,y:.92},{x:.5,y:.82},{x:.5,y:.72},{x:.25,y:.72},{x:.75,y:.72},{x:.38,y:.72},{x:.62,y:.72}],
-        'singleback':     [{x:.5,y:.88},{x:.45,y:.75},{x:.15,y:.72},{x:.35,y:.72},{x:.65,y:.72},{x:.85,y:.72},{x:.42,y:.62},{x:.5,y:.62},{x:.58,y:.62}],
-        'pistol':         [{x:.5,y:.84},{x:.5,y:.73},{x:.15,y:.73},{x:.35,y:.73},{x:.65,y:.73},{x:.85,y:.73},{x:.42,y:.62},{x:.5,y:.62},{x:.58,y:.62}],
-        'empty-3x2':      [{x:.5,y:.82},{x:.08,y:.72},{x:.22,y:.72},{x:.38,y:.72},{x:.62,y:.72},{x:.78,y:.72},{x:.92,y:.72},{x:.42,y:.62},{x:.5,y:.62},{x:.58,y:.62}],
-        'bunch':          [{x:.5,y:.84},{x:.38,y:.74},{x:.22,y:.72},{x:.5,y:.72},{x:.72,y:.68},{x:.72,y:.76},{x:.72,y:.84}],
-        'stack':          [{x:.5,y:.84},{x:.6,y:.73},{x:.35,y:.72},{x:.65,y:.72},{x:.22,y:.66},{x:.22,y:.78},{x:.78,y:.66},{x:.78,y:.78}],
-        'goal-line-o':    [{x:.5,y:.92},{x:.4,y:.83},{x:.6,y:.83},{x:.2,y:.76},{x:.8,y:.76},{x:.38,y:.76},{x:.5,y:.76},{x:.62,y:.76}],
+        // Shotgun Spread 3x1: QB, 5 OL, RB, 3 WR wide left+slot, 1 WR wide right, TE
+        'spread-gun-3x1': [{x:.5,y:.78},{x:.38,y:.68},{x:.44,y:.68},{x:.5,y:.68},{x:.56,y:.68},{x:.62,y:.68},{x:.58,y:.60},{x:.08,y:.65},{x:.22,y:.65},{x:.34,y:.64},{x:.82,y:.65}],
+        // Shotgun Spread 2x2: QB, 5 OL, RB, 2 WR left, 2 WR right
+        'spread-gun-2x2': [{x:.5,y:.78},{x:.38,y:.68},{x:.44,y:.68},{x:.5,y:.68},{x:.56,y:.68},{x:.62,y:.68},{x:.58,y:.60},{x:.08,y:.65},{x:.24,y:.65},{x:.76,y:.65},{x:.92,y:.65}],
+        // I-Formation: QB, FB, RB, 5 OL, TE, 2 WR
+        'i-formation':    [{x:.5,y:.88},{x:.5,y:.78},{x:.5,y:.68},{x:.38,y:.68},{x:.44,y:.68},{x:.56,y:.68},{x:.62,y:.68},{x:.7,y:.68},{x:.08,y:.65},{x:.92,y:.65},{x:.22,y:.65}],
+        // Singleback: QB, RB, 5 OL, TE, 3 WR
+        'singleback':     [{x:.5,y:.84},{x:.5,y:.72},{x:.38,y:.72},{x:.44,y:.72},{x:.56,y:.72},{x:.62,y:.72},{x:.7,y:.72},{x:.08,y:.68},{x:.24,y:.68},{x:.78,y:.68},{x:.92,y:.68}],
+        // Pistol: QB, RB, 5 OL, TE, 3 WR
+        'pistol':         [{x:.5,y:.82},{x:.5,y:.72},{x:.38,y:.72},{x:.44,y:.72},{x:.56,y:.72},{x:.62,y:.72},{x:.7,y:.72},{x:.08,y:.68},{x:.24,y:.68},{x:.78,y:.68},{x:.92,y:.68}],
+        // Empty 3x2: QB, 5 OL, 3 WR left, 2 WR right (no RB/TE)
+        'empty-3x2':      [{x:.5,y:.80},{x:.38,y:.70},{x:.44,y:.70},{x:.5,y:.70},{x:.56,y:.70},{x:.62,y:.70},{x:.08,y:.66},{x:.20,y:.66},{x:.32,y:.66},{x:.72,y:.66},{x:.88,y:.66}],
+        // Bunch: QB, RB, 5 OL, TE, bunch trio right, 1 WR left
+        'bunch':          [{x:.5,y:.84},{x:.42,y:.74},{x:.32,y:.72},{x:.38,y:.72},{x:.44,y:.72},{x:.56,y:.72},{x:.62,y:.72},{x:.08,y:.68},{x:.74,y:.64},{x:.74,y:.72},{x:.74,y:.80}],
+        // Stack: QB, RB, 5 OL, TE, stacked WR pairs each side
+        'stack':          [{x:.5,y:.84},{x:.5,y:.74},{x:.38,y:.72},{x:.44,y:.72},{x:.56,y:.72},{x:.62,y:.72},{x:.7,y:.72},{x:.18,y:.64},{x:.18,y:.74},{x:.86,y:.64},{x:.86,y:.74}],
+        // Goal Line: QB, FB, RB, 5 OL, 2 TE, 1 WR each side
+        'goal-line-o':    [{x:.5,y:.92},{x:.5,y:.82},{x:.5,y:.72},{x:.38,y:.72},{x:.44,y:.72},{x:.56,y:.72},{x:.62,y:.72},{x:.7,y:.72},{x:.78,y:.72},{x:.14,y:.70},{x:.88,y:.70}],
     };
     const DForms = {
         'four-three':     [{x:.3,y:.42},{x:.42,y:.38},{x:.58,y:.38},{x:.7,y:.42},{x:.25,y:.29},{x:.5,y:.27},{x:.75,y:.29},{x:.1,y:.17},{x:.9,y:.17},{x:.38,y:.1},{x:.62,y:.1}],
@@ -1668,7 +1680,7 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
         'nickel':         [{x:.32,y:.42},{x:.5,y:.38},{x:.68,y:.42},{x:.28,y:.29},{x:.5,y:.26},{x:.72,y:.29},{x:.1,y:.19},{x:.9,y:.19},{x:.35,y:.12},{x:.65,y:.12},{x:.5,y:.07}],
         'dime':           [{x:.35,y:.43},{x:.65,y:.43},{x:.22,y:.33},{x:.5,y:.29},{x:.78,y:.33},{x:.1,y:.19},{x:.9,y:.19},{x:.3,y:.12},{x:.7,y:.12},{x:.42,y:.06},{x:.58,y:.06}],
         'goal-line-d':    [{x:.15,y:.47},{x:.28,y:.43},{x:.5,y:.41},{x:.72,y:.43},{x:.85,y:.47},{x:.22,y:.34},{x:.5,y:.31},{x:.78,y:.34},{x:.1,y:.21},{x:.9,y:.21},{x:.5,y:.14}],
-        'prevent':        [{x:.5,y:.43},{x:.1,y:.21},{x:.9,y:.21},{x:.28,y:.17},{x:.72,y:.17},{x:.08,y:.09},{x:.92,y:.09},{x:.22,y:.07},{x:.5,y:.06},{x:.78,y:.07}],
+        'prevent':        [{x:.5,y:.43},{x:.1,y:.28},{x:.9,y:.28},{x:.28,y:.21},{x:.72,y:.21},{x:.08,y:.12},{x:.92,y:.12},{x:.22,y:.09},{x:.5,y:.08},{x:.78,y:.09},{x:.5,y:.20}],
         'blitz-mike':     [{x:.28,y:.42},{x:.42,y:.38},{x:.58,y:.38},{x:.72,y:.42},{x:.22,y:.28},{x:.5,y:.25},{x:.78,y:.28},{x:.1,y:.17},{x:.9,y:.17},{x:.38,y:.09},{x:.62,y:.09}],
     };
 
