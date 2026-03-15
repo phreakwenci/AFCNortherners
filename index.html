@@ -980,7 +980,9 @@
                                 <option>Baltimore Ravens</option>
                             </select>
                             </div>
-                            <button class="w-full bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-3 px-4 rounded-md transition">SIGN ME UP</button>
+                        <button id="nl-submit-btn" onclick="submitNewsletter()" class="w-full bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-3 px-4 rounded-md transition">SIGN ME UP</button>
+                        <p id="nl-success" class="text-green-400 text-sm font-bold hidden">✅ You're in! Welcome to the North Bar.</p>
+                        <p id="nl-error" class="text-red-400 text-sm hidden">Please enter a valid email.</p>
                             <p class="text-xs text-gray-400">We'll never spam you.</p>
                         </div>
                     </div>
@@ -1016,11 +1018,11 @@
                         <p class="text-xl text-gray-300 mb-6">AFC North talk, every Tuesday at 6:00 PM Pacific. Four guys, four teams,
                             zero filters.</p>
                         <div class="mb-8">
-                            <div class="flex items-center text-red-500 mb-2">
-                                <div class="flex items-center text-red-500 mb-2">
-    <i class="fab fa-youtube mr-2"></i>
-    <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" class="hover:text-red-400 transition underline">youtube.com/@afcnorthernersshow</a>
-</div></div>
+                        <div class="flex items-center text-red-500 mb-2">
+                            <i class="fab fa-youtube mr-2"></i>
+                            <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank"
+                                class="hover:text-red-400 transition underline">youtube.com/@afcnorthernersshow</a>
+                        </div>
                             <div class="flex items-center text-yellow-500 mb-2">
                                 <i class="far fa-calendar-alt mr-2"></i><span>Every Tuesday</span></div>
                             <div class="flex items-center text-yellow-500">
@@ -2125,38 +2127,38 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
         </div>
     </div>
 
-    <!-- ═══════════════════════════════════════
+<!-- ═══════════════════════════════════════
      CONTACT MODAL
 ═══════════════════════════════════════ -->
-    <div id="contact-modal" class="an-modal" onclick="closeModalIfOutside(event,'contact-modal')">
-        <div class="an-panel" style="max-width:540px;">
-            <div class="an-header">
-                <div>
-                    <div class="anton-font text-2xl text-white tracking-widest">CONTACT US</div>
-                    <div class="text-yellow-500 text-xs mt-1 tracking-widest">WE READ EVERY MESSAGE</div>
-                </div>
-                <button class="an-close" onclick="closeModal('contact-modal')">&times;</button>
+<div id="contact-modal" class="an-modal" onclick="closeModalIfOutside(event,'contact-modal')">
+    <div class="an-panel" style="max-width:540px;">
+        <div class="an-header">
+            <div>
+                <div class="anton-font text-2xl text-white tracking-widest">CONTACT US</div>
+                <div class="text-yellow-500 text-xs mt-1 tracking-widest">WE READ EVERY MESSAGE</div>
             </div>
-            <div class="p-6 md:p-8" id="contact-form-wrap">
-                <div class="flex items-center gap-3 mb-6 p-3 bg-zinc-800 rounded-lg border border-zinc-700">
-                    <i class="fas fa-envelope text-yellow-500"></i>
-                    <a href="mailto:afcnortherners@gmail.com"
-                        class="text-yellow-400 hover:text-yellow-300 text-sm transition">afcnortherners@gmail.com</a>
-                </div>
-                <div class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="an-label">Name *</label>
-                            <input id="ct-name" class="an-input" type="text" placeholder="Your name">
-                        </div>
-                        <div>
-                            <label class="an-label">Email *</label>
-                            <input id="ct-email" class="an-input" type="email" placeholder="you@example.com">
-                        </div>
+            <button class="an-close" onclick="closeModal('contact-modal')">&times;</button>
+        </div>
+        <div class="p-6 md:p-8" id="contact-form-wrap">
+            <div class="flex items-center gap-3 mb-6 p-3 bg-zinc-800 rounded-lg border border-zinc-700">
+                <i class="fas fa-envelope text-yellow-500"></i>
+                <a href="mailto:afcnortherners@gmail.com"
+                    class="text-yellow-400 hover:text-yellow-300 text-sm transition">afcnortherners@gmail.com</a>
+            </div>
+            <div class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="an-label">Name *</label>
+                        <input id="ct-name" class="an-input" type="text" placeholder="Your name">
                     </div>
                     <div>
-                        <label class="an-label">Subject</label>
-                        <select id="ct-subject" class="an-input">
+                        <label class="an-label">Email *</label>
+                        <input id="ct-email" class="an-input" type="email" placeholder="you@example.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="an-label">Subject</label>
+                    <select id="ct-subject" class="an-input">
                         <option>General question</option>
                         <option>Guest appearance</option>
                         <option>Sponsorship inquiry</option>
@@ -2164,27 +2166,27 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
                         <option>Fan mail 🍺</option>
                         <option>Other</option>
                     </select>
-                    </div>
-                    <div>
-                        <label class="an-label">Message *</label>
-                        <textarea id="ct-message" class="an-input" rows="4" placeholder="What's on your mind?"></textarea>
-                    </div>
-                    <div class="flex gap-3 pt-2">
-                        <button class="an-btn-gold" onclick="submitContact()">SEND MESSAGE</button>
-                        <button class="an-btn-ghost" onclick="closeModal('contact-modal')">Cancel</button>
-                    </div>
-                    <p id="ct-error" class="text-red-400 text-xs hidden">Please fill in all required fields.</p>
                 </div>
-            </div>
-            <div class="an-success" id="contact-success">
-                <i class="fas fa-paper-plane text-5xl text-yellow-500 mb-4"></i>
-                <h3 class="anton-font text-2xl text-white mb-2">MESSAGE SENT!</h3>
-                <p class="text-gray-400 text-sm">We'll get back to you at the email you provided. Go Browns. Or whatever
-                    your team is.</p>
-                <button class="an-btn-gold mt-6" onclick="closeModal('contact-modal')">CLOSE</button>
+                <div>
+                    <label class="an-label">Message *</label>
+                    <textarea id="ct-message" class="an-input" rows="4" placeholder="What's on your mind?"></textarea>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button id="ct-submit-btn" class="an-btn-gold" onclick="submitContact()">SEND MESSAGE</button>
+                    <button class="an-btn-ghost" onclick="closeModal('contact-modal')">Cancel</button>
+                </div>
+                <p id="ct-error" class="text-red-400 text-xs hidden">Please fill in all required fields.</p>
             </div>
         </div>
+        <div class="an-success" id="contact-success">
+            <i class="fas fa-paper-plane text-5xl text-yellow-500 mb-4"></i>
+            <h3 class="anton-font text-2xl text-white mb-2">MESSAGE SENT!</h3>
+            <p class="text-gray-400 text-sm">We'll get back to you at the email you provided. Go Browns. Or whatever
+                your team is.</p>
+            <button class="an-btn-gold mt-6" onclick="closeModal('contact-modal')">CLOSE</button>
+        </div>
     </div>
+</div>
 
     <!-- ═══════════════════════════════════════
      HOT TAKE METER MODAL
@@ -2373,39 +2375,66 @@ async function submitSponsor() {
 }
 
 // ── Contact form ──────────────────────────────────────────────────────────────
+async function submitNewsletter() {
+const email = document.querySelector('#newsletter input[type="email"]').value.trim();
+const team = document.querySelector('#newsletter select').value;
+const btn = document.getElementById('nl-submit-btn');
+const success = document.getElementById('nl-success');
+const err = document.getElementById('nl-error');
+if (!email) { err.classList.remove('hidden'); return; }
+err.classList.add('hidden');
+btn.textContent = 'SIGNING UP…'; btn.disabled = true;
+try {
+const res = await fetch('https://formspree.io/f/mqeydqon', {
+method: 'POST',
+headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+body: JSON.stringify({ email, team, _subject: 'New North Bar Signup' })
+});
+if (res.ok) {
+btn.style.display = 'none';
+success.classList.remove('hidden');
+} else {
+err.textContent = 'Something went wrong — try again.';
+err.classList.remove('hidden');
+btn.textContent = 'SIGN ME UP'; btn.disabled = false;
+}
+} catch(e) {
+err.textContent = 'Network error — try again.';
+err.classList.remove('hidden');
+btn.textContent = 'SIGN ME UP'; btn.disabled = false;
+}
+}
 async function submitContact() {
-    const name    = document.getElementById('ct-name').value.trim();
-    const email   = document.getElementById('ct-email').value.trim();
-    const subject = document.getElementById('ct-subject').value;
-    const message = document.getElementById('ct-message').value.trim();
-    const err     = document.getElementById('ct-error');
-    const btn     = document.querySelector('#contact-form-wrap .an-btn-gold');
-    if (!name || !email || !message) { err.classList.remove('hidden'); return; }
-    err.classList.add('hidden');
-    btn.textContent = 'SENDING…'; btn.disabled = true;
-    try {
-        const res = await fetch('https://formspree.io/f/xjgaybjr', {
-            method: 'POST',
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, subject, message })
-        });
-        const data = await res.json();
-        console.log('Formspree contact response:', res.status, data);
-        if (res.ok) {
-            document.getElementById('contact-form-wrap').style.display = 'none';
-            document.getElementById('contact-success').style.display = 'flex';
-        } else {
-            const msg = data.errors ? data.errors.map(e=>e.message).join(', ') : 'Something went wrong.';
-            err.textContent = msg + ' — or email us at afcnortherners@gmail.com';
-            err.classList.remove('hidden');
-            btn.textContent = 'SEND MESSAGE'; btn.disabled = false;
-        }
-    } catch(e) {
-        console.error('Formspree contact error:', e);
-        err.textContent = 'Network error: ' + e.message + ' — please email afcnortherners@gmail.com';
-        err.classList.remove('hidden');
-        btn.textContent = 'SEND MESSAGE'; btn.disabled = false;
-    }
+const name = document.getElementById('ct-name').value.trim();
+const email = document.getElementById('ct-email').value.trim();
+const subject = document.getElementById('ct-subject').value;
+const message = document.getElementById('ct-message').value.trim();
+const err = document.getElementById('ct-error');
+const btn = document.getElementById('ct-submit-btn');
+if (!name || !email || !message) { err.classList.remove('hidden'); return; }
+err.classList.add('hidden');
+if (btn) { btn.textContent = 'SENDING…'; btn.disabled = true; }
+try {
+const res = await fetch('https://formspree.io/f/xjgaybjr', {
+method: 'POST',
+headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+body: JSON.stringify({ name, email, subject, message })
+});
+const data = await res.json();
+if (res.ok) {
+document.getElementById('contact-form-wrap').style.display = 'none';
+document.getElementById('contact-success').style.display = 'flex';
+} else {
+const msg = data.errors ? data.errors.map(e=>e.message).join(', ') : 'Something went wrong.';
+err.textContent = msg + ' — or email us at afcnortherners@gmail.com';
+err.classList.remove('hidden');
+if (btn) { btn.textContent = 'SEND MESSAGE'; btn.disabled = false; }
+}
+} catch(e) {
+err.textContent = 'Network error — please email afcnortherners@gmail.com';
+err.classList.remove('hidden');
+if (btn) { btn.textContent = 'SEND MESSAGE'; btn.disabled = false; }
+}
 }
 
 // ── Hot Take Meter ────────────────────────────────────────────────────────────
