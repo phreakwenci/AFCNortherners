@@ -997,24 +997,30 @@
             <div class="max-w-6xl mx-auto bg-gray-900 rounded-xl overflow-hidden border border-gray-800">
                 <div class="md:flex">
                     <div class="md:w-1/2 relative bg-black min-h-[300px]">
+                        <!-- YouTube Live Stream Embed - Replace CHANNEL_ID_HERE with your actual YouTube Channel ID (found in YouTube Studio > Settings > Channel) -->
                         <iframe
-                            src="https://player.twitch.tv/?channel=afcnortherners&parent=localhost&parent=afc-northerners.com&autoplay=false"
-                            frameborder="0" scrolling="no" allowfullscreen="true" class="absolute inset-0 w-full h-full"
-                            height="100%" width="100%"></iframe>
+                            src="https://www.youtube.com/embed/live_stream?channel=UCkbDbT5JkrnpkFDh-IBtDkQ&autoplay=0&mute=1"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                            class="absolute inset-0 w-full h-full">
+                        </iframe>
                         <div
-                            class="absolute top-4 left-4 bg-zinc-700 text-white px-3 py-1 rounded-full text-sm font-bold">
-                            OFFLINE</div>
+                            class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            WATCH LIVE</div>
                     </div>
                     <div class="md:w-1/2 p-8 md:p-12">
                         <div class="flex items-center mb-4">
-                            <i class="fab fa-twitch text-2xl text-purple-500 mr-3"></i>
+                            <i class="fab fa-youtube text-2xl text-red-500 mr-3"></i>
                             <h2 class="anton-font text-3xl md:text-4xl text-white">NEXT LIVE SHOW</h2>
                         </div>
-                        <p class="text-xl text-gray-300 mb-6">AFC North talk, live on Twitch. Four guys, four teams,
+                        <p class="text-xl text-gray-300 mb-6">AFC North talk, every Tuesday at 6:00 PM Pacific. Four guys, four teams,
                             zero filters.</p>
                         <div class="mb-8">
-                            <div class="flex items-center text-purple-400 mb-2">
-                                <i class="fab fa-twitch mr-2"></i><span>twitch.tv/afcnortherners</span></div>
+                            <div class="flex items-center text-red-500 mb-2">
+                                <div class="flex items-center text-red-500 mb-2">
+    <i class="fab fa-youtube mr-2"></i>
+    <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" class="hover:text-red-400 transition underline">youtube.com/@afcnorthernersshow</a>
+</div></div>
                             <div class="flex items-center text-yellow-500 mb-2">
                                 <i class="far fa-calendar-alt mr-2"></i><span>Every Tuesday</span></div>
                             <div class="flex items-center text-yellow-500">
@@ -1382,17 +1388,45 @@
         // ── Countdown ────────────────────────────────────────────────────────────────
 function updateCountdown() {
     const now = new Date();
-    const t = new Date();
-    const daysUntil = (2 + 7 - t.getDay()) % 7 || 7;
-    t.setDate(t.getDate() + daysUntil);
-    t.setHours(18,0,0,0);
-    const diff = t - now;
+    
+    // Get current time components in Pacific timezone (America/Los_Angeles)
+    const fmt = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Los_Angeles',
+        year: 'numeric', month: 'numeric', day: 'numeric',
+        hour: 'numeric', minute: 'numeric', second: 'numeric',
+        hour12: false
+    });
+    const parts = {};
+    fmt.formatToParts(now).forEach(p => { if (p.type !== 'literal') parts[p.type] = parseInt(p.value); });
+    
+    // Create a temporary date to determine day of week from Pacific components
+    const pacificTemp = new Date(parts.year, parts.month - 1, parts.day);
+    const currentDay = pacificTemp.getDay(); // 0=Sun, 2=Tue
+    const currentHour = parts.hour;
+    
+    // Calculate days until next Tuesday (2 = Tuesday)
+    let daysUntil = (2 - currentDay + 7) % 7;
+    if (daysUntil === 0 && currentHour >= 18) {
+        daysUntil = 7; // If it's already past 6pm PT on Tuesday, go to next week
+    }
+    
+    // Determine if Pacific Time is currently in DST (PDT = UTC-7) or PST (UTC-8)
+    // DST typically runs from March to November
+    const isDST = (parts.month > 3 && parts.month < 11) || 
+                  (parts.month === 3 && parts.day > 13) || 
+                  (parts.month === 11 && parts.day < 6);
+    const offsetHours = isDST ? 7 : 8;
+    
+    // Calculate target time: next Tuesday at 6:00 PM Pacific converted to UTC
+    const targetUTC = Date.UTC(parts.year, parts.month - 1, parts.day + daysUntil, 18 + offsetHours, 0, 0);
+    const diff = targetUTC - now.getTime();
+    
     const d = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000),
           m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
-    document.getElementById('countdown-days').textContent = String(d).padStart(2,'0');
-    document.getElementById('countdown-hours').textContent = String(h).padStart(2,'0');
-    document.getElementById('countdown-minutes').textContent = String(m).padStart(2,'0');
-    document.getElementById('countdown-seconds').textContent = String(s).padStart(2,'0');
+    document.getElementById('countdown-days').textContent = String(Math.max(0,d)).padStart(2,'0');
+    document.getElementById('countdown-hours').textContent = String(Math.max(0,h)).padStart(2,'0');
+    document.getElementById('countdown-minutes').textContent = String(Math.max(0,m)).padStart(2,'0');
+    document.getElementById('countdown-seconds').textContent = String(Math.max(0,s)).padStart(2,'0');
 }
 setInterval(updateCountdown, 1000); updateCountdown();
 
