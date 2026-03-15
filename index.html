@@ -92,10 +92,10 @@
         :root {
             --primary-black: #0B0B0C;
             --primary-white: #F4F4F5;
-            --steel-gold: #C9A100;
-            --dawg-orange: #EB5A2A;
-            --bengal-orange: #F15025;
-            --raven-purple: #4B2E83;
+            --steel-gold: #FFB612;
+            --dawg-orange: #FF3C00;
+            --bengal-orange: #FB4F14;
+            --raven-purple: #241773;
         }
 
         body {
@@ -201,7 +201,7 @@
 
         .standings-header {
             background: linear-gradient(135deg, #1a1200 0%, #0f0a20 100%);
-            border-bottom: 2px solid #C9A100;
+            border-bottom: 2px solid #FFB612;
             padding: 1.5rem 2rem;
             display: flex;
             align-items: center;
@@ -241,7 +241,7 @@
 
         .standings-row.afc-north-team {
             background: rgba(201, 161, 0, 0.09);
-            border-left: 3px solid #C9A100;
+            border-left: 3px solid #FFB612;
             padding-left: 0.35rem;
         }
 
@@ -301,7 +301,7 @@
                     </div>
                 </div>
                 <h1 class="font-redzone text-lg md:text-xl bg-clip-text text-transparent"
-                    style="background-image: linear-gradient(to right, #C9A100 0%, #C9A100 20%, #F15025 40%, #EB5A2A 60%, #4B2E83 85%, #4B2E83 100%);">
+                    style="background-image: linear-gradient(to right, #FFB612 0%, #FFB612 20%, #FB4F14 40%, #FF3C00 60%, #241773 85%, #241773 100%);">
                     AFC NORTHERNERS</h1>
             </div>
             <nav class="hidden md:flex space-x-6">
@@ -861,7 +861,7 @@
                     <div class="h-2 bg-orange-600"></div>
                     <div class="p-6 text-center">
                         <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-600"
-                            style="background:#F15025;">
+                            style="background:#FB4F14;">
                             <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Rob%20-%20Bengals.png" alt="Rob Gressis" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
                         </div>
                         <h3 class="font-bengals text-2xl text-white mb-1">ROB GRESSIS</h3>
@@ -876,8 +876,8 @@
                     <div class="h-2 bg-purple-700"></div>
                     <div class="p-6 text-center">
                         <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-700"
-                            style="background:#9B6FD4;">
-                            <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Jan%20-%20Ravens.png" alt="Jan-David Soutar" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                            style="background:#4B2E83;">
+                            <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Jan%20-%20Ravens.png" alt="Jan-David Soutar" class="w-full h-full object-cover">
                         </div>
                         <h3 class="font-ravens text-2xl text-white mb-1">JAN-DAVID SOUTAR</h3>
                         <p class="text-sm text-purple-400 mb-2 font-bold font-ravens tracking-wide">Ravens Guy</p>
@@ -953,12 +953,12 @@
                                         <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Chris%20-%20Steelers.png" alt="Chris" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
                                     </div>
                                     <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
-                                        style="background:#F15025;">
+                                        style="background:#FB4F14;">
                                         <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Rob%20-%20Bengals.png" alt="Rob" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
                                     </div>
                                     <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
-                                        style="background:#9B6FD4;">
-                                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Jan%20-%20Ravens.png" alt="Jan-David" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                                        style="background:#4B2E83;">
+                                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Jan%20-%20Ravens.png" alt="Jan-David" class="w-full h-full object-cover">
                                     </div>
                                 </div>
                             </div>
@@ -980,9 +980,10 @@
                                 <option>Baltimore Ravens</option>
                             </select>
                             </div>
-                        <button id="nl-submit-btn" onclick="submitNewsletter()" class="w-full bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-3 px-4 rounded-md transition">SIGN ME UP</button>
-                        <p id="nl-success" class="text-green-400 text-sm font-bold hidden">✅ You're in! Welcome to the North Bar.</p>
-                        <p id="nl-error" class="text-red-400 text-sm hidden">Please enter a valid email.</p>
+                            <button id="nl-submit-btn" onclick="submitNewsletter()" class="w-full bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-3 px-4 rounded-md transition">SIGN ME UP</button>
+                            <p id="nl-success" class="text-green-400 text-sm font-bold hidden">✅ You're in! Welcome to
+                                the North Bar.</p>
+                            <p id="nl-error" class="text-red-400 text-sm hidden">Please enter a valid email.</p>
                             <p class="text-xs text-gray-400">We'll never spam you.</p>
                         </div>
                     </div>
@@ -999,34 +1000,28 @@
             <div class="max-w-6xl mx-auto bg-gray-900 rounded-xl overflow-hidden border border-gray-800">
                 <div class="md:flex">
                     <div class="md:w-1/2 relative bg-black min-h-[300px]">
-                        <!-- YouTube Live Stream Embed - Replace CHANNEL_ID_HERE with your actual YouTube Channel ID (found in YouTube Studio > Settings > Channel) -->
                         <iframe
-                            src="https://www.youtube.com/embed?listType=playlist&list=PLkJ5XJqeisbRD219Q6PwovRxQp8hdiviV&index=1"
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                            class="absolute inset-0 w-full h-full">
-                        </iframe>
+                            src="https://player.twitch.tv/?channel=afcnortherners&parent=localhost&parent=afc-northerners.com&autoplay=false"
+                            frameborder="0" scrolling="no" allowfullscreen="true" class="absolute inset-0 w-full h-full"
+                            height="100%" width="100%"></iframe>
                         <div
-                            class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">
-                            WATCH LIVE</div>
+                            class="absolute top-4 left-4 bg-zinc-700 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            OFFLINE</div>
                     </div>
                     <div class="md:w-1/2 p-8 md:p-12">
                         <div class="flex items-center mb-4">
-                            <i class="fab fa-youtube text-2xl text-red-500 mr-3"></i>
+                            <i class="fab fa-twitch text-2xl text-purple-500 mr-3"></i>
                             <h2 class="anton-font text-3xl md:text-4xl text-white">NEXT LIVE SHOW</h2>
                         </div>
-                        <p class="text-xl text-gray-300 mb-6">AFC North talk, every Tuesday at 6:00 PM Pacific. Four guys, four teams,
+                        <p class="text-xl text-gray-300 mb-6">AFC North talk, live on Twitch. Four guys, four teams,
                             zero filters.</p>
                         <div class="mb-8">
-                        <div class="flex items-center text-red-500 mb-2">
-                            <i class="fab fa-youtube mr-2"></i>
-                            <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank"
-                                class="hover:text-red-400 transition underline">youtube.com/@afcnorthernersshow</a>
-                        </div>
+                            <div class="flex items-center text-purple-400 mb-2">
+                                <i class="fab fa-twitch mr-2"></i><span>twitch.tv/afcnortherners</span></div>
                             <div class="flex items-center text-yellow-500 mb-2">
-                                <i class="far fa-calendar-alt mr-2"></i><span>Every Tuesday</span></div>
+                                <i class="far fa-calendar-alt mr-2"></i><span>Every Wednesday</span></div>
                             <div class="flex items-center text-yellow-500">
-                                <i class="far fa-clock mr-2"></i><span>6:00 PM Pacific Time</span></div>
+                                <i class="far fa-clock mr-2"></i><span>8:00 PM EST</span></div>
                         </div>
                         <div class="grid grid-cols-4 gap-2 mb-8">
                             <div class="countdown-box flex flex-col items-center justify-center py-3 rounded">
@@ -1043,12 +1038,12 @@
                             </div>
                         </div>
                         <div class="space-y-4">
-                            <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank"
-                                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center"><i class="fab fa-youtube mr-2"></i>
-                                SUBSCRIBE ON YOUTUBE</a>
                             <a href="https://www.twitch.tv/afcnortherners" target="_blank"
                                 class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center"><i class="fab fa-twitch mr-2"></i>
                                 FOLLOW ON TWITCH</a>
+                            <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank"
+                                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center"><i class="fab fa-youtube mr-2"></i>
+                                SUBSCRIBE ON YOUTUBE</a>
                         </div>
                     </div>
                 </div>
@@ -1089,156 +1084,158 @@
 
                 <!-- $2 — Bengals orange -->
                 <div class="bg-zinc-900 rounded-2xl border transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
-                    style="border-color:#F15025;">
-                    <div class="h-1" style="background:#F15025;"></div>
+                    style="border-color:#FB4F14;">
+                    <div class="h-1" style="background:#FB4F14;"></div>
                     <div class="p-5 flex flex-col flex-grow">
                         <div class="text-center mb-4">
                             <div class="anton-font text-3xl text-white">$2</div>
                             <div class="text-gray-500 text-xs">/ month</div>
-                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#F15025;">4TH & INCHES</div>
+                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FB4F14;">4TH & INCHES</div>
                             <div class="text-gray-500 text-xs mt-1">QB Sneak. Just do it.</div>
                         </div>
                         <ul class="space-y-2 text-sm text-gray-400 flex-grow">
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#F15025;"></i>Weekly
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FB4F14;"></i>Weekly
                                 instant take within 24hrs of each game from all 4 hosts</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#F15025;"></i>Full
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FB4F14;"></i>Full
                                 season — pre to post</li>
                         </ul>
                         <a href="https://www.patreon.com/checkout/afcnortherners?rid=990114&vanity=575065"
                             target="_blank"
                             class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-white transition hover:opacity-90"
-                            style="background:#F15025;">JOIN FOR $2</a>
+                            style="background:#FB4F14;">JOIN FOR $2</a>
                     </div>
                 </div>
 
                 <!-- $5 — Browns orange — HIGHLIGHTED -->
                 <div class="bg-zinc-900 rounded-2xl border-2 transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden relative"
-                    style="border-color:#EB5A2A; box-shadow:0 0 30px rgba(235,90,42,0.25);">
+                    style="border-color:#FF3C00; box-shadow:0 0 30px rgba(235,90,42,0.25);">
                     <div class="absolute top-0 left-0 right-0 text-center py-1 text-xs font-bold tracking-widest text-white"
-                        style="background:#EB5A2A;">⭐ MOST POPULAR</div>
-                    <div class="h-1 mt-6" style="background:#EB5A2A;"></div>
+                        style="background:#FF3C00;">⭐ MOST POPULAR</div>
+                    <div class="h-1 mt-6" style="background:#FF3C00;"></div>
                     <div class="p-5 flex flex-col flex-grow">
                         <div class="text-center mb-4">
                             <div class="anton-font text-3xl text-white">$5</div>
                             <div class="text-gray-500 text-xs">/ month</div>
-                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#EB5A2A;">3RD & 3</div>
+                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FF3C00;">3RD & 3</div>
                             <div class="text-gray-500 text-xs mt-1">You're in enemy territory.</div>
                         </div>
                         <ul class="space-y-2 text-sm text-gray-400 flex-grow">
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#EB5A2A;"></i>Everything
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>Everything
                                 in 4th & Inches</li>
-                          
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#EB5A2A;"></i>Weekly
-                                AFC North Fantasy Football podcast extras</li>
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>Early
+                                access to weekly podcast</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#EB5A2A;"></i>More
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>Weekly
+                                AFC North Fantasy Football podcast</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>More
                                 perks coming!</li>
                         </ul>
                         <a href="https://www.patreon.com/checkout/afcnortherners?rid=990144&vanity=575065"
                             target="_blank"
                             class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-white transition hover:opacity-90"
-                            style="background:#EB5A2A;">JOIN FOR $5</a>
+                            style="background:#FF3C00;">JOIN FOR $5</a>
                     </div>
                 </div>
 
                 <!-- $8 — Steelers gold -->
                 <div class="bg-zinc-900 rounded-2xl border transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
-                    style="border-color:#C9A100;">
-                    <div class="h-1" style="background:#C9A100;"></div>
+                    style="border-color:#FFB612;">
+                    <div class="h-1" style="background:#FFB612;"></div>
                     <div class="p-5 flex flex-col flex-grow">
                         <div class="text-center mb-4">
                             <div class="anton-font text-3xl text-white">$8</div>
                             <div class="text-gray-500 text-xs">/ month</div>
-                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#C9A100;">2ND & 7</div>
+                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FFB612;">2ND & 7</div>
                             <div class="text-gray-500 text-xs mt-1">Screen or run it to the house?</div>
                         </div>
                         <ul class="space-y-2 text-sm text-gray-400 flex-grow">
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#C9A100;"></i>Everything
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Everything
                                 in 3rd & 3</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#C9A100;"></i>Free AFC
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Free AFC
                                 Northerners swag</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#C9A100;"></i>Access
-                                links to exclusive content</li>
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Access
+                                links to past shows about upcoming opponents</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#C9A100;"></i>Special
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Special
                                 thanks on the show</li>
                         </ul>
                         <a href="https://www.patreon.com/checkout/afcnortherners?rid=990151&vanity=575065"
                             target="_blank"
                             class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-black transition hover:opacity-90"
-                            style="background:#C9A100;">JOIN FOR $8</a>
+                            style="background:#FFB612;">JOIN FOR $8</a>
                     </div>
                 </div>
 
                 <!-- $10 — Ravens purple -->
                 <div class="bg-zinc-900 rounded-2xl border transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
-                    style="border-color:#4B2E83;">
-                    <div class="h-1" style="background:#4B2E83;"></div>
+                    style="border-color:#241773;">
+                    <div class="h-1" style="background:#241773;"></div>
                     <div class="p-5 flex flex-col flex-grow">
                         <div class="text-center mb-4">
                             <div class="anton-font text-3xl text-white">$10</div>
                             <div class="text-gray-500 text-xs">/ month</div>
-                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#9B6FD4;">1ST & 10</div>
+                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#9E7C0C;">1ST & 10</div>
                             <div class="text-gray-500 text-xs mt-1">You've got this.</div>
                         </div>
                         <ul class="space-y-2 text-sm text-gray-400 flex-grow">
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9B6FD4;"></i>Everything
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>Everything
                                 in 2nd & 7</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9B6FD4;"></i>Named
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>Named
                                 thanks on every episode</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9B6FD4;"></i>AFC
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>AFC
                                 Northerners shirt</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9B6FD4;"></i>Exclusive
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>Exclusive
                                 1st & 10 only content</li>
                         </ul>
                         <a href="https://www.patreon.com/checkout/afcnortherners?rid=1049206&vanity=575065"
                             target="_blank"
                             class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-white transition hover:opacity-90"
-                            style="background:#4B2E83;">JOIN FOR $10</a>
+                            style="background:#241773;">JOIN FOR $10</a>
                     </div>
                 </div>
 
                 <!-- $20 — Gold elite (unchanged) -->
                 <div class="rounded-2xl border-2 transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden relative"
-                    style="background:linear-gradient(135deg,#1a0a00,#0f0f0f); border-color:#C9A100; box-shadow:0 0 30px rgba(201,161,0,0.15);">
-                    <div class="h-1" style="background:linear-gradient(90deg,#C9A100,#e6b800);"></div>
+                    style="background:linear-gradient(135deg,#1a0a00,#0f0f0f); border-color:#FFB612; box-shadow:0 0 30px rgba(201,161,0,0.15);">
+                    <div class="h-1" style="background:linear-gradient(90deg,#FFB612,#e6b800);"></div>
                     <div class="p-5 flex flex-col flex-grow">
                         <div class="text-center mb-4">
                             <div class="text-2xl mb-1">🏆</div>
                             <div class="anton-font text-3xl text-white">$20</div>
                             <div class="text-gray-500 text-xs">/ month</div>
-                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#C9A100;">TOUCHDOWN!!!</div>
+                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FFB612;">TOUCHDOWN!!!</div>
                             <div class="text-gray-500 text-xs mt-1">YOU ARE ELITE.</div>
                         </div>
                         <ul class="space-y-2 text-sm text-gray-400 flex-grow">
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#C9A100;"></i>Everything
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Everything
                                 in 1st & 10</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#C9A100;"></i>Team flag
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Team flag
                                 & mug of your choice</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#C9A100;"></i>Autographed
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Autographed
                                 AFC Northerners t-shirt</li>
                             <li class="flex items-start gap-2">
-                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#C9A100;"></i>Entry to
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Entry to
                                 appear LIVE on the show</li>
                         </ul>
                         <a href="https://www.patreon.com/checkout/afcnortherners?rid=1049234&vanity=575065"
                             target="_blank"
                             class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold transition hover:opacity-90"
-                            style="background:linear-gradient(90deg,#C9A100,#e6b800); color:#000;">GO ELITE — $20</a>
+                            style="background:linear-gradient(90deg,#FFB612,#e6b800); color:#000;">GO ELITE — $20</a>
                     </div>
                 </div>
 
@@ -1269,22 +1266,22 @@
                 <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
                     onclick="openSponsorModal()">
                     <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
-                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">THIS COULD BE YOUR BRAND</span>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
                 </div>
                 <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
                     onclick="openSponsorModal()">
                     <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
-                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR COMPETITORS BRAND</span>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
                 </div>
                 <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
                     onclick="openSponsorModal()">
                     <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
-                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">THE BRAND YOU'VE NEVER HEARD ABOUT</span>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
                 </div>
                 <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
                     onclick="openSponsorModal()">
                     <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
-                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">JUST THINK OF WHAT COULD BE</span>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
                 </div>
             </div>
             <!-- Sponsor pitch banner -->
@@ -1388,45 +1385,28 @@
         // ── Countdown ────────────────────────────────────────────────────────────────
 function updateCountdown() {
     const now = new Date();
-    
-    // Get current time components in Pacific timezone (America/Los_Angeles)
     const fmt = new Intl.DateTimeFormat('en-US', {
         timeZone: 'America/Los_Angeles',
         year: 'numeric', month: 'numeric', day: 'numeric',
-        hour: 'numeric', minute: 'numeric', second: 'numeric',
-        hour12: false
+        hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false
     });
     const parts = {};
     fmt.formatToParts(now).forEach(p => { if (p.type !== 'literal') parts[p.type] = parseInt(p.value); });
-    
-    // Create a temporary date to determine day of week from Pacific components
     const pacificTemp = new Date(parts.year, parts.month - 1, parts.day);
-    const currentDay = pacificTemp.getDay(); // 0=Sun, 2=Tue
+    const currentDay = pacificTemp.getDay();
     const currentHour = parts.hour;
-    
-    // Calculate days until next Tuesday (2 = Tuesday)
     let daysUntil = (2 - currentDay + 7) % 7;
-    if (daysUntil === 0 && currentHour >= 18) {
-        daysUntil = 7; // If it's already past 6pm PT on Tuesday, go to next week
-    }
-    
-    // Determine if Pacific Time is currently in DST (PDT = UTC-7) or PST (UTC-8)
-    // DST typically runs from March to November
-    const isDST = (parts.month > 3 && parts.month < 11) || 
-                  (parts.month === 3 && parts.day > 13) || 
-                  (parts.month === 11 && parts.day < 6);
+    if (daysUntil === 0 && currentHour >= 18) daysUntil = 7;
+    const isDST = (parts.month > 3 && parts.month < 11) || (parts.month === 3 && parts.day > 13) || (parts.month === 11 && parts.day < 6);
     const offsetHours = isDST ? 7 : 8;
-    
-    // Calculate target time: next Tuesday at 6:00 PM Pacific converted to UTC
     const targetUTC = Date.UTC(parts.year, parts.month - 1, parts.day + daysUntil, 18 + offsetHours, 0, 0);
     const diff = targetUTC - now.getTime();
-    
     const d = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000),
           m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
-    document.getElementById('countdown-days').textContent = String(Math.max(0,d)).padStart(2,'0');
-    document.getElementById('countdown-hours').textContent = String(Math.max(0,h)).padStart(2,'0');
-    document.getElementById('countdown-minutes').textContent = String(Math.max(0,m)).padStart(2,'0');
-    document.getElementById('countdown-seconds').textContent = String(Math.max(0,s)).padStart(2,'0');
+    document.getElementById('countdown-days').textContent = String(d).padStart(2,'0');
+    document.getElementById('countdown-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('countdown-minutes').textContent = String(m).padStart(2,'0');
+    document.getElementById('countdown-seconds').textContent = String(s).padStart(2,'0');
 }
 setInterval(updateCountdown, 1000); updateCountdown();
 
@@ -1483,7 +1463,7 @@ const STANDINGS = [
 ];
 
 const AFC_NORTH = new Set(['PIT','BAL','CIN','CLE']);
-const TEAM_COLORS = {PIT:'#C9A100',BAL:'#9333ea',CIN:'#f97316',CLE:'#e85a2a',NE:'#4b5563',BUF:'#1d4ed8',MIA:'#0891b2',NYJ:'#166534',JAC:'#0e7490',HOU:'#7e22ce',IND:'#1e3a5f',TEN:'#3b82f6',DEN:'#ea580c',LAC:'#0284c7',KC:'#b91c1c',LV:'#6b7280',PHI:'#065f46',DAL:'#1e40af',WAS:'#991b1b',NYG:'#1e3a5f',CAR:'#0284c7',TB:'#b91c1c',ATL:'#dc2626',NO:'#d97706',SEA:'#065f46',LA:'#1e40af',SF:'#991b1b',ARI:'#b91c1c',CHI:'#1e3a5f',GB:'#166534',MIN:'#7e22ce',DET:'#0284c7'};
+const TEAM_COLORS = {PIT:'#FFB612',BAL:'#9333ea',CIN:'#f97316',CLE:'#e85a2a',NE:'#4b5563',BUF:'#1d4ed8',MIA:'#0891b2',NYJ:'#166534',JAC:'#0e7490',HOU:'#7e22ce',IND:'#1e3a5f',TEN:'#3b82f6',DEN:'#ea580c',LAC:'#0284c7',KC:'#b91c1c',LV:'#6b7280',PHI:'#065f46',DAL:'#1e40af',WAS:'#991b1b',NYG:'#1e3a5f',CAR:'#0284c7',TB:'#b91c1c',ATL:'#dc2626',NO:'#d97706',SEA:'#065f46',LA:'#1e40af',SF:'#991b1b',ARI:'#b91c1c',CHI:'#1e3a5f',GB:'#166534',MIN:'#7e22ce',DET:'#0284c7'};
 const DIV_ORDER = {AFC:['AFC North','AFC East','AFC South','AFC West'],NFC:['NFC North','NFC East','NFC South','NFC West']};
 let currentConf = 'AFC';
 
@@ -1516,7 +1496,7 @@ function renderStandings(conf) {
         const isNorth = div==='AFC North';
         return `
         <div class="division-block">
-            <div class="division-title" style="color:${isNorth?'#C9A100':'#6b7280'}">${div}</div>
+            <div class="division-title" style="color:${isNorth?'#FFB612':'#6b7280'}">${div}</div>
             ${teams.map((t,i)=>`
             <div class="standings-row ${AFC_NORTH.has(t.abbr)?'afc-north-team':''}">
                 <span class="text-gray-500 text-xs text-center">${i+1}</span>
@@ -1939,7 +1919,7 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
 
         .an-header {
             background: linear-gradient(135deg, #1a1200 0%, #0f0a20 100%);
-            border-bottom: 2px solid #C9A100;
+            border-bottom: 2px solid #FFB612;
             padding: 1.5rem 2rem;
             display: flex;
             align-items: center;
@@ -1979,7 +1959,7 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
         }
 
         .an-input:focus {
-            border-color: #C9A100;
+            border-color: #FFB612;
         }
 
         .an-label {
@@ -1993,7 +1973,7 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
         }
 
         .an-btn-gold {
-            background: #C9A100;
+            background: #FFB612;
             color: #000;
             font-family: 'Anton', sans-serif;
             letter-spacing: 1px;
@@ -2125,38 +2105,38 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
         </div>
     </div>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      CONTACT MODAL
 ═══════════════════════════════════════ -->
-<div id="contact-modal" class="an-modal" onclick="closeModalIfOutside(event,'contact-modal')">
-    <div class="an-panel" style="max-width:540px;">
-        <div class="an-header">
-            <div>
-                <div class="anton-font text-2xl text-white tracking-widest">CONTACT US</div>
-                <div class="text-yellow-500 text-xs mt-1 tracking-widest">WE READ EVERY MESSAGE</div>
-            </div>
-            <button class="an-close" onclick="closeModal('contact-modal')">&times;</button>
-        </div>
-        <div class="p-6 md:p-8" id="contact-form-wrap">
-            <div class="flex items-center gap-3 mb-6 p-3 bg-zinc-800 rounded-lg border border-zinc-700">
-                <i class="fas fa-envelope text-yellow-500"></i>
-                <a href="mailto:afcnortherners@gmail.com"
-                    class="text-yellow-400 hover:text-yellow-300 text-sm transition">afcnortherners@gmail.com</a>
-            </div>
-            <div class="space-y-4">
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="an-label">Name *</label>
-                        <input id="ct-name" class="an-input" type="text" placeholder="Your name">
-                    </div>
-                    <div>
-                        <label class="an-label">Email *</label>
-                        <input id="ct-email" class="an-input" type="email" placeholder="you@example.com">
-                    </div>
-                </div>
+    <div id="contact-modal" class="an-modal" onclick="closeModalIfOutside(event,'contact-modal')">
+        <div class="an-panel" style="max-width:540px;">
+            <div class="an-header">
                 <div>
-                    <label class="an-label">Subject</label>
-                    <select id="ct-subject" class="an-input">
+                    <div class="anton-font text-2xl text-white tracking-widest">CONTACT US</div>
+                    <div class="text-yellow-500 text-xs mt-1 tracking-widest">WE READ EVERY MESSAGE</div>
+                </div>
+                <button class="an-close" onclick="closeModal('contact-modal')">&times;</button>
+            </div>
+            <div class="p-6 md:p-8" id="contact-form-wrap">
+                <div class="flex items-center gap-3 mb-6 p-3 bg-zinc-800 rounded-lg border border-zinc-700">
+                    <i class="fas fa-envelope text-yellow-500"></i>
+                    <a href="/cdn-cgi/l/email-protection#83e2e5e0edecf1f7ebe6f1ede6f1f0c3e4eee2eaefade0ecee"
+                        class="text-yellow-400 hover:text-yellow-300 text-sm transition"><span class="__cf_email__" data-cfemail="620304010c0d10160a07100c07101122050f030b0e4c010d0f">[email&#160;protected]</span></a>
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="an-label">Name *</label>
+                            <input id="ct-name" class="an-input" type="text" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="an-label">Email *</label>
+                            <input id="ct-email" class="an-input" type="email" placeholder="you@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="an-label">Subject</label>
+                        <select id="ct-subject" class="an-input">
                         <option>General question</option>
                         <option>Guest appearance</option>
                         <option>Sponsorship inquiry</option>
@@ -2164,27 +2144,27 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
                         <option>Fan mail 🍺</option>
                         <option>Other</option>
                     </select>
+                    </div>
+                    <div>
+                        <label class="an-label">Message *</label>
+                        <textarea id="ct-message" class="an-input" rows="4" placeholder="What's on your mind?"></textarea>
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button class="an-btn-gold" onclick="submitContact()">SEND MESSAGE</button>
+                        <button class="an-btn-ghost" onclick="closeModal('contact-modal')">Cancel</button>
+                    </div>
+                    <p id="ct-error" class="text-red-400 text-xs hidden">Please fill in all required fields.</p>
                 </div>
-                <div>
-                    <label class="an-label">Message *</label>
-                    <textarea id="ct-message" class="an-input" rows="4" placeholder="What's on your mind?"></textarea>
-                </div>
-                <div class="flex gap-3 pt-2">
-                    <button id="ct-submit-btn" class="an-btn-gold" onclick="submitContact()">SEND MESSAGE</button>
-                    <button class="an-btn-ghost" onclick="closeModal('contact-modal')">Cancel</button>
-                </div>
-                <p id="ct-error" class="text-red-400 text-xs hidden">Please fill in all required fields.</p>
+            </div>
+            <div class="an-success" id="contact-success">
+                <i class="fas fa-paper-plane text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="anton-font text-2xl text-white mb-2">MESSAGE SENT!</h3>
+                <p class="text-gray-400 text-sm">We'll get back to you at the email you provided. Go Browns. Or whatever
+                    your team is.</p>
+                <button class="an-btn-gold mt-6" onclick="closeModal('contact-modal')">CLOSE</button>
             </div>
         </div>
-        <div class="an-success" id="contact-success">
-            <i class="fas fa-paper-plane text-5xl text-yellow-500 mb-4"></i>
-            <h3 class="anton-font text-2xl text-white mb-2">MESSAGE SENT!</h3>
-            <p class="text-gray-400 text-sm">We'll get back to you at the email you provided. Go Browns. Or whatever
-                your team is.</p>
-            <button class="an-btn-gold mt-6" onclick="closeModal('contact-modal')">CLOSE</button>
-        </div>
     </div>
-</div>
 
     <!-- ═══════════════════════════════════════
      HOT TAKE METER MODAL
@@ -2250,8 +2230,10 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
                     posted constitutes acceptance of the updated Terms.</p>
 
                 <h4 class="anton-font text-white text-lg tracking-wide">7. CONTACT</h4>
-                <p>Questions about these Terms? Email us at <a href="mailto:afcnortherners@gmail.com"
-                        class="text-yellow-400 hover:text-yellow-300">afcnortherners@gmail.com</a>.</p>
+                <p>Questions about these Terms? Email us at <a
+                        href="/cdn-cgi/l/email-protection#4f2e292c21203d3b272a3d212a3d3c0f28222e2623612c2022"
+                        class="text-yellow-400 hover:text-yellow-300"><span class="__cf_email__" data-cfemail="d8b9bebbb6b7aaacb0bdaab6bdaaab98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span></a>.
+                </p>
             </div>
             <div class="p-4 border-t border-zinc-800 flex justify-end">
                 <button class="an-btn-gold" onclick="closeModal('terms-modal')">GOT IT</button>
@@ -2304,8 +2286,10 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
 
                 <h4 class="anton-font text-white text-lg tracking-wide">7. YOUR RIGHTS</h4>
                 <p>You have the right to access, correct, or request deletion of any personal data we hold about you. To
-                    exercise these rights, contact us at <a href="mailto:afcnortherners@gmail.com"
-                        class="text-yellow-400 hover:text-yellow-300">afcnortherners@gmail.com</a>.</p>
+                    exercise these rights, contact us at <a
+                        href="/cdn-cgi/l/email-protection#751413161b1a07011d10071b100706351218141c195b161a18"
+                        class="text-yellow-400 hover:text-yellow-300"><span class="__cf_email__" data-cfemail="5b3a3d383534292f333e29353e29281b3c363a323775383436">[email&#160;protected]</span></a>.
+                </p>
 
                 <h4 class="anton-font text-white text-lg tracking-wide">8. CHANGES TO THIS POLICY</h4>
                 <p>We may update this Privacy Policy from time to time. The "last updated" date at the top will reflect
@@ -2320,6 +2304,7 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
     <!-- ═══════════════════════════════════════
      MODAL SCRIPTS
 ═══════════════════════════════════════ -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // ── Generic modal helpers ─────────────────────────────────────────────────────
 function openModal(id) { document.getElementById(id).classList.add('open'); }
@@ -2373,81 +2358,72 @@ async function submitSponsor() {
 }
 
 // ── Contact form ──────────────────────────────────────────────────────────────
-async function submitNewsletter() {
-const email = document.querySelector('#newsletter input[type="email"]').value.trim();
-const team = document.querySelector('#newsletter select').value;
-const btn = document.getElementById('nl-submit-btn');
-const success = document.getElementById('nl-success');
-const err = document.getElementById('nl-error');
-if (!email) { err.classList.remove('hidden'); return; }
-err.classList.add('hidden');
-btn.textContent = 'SIGNING UP…'; btn.disabled = true;
-try {
-const res = await fetch('https://formspree.io/f/mqeydqon', {
-method: 'POST',
-headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-body: JSON.stringify({ email, team, _subject: 'New North Bar Signup' })
-});
-if (res.ok) {
-btn.style.display = 'none';
-success.classList.remove('hidden');
-} else {
-err.textContent = 'Something went wrong — try again.';
-err.classList.remove('hidden');
-btn.textContent = 'SIGN ME UP'; btn.disabled = false;
-}
-} catch(e) {
-err.textContent = 'Network error — try again.';
-err.classList.remove('hidden');
-btn.textContent = 'SIGN ME UP'; btn.disabled = false;
-}
-}
 async function submitContact() {
-const name = document.getElementById('ct-name').value.trim();
-const email = document.getElementById('ct-email').value.trim();
-const subject = document.getElementById('ct-subject').value;
-const message = document.getElementById('ct-message').value.trim();
-const err = document.getElementById('ct-error');
-const btn = document.getElementById('ct-submit-btn');
-if (!name || !email || !message) { err.classList.remove('hidden'); return; }
-err.classList.add('hidden');
-if (btn) { btn.textContent = 'SENDING…'; btn.disabled = true; }
-try {
-const res = await fetch('https://formspree.io/f/xjgaybjr', {
-method: 'POST',
-headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-body: JSON.stringify({ name, email, subject, message })
-});
-const data = await res.json();
-if (res.ok) {
-document.getElementById('contact-form-wrap').style.display = 'none';
-document.getElementById('contact-success').style.display = 'flex';
-} else {
-const msg = data.errors ? data.errors.map(e=>e.message).join(', ') : 'Something went wrong.';
-err.textContent = msg + ' — or email us at afcnortherners@gmail.com';
-err.classList.remove('hidden');
-if (btn) { btn.textContent = 'SEND MESSAGE'; btn.disabled = false; }
-}
-} catch(e) {
-err.textContent = 'Network error — please email afcnortherners@gmail.com';
-err.classList.remove('hidden');
-if (btn) { btn.textContent = 'SEND MESSAGE'; btn.disabled = false; }
-}
+    const name    = document.getElementById('ct-name').value.trim();
+    const email   = document.getElementById('ct-email').value.trim();
+    const subject = document.getElementById('ct-subject').value;
+    const message = document.getElementById('ct-message').value.trim();
+    const err     = document.getElementById('ct-error');
+    const btn     = document.querySelector('#contact-form-wrap .an-btn-gold');
+    if (!name || !email || !message) { err.classList.remove('hidden'); return; }
+    err.classList.add('hidden');
+    btn.textContent = 'SENDING…'; btn.disabled = true;
+    try {
+        const res = await fetch('https://formspree.io/f/xjgaybjr', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, subject, message })
+        });
+        const data = await res.json();
+        console.log('Formspree contact response:', res.status, data);
+        if (res.ok) {
+            document.getElementById('contact-form-wrap').style.display = 'none';
+            document.getElementById('contact-success').style.display = 'flex';
+        } else {
+            const msg = data.errors ? data.errors.map(e=>e.message).join(', ') : 'Something went wrong.';
+            err.textContent = msg + ' — or email us at afcnortherners@gmail.com';
+            err.classList.remove('hidden');
+            btn.textContent = 'SEND MESSAGE'; btn.disabled = false;
+        }
+    } catch(e) {
+        console.error('Formspree contact error:', e);
+        err.textContent = 'Network error: ' + e.message + ' — please email afcnortherners@gmail.com';
+        err.classList.remove('hidden');
+        btn.textContent = 'SEND MESSAGE'; btn.disabled = false;
+    }
 }
 
 // ── Hot Take Meter ────────────────────────────────────────────────────────────
-const HOT_TAKES = [
-    { id:'ht1', text:'The Steelers are a playoff team in 2026.', yes:0, no:0 },
-    { id:'ht2', text:'Lamar Jackson is the best QB in the AFC North — and it\'s not close.', yes:0, no:0 },
-    { id:'ht3', text:'The Browns will finally have a winning season in 2026.', yes:0, no:0 },
-    { id:'ht4', text:'Joe Burrow will win a Super Bowl before he retires.', yes:0, no:0 },
-    { id:'ht5', text:'The AFC North is the toughest division in football.', yes:0, no:0 },
-];
+const N8N_WEBHOOK = 'https://afcnortherners.app.n8n.cloud/webhook/airtable-records';
+
+let HOT_TAKES = [];
 const htVoted = {};
 
-function openHotTake() {
-    renderHotTakes();
+async function fetchHotTakes() {
+    try {
+        const res = await fetch(N8N_WEBHOOK);
+        if (!res.ok) throw new Error('Webhook fetch failed: ' + res.status);
+        const data = await res.json();
+        // Handle both array response and Airtable-style {records:[]} response
+        const records = Array.isArray(data) ? data : (data.records || []);
+        HOT_TAKES = records.map(r => ({
+            id:   r.id || r.fields?.id || Math.random().toString(36).slice(2),
+            text: r.fields?.['Take Text'] || r['Take Text'] || r.text || '',
+            yes:  r.fields?.['Yes Votes'] || r['Yes Votes'] || r.yes || 0,
+            no:   r.fields?.['No Votes']  || r['No Votes']  || r.no  || 0,
+        }));
+    } catch(err) {
+        console.error('Hot Takes fetch error:', err);
+        HOT_TAKES = [];
+    }
+}
+
+async function openHotTake() {
     openModal('hottake-modal');
+    document.getElementById('ht-takes').innerHTML =
+        '<div class="text-center py-8"><i class="fas fa-circle-notch fa-spin text-2xl text-yellow-500 mb-3 block"></i><p class="text-gray-400 text-sm">Loading takes...</p></div>';
+    await fetchHotTakes();
+    renderHotTakes();
 }
 
 function renderHotTakes() {
@@ -2476,6 +2452,9 @@ function renderHotTakes() {
             </div>`}
         </div>`;
     }).join('');
+    if (!HOT_TAKES.length) {
+        container.innerHTML = '<p class="text-center text-gray-500 py-8">No hot takes this week — check back soon!</p>';
+    }
 }
 
 function htVote(id, vote) {
@@ -2485,13 +2464,43 @@ function htVote(id, vote) {
     if (!take) return;
     take[vote === 'yes' ? 'yes' : 'no']++;
     renderHotTakes();
-    // Animate bar
     const total = take.yes + take.no;
     const yesPct = Math.round(take.yes / total * 100);
     setTimeout(() => {
         const bar = document.getElementById('bar-' + id);
         if (bar) bar.style.width = yesPct + '%';
     }, 50);
+}
+
+// ── Newsletter ────────────────────────────────────────────────────────────────
+async function submitNewsletter() {
+    const email = document.querySelector('#newsletter input[type="email"]').value.trim();
+    const team  = document.querySelector('#newsletter select').value;
+    const btn     = document.getElementById('nl-submit-btn');
+    const success = document.getElementById('nl-success');
+    const err     = document.getElementById('nl-error');
+    if (!email) { err.classList.remove('hidden'); return; }
+    err.classList.add('hidden');
+    btn.textContent = 'SIGNING UP…'; btn.disabled = true;
+    try {
+        const res = await fetch('https://formspree.io/f/mqeydqon', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, team, _subject: 'New North Bar Signup' })
+        });
+        if (res.ok) {
+            btn.style.display = 'none';
+            success.classList.remove('hidden');
+        } else {
+            err.textContent = 'Something went wrong — try again.';
+            err.classList.remove('hidden');
+            btn.textContent = 'SIGN ME UP'; btn.disabled = false;
+        }
+    } catch(e) {
+        err.textContent = 'Network error — try again.';
+        err.classList.remove('hidden');
+        btn.textContent = 'SIGN ME UP'; btn.disabled = false;
+    }
 }
     </script>
 </body>
