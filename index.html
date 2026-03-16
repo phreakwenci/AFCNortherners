@@ -1,66 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GNNGXDWV3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D45QW183ZD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-3GNNGXDWV3');
-</script>
-</script>
+  gtag('config', 'G-D45QW183ZD');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFC Northerners - The Ultimate AFC North Sports Talk Show</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:wght@400;700&family=Caveat:wght@400;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:wght@400;700&family=Caveat:wght@400;700&family=Kalam:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         /* ── Custom Fonts from GitHub ── */
         @font-face {
             font-family: 'NFLRedZone';
             src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/NFL%20RedZone.ttf') format('truetype');
-            font-weight: normal; font-style: normal; font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
         }
+
         @font-face {
             font-family: 'MatrixBold';
             src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/MatrixBold.ttf') format('truetype');
-            font-weight: normal; font-style: normal; font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
         }
+
         @font-face {
             font-family: 'Gunplay';
             src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/gunplay%20rg.otf') format('opentype');
-            font-weight: normal; font-style: normal; font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
         }
+
         @font-face {
             font-family: 'NFLBengals';
             src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/NFL%20Cincinnati%20Bengals.otf') format('opentype');
-            font-weight: normal; font-style: normal; font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
         }
+
         @font-face {
             font-family: 'NFLBrowns';
             src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/NFL_Browns_2015.otf') format('opentype');
-            font-weight: normal; font-style: normal; font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
         }
+
         @font-face {
             font-family: 'Freshman';
             src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/Freshman.ttf') format('truetype');
-            font-weight: normal; font-style: normal; font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
         }
+
         @font-face {
             font-family: 'VersaVersa';
             src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/Versa-Versa.otf') format('opentype');
-            font-weight: normal; font-style: normal; font-display: swap;
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
         }
 
         /* ── Font utility classes ── */
-        .font-redzone  { font-family: 'NFLRedZone', 'Anton', sans-serif; }
-        .font-ravens   { font-family: 'MatrixBold', 'Anton', sans-serif; }
-        .font-steelers { font-family: 'Gunplay', 'Anton', sans-serif; }
-        .font-bengals  { font-family: 'NFLBengals', 'Anton', sans-serif; }
-        .font-browns   { font-family: 'NFLBrowns', 'Anton', sans-serif; }
+        .font-redzone {
+            font-family: 'NFLRedZone', 'Anton', sans-serif;
+        }
+
+        .font-ravens {
+            font-family: 'MatrixBold', 'Anton', sans-serif;
+        }
+
+        .font-steelers {
+            font-family: 'Gunplay', 'Anton', sans-serif;
+        }
+
+        .font-bengals {
+            font-family: 'NFLBengals', 'Anton', sans-serif;
+        }
+
+        .font-browns {
+            font-family: 'NFLBrowns', 'Anton', sans-serif;
+        }
 
         :root {
             --primary-black: #0B0B0C;
@@ -70,194 +106,426 @@
             --bengal-orange: #FB4F14;
             --raven-purple: #241773;
         }
-        body { font-family: 'Archivo Narrow', sans-serif; background-color: #09090b; color: var(--primary-white); }
-        h1,h2,h3,h4,h5,h6 { font-family: 'Anton', sans-serif; letter-spacing: 1px; text-transform: uppercase; }
-        .anton-font { font-family: 'Anton', sans-serif; letter-spacing: 1px; }
-        .bg-zinc-950 { background-color: #09090b; }
-        .hero-overlay { background: linear-gradient(to bottom, rgba(11,11,12,0.2), rgba(11,11,12,0.9)); }
-        .beer-stain { position:absolute; width:200px; height:200px; border-radius:50%; background:rgba(244,244,245,0.03); filter:blur(10px); z-index:-1; }
-        .stadium-light { position:absolute; width:100%; height:100%; background:radial-gradient(circle at 50% 0%, rgba(201,161,0,0.1), transparent 70%); z-index:-1; }
-        .nav-link:hover { text-shadow: 0 0 8px rgba(244,244,245,0.7); }
-        .countdown-box { background:rgba(244,244,245,0.1); backdrop-filter:blur(5px); }
-        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-        .animate-pulse { animation: pulse 2s infinite; }
+
+        body {
+            font-family: 'Archivo Narrow', sans-serif;
+            background-color: #09090b;
+            color: var(--primary-white);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .anton-font {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .bg-zinc-950 {
+            background-color: #09090b;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(11, 11, 12, 0.2), rgba(11, 11, 12, 0.9));
+        }
+
+        .beer-stain {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(244, 244, 245, 0.03);
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        .stadium-light {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(201, 161, 0, 0.1), transparent 70%);
+            z-index: -1;
+        }
+
+        .nav-link:hover {
+            text-shadow: 0 0 8px rgba(244, 244, 245, 0.7);
+        }
+
+        .countdown-box {
+            background: rgba(244, 244, 245, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0.5
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
 
         /* ── Standings Modal ── */
-        #standings-modal { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); overflow-y:auto; }
-        #standings-modal.open { display:flex; align-items:flex-start; justify-content:center; padding:2rem 1rem; }
-        .standings-panel { background:#111113; border:1px solid #2a2a2e; border-radius:16px; max-width:860px; width:100%; overflow:hidden; box-shadow:0 0 60px rgba(201,161,0,0.15); }
-        .standings-header { background:linear-gradient(135deg,#1a1200 0%,#0f0a20 100%); border-bottom:2px solid #FFB612; padding:1.5rem 2rem; display:flex; align-items:center; justify-content:space-between; }
-        .division-block { padding:1rem 1.5rem; border-bottom:1px solid #1e1e22; }
-        .division-block:last-child { border-bottom:none; }
-        .division-title { font-family:'Anton',sans-serif; letter-spacing:2px; font-size:0.7rem; text-transform:uppercase; margin-bottom:0.5rem; }
-        .standings-row { display:grid; grid-template-columns:1.2rem 0.8rem 1fr 2.2rem 2.2rem 3rem; gap:0.4rem; align-items:center; padding:0.35rem 0.4rem; border-radius:5px; font-size:0.82rem; }
-        .standings-row:hover { background:rgba(255,255,255,0.04); }
-        .standings-row.afc-north-team { background:rgba(201,161,0,0.09); border-left:3px solid #FFB612; padding-left:0.35rem; }
-        .team-color-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
-        .clinched-badge { font-size:0.58rem; padding:1px 3px; border-radius:3px; font-weight:bold; font-family:'Anton',sans-serif; }
-        .clinched-conference { background:#1a3a1a; color:#4ade80; }
-        .clinched-division   { background:#1a1a3a; color:#818cf8; }
-        .clinched-wildcard   { background:#3a1a1a; color:#fb923c; }
+        #standings-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            overflow-y: auto;
+        }
+
+        #standings-modal.open {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .standings-panel {
+            background: #111113;
+            border: 1px solid #2a2a2e;
+            border-radius: 16px;
+            max-width: 860px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(201, 161, 0, 0.15);
+        }
+
+        .standings-header {
+            background: linear-gradient(135deg, #1a1200 0%, #0f0a20 100%);
+            border-bottom: 2px solid #FFB612;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .division-block {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #1e1e22;
+        }
+
+        .division-block:last-child {
+            border-bottom: none;
+        }
+
+        .division-title {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .standings-row {
+            display: grid;
+            grid-template-columns: 1.2rem 0.8rem 1fr 2.2rem 2.2rem 3rem;
+            gap: 0.4rem;
+            align-items: center;
+            padding: 0.35rem 0.4rem;
+            border-radius: 5px;
+            font-size: 0.82rem;
+        }
+
+        .standings-row:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .standings-row.afc-north-team {
+            background: rgba(201, 161, 0, 0.09);
+            border-left: 3px solid #FFB612;
+            padding-left: 0.35rem;
+        }
+
+        .team-color-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .clinched-badge {
+            font-size: 0.58rem;
+            padding: 1px 3px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-family: 'Anton', sans-serif;
+        }
+
+        .clinched-conference {
+            background: #1a3a1a;
+            color: #4ade80;
+        }
+
+        .clinched-division {
+            background: #1a1a3a;
+            color: #818cf8;
+        }
+
+        .clinched-wildcard {
+            background: #3a1a1a;
+            color: #fb923c;
+        }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col bg-zinc-950">
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      NAVIGATION
 ═══════════════════════════════════════ -->
-<header class="sticky top-0 z-50 bg-black bg-opacity-90 border-b border-gray-800">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-            <img
+    <header class="sticky top-0 z-50 bg-black bg-opacity-90 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img
                 src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20NOTHERNERS%20YT%20LOGO%20(With%20Rob-Bengal).png"
                 alt="AFC Northerners Logo"
                 class="h-10 w-auto object-contain rounded-full"
                 onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='flex';"
             />
-            <div id="logo-fallback" class="w-10 h-10 rounded-full bg-gray-800 items-center justify-content-center" style="display:none;">
-                <div class="w-8 h-8 relative">
-                    <div class="absolute inset-0 rounded-full bg-yellow-600"></div>
-                    <div class="absolute inset-1 rounded-full bg-black flex items-center justify-center">
-                        <span class="anton-font text-xs text-yellow-600">AN</span>
+                <div id="logo-fallback" class="w-10 h-10 rounded-full bg-gray-800 items-center justify-content-center"
+                    style="display:none;">
+                    <div class="w-8 h-8 relative">
+                        <div class="absolute inset-0 rounded-full bg-yellow-600"></div>
+                        <div class="absolute inset-1 rounded-full bg-black flex items-center justify-center">
+                            <span class="anton-font text-xs text-yellow-600">AN</span>
+                        </div>
                     </div>
                 </div>
+                <h1 class="font-redzone text-lg md:text-xl bg-clip-text text-transparent"
+                    style="background-image: linear-gradient(to right, #FFB612 0%, #FFB612 20%, #FB4F14 40%, #FF3C00 60%, #241773 85%, #241773 100%);">
+                    AFC NORTHERNERS</h1>
             </div>
-            <h1 class="font-redzone text-lg md:text-xl bg-clip-text text-transparent" style="background-image: linear-gradient(to right, #FFB612 0%, #FFB612 20%, #FB4F14 40%, #FF3C00 60%, #241773 85%, #241773 100%);">AFC NORTHERNERS</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank"
+                    class="nav-link text-white hover:text-yellow-400 transition">WATCH</a>
+                <a href="#live" class="nav-link text-white hover:text-yellow-400 transition">LIVE</a>
+                <a href="#newsletter" class="nav-link text-white hover:text-yellow-400 transition">COMMUNITY</a>
+                <a href="#hosts" class="nav-link text-white hover:text-yellow-400 transition">HOSTS</a>
+                <a href="#patreon" class="nav-link text-white hover:text-yellow-400 transition">PATREON</a>
+                <button onclick="openStandings()" class="nav-link text-white hover:text-yellow-400 transition cursor-pointer bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">STANDINGS</button>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="https://www.patreon.com/c/afcnortherners" target="_blank"
+                    class="hidden md:block text-white px-4 py-2 rounded-md text-sm font-bold transition shadow-[0_0_15px_rgba(255,66,77,0.4)] hover:shadow-[0_0_20px_rgba(255,66,77,0.6)]"
+                    style="background:#FF424D;">
+                    <i class="fab fa-patreon mr-2"></i> JOIN
+                </a>
+                <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank"
+                    class="hidden md:block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-bold transition shadow-[0_0_15px_rgba(229,57,57,0.4)]">
+                    <i class="fab fa-youtube mr-2"></i> SUBSCRIBE
+                </a>
+                <button class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
+            </div>
         </div>
-        <nav class="hidden md:flex space-x-6">
-            <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" class="nav-link text-white hover:text-yellow-400 transition">WATCH</a>
-            <a href="#live" class="nav-link text-white hover:text-yellow-400 transition">LIVE</a>
-            <a href="#newsletter" class="nav-link text-white hover:text-yellow-400 transition">COMMUNITY</a>
-            <a href="#hosts" class="nav-link text-white hover:text-yellow-400 transition">HOSTS</a>
-            <a href="#patreon" class="nav-link text-white hover:text-yellow-400 transition">PATREON</a>
-            <button onclick="openStandings()" class="nav-link text-white hover:text-yellow-400 transition cursor-pointer bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">STANDINGS</button>
-        </nav>
-        <div class="flex items-center space-x-4">
-            <a href="https://www.patreon.com/c/afcnortherners" target="_blank" class="hidden md:block text-white px-4 py-2 rounded-md text-sm font-bold transition shadow-[0_0_15px_rgba(255,66,77,0.4)] hover:shadow-[0_0_20px_rgba(255,66,77,0.6)]" style="background:#FF424D;">
-                <i class="fab fa-patreon mr-2"></i> JOIN
-            </a>
-            <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank" class="hidden md:block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-bold transition shadow-[0_0_15px_rgba(229,57,57,0.4)]">
-                <i class="fab fa-youtube mr-2"></i> SUBSCRIBE
-            </a>
-            <button class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
-        </div>
-    </div>
-</header>
+    </header>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      STANDINGS MODAL
 ═══════════════════════════════════════ -->
-<div id="standings-modal" onclick="closeStandingsIfOutside(event)">
-    <div class="standings-panel my-4">
-        <div class="standings-header">
-            <div class="flex items-center gap-4">
-                <img
+    <div id="standings-modal" onclick="closeStandingsIfOutside(event)">
+        <div class="standings-panel my-4">
+            <div class="standings-header">
+                <div class="flex items-center gap-4">
+                    <img
                     src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20NOTHERNERS%20YT%20LOGO%20(With%20Rob-Bengal).png"
                     alt="AFC Northerners"
                     class="h-12 w-auto object-contain hidden sm:block"
                     onerror="this.style.display='none';"
                 />
-                <div>
-                    <div class="anton-font text-2xl text-white tracking-widest">2025 NFL STANDINGS</div>
-                    <div class="text-yellow-500 text-xs mt-1 tracking-widest">AFC NORTH TEAMS HIGHLIGHTED IN GOLD</div>
+                    <div>
+                        <div class="anton-font text-2xl text-white tracking-widest">2025 NFL STANDINGS</div>
+                        <div class="text-yellow-500 text-xs mt-1 tracking-widest">AFC NORTH TEAMS HIGHLIGHTED IN GOLD
+                        </div>
+                    </div>
                 </div>
+                <button onclick="closeStandings()" class="text-gray-400 hover:text-white transition text-3xl leading-none w-10 h-10 flex items-center justify-center">&times;</button>
             </div>
-            <button onclick="closeStandings()" class="text-gray-400 hover:text-white transition text-3xl leading-none w-10 h-10 flex items-center justify-center">&times;</button>
+            <div class="flex border-b border-zinc-800 bg-zinc-900">
+                <button onclick="showConference('AFC')" id="tab-afc" class="px-6 py-3 text-sm font-bold text-yellow-400 border-b-2 border-yellow-500 transition anton-font tracking-widest">AFC</button>
+                <button onclick="showConference('NFC')" id="tab-nfc" class="px-6 py-3 text-sm font-bold text-gray-400 hover:text-white border-b-2 border-transparent transition anton-font tracking-widest">NFC</button>
+            </div>
+            <div id="standings-body" class="max-h-[72vh] overflow-y-auto"></div>
         </div>
-        <div class="flex border-b border-zinc-800 bg-zinc-900">
-            <button onclick="showConference('AFC')" id="tab-afc" class="px-6 py-3 text-sm font-bold text-yellow-400 border-b-2 border-yellow-500 transition anton-font tracking-widest">AFC</button>
-            <button onclick="showConference('NFC')" id="tab-nfc" class="px-6 py-3 text-sm font-bold text-gray-400 hover:text-white border-b-2 border-transparent transition anton-font tracking-widest">NFC</button>
-        </div>
-        <div id="standings-body" class="max-h-[72vh] overflow-y-auto"></div>
     </div>
-</div>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      HERO
 ═══════════════════════════════════════ -->
-<section class="relative h-screen max-h-[800px] overflow-hidden">
-    <div class="stadium-light"></div>
-    <div class="beer-stain top-1/4 left-1/4"></div>
-    <div class="beer-stain bottom-1/4 right-1/4"></div>
-    <!-- YouTube video background -->
-    <div class="absolute inset-0 z-0">
-        <iframe id="hero-video" class="w-full h-full"
-            src="https://www.youtube.com/embed/izfj0GMiV9s?autoplay=1&mute=1&loop=1&playlist=izfj0GMiV9s&controls=0&rel=0&modestbranding=1"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="hero-overlay absolute inset-0 z-10"></div>
-    <!-- Hero content -->
-    <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
-        <div class="max-w-4xl">
-            <h1 class="anton-font text-4xl md:text-6xl lg:text-7xl mb-6 text-white">AFC NORTH. ONE TABLE. FOUR BEERS. ZERO FILTERS.</h1>
-            <p class="text-xl md:text-2xl mb-10 text-gray-300">Browns • Steelers • Bengals • Ravens — the weekly bar-brawl your timeline deserves.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-md text-lg font-bold transition flex items-center justify-center shadow-[0_0_20px_rgba(229,57,57,0.4)]">
-                    <i class="fab fa-youtube mr-3 text-xl"></i> WATCH LATEST EPISODE
-                </a>
-                <button onclick="openHotTake()" class="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-md text-lg font-bold transition flex items-center justify-center border border-zinc-700">
+    <section class="relative h-screen max-h-[800px] overflow-hidden">
+        <div class="stadium-light"></div>
+        <div class="beer-stain top-1/4 left-1/4"></div>
+        <div class="beer-stain bottom-1/4 right-1/4"></div>
+        <!-- YouTube video background -->
+        <div class="absolute inset-0 z-0">
+            <iframe id="hero-video" class="w-full h-full"
+                src="https://www.youtube.com/embed/izfj0GMiV9s?autoplay=1&mute=1&loop=1&playlist=izfj0GMiV9s&controls=0&rel=0&modestbranding=1"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div class="hero-overlay absolute inset-0 z-10"></div>
+        <!-- Hero content -->
+        <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
+            <div class="max-w-4xl">
+                <h1 class="anton-font text-4xl md:text-6xl lg:text-7xl mb-6 text-white">AFC NORTH. ONE TABLE. FOUR
+                    BEERS. ZERO FILTERS.</h1>
+                <p class="text-xl md:text-2xl mb-10 text-gray-300">Browns • Steelers • Bengals • Ravens — the weekly
+                    bar-brawl your timeline deserves.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank"
+                        class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-md text-lg font-bold transition flex items-center justify-center shadow-[0_0_20px_rgba(229,57,57,0.4)]">
+                        <i class="fab fa-youtube mr-3 text-xl"></i> WATCH LATEST EPISODE
+                    </a>
+                    <button onclick="openHotTake()" class="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-md text-lg font-bold transition flex items-center justify-center border border-zinc-700">
                     🔥 HOT TAKE METER
                 </button>
-                <a href="#newsletter" class="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-md text-lg font-bold transition flex items-center justify-center border border-zinc-700">
-                    <i class="fas fa-beer mr-3 text-xl"></i> JOIN THE NORTH BAR
-                </a>
+                    <a href="#newsletter"
+                        class="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-md text-lg font-bold transition flex items-center justify-center border border-zinc-700">
+                        <i class="fas fa-beer mr-3 text-xl"></i> JOIN THE NORTH BAR
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="absolute bottom-10 left-0 right-0 z-20 flex justify-center">
-        <a href="#episodes" class="text-white animate-bounce"><i class="fas fa-chevron-down text-3xl"></i></a>
-    </div>
-</section>
+        <div class="absolute bottom-10 left-0 right-0 z-20 flex justify-center">
+            <a href="#episodes" class="text-white animate-bounce"><i class="fas fa-chevron-down text-3xl"></i></a>
+        </div>
+    </section>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      LATEST EPISODES
 ═══════════════════════════════════════ -->
-<section id="episodes" class="py-16 bg-zinc-950">
-    <div class="container mx-auto px-4">
-        <!-- Section banner: smooth Ken Burns-style pan through 4 quarters with crossfade -->
-        <style>
-            .thumb-banner { position:relative; height:192px; border-radius:1rem; overflow:hidden; }
-            .thumb-banner img {
-                position:absolute; inset:0; width:100%; height:100%;
-                object-fit:cover;
-                transition: opacity 1s ease-in-out;
-            }
-            .thumb-banner img.tb-active { opacity:1; }
-            .thumb-banner img.tb-hidden { opacity:0; }
-            /* Ken-burns zoom+drift per quarter */
-            .thumb-banner img.tb-q0 { object-position:center 0%;   animation: kbQ0 8s ease-in-out forwards; }
-            .thumb-banner img.tb-q1 { object-position:center 33%;  animation: kbQ1 8s ease-in-out forwards; }
-            .thumb-banner img.tb-q2 { object-position:center 66%;  animation: kbQ2 8s ease-in-out forwards; }
-            .thumb-banner img.tb-q3 { object-position:center 100%; animation: kbQ3 8s ease-in-out forwards; }
-            @keyframes kbQ0 { 0%{transform:scale(1.0) translateY(0)}   100%{transform:scale(1.06) translateY(-4px)} }
-            @keyframes kbQ1 { 0%{transform:scale(1.04) translateY(2px)} 100%{transform:scale(1.0)  translateY(-2px)} }
-            @keyframes kbQ2 { 0%{transform:scale(1.0) translateY(0)}   100%{transform:scale(1.05) translateY(3px)} }
-            @keyframes kbQ3 { 0%{transform:scale(1.05) translateY(2px)} 100%{transform:scale(1.0)  translateY(-3px)} }
-        </style>
-        <div class="thumb-banner mb-8" id="thumb-banner">
-            <!-- Two image slots for crossfade; JS swaps classes -->
-            <img id="tb-img-a"
+    <section id="episodes" class="py-16 bg-zinc-950">
+        <div class="container mx-auto px-4">
+            <!-- Section banner: smooth Ken Burns-style pan through 4 quarters with crossfade -->
+            <style>
+                .thumb-banner {
+                    position: relative;
+                    height: 192px;
+                    border-radius: 1rem;
+                    overflow: hidden;
+                }
+
+                .thumb-banner img {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: opacity 1s ease-in-out;
+                }
+
+                .thumb-banner img.tb-active {
+                    opacity: 1;
+                }
+
+                .thumb-banner img.tb-hidden {
+                    opacity: 0;
+                }
+
+                /* Ken-burns zoom+drift per quarter */
+                .thumb-banner img.tb-q0 {
+                    object-position: center 0%;
+                    animation: kbQ0 8s ease-in-out forwards;
+                }
+
+                .thumb-banner img.tb-q1 {
+                    object-position: center 33%;
+                    animation: kbQ1 8s ease-in-out forwards;
+                }
+
+                .thumb-banner img.tb-q2 {
+                    object-position: center 66%;
+                    animation: kbQ2 8s ease-in-out forwards;
+                }
+
+                .thumb-banner img.tb-q3 {
+                    object-position: center 100%;
+                    animation: kbQ3 8s ease-in-out forwards;
+                }
+
+                @keyframes kbQ0 {
+                    0% {
+                        transform: scale(1.0) translateY(0)
+                    }
+
+                    100% {
+                        transform: scale(1.06) translateY(-4px)
+                    }
+                }
+
+                @keyframes kbQ1 {
+                    0% {
+                        transform: scale(1.04) translateY(2px)
+                    }
+
+                    100% {
+                        transform: scale(1.0) translateY(-2px)
+                    }
+                }
+
+                @keyframes kbQ2 {
+                    0% {
+                        transform: scale(1.0) translateY(0)
+                    }
+
+                    100% {
+                        transform: scale(1.05) translateY(3px)
+                    }
+                }
+
+                @keyframes kbQ3 {
+                    0% {
+                        transform: scale(1.05) translateY(2px)
+                    }
+
+                    100% {
+                        transform: scale(1.0) translateY(-3px)
+                    }
+                }
+            </style>
+            <div class="thumb-banner mb-8" id="thumb-banner">
+                <!-- Two image slots for crossfade; JS swaps classes -->
+                <img id="tb-img-a"
                 src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20NOTHERNERS%20Thumbs%20-%202026%20(With%20Rob-Bengal).png"
                 class="tb-active tb-q0"
                 onerror="document.getElementById('thumb-banner').style.display='none';"
                 alt="AFC Northerners" />
-            <img id="tb-img-b"
+                <img id="tb-img-b"
                 src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20NOTHERNERS%20Thumbs%20-%202026%20(With%20Rob-Bengal).png"
                 class="tb-hidden tb-q1"
                 alt="AFC Northerners" />
-            <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-transparent to-black/75 flex items-center px-8" style="z-index:2;">
-                <h2 class="anton-font text-3xl md:text-5xl text-white drop-shadow-lg">LATEST EPISODES</h2>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-transparent to-black/75 flex items-center px-8"
+                    style="z-index:2;">
+                    <h2 class="anton-font text-3xl md:text-5xl text-white drop-shadow-lg">LATEST EPISODES</h2>
+                </div>
+                <!-- Quarter indicator dots -->
+                <div class="absolute bottom-3 right-4 flex gap-1.5" style="z-index:3;" id="tb-dots">
+                    <span class="tb-dot w-2 h-2 rounded-full bg-white opacity-90 transition-all duration-500"></span>
+                    <span class="tb-dot w-2 h-2 rounded-full bg-white opacity-30 transition-all duration-500"></span>
+                    <span class="tb-dot w-2 h-2 rounded-full bg-white opacity-30 transition-all duration-500"></span>
+                    <span class="tb-dot w-2 h-2 rounded-full bg-white opacity-30 transition-all duration-500"></span>
+                </div>
             </div>
-            <!-- Quarter indicator dots -->
-            <div class="absolute bottom-3 right-4 flex gap-1.5" style="z-index:3;" id="tb-dots">
-                <span class="tb-dot w-2 h-2 rounded-full bg-white opacity-90 transition-all duration-500"></span>
-                <span class="tb-dot w-2 h-2 rounded-full bg-white opacity-30 transition-all duration-500"></span>
-                <span class="tb-dot w-2 h-2 rounded-full bg-white opacity-30 transition-all duration-500"></span>
-                <span class="tb-dot w-2 h-2 rounded-full bg-white opacity-30 transition-all duration-500"></span>
-            </div>
-        </div>
-        <script>
-        (function(){
+            <script>
+                (function(){
             const quarters = ['tb-q0','tb-q1','tb-q2','tb-q3'];
             const positions = ['0%','33%','66%','100%'];
             let current = 0;
@@ -293,143 +561,197 @@
             imgs[0].className = 'tb-active tb-q0';
             setInterval(next, 8000);
         })();
-        </script>
-        <div class="flex justify-end items-center mb-6">
-            <a href="https://www.youtube.com/playlist?list=PLkJ5XJqeisbRD219Q6PwovRxQp8hdiviV" target="_blank" class="text-yellow-500 hover:text-yellow-400 flex items-center">VIEW ALL <i class="fas fa-arrow-right ml-2"></i></a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-gray-800 rounded-xl overflow-hidden flex flex-col shadow-lg">
-                <div class="relative aspect-video bg-gray-900">
-                    <iframe class="w-full h-full absolute inset-0"
-                        src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbRD219Q6PwovRxQp8hdiviV&index=1"
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1.5 bg-red-600 text-white text-xs font-bold rounded-md">LATEST</span>
-                        <span class="px-3 py-1.5 bg-yellow-600 text-black text-xs font-bold rounded-md">FULL EPISODE</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white leading-tight">Latest Episode</h3>
-                    <p class="text-gray-400 text-sm mb-5 leading-relaxed flex-grow">Fresh takes from the AFC Northerners crew. Use the playlist menu to browse all episodes.</p>
-                    <div class="flex justify-between items-center text-sm text-gray-500 pt-4 border-t border-gray-700 mt-auto">
-                        <span class="flex items-center"><i class="fab fa-youtube mr-2 text-red-500"></i>YouTube</span>
-                        <a href="https://www.youtube.com/playlist?list=PLkJ5XJqeisbRD219Q6PwovRxQp8hdiviV" target="_blank" class="text-yellow-500 hover:text-yellow-400">Full Playlist <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
-                    </div>
-                </div>
+            </script>
+            <div class="flex justify-end items-center mb-6">
+                <a href="https://www.youtube.com/playlist?list=PLkJ5XJqeisbRD219Q6PwovRxQp8hdiviV" target="_blank"
+                    class="text-yellow-500 hover:text-yellow-400 flex items-center">VIEW ALL
+                    <i class="fas fa-arrow-right ml-2"></i></a>
             </div>
-            <div class="bg-gray-800 rounded-xl overflow-hidden flex flex-col shadow-lg">
-                <div class="relative aspect-video bg-gray-900">
-                    <div class="w-full h-full grid grid-cols-3 gap-1 p-1">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-800 rounded-xl overflow-hidden flex flex-col shadow-lg">
+                    <div class="relative aspect-video bg-gray-900">
+                        <iframe class="w-full h-full absolute inset-0"
+                            src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbRD219Q6PwovRxQp8hdiviV&index=1"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1.5 bg-red-600 text-white text-xs font-bold rounded-md">LATEST</span>
+                            <span class="px-3 py-1.5 bg-yellow-600 text-black text-xs font-bold rounded-md">FULL EPISODE</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white leading-tight">Latest Episode</h3>
+                        <p class="text-gray-400 text-sm mb-5 leading-relaxed flex-grow">Fresh takes from the AFC
+                            Northerners crew. Use the playlist menu to browse all episodes.</p>
+                        <div
+                            class="flex justify-between items-center text-sm text-gray-500 pt-4 border-t border-gray-700 mt-auto">
+                            <span class="flex items-center"><i class="fab fa-youtube mr-2 text-red-500"></i>YouTube</span>
+                            <a href="https://www.youtube.com/playlist?list=PLkJ5XJqeisbRD219Q6PwovRxQp8hdiviV"
+                                target="_blank" class="text-yellow-500 hover:text-yellow-400">Full Playlist
+                                <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1.5 bg-red-600 text-white text-xs font-bold rounded-md">SHORTS</span>
-                        <span class="px-3 py-1.5 bg-zinc-600 text-white text-xs font-bold rounded-md">QUICK HITS</span>
+                <div class="bg-gray-800 rounded-xl overflow-hidden flex flex-col shadow-lg">
+                    <div class="relative aspect-video bg-gray-900">
+                        <div class="w-full h-full grid grid-cols-3 gap-1 p-1">
+                            <iframe class="w-full h-full"
+                                src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=1"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <iframe class="w-full h-full"
+                                src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=2"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            <iframe class="w-full h-full"
+                                src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=3"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white leading-tight">Latest Shorts & Clips</h3>
-                    <p class="text-gray-400 text-sm mb-5 leading-relaxed flex-grow">Rapid-fire takes, hot reactions, and the best moments from the AFC Northerners.</p>
-                    <div class="flex justify-between items-center text-sm text-gray-500 pt-4 border-t border-gray-700 mt-auto">
-                        <span class="flex items-center"><i class="fab fa-youtube mr-2 text-red-500"></i>YouTube Shorts</span>
-                        <a href="https://www.youtube.com/@afcnorthernersshow/shorts" target="_blank" class="text-yellow-500 hover:text-yellow-400">View All <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1.5 bg-red-600 text-white text-xs font-bold rounded-md">SHORTS</span>
+                            <span class="px-3 py-1.5 bg-zinc-600 text-white text-xs font-bold rounded-md">QUICK HITS</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white leading-tight">Latest Shorts & Clips</h3>
+                        <p class="text-gray-400 text-sm mb-5 leading-relaxed flex-grow">Rapid-fire takes, hot reactions,
+                            and the best moments from the AFC Northerners.</p>
+                        <div
+                            class="flex justify-between items-center text-sm text-gray-500 pt-4 border-t border-gray-700 mt-auto">
+                            <span class="flex items-center"><i class="fab fa-youtube mr-2 text-red-500"></i>YouTube Shorts</span>
+                            <a href="https://www.youtube.com/@afcnorthernersshow/shorts" target="_blank"
+                                class="text-yellow-500 hover:text-yellow-400">View All
+                                <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="bg-gray-800 rounded-xl overflow-hidden flex flex-col shadow-lg border-2 border-yellow-600/30">
-                <div class="relative aspect-video overflow-hidden">
-                    <img
+                <div
+                    class="bg-gray-800 rounded-xl overflow-hidden flex flex-col shadow-lg border-2 border-yellow-600/30">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img
                         src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20Northerners%20YT%20Banner-1%20(Rob-Bengals).png"
                         alt="AFC Northerners Banner"
                         class="w-full h-full object-cover"
                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
                     />
-                    <!-- Fallback -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-red-900 to-black items-center justify-center" style="display:none;">
-                        <i class="fab fa-youtube text-6xl text-red-600 animate-pulse"></i>
+                        <!-- Fallback -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-red-900 to-black items-center justify-center"
+                            style="display:none;">
+                            <i class="fab fa-youtube text-6xl text-red-600 animate-pulse"></i>
+                        </div>
+                        <!-- Overlay with subscribe button -->
+                        <div
+                            class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-4">
+                            <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg">Never Miss a Show</h3>
+                            <p class="text-gray-200 text-sm mb-4 drop-shadow">Subscribe for notifications</p>
+                            <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank"
+                                class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md text-sm font-bold transition shadow-lg">
+                                <i class="fab fa-youtube mr-2"></i>SUBSCRIBE
+                            </a>
+                        </div>
                     </div>
-                    <!-- Overlay with subscribe button -->
-                    <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center p-4">
-                        <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg">Never Miss a Show</h3>
-                        <p class="text-gray-200 text-sm mb-4 drop-shadow">Subscribe for notifications</p>
-                        <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md text-sm font-bold transition shadow-lg">
-                            <i class="fab fa-youtube mr-2"></i>SUBSCRIBE
-                        </a>
-                    </div>
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1.5 bg-red-600 text-white text-xs font-bold rounded-md">CHANNEL</span>
-                        <span class="px-3 py-1.5 bg-zinc-600 text-white text-xs font-bold rounded-md">ALL CONTENT</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white leading-tight">Full Archive & More</h3>
-                    <p class="text-gray-400 text-sm mb-5 leading-relaxed flex-grow">Browse every episode, short, and community post. Join the Northerners family.</p>
-                    <div class="flex justify-between items-center text-sm text-gray-500 pt-4 border-t border-gray-700 mt-auto">
-                        <span class="flex items-center"><i class="fas fa-bell mr-2"></i>Notifications</span>
-                        <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" class="text-yellow-500 hover:text-yellow-400">Channel <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1.5 bg-red-600 text-white text-xs font-bold rounded-md">CHANNEL</span>
+                            <span class="px-3 py-1.5 bg-zinc-600 text-white text-xs font-bold rounded-md">ALL CONTENT</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white leading-tight">Full Archive & More</h3>
+                        <p class="text-gray-400 text-sm mb-5 leading-relaxed flex-grow">Browse every episode, short, and
+                            community post. Join the Northerners family.</p>
+                        <div
+                            class="flex justify-between items-center text-sm text-gray-500 pt-4 border-t border-gray-700 mt-auto">
+                            <span class="flex items-center"><i class="fas fa-bell mr-2"></i>Notifications</span>
+                            <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank"
+                                class="text-yellow-500 hover:text-yellow-400">Channel
+                                <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      HIGHLIGHT CLIPS
 ═══════════════════════════════════════ -->
-<section class="py-16 bg-zinc-950">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center mb-10">
-            <h2 class="anton-font text-3xl md:text-4xl text-white">HIGHLIGHT CLIPS</h2>
-            <a href="https://www.youtube.com/playlist?list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz" target="_blank" class="text-yellow-500 hover:text-yellow-400 flex items-center">VIEW ALL <i class="fas fa-arrow-right ml-2"></i></a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="md:col-span-2 grid grid-cols-3 gap-2 bg-gray-800 rounded-xl overflow-hidden shadow-lg p-2">
-                <div class="relative aspect-[9/16] bg-gray-900"><iframe class="w-full h-full" src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
-                <div class="relative aspect-[9/16] bg-gray-900"><iframe class="w-full h-full" src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
-                <div class="relative aspect-[9/16] bg-gray-900"><iframe class="w-full h-full" src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+    <section class="py-16 bg-zinc-950">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="anton-font text-3xl md:text-4xl text-white">HIGHLIGHT CLIPS</h2>
+                <a href="https://www.youtube.com/playlist?list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz" target="_blank"
+                    class="text-yellow-500 hover:text-yellow-400 flex items-center">VIEW ALL
+                    <i class="fas fa-arrow-right ml-2"></i></a>
             </div>
-            <div class="bg-gradient-to-br from-zinc-800 to-black rounded-xl p-6 flex flex-col justify-between border border-zinc-700">
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Quick Hits</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Can't watch the full show? Catch our shorts for rapid-fire takes and the best moments from each episode. New clips drop throughout the week.</p>
-                    <ul class="space-y-3 text-sm text-gray-300 mb-6">
-                        <li class="flex items-center"><i class="fas fa-bolt text-yellow-500 mr-3"></i> Instant reactions</li>
-                        <li class="flex items-center"><i class="fas fa-fire text-red-500 mr-3"></i> Spicy takes</li>
-                        <li class="flex items-center"><i class="fas fa-laugh-beam text-blue-500 mr-3"></i> Best moments</li>
-                    </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 grid grid-cols-3 gap-2 bg-gray-800 rounded-xl overflow-hidden shadow-lg p-2">
+                    <div class="relative aspect-[9/16] bg-gray-900"><iframe class="w-full h-full"
+                            src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=1"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    </div>
+                    <div class="relative aspect-[9/16] bg-gray-900"><iframe class="w-full h-full"
+                            src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=2"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    </div>
+                    <div class="relative aspect-[9/16] bg-gray-900"><iframe class="w-full h-full"
+                            src="https://www.youtube.com/embed/?listType=playlist&list=PLkJ5XJqeisbR_DpJ5JhvTz421Ats0QKXz&index=3"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    </div>
                 </div>
-                <a href="https://www.youtube.com/@afcnorthernersshow/shorts" target="_blank" class="block w-full bg-zinc-700 hover:bg-zinc-600 text-white text-center py-3 rounded-md font-bold transition">Browse All Shorts</a>
+                <div
+                    class="bg-gradient-to-br from-zinc-800 to-black rounded-xl p-6 flex flex-col justify-between border border-zinc-700">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Quick Hits</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Can't watch the full show? Catch our
+                            shorts for rapid-fire takes and the best moments from each episode. New clips drop
+                            throughout the week.</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-6">
+                            <li class="flex items-center"><i class="fas fa-bolt text-yellow-500 mr-3"></i> Instant
+                                reactions</li>
+                            <li class="flex items-center"><i class="fas fa-fire text-red-500 mr-3"></i> Spicy takes</li>
+                            <li class="flex items-center"><i class="fas fa-laugh-beam text-blue-500 mr-3"></i> Best
+                                moments</li>
+                        </ul>
+                    </div>
+                    <a href="https://www.youtube.com/@afcnorthernersshow/shorts" target="_blank"
+                        class="block w-full bg-zinc-700 hover:bg-zinc-600 text-white text-center py-3 rounded-md font-bold transition">Browse
+                        All Shorts</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      THE PLAYBOOK — DUAL OFFENSE + DEFENSE
 ═══════════════════════════════════════ -->
-<section class="py-16 relative overflow-hidden" style="background-color:#0f172a;">
-    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image:linear-gradient(rgba(59,130,246,0.2) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.2) 1px,transparent 1px);background-size:40px 40px;"></div>
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="text-center mb-8">
-            <h2 class="anton-font text-3xl md:text-4xl text-white tracking-wider mb-2">THE PLAYBOOK</h2>
-            <p class="text-gray-400">Set <span class="text-red-400 font-bold">Offense</span> AND <span class="text-blue-400 font-bold">Defense</span> simultaneously — full field, both units on canvas at once.</p>
+    <section class="py-16 relative overflow-hidden" style="background-color:#0f172a;">
+        <div class="absolute inset-0 opacity-10 pointer-events-none"
+            style="background-image:linear-gradient(rgba(59,130,246,0.2) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.2) 1px,transparent 1px);background-size:40px 40px;">
         </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-8">
+                <h2 class="anton-font text-3xl md:text-4xl text-white tracking-wider mb-2">THE PLAYBOOK</h2>
+                <p class="text-gray-400">Set <span class="text-red-400 font-bold">Offense</span> AND
+                    <span class="text-blue-400 font-bold">Defense</span> simultaneously — full field, both units on
+                    canvas at once.</p>
+            </div>
 
-        <!-- Controls -->
-        <div class="max-w-4xl mx-auto bg-zinc-800 rounded-t-lg p-4 border border-zinc-700 border-b-0">
-            <!-- Formation selects: side-by-side -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
-                <!-- Offense -->
-                <div class="bg-red-950/40 border border-red-800/40 rounded-lg p-3">
-                    <div class="flex items-center gap-2 mb-2">
-                        <span class="w-3 h-3 rounded-full bg-red-500 flex-shrink-0"></span>
-                        <span class="text-xs text-red-300 uppercase font-bold tracking-widest">Offense Formation</span>
-                        <span class="text-xs text-gray-500 ml-auto">(bottom half)</span>
-                    </div>
-                    <select id="offense-formation" class="w-full px-3 h-9 rounded bg-zinc-700 text-white text-sm border border-red-700/50 focus:outline-none focus:ring-2 focus:ring-red-500">
+            <!-- Controls -->
+            <div class="max-w-4xl mx-auto bg-zinc-800 rounded-t-lg p-4 border border-zinc-700 border-b-0">
+                <!-- Formation selects: side-by-side -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                    <!-- Offense -->
+                    <div class="bg-red-950/40 border border-red-800/40 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500 flex-shrink-0"></span>
+                            <span class="text-xs text-red-300 uppercase font-bold tracking-widest">Offense Formation</span>
+                            <span class="text-xs text-gray-500 ml-auto">(bottom half)</span>
+                        </div>
+                        <select id="offense-formation" class="w-full px-3 h-9 rounded bg-zinc-700 text-white text-sm border border-red-700/50 focus:outline-none focus:ring-2 focus:ring-red-500">
                         <option value="none">— None —</option>
                         <option value="spread-gun-3x1">Shotgun – 3×1 Trips</option>
                         <option value="spread-gun-2x2">Shotgun – 2×2 Spread</option>
@@ -441,15 +763,15 @@
                         <option value="stack">Stacked Twins</option>
                         <option value="goal-line-o">Goal Line Heavy</option>
                     </select>
-                </div>
-                <!-- Defense -->
-                <div class="bg-blue-950/40 border border-blue-800/40 rounded-lg p-3">
-                    <div class="flex items-center gap-2 mb-2">
-                        <span class="w-3 h-3 rounded-full bg-blue-500 flex-shrink-0"></span>
-                        <span class="text-xs text-blue-300 uppercase font-bold tracking-widest">Defense Formation</span>
-                        <span class="text-xs text-gray-500 ml-auto">(top half)</span>
                     </div>
-                    <select id="defense-formation" class="w-full px-3 h-9 rounded bg-zinc-700 text-white text-sm border border-blue-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <!-- Defense -->
+                    <div class="bg-blue-950/40 border border-blue-800/40 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="w-3 h-3 rounded-full bg-blue-500 flex-shrink-0"></span>
+                            <span class="text-xs text-blue-300 uppercase font-bold tracking-widest">Defense Formation</span>
+                            <span class="text-xs text-gray-500 ml-auto">(top half)</span>
+                        </div>
+                        <select id="defense-formation" class="w-full px-3 h-9 rounded bg-zinc-700 text-white text-sm border border-blue-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="none">— None —</option>
                         <option value="four-three">4-3 Base Cover 3</option>
                         <option value="four-three-man">4-3 Cover 1 Man</option>
@@ -460,481 +782,614 @@
                         <option value="prevent">Prevent D</option>
                         <option value="blitz-mike">Mike Blitz</option>
                     </select>
+                    </div>
+                </div>
+                <!-- Drawing tools -->
+                <div class="flex items-center justify-between flex-wrap gap-3">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <span class="text-xs text-gray-400 uppercase font-bold">Draw:</span>
+                        <button id="playbook-tool-circle-o" title="Add Offensive Player" class="w-10 h-10 rounded bg-red-600 text-white hover:bg-red-500 transition flex items-center justify-center active:scale-95 shadow-lg"><i class="fas fa-user text-sm"></i></button>
+                        <button id="playbook-tool-circle-d" title="Add Defensive Player" class="w-10 h-10 rounded bg-blue-600 text-white hover:bg-blue-500 transition flex items-center justify-center active:scale-95 shadow-lg"><i class="fas fa-shield-alt text-sm"></i></button>
+                        <button id="playbook-tool-arrow" title="Draw Route / Movement" class="w-10 h-10 rounded bg-zinc-700 text-gray-300 hover:bg-zinc-600 transition flex items-center justify-center active:scale-95"><i class="fas fa-long-arrow-alt-right"></i></button>
+                        <button id="playbook-tool-zone" title="Draw Zone" class="w-10 h-10 rounded bg-zinc-700 text-gray-300 hover:bg-zinc-600 transition flex items-center justify-center active:scale-95"><i class="far fa-circle"></i></button>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button id="playbook-tool-undo" title="Undo last action (Ctrl+Z)" class="w-10 h-10 rounded bg-zinc-700 text-gray-400 hover:bg-amber-700 hover:text-white transition flex items-center justify-center active:scale-95 opacity-40" disabled><i class="fas fa-undo text-sm"></i></button>
+                        <button id="playbook-tool-clear" title="Clear Board" class="w-10 h-10 rounded bg-zinc-700 text-gray-300 hover:bg-red-700 hover:text-white transition flex items-center justify-center active:scale-95"><i class="fas fa-trash-alt text-sm"></i></button>
+                        <button id="playbook-tool-save" title="Save as PNG" class="px-4 h-10 rounded bg-green-600 text-white text-sm font-bold hover:bg-green-500 transition flex items-center justify-center active:scale-95"><i class="fas fa-download mr-2"></i>SAVE</button>
+                    </div>
                 </div>
             </div>
-            <!-- Drawing tools -->
-            <div class="flex items-center justify-between flex-wrap gap-3">
-                <div class="flex items-center gap-2 flex-wrap">
-                    <span class="text-xs text-gray-400 uppercase font-bold">Draw:</span>
-                    <button id="playbook-tool-circle-o" title="Add Offensive Player" class="w-10 h-10 rounded bg-red-600 text-white hover:bg-red-500 transition flex items-center justify-center active:scale-95 shadow-lg"><i class="fas fa-user text-sm"></i></button>
-                    <button id="playbook-tool-circle-d" title="Add Defensive Player" class="w-10 h-10 rounded bg-blue-600 text-white hover:bg-blue-500 transition flex items-center justify-center active:scale-95 shadow-lg"><i class="fas fa-shield-alt text-sm"></i></button>
-                    <button id="playbook-tool-arrow" title="Draw Route / Movement" class="w-10 h-10 rounded bg-zinc-700 text-gray-300 hover:bg-zinc-600 transition flex items-center justify-center active:scale-95"><i class="fas fa-long-arrow-alt-right"></i></button>
-                    <button id="playbook-tool-zone" title="Draw Zone" class="w-10 h-10 rounded bg-zinc-700 text-gray-300 hover:bg-zinc-600 transition flex items-center justify-center active:scale-95"><i class="far fa-circle"></i></button>
-                </div>
-                <div class="flex items-center gap-2">
-                    <button id="playbook-tool-undo" title="Undo last action (Ctrl+Z)" class="w-10 h-10 rounded bg-zinc-700 text-gray-400 hover:bg-amber-700 hover:text-white transition flex items-center justify-center active:scale-95 opacity-40" disabled><i class="fas fa-undo text-sm"></i></button>
-                    <button id="playbook-tool-clear" title="Clear Board" class="w-10 h-10 rounded bg-zinc-700 text-gray-300 hover:bg-red-700 hover:text-white transition flex items-center justify-center active:scale-95"><i class="fas fa-trash-alt text-sm"></i></button>
-                    <button id="playbook-tool-save" title="Save as PNG" class="px-4 h-10 rounded bg-green-600 text-white text-sm font-bold hover:bg-green-500 transition flex items-center justify-center active:scale-95"><i class="fas fa-download mr-2"></i>SAVE</button>
-                </div>
-            </div>
-        </div>
 
-        <!-- Canvas -->
-        <div class="max-w-4xl mx-auto bg-zinc-800 rounded-b-lg p-4 border border-zinc-700 shadow-2xl">
-            <canvas id="playbook-canvas" class="w-full rounded cursor-crosshair touch-none block" style="background-color:#0A7A3E;height:480px;"></canvas>
-            <div class="mt-3 flex flex-wrap justify-center gap-4 text-xs text-gray-400" style="font-family:'Kalam',cursive;">
-                <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-red-500 mr-2"></span>Offense (below LOS)</span>
-                <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-blue-500 mr-2"></span>Defense (above LOS)</span>
-                <span class="flex items-center"><i class="fas fa-hand-paper mr-2"></i>Drag players</span>
-                <span class="flex items-center"><i class="fas fa-mouse-pointer mr-2"></i>Dbl-click to delete</span>
+            <!-- Canvas -->
+            <div class="max-w-4xl mx-auto bg-zinc-800 rounded-b-lg p-4 border border-zinc-700 shadow-2xl">
+                <canvas id="playbook-canvas" class="w-full rounded cursor-crosshair touch-none block"
+                    style="background-color:#0A7A3E;height:480px;"></canvas>
+                <div class="mt-3 flex flex-wrap justify-center gap-4 text-xs text-gray-400"
+                    style="font-family:'Kalam',cursive;">
+                    <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-red-500 mr-2"></span>Offense
+                    (below LOS)</span>
+                    <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-blue-500 mr-2"></span>Defense
+                    (above LOS)</span>
+                    <span class="flex items-center"><i class="fas fa-hand-paper mr-2"></i>Drag players</span>
+                    <span class="flex items-center"><i class="fas fa-mouse-pointer mr-2"></i>Dbl-click to delete</span>
+                </div>
+            </div>
+            <div class="max-w-4xl mx-auto mt-4 bg-zinc-800 rounded-lg p-4 border border-zinc-700">
+                <label class="block text-sm font-medium text-gray-400 mb-2" style="font-family:'Caveat',cursive;font-size:1.2rem;">Play Name / Notes</label>
+                <input type="text" id="play-name" placeholder="e.g., Steelers Mesh Concept vs Cover 3" class="w-full px-4 py-2 bg-zinc-900 border border-zinc-600 rounded text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500">
             </div>
         </div>
-        <div class="max-w-4xl mx-auto mt-4 bg-zinc-800 rounded-lg p-4 border border-zinc-700">
-            <label class="block text-sm font-medium text-gray-400 mb-2" style="font-family:'Caveat',cursive;font-size:1.2rem;">Play Name / Notes</label>
-            <input type="text" id="play-name" placeholder="e.g., Steelers Mesh Concept vs Cover 3" class="w-full px-4 py-2 bg-zinc-900 border border-zinc-600 rounded text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500">
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      MEET THE HOSTS
 ═══════════════════════════════════════ -->
-<section id="hosts" class="py-16 bg-zinc-950">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center mb-10">
-            <h2 class="anton-font text-3xl md:text-4xl text-white">MEET THE HOSTS</h2>
-            <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" class="text-yellow-500 hover:text-yellow-400 flex items-center">JOIN US <i class="fas fa-arrow-right ml-2"></i></a>
+    <section id="hosts" class="py-16 bg-zinc-950">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="anton-font text-3xl md:text-4xl text-white">MEET THE HOSTS</h2>
+                <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank"
+                    class="text-yellow-500 hover:text-yellow-400 flex items-center">JOIN US
+                    <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Browns -->
+                <div
+                    class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                    <div class="h-2 bg-orange-500"></div>
+                    <div class="p-6 text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-500"
+                            style="background:#FF6B00;">
+                            <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/DGBG%20-%20Browns.png" alt="Dave Green" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                        </div>
+                        <h3 class="font-browns text-2xl text-white mb-1">DAVE GREEN</h3>
+                        <p class="text-sm text-orange-400 mb-2 font-bold font-browns tracking-wide">Browns Guy</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">Lifelong Browns fan since '79. Will debate
+                            Myles Garrett vs. TJ Watt until the beer runs cold.</p>
+                    </div>
+                </div>
+                <!-- Steelers -->
+                <div
+                    class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                    <div class="h-2 bg-yellow-600"></div>
+                    <div class="p-6 text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-yellow-600"
+                            style="background:#FFD700;">
+                            <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Chris%20-%20Steelers.png" alt="Chris Adkins" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                        </div>
+                        <h3 class="font-steelers text-2xl text-white mb-1">CHRIS ADKINS</h3>
+                        <p class="text-sm text-yellow-400 mb-2 font-bold font-steelers tracking-wide">Steelers Guy</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">Six rings and counting. Defensive football
+                            purist who bleeds black and gold every Sunday.</p>
+                    </div>
+                </div>
+                <!-- Bengals -->
+                <div
+                    class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                    <div class="h-2 bg-orange-600"></div>
+                    <div class="p-6 text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-600"
+                            style="background:#FB4F14;">
+                            <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Rob%20-%20Bengals.png" alt="Rob Gressis" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                        </div>
+                        <h3 class="font-bengals text-2xl text-white mb-1">ROB GRESSIS</h3>
+                        <p class="text-sm text-orange-400 mb-2 font-bold font-bengals tracking-wide">Bengals Guy</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">Who Dey since the dark ages. Optimistic about
+                            Burrow's arm and Higgins' hands this season.</p>
+                    </div>
+                </div>
+                <!-- Ravens -->
+                <div
+                    class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
+                    <div class="h-2 bg-purple-700"></div>
+                    <div class="p-6 text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-700"
+                            style="background:#4B2E83;">
+                            <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Jan%20-%20Ravens.png" alt="Jan-David Soutar" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-ravens text-2xl text-white mb-1">JAN-DAVID SOUTAR</h3>
+                        <p class="text-sm text-purple-400 mb-2 font-bold font-ravens tracking-wide">Ravens Guy</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">Lamar apologist and defensive scheme junkie.
+                            Flock mentality runs deep since the Baltimore move.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Browns -->
-            <div class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
-                <div class="h-2 bg-orange-500"></div>
-                <div class="p-6 text-center">
-                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-500" style="background:#FF6B00;">
-                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/DGBG%20-%20Browns.png" alt="Dave Green" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
-                    </div>
-                    <h3 class="font-browns text-2xl text-white mb-1">DAVE GREEN</h3>
-                    <p class="text-sm text-orange-400 mb-2 font-bold font-browns tracking-wide">Browns Guy</p>
-                    <p class="text-gray-300 text-sm leading-relaxed">Lifelong Browns fan since '79. Will debate Myles Garrett vs. TJ Watt until the beer runs cold.</p>
-                </div>
-            </div>
-            <!-- Steelers -->
-            <div class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
-                <div class="h-2 bg-yellow-600"></div>
-                <div class="p-6 text-center">
-                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-yellow-600" style="background:#FFD700;">
-                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Chris%20-%20Steelers.png" alt="Chris Adkins" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
-                    </div>
-                    <h3 class="font-steelers text-2xl text-white mb-1">CHRIS ADKINS</h3>
-                    <p class="text-sm text-yellow-400 mb-2 font-bold font-steelers tracking-wide">Steelers Guy</p>
-                    <p class="text-gray-300 text-sm leading-relaxed">Six rings and counting. Defensive football purist who bleeds black and gold every Sunday.</p>
-                </div>
-            </div>
-            <!-- Bengals -->
-            <div class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
-                <div class="h-2 bg-orange-600"></div>
-                <div class="p-6 text-center">
-                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-600" style="background:#FB4F14;">
-                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Rob%20-%20Bengals.png" alt="Rob Gressis" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
-                    </div>
-                    <h3 class="font-bengals text-2xl text-white mb-1">ROB GRESSIS</h3>
-                    <p class="text-sm text-orange-400 mb-2 font-bold font-bengals tracking-wide">Bengals Guy</p>
-                    <p class="text-gray-300 text-sm leading-relaxed">Who Dey since the dark ages. Optimistic about Burrow's arm and Higgins' hands this season.</p>
-                </div>
-            </div>
-            <!-- Ravens -->
-            <div class="bg-gray-800 rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
-                <div class="h-2 bg-purple-700"></div>
-                <div class="p-6 text-center">
-                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-purple-700" style="background:#4B2E83;">
-                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Jan%20-%20Ravens.png" alt="Jan-David Soutar" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="font-ravens text-2xl text-white mb-1">JAN-DAVID SOUTAR</h3>
-                    <p class="text-sm text-purple-400 mb-2 font-bold font-ravens tracking-wide">Ravens Guy</p>
-                    <p class="text-gray-300 text-sm leading-relaxed">Lamar apologist and defensive scheme junkie. Flock mentality runs deep since the Baltimore move.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      AFC NORTH WIRE
 ═══════════════════════════════════════ -->
-<section class="py-16 bg-zinc-900">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-            <div class="flex items-center">
-                <i class="fas fa-bolt text-yellow-500 text-2xl mr-3"></i>
-                <h2 class="anton-font text-3xl md:text-4xl text-white">AFC NORTH WIRE</h2>
+    <section class="py-16 bg-zinc-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <div class="flex items-center">
+                    <i class="fas fa-bolt text-yellow-500 text-2xl mr-3"></i>
+                    <h2 class="anton-font text-3xl md:text-4xl text-white">AFC NORTH WIRE</h2>
+                </div>
+                <div class="flex space-x-1 bg-gray-800 p-1 rounded-lg mt-4 md:mt-0 flex-wrap" id="news-source-tabs">
+                    <button class="news-tab px-3 py-2 text-orange-400 text-xs font-bold rounded-md hover:bg-zinc-700 transition" data-source="cincyjungle">BENGALS</button> 
+                    <button class="news-tab px-3 py-2 text-orange-500 text-xs font-bold rounded-md hover:bg-zinc-700 transition" data-source="dawgsbynature">BROWNS</button>
+                    <button class="news-tab px-3 py-2 text-purple-400 text-xs font-bold rounded-md hover:bg-zinc-700 transition" data-source="baltimorebeatdown">RAVENS</button>
+                    <button class="news-tab px-3 py-2 text-yellow-500 text-xs font-bold rounded-md hover:bg-zinc-700 transition" data-source="behindsteel">STEELERS</button>  <button class="news-tab active px-3 py-2 text-white text-xs font-bold rounded-md bg-zinc-700" data-source="all">ALL</button>
+                    <button class="news-tab px-3 py-2 text-red-400 text-xs font-bold rounded-md hover:bg-zinc-700 transition" data-source="espn">ESPN</button>
+                </div>
             </div>
-            <div class="flex space-x-1 bg-gray-800 p-1 rounded-lg mt-4 md:mt-0 flex-wrap" id="news-source-tabs">
-                <button class="news-tab active px-3 py-2 text-white text-xs font-bold rounded-md bg-zinc-700" data-source="all">ALL</button>
-                <button class="news-tab px-3 py-2 text-purple-400 text-xs font-bold rounded-md hover:bg-zinc-700 transition" data-source="baltimorebeatdown">RAVENS</button>
-                <button class="news-tab px-3 py-2 text-orange-400 text-xs font-bold rounded-md hover:bg-zinc-700 transition" data-source="cincyjungle">BENGALS</button>
-                <button class="news-tab px-3 py-2 text-orange-500 text-xs font-bold rounded-md hover:bg-zinc-700 transition" data-source="dawgsbynature">BROWNS</button>
-                <button class="news-tab px-3 py-2 text-yellow-500 text-xs font-bold rounded-md hover:bg-zinc-700 transition" data-source="behindsteel">STEELERS</button>
-                <button class="news-tab px-3 py-2 text-red-400 text-xs font-bold rounded-md hover:bg-zinc-700 transition" data-source="espn">ESPN</button>
+            <p class="text-gray-500 mb-6 text-xs">Live feeds from AFC North team blogs &amp; national NFL sources.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="news-feed-grid">
+                <div class="col-span-full text-center py-12">
+                    <i class="fas fa-circle-notch fa-spin text-3xl text-yellow-500 mb-4 block"></i>
+                    <p class="text-gray-400">Loading live AFC North headlines…</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center flex flex-wrap justify-center gap-4">
+                <a href="https://www.baltimorebeatdown.com" target="_blank"
+                    class="text-purple-400 hover:text-purple-300 text-xs">Baltimore Beatdown</a>
+                <a href="https://www.cincyjungle.com" target="_blank"
+                    class="text-orange-400 hover:text-orange-300 text-xs">Cincy Jungle</a>
+                <a href="https://www.dawgsbynature.com" target="_blank"
+                    class="text-orange-500 hover:text-orange-400 text-xs">Dawgs By Nature</a>
+                <a href="https://www.behindthesteelcurtain.com" target="_blank"
+                    class="text-yellow-500 hover:text-yellow-400 text-xs">Behind Steel Curtain</a>
+                <span class="text-gray-600 text-xs">| Live RSS Feeds</span>
             </div>
         </div>
-        <p class="text-gray-500 mb-6 text-xs">Live feeds from AFC North team blogs &amp; national NFL sources.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="news-feed-grid">
-            <div class="col-span-full text-center py-12">
-                <i class="fas fa-circle-notch fa-spin text-3xl text-yellow-500 mb-4 block"></i>
-                <p class="text-gray-400">Loading live AFC North headlines…</p>
-            </div>
-        </div>
-        <div class="mt-8 text-center flex flex-wrap justify-center gap-4">
-            <a href="https://www.baltimorebeatdown.com" target="_blank" class="text-purple-400 hover:text-purple-300 text-xs">Baltimore Beatdown</a>
-            <a href="https://www.cincyjungle.com" target="_blank" class="text-orange-400 hover:text-orange-300 text-xs">Cincy Jungle</a>
-            <a href="https://www.dawgsbynature.com" target="_blank" class="text-orange-500 hover:text-orange-400 text-xs">Dawgs By Nature</a>
-            <a href="https://www.behindthesteelcurtain.com" target="_blank" class="text-yellow-500 hover:text-yellow-400 text-xs">Behind Steel Curtain</a>
-            <span class="text-gray-600 text-xs">| Live RSS Feeds</span>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      NEWSLETTER
 ═══════════════════════════════════════ -->
-<section id="newsletter" class="py-16 bg-gradient-to-r from-zinc-900 to-zinc-950">
-    <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto bg-gray-800 rounded-xl overflow-hidden">
-            <div class="md:flex">
-                <div class="md:w-1/2 p-8 md:p-12 bg-gradient-to-br from-yellow-600 to-orange-600 flex flex-col justify-center">
-                    <div class="text-center md:text-left">
-                        <h2 class="anton-font text-3xl md:text-4xl text-black mb-4">JOIN THE NORTH BAR</h2>
-                        <p class="text-black font-bold mb-6">Get "6-Pack Friday": 6 spicy takes, odds swings, and clips — straight to your inbox.</p>
-                        <div class="flex justify-center md:justify-start">
-                            <div class="flex -space-x-2">
-                                <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden" style="background:#FF6B00;">
-                                    <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/DGBG%20-%20Browns.png" alt="Dave" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
-                                </div>
-                                <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden" style="background:#FFD700;">
-                                    <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Chris%20-%20Steelers.png" alt="Chris" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
-                                </div>
-                                <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden" style="background:#FB4F14;">
-                                    <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Rob%20-%20Bengals.png" alt="Rob" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
-                                </div>
-                                <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden" style="background:#4B2E83;">
-                                    <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Jan%20-%20Ravens.png" alt="Jan-David" class="w-full h-full object-cover">
+    <section id="newsletter" class="py-16 bg-gradient-to-r from-zinc-900 to-zinc-950">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gray-800 rounded-xl overflow-hidden">
+                <div class="md:flex">
+                    <div
+                        class="md:w-1/2 p-8 md:p-12 bg-gradient-to-br from-yellow-600 to-orange-600 flex flex-col justify-center">
+                        <div class="text-center md:text-left">
+                            <h2 class="anton-font text-3xl md:text-4xl text-black mb-4">JOIN THE NORTH BAR</h2>
+                            <p class="text-black font-bold mb-6">Get "6-Pack Friday": 6 spicy takes, odds swings, and
+                                clips — straight to your inbox.</p>
+                            <div class="flex justify-center md:justify-start">
+                                <div class="flex -space-x-2">
+                                    <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
+                                        style="background:#FF6B00;">
+                                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/DGBG%20-%20Browns.png" alt="Dave" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
+                                        style="background:#FFD700;">
+                                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Chris%20-%20Steelers.png" alt="Chris" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
+                                        style="background:#FB4F14;">
+                                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Rob%20-%20Bengals.png" alt="Rob" class="w-full h-full object-cover" style="mix-blend-mode:multiply;">
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full border-2 border-black overflow-hidden"
+                                        style="background:#4B2E83;">
+                                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/faces/Jan%20-%20Ravens.png" alt="Jan-David" class="w-full h-full object-cover">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="md:w-1/2 p-8 md:p-12">
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-white mb-1">Email Address</label>
-                            <input type="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="you@example.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-white mb-1">Your Team</label>
-                            <select class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-white mb-1">Email Address</label>
+                                <input type="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="you@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-white mb-1">Your Team</label>
+                                <select class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
                                 <option value="">Select your team</option>
                                 <option>Cleveland Browns</option>
                                 <option>Pittsburgh Steelers</option>
                                 <option>Cincinnati Bengals</option>
                                 <option>Baltimore Ravens</option>
                             </select>
+                            </div>
+                            <button id="nl-submit-btn" onclick="submitNewsletter()" class="w-full bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-3 px-4 rounded-md transition">SIGN ME UP</button>
+                            <p id="nl-success" class="text-green-400 text-sm font-bold hidden">✅ You're in! Welcome to
+                                the North Bar.</p>
+                            <p id="nl-error" class="text-red-400 text-sm hidden">Please enter a valid email.</p>
+                            <p class="text-xs text-gray-400">We'll never spam you.</p>
                         </div>
-                        <button id="nl-submit-btn" onclick="submitNewsletter()" class="w-full bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-3 px-4 rounded-md transition">SIGN ME UP</button>
-                        <p id="nl-success" class="text-green-400 text-sm font-bold hidden">✅ You're in! Welcome to the North Bar.</p>
-                        <p id="nl-error" class="text-red-400 text-sm hidden">Please enter a valid email.</p>
-                        <p class="text-xs text-gray-400">We'll never spam you.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════
-     LIVE / TWITCH
+    <!-- ═══════════════════════════════════════
+     LIVE / YOUTUBE / TWITCH
 ═══════════════════════════════════════ -->
-<section id="live" class="py-16 bg-black">
-    <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto bg-gray-900 rounded-xl overflow-hidden border border-gray-800">
-            <div class="md:flex">
-                <div class="md:w-1/2 relative bg-black min-h-[300px]">
-                    <iframe src="https://player.twitch.tv/?channel=afcnortherners&parent=localhost&parent=afc-northerners.com&autoplay=false"
-                        frameborder="0" scrolling="no" allowfullscreen="true"
-                        class="absolute inset-0 w-full h-full" height="100%" width="100%"></iframe>
-                    <div class="absolute top-4 left-4 bg-zinc-700 text-white px-3 py-1 rounded-full text-sm font-bold">OFFLINE</div>
-                </div>
-                <div class="md:w-1/2 p-8 md:p-12">
-                    <div class="flex items-center mb-4">
-                        <i class="fab fa-twitch text-2xl text-purple-500 mr-3"></i>
-                        <h2 class="anton-font text-3xl md:text-4xl text-white">NEXT LIVE SHOW</h2>
+    <section id="live" class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto bg-gray-900 rounded-xl overflow-hidden border border-gray-800">
+                <div class="md:flex">
+                    <div class="md:w-1/2 relative bg-black min-h-[300px]">
+                        <iframe
+                            src="https://www.youtube.com/embed?listType=playlist&list=PLkJ5XJqeisbRD219Q6PwovRxQp8hdiviV&index=1"
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute inset-0 w-full h-full"></iframe>
+                        <div
+                            class="absolute top-4 left-4 bg-zinc-700 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            OFFLINE</div>
                     </div>
-                    <p class="text-xl text-gray-300 mb-6">AFC North talk, live on Twitch. Four guys, four teams, zero filters.</p>
-                    <div class="mb-8">
-                        <div class="flex items-center text-purple-400 mb-2"><i class="fab fa-twitch mr-2"></i><span>twitch.tv/afcnortherners</span></div>
-                        <div class="flex items-center text-yellow-500 mb-2"><i class="far fa-calendar-alt mr-2"></i><span>Every Wednesday</span></div>
-                        <div class="flex items-center text-yellow-500"><i class="far fa-clock mr-2"></i><span>8:00 PM EST</span></div>
-                    </div>
-                    <div class="grid grid-cols-4 gap-2 mb-8">
-                        <div class="countdown-box flex flex-col items-center justify-center py-3 rounded"><span class="text-2xl font-bold text-white" id="countdown-days">--</span><span class="text-xs text-gray-400">DAYS</span></div>
-                        <div class="countdown-box flex flex-col items-center justify-center py-3 rounded"><span class="text-2xl font-bold text-white" id="countdown-hours">--</span><span class="text-xs text-gray-400">HRS</span></div>
-                        <div class="countdown-box flex flex-col items-center justify-center py-3 rounded"><span class="text-2xl font-bold text-white" id="countdown-minutes">--</span><span class="text-xs text-gray-400">MIN</span></div>
-                        <div class="countdown-box flex flex-col items-center justify-center py-3 rounded"><span class="text-2xl font-bold text-white" id="countdown-seconds">--</span><span class="text-xs text-gray-400">SEC</span></div>
-                    </div>
-                    <div class="space-y-4">
-                        <a href="https://www.twitch.tv/afcnortherners" target="_blank" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center"><i class="fab fa-twitch mr-2"></i> FOLLOW ON TWITCH</a>
-                        <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center"><i class="fab fa-youtube mr-2"></i> SUBSCRIBE ON YOUTUBE</a>
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <div class="flex items-center mb-4">
+                            <i class="fab fa-twitch text-2xl text-purple-500 mr-3"></i>
+                            <h2 class="anton-font text-3xl md:text-4xl text-white">NEXT LIVE SHOW</h2>
+                        </div>
+                        <p class="text-xl text-gray-300 mb-6">AFC North talk, live on Twitch. Four guys, four teams,
+                            zero filters.</p>
+                        <div class="mb-8">
+                            <div class="flex items-center text-purple-400 mb-2">
+                                <i class="fab fa-twitch mr-2"></i><span>twitch.tv/afcnortherners</span></div>
+                            <div class="flex items-center text-yellow-500 mb-2">
+                                <i class="far fa-calendar-alt mr-2"></i><span>Every Tuesday</span></div>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="far fa-clock mr-2"></i><span>6:00 PM PST</span></div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 mb-8">
+                            <div class="countdown-box flex flex-col items-center justify-center py-3 rounded">
+                                <span class="text-2xl font-bold text-white" id="countdown-days">--</span><span class="text-xs text-gray-400">DAYS</span>
+                            </div>
+                            <div class="countdown-box flex flex-col items-center justify-center py-3 rounded">
+                                <span class="text-2xl font-bold text-white" id="countdown-hours">--</span><span class="text-xs text-gray-400">HRS</span>
+                            </div>
+                            <div class="countdown-box flex flex-col items-center justify-center py-3 rounded">
+                                <span class="text-2xl font-bold text-white" id="countdown-minutes">--</span><span class="text-xs text-gray-400">MIN</span>
+                            </div>
+                            <div class="countdown-box flex flex-col items-center justify-center py-3 rounded">
+                                <span class="text-2xl font-bold text-white" id="countdown-seconds">--</span><span class="text-xs text-gray-400">SEC</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="https://www.twitch.tv/afcnortherners" target="_blank"
+                                class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center"><i class="fab fa-twitch mr-2"></i>
+                                FOLLOW ON TWITCH</a>
+                            <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank"
+                                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-md transition flex items-center justify-center"><i class="fab fa-youtube mr-2"></i>
+                                SUBSCRIBE ON YOUTUBE</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      PATREON
 ═══════════════════════════════════════ -->
-<section id="patreon" class="py-20 relative overflow-hidden" style="background:#0B0B0C;">
-    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background:radial-gradient(circle at 50% 0%, #FF424D, transparent 70%);"></div>
-    <div class="container mx-auto px-4 relative z-10">
+    <section id="patreon" class="py-20 relative overflow-hidden" style="background:#0B0B0C;">
+        <div class="absolute inset-0 opacity-5 pointer-events-none"
+            style="background:radial-gradient(circle at 50% 0%, #FF424D, transparent 70%);"></div>
+        <div class="container mx-auto px-4 relative z-10">
 
-        <!-- Header -->
-        <div class="text-center mb-6">
-            <div class="inline-flex items-center gap-3 mb-4">
-                <i class="fab fa-patreon text-4xl" style="color:#FF424D;"></i>
-                <h2 class="anton-font text-4xl md:text-5xl text-white tracking-wider">SUPPORT THE SHOW</h2>
+            <!-- Header -->
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center gap-3 mb-4">
+                    <i class="fab fa-patreon text-4xl" style="color:#FF424D;"></i>
+                    <h2 class="anton-font text-4xl md:text-5xl text-white tracking-wider">SUPPORT THE SHOW</h2>
+                </div>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">Every dollar goes back into making
+                    the show better. Pick your tier, get your perks, and become part of the North.</p>
             </div>
-            <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">Every dollar goes back into making the show better. Pick your tier, get your perks, and become part of the North.</p>
+
+            <!-- Welcome note -->
+            <div
+                class="max-w-2xl mx-auto mb-14 bg-zinc-900 rounded-2xl border border-zinc-700 p-6 text-center relative">
+                <i class="fas fa-quote-left text-2xl absolute top-4 left-5" style="color:#FF424D; opacity:0.4;"></i>
+                <p class="text-gray-300 italic leading-relaxed px-6">Thank you so much! Seriously, we appreciate it —
+                    you're an amazing human being, no matter what team you bleed for.
+                    <span class="text-white font-bold">Except that one team.</span> Fuck those guys.</p>
+                <p class="text-yellow-500 font-bold mt-3 text-sm tracking-widest">— THE GUYS FROM THE AFC NORTH</p>
+            </div>
+
+            <!-- Tiers grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+
+                <!-- $2 — Bengals orange -->
+                <div class="bg-zinc-900 rounded-2xl border transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
+                    style="border-color:#FB4F14;">
+                    <div class="h-1" style="background:#FB4F14;"></div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-center mb-4">
+                            <div class="anton-font text-3xl text-white">$2</div>
+                            <div class="text-gray-500 text-xs">/ month</div>
+                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FB4F14;">4TH & INCHES</div>
+                            <div class="text-gray-500 text-xs mt-1">QB Sneak. Just do it.</div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-400 flex-grow">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FB4F14;"></i>Weekly
+                                instant take within 24hrs of each game from all 4 hosts</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FB4F14;"></i>Full
+                                season — pre to post</li>
+                        </ul>
+                        <a href="https://www.patreon.com/checkout/afcnortherners?rid=990114&vanity=575065"
+                            target="_blank"
+                            class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-white transition hover:opacity-90"
+                            style="background:#FB4F14;">JOIN FOR $2</a>
+                    </div>
+                </div>
+
+                <!-- $5 — Browns orange — HIGHLIGHTED -->
+                <div class="bg-zinc-900 rounded-2xl border-2 transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden relative"
+                    style="border-color:#FF3C00; box-shadow:0 0 30px rgba(235,90,42,0.25);">
+                    <div class="absolute top-0 left-0 right-0 text-center py-1 text-xs font-bold tracking-widest text-white"
+                        style="background:#FF3C00;">⭐ MOST POPULAR</div>
+                    <div class="h-1 mt-6" style="background:#FF3C00;"></div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-center mb-4">
+                            <div class="anton-font text-3xl text-white">$5</div>
+                            <div class="text-gray-500 text-xs">/ month</div>
+                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FF3C00;">3RD & 3</div>
+                            <div class="text-gray-500 text-xs mt-1">You're in enemy territory.</div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-400 flex-grow">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>Everything
+                                in 4th & Inches</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>Early
+                                access to weekly podcast</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>Weekly
+                                AFC North Fantasy Football podcast</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>More
+                                perks coming!</li>
+                        </ul>
+                        <a href="https://www.patreon.com/checkout/afcnortherners?rid=990144&vanity=575065"
+                            target="_blank"
+                            class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-white transition hover:opacity-90"
+                            style="background:#FF3C00;">JOIN FOR $5</a>
+                    </div>
+                </div>
+
+                <!-- $8 — Steelers gold -->
+                <div class="bg-zinc-900 rounded-2xl border transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
+                    style="border-color:#FFB612;">
+                    <div class="h-1" style="background:#FFB612;"></div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-center mb-4">
+                            <div class="anton-font text-3xl text-white">$8</div>
+                            <div class="text-gray-500 text-xs">/ month</div>
+                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FFB612;">2ND & 7</div>
+                            <div class="text-gray-500 text-xs mt-1">Screen or run it to the house?</div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-400 flex-grow">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Everything
+                                in 3rd & 3</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Free AFC
+                                Northerners swag</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Access
+                                links to past shows about upcoming opponents</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Special
+                                thanks on the show</li>
+                        </ul>
+                        <a href="https://www.patreon.com/checkout/afcnortherners?rid=990151&vanity=575065"
+                            target="_blank"
+                            class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-black transition hover:opacity-90"
+                            style="background:#FFB612;">JOIN FOR $8</a>
+                    </div>
+                </div>
+
+                <!-- $10 — Ravens purple -->
+                <div class="bg-zinc-900 rounded-2xl border transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
+                    style="border-color:#241773;">
+                    <div class="h-1" style="background:#241773;"></div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-center mb-4">
+                            <div class="anton-font text-3xl text-white">$10</div>
+                            <div class="text-gray-500 text-xs">/ month</div>
+                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#9E7C0C;">1ST & 10</div>
+                            <div class="text-gray-500 text-xs mt-1">You've got this.</div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-400 flex-grow">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>Everything
+                                in 2nd & 7</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>Named
+                                thanks on every episode</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>AFC
+                                Northerners shirt</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>Exclusive
+                                1st & 10 only content</li>
+                        </ul>
+                        <a href="https://www.patreon.com/checkout/afcnortherners?rid=1049206&vanity=575065"
+                            target="_blank"
+                            class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-white transition hover:opacity-90"
+                            style="background:#241773;">JOIN FOR $10</a>
+                    </div>
+                </div>
+
+                <!-- $20 — Gold elite (unchanged) -->
+                <div class="rounded-2xl border-2 transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden relative"
+                    style="background:linear-gradient(135deg,#1a0a00,#0f0f0f); border-color:#FFB612; box-shadow:0 0 30px rgba(201,161,0,0.15);">
+                    <div class="h-1" style="background:linear-gradient(90deg,#FFB612,#e6b800);"></div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-center mb-4">
+                            <div class="text-2xl mb-1">🏆</div>
+                            <div class="anton-font text-3xl text-white">$20</div>
+                            <div class="text-gray-500 text-xs">/ month</div>
+                            <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FFB612;">TOUCHDOWN!!!</div>
+                            <div class="text-gray-500 text-xs mt-1">YOU ARE ELITE.</div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-400 flex-grow">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Everything
+                                in 1st & 10</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Team flag
+                                & mug of your choice</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Autographed
+                                AFC Northerners t-shirt</li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Entry to
+                                appear LIVE on the show</li>
+                        </ul>
+                        <a href="https://www.patreon.com/checkout/afcnortherners?rid=1049234&vanity=575065"
+                            target="_blank"
+                            class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold transition hover:opacity-90"
+                            style="background:linear-gradient(90deg,#FFB612,#e6b800); color:#000;">GO ELITE — $20</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA bar -->
+            <div class="text-center">
+                <a href="https://www.patreon.com/c/afcnortherners" target="_blank"
+                    class="inline-flex items-center gap-3 text-white font-bold px-10 py-4 rounded-xl text-lg transition hover:opacity-90 shadow-[0_0_30px_rgba(255,66,77,0.3)]"
+                    style="background:#FF424D;">
+                    <i class="fab fa-patreon text-xl"></i> VIEW ALL TIERS ON PATREON
+                </a>
+            </div>
         </div>
+    </section>
 
-        <!-- Welcome note -->
-        <div class="max-w-2xl mx-auto mb-14 bg-zinc-900 rounded-2xl border border-zinc-700 p-6 text-center relative">
-            <i class="fas fa-quote-left text-2xl absolute top-4 left-5" style="color:#FF424D; opacity:0.4;"></i>
-            <p class="text-gray-300 italic leading-relaxed px-6">Thank you so much! Seriously, we appreciate it — you're an amazing human being, no matter what team you bleed for. <span class="text-white font-bold">Except that one team.</span> Fuck those guys.</p>
-            <p class="text-yellow-500 font-bold mt-3 text-sm tracking-widest">— THE GUYS FROM THE AFC NORTH</p>
-        </div>
-
-        <!-- Tiers grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-
-            <!-- $2 — Bengals orange -->
-            <div class="bg-zinc-900 rounded-2xl border transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden" style="border-color:#FB4F14;">
-                <div class="h-1" style="background:#FB4F14;"></div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <div class="text-center mb-4">
-                        <div class="anton-font text-3xl text-white">$2</div>
-                        <div class="text-gray-500 text-xs">/ month</div>
-                        <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FB4F14;">4TH & INCHES</div>
-                        <div class="text-gray-500 text-xs mt-1">QB Sneak. Just do it.</div>
-                    </div>
-                    <ul class="space-y-2 text-sm text-gray-400 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FB4F14;"></i>Weekly instant take within 24hrs of each game from all 4 hosts</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FB4F14;"></i>Full season — pre to post</li>
-                    </ul>
-                    <a href="https://www.patreon.com/checkout/afcnortherners?rid=990114&vanity=575065" target="_blank" class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-white transition hover:opacity-90" style="background:#FB4F14;">JOIN FOR $2</a>
-                </div>
-            </div>
-
-            <!-- $5 — Browns orange — HIGHLIGHTED -->
-            <div class="bg-zinc-900 rounded-2xl border-2 transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden relative" style="border-color:#FF3C00; box-shadow:0 0 30px rgba(235,90,42,0.25);">
-                <div class="absolute top-0 left-0 right-0 text-center py-1 text-xs font-bold tracking-widest text-white" style="background:#FF3C00;">⭐ MOST POPULAR</div>
-                <div class="h-1 mt-6" style="background:#FF3C00;"></div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <div class="text-center mb-4">
-                        <div class="anton-font text-3xl text-white">$5</div>
-                        <div class="text-gray-500 text-xs">/ month</div>
-                        <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FF3C00;">3RD & 3</div>
-                        <div class="text-gray-500 text-xs mt-1">You're in enemy territory.</div>
-                    </div>
-                    <ul class="space-y-2 text-sm text-gray-400 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>Everything in 4th & Inches</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>Early access to weekly podcast</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>Weekly AFC North Fantasy Football podcast</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FF3C00;"></i>More perks coming!</li>
-                    </ul>
-                    <a href="https://www.patreon.com/checkout/afcnortherners?rid=990144&vanity=575065" target="_blank" class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-white transition hover:opacity-90" style="background:#FF3C00;">JOIN FOR $5</a>
-                </div>
-            </div>
-
-            <!-- $8 — Steelers gold -->
-            <div class="bg-zinc-900 rounded-2xl border transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden" style="border-color:#FFB612;">
-                <div class="h-1" style="background:#FFB612;"></div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <div class="text-center mb-4">
-                        <div class="anton-font text-3xl text-white">$8</div>
-                        <div class="text-gray-500 text-xs">/ month</div>
-                        <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FFB612;">2ND & 7</div>
-                        <div class="text-gray-500 text-xs mt-1">Screen or run it to the house?</div>
-                    </div>
-                    <ul class="space-y-2 text-sm text-gray-400 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Everything in 3rd & 3</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Free AFC Northerners swag</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Access links to past shows about upcoming opponents</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Special thanks on the show</li>
-                    </ul>
-                    <a href="https://www.patreon.com/checkout/afcnortherners?rid=990151&vanity=575065" target="_blank" class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-black transition hover:opacity-90" style="background:#FFB612;">JOIN FOR $8</a>
-                </div>
-            </div>
-
-            <!-- $10 — Ravens purple -->
-            <div class="bg-zinc-900 rounded-2xl border transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden" style="border-color:#241773;">
-                <div class="h-1" style="background:#241773;"></div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <div class="text-center mb-4">
-                        <div class="anton-font text-3xl text-white">$10</div>
-                        <div class="text-gray-500 text-xs">/ month</div>
-                        <div class="anton-font text-sm mt-2 tracking-wide" style="color:#9E7C0C;">1ST & 10</div>
-                        <div class="text-gray-500 text-xs mt-1">You've got this.</div>
-                    </div>
-                    <ul class="space-y-2 text-sm text-gray-400 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>Everything in 2nd & 7</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>Named thanks on every episode</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>AFC Northerners shirt</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#9E7C0C;"></i>Exclusive 1st & 10 only content</li>
-                    </ul>
-                    <a href="https://www.patreon.com/checkout/afcnortherners?rid=1049206&vanity=575065" target="_blank" class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold text-white transition hover:opacity-90" style="background:#241773;">JOIN FOR $10</a>
-                </div>
-            </div>
-
-            <!-- $20 — Gold elite (unchanged) -->
-            <div class="rounded-2xl border-2 transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden relative" style="background:linear-gradient(135deg,#1a0a00,#0f0f0f); border-color:#FFB612; box-shadow:0 0 30px rgba(201,161,0,0.15);">
-                <div class="h-1" style="background:linear-gradient(90deg,#FFB612,#e6b800);"></div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <div class="text-center mb-4">
-                        <div class="text-2xl mb-1">🏆</div>
-                        <div class="anton-font text-3xl text-white">$20</div>
-                        <div class="text-gray-500 text-xs">/ month</div>
-                        <div class="anton-font text-sm mt-2 tracking-wide" style="color:#FFB612;">TOUCHDOWN!!!</div>
-                        <div class="text-gray-500 text-xs mt-1">YOU ARE ELITE.</div>
-                    </div>
-                    <ul class="space-y-2 text-sm text-gray-400 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Everything in 1st & 10</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Team flag & mug of your choice</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Autographed AFC Northerners t-shirt</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check-circle mt-0.5 flex-shrink-0" style="color:#FFB612;"></i>Entry to appear LIVE on the show</li>
-                    </ul>
-                    <a href="https://www.patreon.com/checkout/afcnortherners?rid=1049234&vanity=575065" target="_blank" class="mt-5 block text-center py-2.5 rounded-lg text-sm font-bold transition hover:opacity-90" style="background:linear-gradient(90deg,#FFB612,#e6b800); color:#000;">GO ELITE — $20</a>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- CTA bar -->
-        <div class="text-center">
-            <a href="https://www.patreon.com/c/afcnortherners" target="_blank" class="inline-flex items-center gap-3 text-white font-bold px-10 py-4 rounded-xl text-lg transition hover:opacity-90 shadow-[0_0_30px_rgba(255,66,77,0.3)]" style="background:#FF424D;">
-                <i class="fab fa-patreon text-xl"></i> VIEW ALL TIERS ON PATREON
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      SPONSORS
 ═══════════════════════════════════════ -->
-<section id="sponsors" class="py-16 bg-zinc-900">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="anton-font text-3xl md:text-4xl text-white mb-3">OUR PARTNERS</h2>
-            <p class="text-gray-400 text-sm">Brands that back the North</p>
-        </div>
-        <!-- Placeholder slots — replace with real logos when sponsors come in -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer" onclick="openSponsorModal()">
-                <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
-                <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
+    <section id="sponsors" class="py-16 bg-zinc-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="anton-font text-3xl md:text-4xl text-white mb-3">OUR PARTNERS</h2>
+                <p class="text-gray-400 text-sm">Brands that back the North</p>
             </div>
-            <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer" onclick="openSponsorModal()">
-                <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
-                <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
+            <!-- Placeholder slots — replace with real logos when sponsors come in -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
+                    onclick="openSponsorModal()">
+                    <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
+                </div>
+                <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
+                    onclick="openSponsorModal()">
+                    <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
+                </div>
+                <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
+                    onclick="openSponsorModal()">
+                    <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
+                </div>
+                <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer"
+                    onclick="openSponsorModal()">
+                    <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
+                    <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
+                </div>
             </div>
-            <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer" onclick="openSponsorModal()">
-                <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
-                <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
-            </div>
-            <div class="flex flex-col items-center justify-center p-6 bg-zinc-800 rounded-xl h-28 border-2 border-dashed border-zinc-600 hover:border-yellow-600/50 transition group cursor-pointer" onclick="openSponsorModal()">
-                <i class="fas fa-plus text-zinc-500 group-hover:text-yellow-500 text-2xl mb-2 transition"></i>
-                <span class="text-zinc-500 group-hover:text-yellow-500 text-xs font-bold transition">YOUR BRAND</span>
-            </div>
-        </div>
-        <!-- Sponsor pitch banner -->
-        <div class="max-w-3xl mx-auto bg-gradient-to-r from-yellow-900/40 to-zinc-800 rounded-2xl border border-yellow-600/30 p-8 flex flex-col md:flex-row items-center gap-6">
-            <div class="flex-1">
-                <h3 class="anton-font text-2xl text-yellow-400 mb-2">REACH THE AFC NORTH FAITHFUL</h3>
-                <p class="text-gray-300 text-sm leading-relaxed">We talk to the most passionate football fans in the AFC — Browns, Steelers, Bengals, and Ravens die-hards every week. Get your brand in front of them.</p>
-            </div>
-            <button onclick="openSponsorModal()" class="flex-shrink-0 bg-yellow-600 hover:bg-yellow-500 text-black font-bold px-8 py-4 rounded-lg transition shadow-[0_0_20px_rgba(201,161,0,0.3)] hover:shadow-[0_0_30px_rgba(201,161,0,0.5)] whitespace-nowrap anton-font text-lg">
+            <!-- Sponsor pitch banner -->
+            <div
+                class="max-w-3xl mx-auto bg-gradient-to-r from-yellow-900/40 to-zinc-800 rounded-2xl border border-yellow-600/30 p-8 flex flex-col md:flex-row items-center gap-6">
+                <div class="flex-1">
+                    <h3 class="anton-font text-2xl text-yellow-400 mb-2">REACH THE AFC NORTH FAITHFUL</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">We talk to the most passionate football fans in the
+                        AFC — Browns, Steelers, Bengals, and Ravens die-hards every week. Get your brand in front of
+                        them.</p>
+                </div>
+                <button onclick="openSponsorModal()" class="flex-shrink-0 bg-yellow-600 hover:bg-yellow-500 text-black font-bold px-8 py-4 rounded-lg transition shadow-[0_0_20px_rgba(201,161,0,0.3)] hover:shadow-[0_0_30px_rgba(201,161,0,0.5)] whitespace-nowrap anton-font text-lg">
                 BECOME A SPONSOR
             </button>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════ -->
-<footer class="bg-black pt-16 pb-8 border-t border-gray-800">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-                <div class="flex items-center space-x-2 mb-4">
-                    <img
+    <footer class="bg-black pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img
                         src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20NOTHERNERS%20YT%20LOGO%20(With%20Rob-Bengal).png"
                         alt="AFC Northerners Logo"
                         class="h-10 w-auto object-contain rounded-full"
                     />
-                    <h3 class="font-redzone text-sm text-white">AFC NORTHERNERS</h3>
+                        <h3 class="font-redzone text-sm text-white">AFC NORTHERNERS</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">Four AFC North superfans arguing ball at the bar. Zero filters, all
+                        passion.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" title="YouTube"
+                            class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="https://x.com/afcnortherners" target="_blank" title="X / Twitter"
+                            class="text-gray-400 hover:text-white transition"><i class="fab fa-x-twitter text-xl"></i></a>
+                        <a href="https://www.instagram.com/afcnortherners" target="_blank" title="Instagram"
+                            class="text-gray-400 hover:text-pink-500 transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.tiktok.com/@AFC_Northerners" target="_blank" title="TikTok"
+                            class="text-gray-400 hover:text-cyan-400 transition"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="https://www.reddit.com/r/afcnortherners" target="_blank" title="Reddit"
+                            class="text-gray-400 hover:text-orange-500 transition"><i class="fab fa-reddit text-xl"></i></a>
+                        <a href="https://www.patreon.com/c/afcnortherners" target="_blank" title="Patreon"
+                            class="text-gray-400 hover:text-red-400 transition"><i class="fab fa-patreon text-xl"></i></a>
+                    </div>
                 </div>
-                <p class="text-gray-400 text-sm">Four AFC North superfans arguing ball at the bar. Zero filters, all passion.</p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" title="YouTube" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
-                    <a href="https://x.com/afcnortherners" target="_blank" title="X / Twitter" class="text-gray-400 hover:text-white transition"><i class="fab fa-x-twitter text-xl"></i></a>
-                    <a href="https://www.instagram.com/afcnortherners" target="_blank" title="Instagram" class="text-gray-400 hover:text-pink-500 transition"><i class="fab fa-instagram text-xl"></i></a>
-                    <a href="https://www.tiktok.com/@AFC_Northerners" target="_blank" title="TikTok" class="text-gray-400 hover:text-cyan-400 transition"><i class="fab fa-tiktok text-xl"></i></a>
-                    <a href="https://www.reddit.com/r/afcnortherners" target="_blank" title="Reddit" class="text-gray-400 hover:text-orange-500 transition"><i class="fab fa-reddit text-xl"></i></a>
-                    <a href="https://www.patreon.com/c/afcnortherners" target="_blank" title="Patreon" class="text-gray-400 hover:text-red-400 transition"><i class="fab fa-patreon text-xl"></i></a>
+                <div>
+                    <h4 class="anton-font text-lg text-white mb-4">WATCH</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#episodes" class="text-gray-400 hover:text-white transition">Latest Episodes</a>
+                        </li>
+                        <li><a href="#live" class="text-gray-400 hover:text-white transition">Live Shows</a></li>
+                        <li><a href="https://www.youtube.com/@afcnorthernersshow/shorts" target="_blank"
+                                class="text-gray-400 hover:text-white transition">Highlight Clips</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="anton-font text-lg text-white mb-4">COMMUNITY</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#newsletter" class="text-gray-400 hover:text-white transition">North Bar
+                                Newsletter</a></li>
+                        <li><a href="https://www.reddit.com/r/afcnortherners" target="_blank"
+                                class="text-gray-400 hover:text-white transition">Reddit Community</a></li>
+                        <li><a href="https://www.patreon.com/c/afcnortherners" target="_blank"
+                                class="text-gray-400 hover:text-red-400 transition">Patreon</a></li>
+                        <li><button onclick="openHotTake()" class="text-gray-400 hover:text-yellow-400 transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">🔥 Hot Take Meter</button>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="anton-font text-lg text-white mb-4">ABOUT</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#hosts" class="text-gray-400 hover:text-white transition">Meet the Hosts</a></li>
+                        <li><button onclick="openSponsorModal()" class="text-gray-400 hover:text-yellow-400 transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">Become a Sponsor</button>
+                        </li>
+                        <li><button onclick="openContactModal()" class="text-gray-400 hover:text-white transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">Contact Us</button>
+                        </li>
+                        <li><button onclick="openStandings()" class="text-gray-400 hover:text-yellow-400 transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">2025 Standings</button>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div>
-                <h4 class="anton-font text-lg text-white mb-4">WATCH</h4>
-                <ul class="space-y-2">
-                    <li><a href="#episodes" class="text-gray-400 hover:text-white transition">Latest Episodes</a></li>
-                    <li><a href="#live" class="text-gray-400 hover:text-white transition">Live Shows</a></li>
-                    <li><a href="https://www.youtube.com/@afcnorthernersshow/shorts" target="_blank" class="text-gray-400 hover:text-white transition">Highlight Clips</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="anton-font text-lg text-white mb-4">COMMUNITY</h4>
-                <ul class="space-y-2">
-                    <li><a href="#newsletter" class="text-gray-400 hover:text-white transition">North Bar Newsletter</a></li>
-                    <li><a href="https://www.reddit.com/r/afcnortherners" target="_blank" class="text-gray-400 hover:text-white transition">Reddit Community</a></li>
-                    <li><a href="https://www.patreon.com/c/afcnortherners" target="_blank" class="text-gray-400 hover:text-red-400 transition">Patreon</a></li>
-                    <li><button onclick="openHotTake()" class="text-gray-400 hover:text-yellow-400 transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">🔥 Hot Take Meter</button></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="anton-font text-lg text-white mb-4">ABOUT</h4>
-                <ul class="space-y-2">
-                    <li><a href="#hosts" class="text-gray-400 hover:text-white transition">Meet the Hosts</a></li>
-                    <li><button onclick="openSponsorModal()" class="text-gray-400 hover:text-yellow-400 transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">Become a Sponsor</button></li>
-                    <li><button onclick="openContactModal()" class="text-gray-400 hover:text-white transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">Contact Us</button></li>
-                    <li><button onclick="openStandings()" class="text-gray-400 hover:text-yellow-400 transition text-left bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">2025 Standings</button></li>
-                </ul>
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2026 AFC Northerners. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <button onclick="openTermsModal()" class="text-gray-500 hover:text-gray-400 text-sm bg-transparent border-0" style="font-family:'Archivo Narrow',sans-serif;">Terms</button>
+                    <button onclick="openPrivacyModal()" class="text-gray-500 hover:text-gray-400 text-sm bg-transparent border-0" style="font-family:'Archivo Narrow',sans-serif;">Privacy</button>
+                </div>
             </div>
         </div>
-        <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2026 AFC Northerners. All rights reserved.</p>
-            <div class="flex space-x-4">
-                <button onclick="openTermsModal()" class="text-gray-500 hover:text-gray-400 text-sm bg-transparent border-0" style="font-family:'Archivo Narrow',sans-serif;">Terms</button>
-                <button onclick="openPrivacyModal()" class="text-gray-500 hover:text-gray-400 text-sm bg-transparent border-0" style="font-family:'Archivo Narrow',sans-serif;">Privacy</button>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      SCRIPTS
 ═══════════════════════════════════════ -->
-<script>
-// ── Countdown ────────────────────────────────────────────────────────────────
+    <script>
+        // ── Countdown ────────────────────────────────────────────────────────────────
 function updateCountdown() {
     const now = new Date();
     const fmt = new Intl.DateTimeFormat('en-US', {
@@ -955,10 +1410,10 @@ function updateCountdown() {
     const diff = targetUTC - now.getTime();
     const d = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000),
           m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
-    document.getElementById('countdown-days').textContent = String(d).padStart(2,'0');
-    document.getElementById('countdown-hours').textContent = String(h).padStart(2,'0');
-    document.getElementById('countdown-minutes').textContent = String(m).padStart(2,'0');
-    document.getElementById('countdown-seconds').textContent = String(s).padStart(2,'0');
+    document.getElementById('countdown-days').textContent = String(Math.max(0,d)).padStart(2,'0');
+    document.getElementById('countdown-hours').textContent = String(Math.max(0,h)).padStart(2,'0');
+    document.getElementById('countdown-minutes').textContent = String(Math.max(0,m)).padStart(2,'0');
+    document.getElementById('countdown-seconds').textContent = String(Math.max(0,s)).padStart(2,'0');
 }
 setInterval(updateCountdown, 1000); updateCountdown();
 
@@ -1437,62 +1892,197 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
     setTimeout(()=>resizeCanvas(),100);
     let rt; window.addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>{ const s=JSON.parse(JSON.stringify(elements)); resizeCanvas(); elements=s; redraw(); },250); });
 })();
-</script>
+    </script>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      MODAL STYLES (shared)
 ═══════════════════════════════════════ -->
-<style>
-.an-modal { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.88); backdrop-filter:blur(6px); overflow-y:auto; }
-.an-modal.open { display:flex; align-items:flex-start; justify-content:center; padding:2rem 1rem; }
-.an-panel { background:#111113; border:1px solid #2a2a2e; border-radius:16px; width:100%; overflow:hidden; box-shadow:0 0 60px rgba(201,161,0,0.1); }
-.an-header { background:linear-gradient(135deg,#1a1200 0%,#0f0a20 100%); border-bottom:2px solid #FFB612; padding:1.5rem 2rem; display:flex; align-items:center; justify-content:space-between; }
-.an-close { color:#9ca3af; font-size:2rem; line-height:1; width:2.5rem; height:2.5rem; display:flex; align-items:center; justify-content:center; cursor:pointer; background:none; border:none; transition:color .2s; }
-.an-close:hover { color:#fff; }
-.an-input { width:100%; padding:.75rem 1rem; background:#1c1c1f; border:1px solid #3f3f46; border-radius:.5rem; color:#fff; font-family:'Archivo Narrow',sans-serif; font-size:.95rem; transition:border-color .2s; outline:none; }
-.an-input:focus { border-color:#FFB612; }
-.an-label { display:block; font-size:.8rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#9ca3af; margin-bottom:.4rem; }
-.an-btn-gold { background:#FFB612; color:#000; font-family:'Anton',sans-serif; letter-spacing:1px; font-size:1rem; padding:.75rem 2rem; border-radius:.5rem; border:none; cursor:pointer; transition:background .2s, box-shadow .2s; }
-.an-btn-gold:hover { background:#e6b800; box-shadow:0 0 20px rgba(201,161,0,0.4); }
-.an-btn-ghost { background:transparent; color:#9ca3af; border:1px solid #3f3f46; font-family:'Archivo Narrow',sans-serif; font-size:.9rem; padding:.6rem 1.5rem; border-radius:.5rem; cursor:pointer; transition:all .2s; }
-.an-btn-ghost:hover { border-color:#9ca3af; color:#fff; }
-.an-success { display:none; flex-direction:column; align-items:center; justify-content:center; padding:3rem 2rem; text-align:center; }
-/* Hot Take Meter */
-.ht-bar-wrap { background:#27272a; border-radius:999px; height:1.5rem; overflow:hidden; position:relative; }
-.ht-bar { height:100%; border-radius:999px; transition:width 1s cubic-bezier(.4,0,.2,1); }
-.ht-vote-btn { flex:1; padding:.6rem; border-radius:.5rem; border:none; cursor:pointer; font-family:'Anton',sans-serif; letter-spacing:1px; font-size:.85rem; transition:all .2s; }
-</style>
+    <style>
+        .an-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(6px);
+            overflow-y: auto;
+        }
 
-<!-- ═══════════════════════════════════════
+        .an-modal.open {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .an-panel {
+            background: #111113;
+            border: 1px solid #2a2a2e;
+            border-radius: 16px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(201, 161, 0, 0.1);
+        }
+
+        .an-header {
+            background: linear-gradient(135deg, #1a1200 0%, #0f0a20 100%);
+            border-bottom: 2px solid #FFB612;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .an-close {
+            color: #9ca3af;
+            font-size: 2rem;
+            line-height: 1;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color .2s;
+        }
+
+        .an-close:hover {
+            color: #fff;
+        }
+
+        .an-input {
+            width: 100%;
+            padding: .75rem 1rem;
+            background: #1c1c1f;
+            border: 1px solid #3f3f46;
+            border-radius: .5rem;
+            color: #fff;
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: .95rem;
+            transition: border-color .2s;
+            outline: none;
+        }
+
+        .an-input:focus {
+            border-color: #FFB612;
+        }
+
+        .an-label {
+            display: block;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin-bottom: .4rem;
+        }
+
+        .an-btn-gold {
+            background: #FFB612;
+            color: #000;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            padding: .75rem 2rem;
+            border-radius: .5rem;
+            border: none;
+            cursor: pointer;
+            transition: background .2s, box-shadow .2s;
+        }
+
+        .an-btn-gold:hover {
+            background: #e6b800;
+            box-shadow: 0 0 20px rgba(201, 161, 0, 0.4);
+        }
+
+        .an-btn-ghost {
+            background: transparent;
+            color: #9ca3af;
+            border: 1px solid #3f3f46;
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: .9rem;
+            padding: .6rem 1.5rem;
+            border-radius: .5rem;
+            cursor: pointer;
+            transition: all .2s;
+        }
+
+        .an-btn-ghost:hover {
+            border-color: #9ca3af;
+            color: #fff;
+        }
+
+        .an-success {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        /* Hot Take Meter */
+        .ht-bar-wrap {
+            background: #27272a;
+            border-radius: 999px;
+            height: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ht-bar {
+            height: 100%;
+            border-radius: 999px;
+            transition: width 1s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .ht-vote-btn {
+            flex: 1;
+            padding: .6rem;
+            border-radius: .5rem;
+            border: none;
+            cursor: pointer;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            font-size: .85rem;
+            transition: all .2s;
+        }
+    </style>
+
+    <!-- ═══════════════════════════════════════
      SPONSOR MODAL
 ═══════════════════════════════════════ -->
-<div id="sponsor-modal" class="an-modal" onclick="closeModalIfOutside(event,'sponsor-modal')">
-    <div class="an-panel" style="max-width:600px;">
-        <div class="an-header">
-            <div>
-                <div class="anton-font text-2xl text-white tracking-widest">BECOME A SPONSOR</div>
-                <div class="text-yellow-500 text-xs mt-1 tracking-widest">REACH THE AFC NORTH FAITHFUL</div>
+    <div id="sponsor-modal" class="an-modal" onclick="closeModalIfOutside(event,'sponsor-modal')">
+        <div class="an-panel" style="max-width:600px;">
+            <div class="an-header">
+                <div>
+                    <div class="anton-font text-2xl text-white tracking-widest">BECOME A SPONSOR</div>
+                    <div class="text-yellow-500 text-xs mt-1 tracking-widest">REACH THE AFC NORTH FAITHFUL</div>
+                </div>
+                <button class="an-close" onclick="closeModal('sponsor-modal')">&times;</button>
             </div>
-            <button class="an-close" onclick="closeModal('sponsor-modal')">&times;</button>
-        </div>
-        <div class="p-6 md:p-8" id="sponsor-form-wrap">
-            <p class="text-gray-400 text-sm mb-6 leading-relaxed">We reach passionate AFC North fans every week across YouTube, Twitch, and social. Fill out the form below and we'll be in touch about partnership opportunities.</p>
-            <div class="space-y-4">
-                <div>
-                    <label class="an-label">Your Name *</label>
-                    <input id="sp-name" class="an-input" type="text" placeholder="John Smith">
-                </div>
-                <div>
-                    <label class="an-label">Company / Brand *</label>
-                    <input id="sp-company" class="an-input" type="text" placeholder="Acme Brewing Co.">
-                </div>
-                <div>
-                    <label class="an-label">Email Address *</label>
-                    <input id="sp-email" class="an-input" type="email" placeholder="you@company.com">
-                </div>
-                <div>
-                    <label class="an-label">Monthly Budget</label>
-                    <select id="sp-budget" class="an-input">
+            <div class="p-6 md:p-8" id="sponsor-form-wrap">
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">We reach passionate AFC North fans every week
+                    across YouTube, Twitch, and social. Fill out the form below and we'll be in touch about partnership
+                    opportunities.</p>
+                <div class="space-y-4">
+                    <div>
+                        <label class="an-label">Your Name *</label>
+                        <input id="sp-name" class="an-input" type="text" placeholder="John Smith">
+                    </div>
+                    <div>
+                        <label class="an-label">Company / Brand *</label>
+                        <input id="sp-company" class="an-input" type="text" placeholder="Acme Brewing Co.">
+                    </div>
+                    <div>
+                        <label class="an-label">Email Address *</label>
+                        <input id="sp-email" class="an-input" type="email" placeholder="you@company.com">
+                    </div>
+                    <div>
+                        <label class="an-label">Monthly Budget</label>
+                        <select id="sp-budget" class="an-input">
                         <option value="">Select a range</option>
                         <option>Under $250</option>
                         <option>$250 – $500</option>
@@ -1500,58 +2090,60 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
                         <option>$1,000 – $2,500</option>
                         <option>$2,500+</option>
                     </select>
+                    </div>
+                    <div>
+                        <label class="an-label">Tell us about your brand</label>
+                        <textarea id="sp-message" class="an-input" rows="3" placeholder="What you do, who you're trying to reach, anything else..."></textarea>
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button class="an-btn-gold" onclick="submitSponsor()">SEND INQUIRY</button>
+                        <button class="an-btn-ghost" onclick="closeModal('sponsor-modal')">Cancel</button>
+                    </div>
+                    <p id="sp-error" class="text-red-400 text-xs hidden">Please fill in all required fields.</p>
                 </div>
-                <div>
-                    <label class="an-label">Tell us about your brand</label>
-                    <textarea id="sp-message" class="an-input" rows="3" placeholder="What you do, who you're trying to reach, anything else..."></textarea>
-                </div>
-                <div class="flex gap-3 pt-2">
-                    <button class="an-btn-gold" onclick="submitSponsor()">SEND INQUIRY</button>
-                    <button class="an-btn-ghost" onclick="closeModal('sponsor-modal')">Cancel</button>
-                </div>
-                <p id="sp-error" class="text-red-400 text-xs hidden">Please fill in all required fields.</p>
             </div>
-        </div>
-        <div class="an-success" id="sponsor-success">
-            <i class="fas fa-handshake text-5xl text-yellow-500 mb-4"></i>
-            <h3 class="anton-font text-2xl text-white mb-2">WE'LL BE IN TOUCH!</h3>
-            <p class="text-gray-400 text-sm">Thanks for reaching out. We'll review your inquiry and get back to you within 2 business days.</p>
-            <button class="an-btn-gold mt-6" onclick="closeModal('sponsor-modal')">CLOSE</button>
+            <div class="an-success" id="sponsor-success">
+                <i class="fas fa-handshake text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="anton-font text-2xl text-white mb-2">WE'LL BE IN TOUCH!</h3>
+                <p class="text-gray-400 text-sm">Thanks for reaching out. We'll review your inquiry and get back to you
+                    within 2 business days.</p>
+                <button class="an-btn-gold mt-6" onclick="closeModal('sponsor-modal')">CLOSE</button>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      CONTACT MODAL
 ═══════════════════════════════════════ -->
-<div id="contact-modal" class="an-modal" onclick="closeModalIfOutside(event,'contact-modal')">
-    <div class="an-panel" style="max-width:540px;">
-        <div class="an-header">
-            <div>
-                <div class="anton-font text-2xl text-white tracking-widest">CONTACT US</div>
-                <div class="text-yellow-500 text-xs mt-1 tracking-widest">WE READ EVERY MESSAGE</div>
-            </div>
-            <button class="an-close" onclick="closeModal('contact-modal')">&times;</button>
-        </div>
-        <div class="p-6 md:p-8" id="contact-form-wrap">
-            <div class="flex items-center gap-3 mb-6 p-3 bg-zinc-800 rounded-lg border border-zinc-700">
-                <i class="fas fa-envelope text-yellow-500"></i>
-                <a href="/cdn-cgi/l/email-protection#83e2e5e0edecf1f7ebe6f1ede6f1f0c3e4eee2eaefade0ecee" class="text-yellow-400 hover:text-yellow-300 text-sm transition"><span class="__cf_email__" data-cfemail="620304010c0d10160a07100c07101122050f030b0e4c010d0f">[email&#160;protected]</span></a>
-            </div>
-            <div class="space-y-4">
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="an-label">Name *</label>
-                        <input id="ct-name" class="an-input" type="text" placeholder="Your name">
-                    </div>
-                    <div>
-                        <label class="an-label">Email *</label>
-                        <input id="ct-email" class="an-input" type="email" placeholder="you@example.com">
-                    </div>
-                </div>
+    <div id="contact-modal" class="an-modal" onclick="closeModalIfOutside(event,'contact-modal')">
+        <div class="an-panel" style="max-width:540px;">
+            <div class="an-header">
                 <div>
-                    <label class="an-label">Subject</label>
-                    <select id="ct-subject" class="an-input">
+                    <div class="anton-font text-2xl text-white tracking-widest">CONTACT US</div>
+                    <div class="text-yellow-500 text-xs mt-1 tracking-widest">WE READ EVERY MESSAGE</div>
+                </div>
+                <button class="an-close" onclick="closeModal('contact-modal')">&times;</button>
+            </div>
+            <div class="p-6 md:p-8" id="contact-form-wrap">
+                <div class="flex items-center gap-3 mb-6 p-3 bg-zinc-800 rounded-lg border border-zinc-700">
+                    <i class="fas fa-envelope text-yellow-500"></i>
+                    <a href="/cdn-cgi/l/email-protection#83e2e5e0edecf1f7ebe6f1ede6f1f0c3e4eee2eaefade0ecee"
+                        class="text-yellow-400 hover:text-yellow-300 text-sm transition"><span class="__cf_email__" data-cfemail="620304010c0d10160a07100c07101122050f030b0e4c010d0f">[email&#160;protected]</span></a>
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="an-label">Name *</label>
+                            <input id="ct-name" class="an-input" type="text" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="an-label">Email *</label>
+                            <input id="ct-email" class="an-input" type="email" placeholder="you@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="an-label">Subject</label>
+                        <select id="ct-subject" class="an-input">
                         <option>General question</option>
                         <option>Guest appearance</option>
                         <option>Sponsorship inquiry</option>
@@ -1559,139 +2151,197 @@ document.addEventListener('DOMContentLoaded',()=>{ loadNews(); setInterval(loadN
                         <option>Fan mail 🍺</option>
                         <option>Other</option>
                     </select>
+                    </div>
+                    <div>
+                        <label class="an-label">Message *</label>
+                        <textarea id="ct-message" class="an-input" rows="4" placeholder="What's on your mind?"></textarea>
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button class="an-btn-gold" onclick="submitContact()">SEND MESSAGE</button>
+                        <button class="an-btn-ghost" onclick="closeModal('contact-modal')">Cancel</button>
+                    </div>
+                    <p id="ct-error" class="text-red-400 text-xs hidden">Please fill in all required fields.</p>
                 </div>
-                <div>
-                    <label class="an-label">Message *</label>
-                    <textarea id="ct-message" class="an-input" rows="4" placeholder="What's on your mind?"></textarea>
-                </div>
-                <div class="flex gap-3 pt-2">
-                    <button class="an-btn-gold" onclick="submitContact()">SEND MESSAGE</button>
-                    <button class="an-btn-ghost" onclick="closeModal('contact-modal')">Cancel</button>
-                </div>
-                <p id="ct-error" class="text-red-400 text-xs hidden">Please fill in all required fields.</p>
+            </div>
+            <div class="an-success" id="contact-success">
+                <i class="fas fa-paper-plane text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="anton-font text-2xl text-white mb-2">MESSAGE SENT!</h3>
+                <p class="text-gray-400 text-sm">We'll get back to you at the email you provided. Go Browns. Or whatever
+                    your team is.</p>
+                <button class="an-btn-gold mt-6" onclick="closeModal('contact-modal')">CLOSE</button>
             </div>
         </div>
-        <div class="an-success" id="contact-success">
-            <i class="fas fa-paper-plane text-5xl text-yellow-500 mb-4"></i>
-            <h3 class="anton-font text-2xl text-white mb-2">MESSAGE SENT!</h3>
-            <p class="text-gray-400 text-sm">We'll get back to you at the email you provided. Go Browns. Or whatever your team is.</p>
-            <button class="an-btn-gold mt-6" onclick="closeModal('contact-modal')">CLOSE</button>
-        </div>
     </div>
-</div>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      HOT TAKE METER MODAL
 ═══════════════════════════════════════ -->
-<div id="hottake-modal" class="an-modal" onclick="closeModalIfOutside(event,'hottake-modal')">
-    <div class="an-panel" style="max-width:580px;">
+    <div id="hottake-modal" class="an-modal" onclick="closeModalIfOutside(event,'hottake-modal')">
+        <div class="an-panel" style="max-width:580px;">
+            <div class="an-header">
+                <div>
+                    <div class="anton-font text-2xl text-white tracking-widest">🔥 HOT TAKE METER</div>
+                    <div class="text-yellow-500 text-xs mt-1 tracking-widest">VOTE ON THE WEEK'S SPICIEST AFC NORTH
+                        TAKES</div>
+                </div>
+                <button class="an-close" onclick="closeModal('hottake-modal')">&times;</button>
+            </div>
+            <div class="px-6 md:px-8 pt-5 pb-0">
+                <button onclick="openModal('hottake-submit-modal')" class="w-full flex items-center justify-center gap-2 py-3 rounded-lg font-bold text-black transition hover:opacity-90 active:scale-95" style="background:linear-gradient(90deg,#FFB612,#e6b800);font-family:'Anton',sans-serif;letter-spacing:1px;font-size:1rem;">
+                    🔥 SUBMIT YOUR HOT TAKE!
+                </button>
+            </div>
+            <div class="p-6 md:p-8 space-y-6" id="ht-takes">
+
+                <!-- Takes injected by JS -->
+            </div>
+        </div>
+    </div>
+<div id="hottake-submit-modal" class="an-modal" onclick="closeModalIfOutside(event,'hottake-submit-modal')">
+    <div class="an-panel" style="max-width:540px;">
         <div class="an-header">
             <div>
-                <div class="anton-font text-2xl text-white tracking-widest">🔥 HOT TAKE METER</div>
-                <div class="text-yellow-500 text-xs mt-1 tracking-widest">VOTE ON THE WEEK'S SPICIEST AFC NORTH TAKES</div>
+                <div class="anton-font text-2xl text-white tracking-widest">🔥 SUBMIT YOUR HOT TAKE</div>
+                <div class="text-yellow-500 text-xs mt-1 tracking-widest">THINK YOU'VE GOT A SPICY ONE? LET'S HEAR IT.
+                </div>
             </div>
-            <button class="an-close" onclick="closeModal('hottake-modal')">&times;</button>
+            <button class="an-close" onclick="closeModal('hottake-submit-modal')">&times;</button>
         </div>
-        <div class="p-6 md:p-8 space-y-6" id="ht-takes">
-            <!-- Takes injected by JS -->
+        <div class="p-2">
+            <iframe class="airtable-embed" src="https://airtable.com/embed/appnddOLSU3eJWA0M/pagE4gLJGvDtpkp5z/form"
+                frameborder="0" onmousewheel="" width="100%" height="533"
+                style="background:transparent; border:none;"></iframe>
         </div>
     </div>
 </div>
-
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      TERMS MODAL
 ═══════════════════════════════════════ -->
-<div id="terms-modal" class="an-modal" onclick="closeModalIfOutside(event,'terms-modal')">
-    <div class="an-panel" style="max-width:680px;">
-        <div class="an-header">
-            <div class="anton-font text-2xl text-white tracking-widest">TERMS OF USE</div>
-            <button class="an-close" onclick="closeModal('terms-modal')">&times;</button>
-        </div>
-        <div class="p-6 md:p-8 max-h-[70vh] overflow-y-auto text-gray-300 text-sm leading-relaxed space-y-5">
-            <p class="text-gray-500 text-xs">Last updated: January 2026</p>
-            <p>Welcome to AFC Northerners. By accessing or using this website, you agree to be bound by these Terms of Use. Please read them carefully.</p>
+    <div id="terms-modal" class="an-modal" onclick="closeModalIfOutside(event,'terms-modal')">
+        <div class="an-panel" style="max-width:680px;">
+            <div class="an-header">
+                <div class="anton-font text-2xl text-white tracking-widest">TERMS OF USE</div>
+                <button class="an-close" onclick="closeModal('terms-modal')">&times;</button>
+            </div>
+            <div class="p-6 md:p-8 max-h-[70vh] overflow-y-auto text-gray-300 text-sm leading-relaxed space-y-5">
+                <p class="text-gray-500 text-xs">Last updated: January 2026</p>
+                <p>Welcome to AFC Northerners. By accessing or using this website, you agree to be bound by these Terms
+                    of Use. Please read them carefully.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">1. USE OF THE SITE</h4>
-            <p>This site is provided for entertainment and informational purposes only. You agree to use it only for lawful purposes and in a way that does not infringe the rights of others. You must not misuse this site by introducing viruses or other harmful material, or attempting to gain unauthorized access to any part of the site.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">1. USE OF THE SITE</h4>
+                <p>This site is provided for entertainment and informational purposes only. You agree to use it only for
+                    lawful purposes and in a way that does not infringe the rights of others. You must not misuse this
+                    site by introducing viruses or other harmful material, or attempting to gain unauthorized access to
+                    any part of the site.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">2. INTELLECTUAL PROPERTY</h4>
-            <p>All content on this site — including logos, graphics, show names, episode content, and text — is the property of AFC Northerners or its content suppliers. You may not reproduce, distribute, or create derivative works from any content without express written permission.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">2. INTELLECTUAL PROPERTY</h4>
+                <p>All content on this site — including logos, graphics, show names, episode content, and text — is the
+                    property of AFC Northerners or its content suppliers. You may not reproduce, distribute, or create
+                    derivative works from any content without express written permission.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">3. DISCLAIMER</h4>
-            <p>AFC Northerners is a fan-produced sports talk show. Nothing on this site constitutes professional sports betting advice, financial advice, or endorsement of any team or organization. All opinions expressed are those of the individual hosts and do not reflect the views of the NFL or any of its affiliated teams.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">3. DISCLAIMER</h4>
+                <p>AFC Northerners is a fan-produced sports talk show. Nothing on this site constitutes professional
+                    sports betting advice, financial advice, or endorsement of any team or organization. All opinions
+                    expressed are those of the individual hosts and do not reflect the views of the NFL or any of its
+                    affiliated teams.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">4. THIRD-PARTY LINKS</h4>
-            <p>This site contains links to third-party websites (YouTube, Twitch, Reddit, etc.). We have no control over the content or practices of those sites and accept no responsibility for them. Visiting any third-party site is at your own risk.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">4. THIRD-PARTY LINKS</h4>
+                <p>This site contains links to third-party websites (YouTube, Twitch, Reddit, etc.). We have no control
+                    over the content or practices of those sites and accept no responsibility for them. Visiting any
+                    third-party site is at your own risk.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">5. LIMITATION OF LIABILITY</h4>
-            <p>To the fullest extent permitted by law, AFC Northerners shall not be liable for any indirect, incidental, or consequential damages arising from your use of this site or its content.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">5. LIMITATION OF LIABILITY</h4>
+                <p>To the fullest extent permitted by law, AFC Northerners shall not be liable for any indirect,
+                    incidental, or consequential damages arising from your use of this site or its content.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">6. CHANGES TO THESE TERMS</h4>
-            <p>We reserve the right to modify these Terms at any time. Continued use of the site after changes are posted constitutes acceptance of the updated Terms.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">6. CHANGES TO THESE TERMS</h4>
+                <p>We reserve the right to modify these Terms at any time. Continued use of the site after changes are
+                    posted constitutes acceptance of the updated Terms.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">7. CONTACT</h4>
-            <p>Questions about these Terms? Email us at <a href="/cdn-cgi/l/email-protection#4f2e292c21203d3b272a3d212a3d3c0f28222e2623612c2022" class="text-yellow-400 hover:text-yellow-300"><span class="__cf_email__" data-cfemail="d8b9bebbb6b7aaacb0bdaab6bdaaab98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span></a>.</p>
-        </div>
-        <div class="p-4 border-t border-zinc-800 flex justify-end">
-            <button class="an-btn-gold" onclick="closeModal('terms-modal')">GOT IT</button>
+                <h4 class="anton-font text-white text-lg tracking-wide">7. CONTACT</h4>
+                <p>Questions about these Terms? Email us at <a
+                        href="/cdn-cgi/l/email-protection#4f2e292c21203d3b272a3d212a3d3c0f28222e2623612c2022"
+                        class="text-yellow-400 hover:text-yellow-300"><span class="__cf_email__" data-cfemail="d8b9bebbb6b7aaacb0bdaab6bdaaab98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span></a>.
+                </p>
+            </div>
+            <div class="p-4 border-t border-zinc-800 flex justify-end">
+                <button class="an-btn-gold" onclick="closeModal('terms-modal')">GOT IT</button>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      PRIVACY MODAL
 ═══════════════════════════════════════ -->
-<div id="privacy-modal" class="an-modal" onclick="closeModalIfOutside(event,'privacy-modal')">
-    <div class="an-panel" style="max-width:680px;">
-        <div class="an-header">
-            <div class="anton-font text-2xl text-white tracking-widest">PRIVACY POLICY</div>
-            <button class="an-close" onclick="closeModal('privacy-modal')">&times;</button>
-        </div>
-        <div class="p-6 md:p-8 max-h-[70vh] overflow-y-auto text-gray-300 text-sm leading-relaxed space-y-5">
-            <p class="text-gray-500 text-xs">Last updated: January 2026</p>
-            <p>AFC Northerners ("we", "us") respects your privacy. This policy explains what information we collect, how we use it, and your rights regarding it.</p>
+    <div id="privacy-modal" class="an-modal" onclick="closeModalIfOutside(event,'privacy-modal')">
+        <div class="an-panel" style="max-width:680px;">
+            <div class="an-header">
+                <div class="anton-font text-2xl text-white tracking-widest">PRIVACY POLICY</div>
+                <button class="an-close" onclick="closeModal('privacy-modal')">&times;</button>
+            </div>
+            <div class="p-6 md:p-8 max-h-[70vh] overflow-y-auto text-gray-300 text-sm leading-relaxed space-y-5">
+                <p class="text-gray-500 text-xs">Last updated: January 2026</p>
+                <p>AFC Northerners ("we", "us") respects your privacy. This policy explains what information we collect,
+                    how we use it, and your rights regarding it.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">1. INFORMATION WE COLLECT</h4>
-            <p>We may collect the following information when you interact with this site: your name and email address when you sign up for our newsletter or submit a contact/sponsor form; usage data such as pages visited and time on site (via embedded analytics); and information voluntarily submitted through any form on this site.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">1. INFORMATION WE COLLECT</h4>
+                <p>We may collect the following information when you interact with this site: your name and email
+                    address when you sign up for our newsletter or submit a contact/sponsor form; usage data such as
+                    pages visited and time on site (via embedded analytics); and information voluntarily submitted
+                    through any form on this site.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">2. HOW WE USE YOUR INFORMATION</h4>
-            <p>We use collected information to: send our "6-Pack Friday" newsletter to subscribers who opt in; respond to contact and sponsorship inquiries; and improve the website experience. We do not sell, trade, or rent your personal information to third parties.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">2. HOW WE USE YOUR INFORMATION</h4>
+                <p>We use collected information to: send our "6-Pack Friday" newsletter to subscribers who opt in;
+                    respond to contact and sponsorship inquiries; and improve the website experience. We do not sell,
+                    trade, or rent your personal information to third parties.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">3. NEWSLETTER & EMAIL</h4>
-            <p>If you subscribe to our newsletter, you can unsubscribe at any time using the link included in every email. We will only contact you for purposes directly related to the show and community.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">3. NEWSLETTER & EMAIL</h4>
+                <p>If you subscribe to our newsletter, you can unsubscribe at any time using the link included in every
+                    email. We will only contact you for purposes directly related to the show and community.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">4. THIRD-PARTY SERVICES</h4>
-            <p>This site embeds content from YouTube and Twitch. Those platforms may set their own cookies and collect data in accordance with their own privacy policies. We encourage you to review those policies. We are not responsible for third-party data practices.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">4. THIRD-PARTY SERVICES</h4>
+                <p>This site embeds content from YouTube and Twitch. Those platforms may set their own cookies and
+                    collect data in accordance with their own privacy policies. We encourage you to review those
+                    policies. We are not responsible for third-party data practices.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">5. COOKIES</h4>
-            <p>This site may use basic cookies to improve your experience. We do not use cookies for advertising or tracking purposes beyond standard analytics. You can disable cookies in your browser settings at any time.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">5. COOKIES</h4>
+                <p>This site may use basic cookies to improve your experience. We do not use cookies for advertising or
+                    tracking purposes beyond standard analytics. You can disable cookies in your browser settings at any
+                    time.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">6. DATA RETENTION</h4>
-            <p>We retain your contact information only as long as necessary to respond to your inquiry or maintain your newsletter subscription. You may request deletion of your data at any time by emailing us.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">6. DATA RETENTION</h4>
+                <p>We retain your contact information only as long as necessary to respond to your inquiry or maintain
+                    your newsletter subscription. You may request deletion of your data at any time by emailing us.</p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">7. YOUR RIGHTS</h4>
-            <p>You have the right to access, correct, or request deletion of any personal data we hold about you. To exercise these rights, contact us at <a href="/cdn-cgi/l/email-protection#751413161b1a07011d10071b100706351218141c195b161a18" class="text-yellow-400 hover:text-yellow-300"><span class="__cf_email__" data-cfemail="5b3a3d383534292f333e29353e29281b3c363a323775383436">[email&#160;protected]</span></a>.</p>
+                <h4 class="anton-font text-white text-lg tracking-wide">7. YOUR RIGHTS</h4>
+                <p>You have the right to access, correct, or request deletion of any personal data we hold about you. To
+                    exercise these rights, contact us at <a
+                        href="/cdn-cgi/l/email-protection#751413161b1a07011d10071b100706351218141c195b161a18"
+                        class="text-yellow-400 hover:text-yellow-300"><span class="__cf_email__" data-cfemail="5b3a3d383534292f333e29353e29281b3c363a323775383436">[email&#160;protected]</span></a>.
+                </p>
 
-            <h4 class="anton-font text-white text-lg tracking-wide">8. CHANGES TO THIS POLICY</h4>
-            <p>We may update this Privacy Policy from time to time. The "last updated" date at the top will reflect any changes. Continued use of the site constitutes acceptance of the updated policy.</p>
-        </div>
-        <div class="p-4 border-t border-zinc-800 flex justify-end">
-            <button class="an-btn-gold" onclick="closeModal('privacy-modal')">GOT IT</button>
+                <h4 class="anton-font text-white text-lg tracking-wide">8. CHANGES TO THIS POLICY</h4>
+                <p>We may update this Privacy Policy from time to time. The "last updated" date at the top will reflect
+                    any changes. Continued use of the site constitutes acceptance of the updated policy.</p>
+            </div>
+            <div class="p-4 border-t border-zinc-800 flex justify-end">
+                <button class="an-btn-gold" onclick="closeModal('privacy-modal')">GOT IT</button>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
      MODAL SCRIPTS
 ═══════════════════════════════════════ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── Generic modal helpers ─────────────────────────────────────────────────────
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        // ── Generic modal helpers ─────────────────────────────────────────────────────
 function openModal(id) { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 function closeModalIfOutside(e, id) { if (e.target === document.getElementById(id)) closeModal(id); }
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
-        ['sponsor-modal','contact-modal','hottake-modal','terms-modal','privacy-modal'].forEach(closeModal);
+        ['sponsor-modal','contact-modal','hottake-modal','hottake-submit-modal','terms-modal','privacy-modal'].forEach(closeModal);
     }
 });
 function openSponsorModal() { openModal('sponsor-modal'); }
@@ -1891,6 +2541,7 @@ async function submitNewsletter() {
         btn.textContent = 'SIGN ME UP'; btn.disabled = false;
     }
 }
-</script>
+    </script>
 </body>
+
 </html>
