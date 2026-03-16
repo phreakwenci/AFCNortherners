@@ -2513,33 +2513,37 @@ async function htVote(id, vote) {
 
 // ── Newsletter ────────────────────────────────────────────────────────────────
 async function submitNewsletter() {
-    const email = document.querySelector('#newsletter input[type="email"]').value.trim();
-    const team  = document.querySelector('#newsletter select').value;
-    const btn     = document.getElementById('nl-submit-btn');
-    const success = document.getElementById('nl-success');
-    const err     = document.getElementById('nl-error');
-    if (!email) { err.classList.remove('hidden'); return; }
-    err.classList.add('hidden');
-    btn.textContent = 'SIGNING UP…'; btn.disabled = true;
-    try {
-        const res = await fetch('https://formspree.io/f/mqeydqon', {
-            method: 'POST',
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, team, _subject: 'New North Bar Signup' })
-        });
-        if (res.ok) {
-            btn.style.display = 'none';
-            success.classList.remove('hidden');
-        } else {
-            err.textContent = 'Something went wrong — try again.';
-            err.classList.remove('hidden');
-            btn.textContent = 'SIGN ME UP'; btn.disabled = false;
-        }
-    } catch(e) {
-        err.textContent = 'Network error — try again.';
-        err.classList.remove('hidden');
-        btn.textContent = 'SIGN ME UP'; btn.disabled = false;
-    }
+const email = document.querySelector('#newsletter input[type="email"]').value.trim();
+const team = document.querySelector('#newsletter select').value;
+const btn = document.getElementById('nl-submit-btn');
+const success = document.getElementById('nl-success');
+const err = document.getElementById('nl-error');
+if (!email) { err.classList.remove('hidden'); return; }
+err.classList.add('hidden');
+btn.textContent = 'SIGNING UP…'; btn.disabled = true;
+try {
+const params = new URLSearchParams();
+params.append('fields[email]', email);
+if (team) params.append('fields[team]', team);
+const res = await fetch('https://assets.mailerlite.com/jsonp/2194589/forms/182057923442116251/subscribe', {
+method: 'POST',
+headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+body: params.toString()
+});
+const data = await res.json();
+if (data.success) {
+btn.style.display = 'none';
+success.classList.remove('hidden');
+} else {
+err.textContent = 'Something went wrong — try again.';
+err.classList.remove('hidden');
+btn.textContent = 'SIGN ME UP'; btn.disabled = false;
+}
+} catch(e) {
+err.textContent = 'Network error — try again.';
+err.classList.remove('hidden');
+btn.textContent = 'SIGN ME UP'; btn.disabled = false;
+}
 }
     </script>
 </body>
