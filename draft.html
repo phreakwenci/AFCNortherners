@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D45QW183ZD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-D45QW183ZD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Draft Central - AFC Northerners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:wght@400;700&family=Caveat:wght@400;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── Custom Fonts from GitHub ── */
+        @font-face {
+            font-family: 'NFLRedZone';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/NFL%20RedZone.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'MatrixBold';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/MatrixBold.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Gunplay';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/gunplay%20rg.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NFLBengals';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/NFL%20Cincinnati%20Bengals.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NFLBrowns';
+            src: url('https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/font/NFL_Browns_2015.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .font-redzone {
+            font-family: 'NFLRedZone', 'Anton', sans-serif;
+        }
+
+        .font-ravens {
+            font-family: 'MatrixBold', 'Anton', sans-serif;
+        }
+
+        .font-steelers {
+            font-family: 'Gunplay', 'Anton', sans-serif;
+        }
+
+        .font-bengals {
+            font-family: 'NFLBengals', 'Anton', sans-serif;
+        }
+
+        .font-browns {
+            font-family: 'NFLBrowns', 'Anton', sans-serif;
+        }
+
+        :root {
+            --primary-black: #0B0B0C;
+            --primary-white: #F4F4F5;
+            --steel-gold: #FFB612;
+            --dawg-orange: #FF3C00;
+            --bengal-orange: #FB4F14;
+            --raven-purple: #241773;
+        }
+
+        body {
+            font-family: 'Archivo Narrow', sans-serif;
+            background-color: #09090b;
+            color: var(--primary-white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .bg-zinc-950 {
+            background-color: #09090b;
+        }
+
+        .nav-link:hover {
+            text-shadow: 0 0 8px rgba(244, 244, 245, 0.7);
+        }
+
+        .draft-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .draft-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .prospect-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .team-tab.active {
+            border-bottom: 3px solid;
+        }
+
+        .browns-tab.active { border-color: #FF3C00; color: #FF3C00; }
+        .steelers-tab.active { border-color: #FFB612; color: #FFB612; }
+        .bengals-tab.active { border-color: #FB4F14; color: #FB4F14; }
+        .ravens-tab.active { border-color: #241773; color: #241773; }
+
+        .pick-badge {
+            font-family: 'Anton', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border: 2px solid #FFB612;
+        }
+
+        .need-priority {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        .priority-high { background: #ef4444; box-shadow: 0 0 8px #ef4444; }
+        .priority-med { background: #f59e0b; }
+        .priority-low { background: #6b7280; }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-zinc-950">
+
+    <!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+    <header class="sticky top-0 z-50 bg-black bg-opacity-90 border-b border-gray-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20NOTHERNERS%20YT%20LOGO%20(With%20Rob-Bengal).png"
+                    alt="AFC Northerners Logo"
+                    class="h-10 w-auto object-contain rounded-full"
+                    onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='flex';" />
+                <div id="logo-fallback" class="w-10 h-10 rounded-full bg-gray-800 items-center justify-content-center"
+                    style="display:none;">
+                    <div class="w-8 h-8 relative">
+                        <div class="absolute inset-0 rounded-full bg-yellow-600"></div>
+                        <div class="absolute inset-1 rounded-full bg-black flex items-center justify-center">
+                            <span class="font-redzone text-xs text-yellow-600">AN</span>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="font-redzone text-lg md:text-xl bg-clip-text text-transparent"
+                    style="background-image: linear-gradient(to right, #FFB612 0%, #FFB612 20%, #FB4F14 40%, #FF3C00 60%, #241773 85%, #241773 100%);">
+                    AFC NORTHERNERS</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="nav-link text-white hover:text-yellow-400 transition">HOME</a>
+                <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank"
+                    class="nav-link text-white hover:text-yellow-400 transition">WATCH</a>
+                <a href="index.html#live" class="nav-link text-white hover:text-yellow-400 transition">LIVE</a>
+                <a href="draft.html" class="nav-link text-yellow-400 transition font-bold">DRAFT HQ</a>
+                <a href="draft-tracker.html" class="nav-link text-red-500 hover:text-red-400 transition font-bold animate-pulse">LIVE TRACKER</a>
+                <a href="index.html#hosts" class="nav-link text-white hover:text-yellow-400 transition">HOSTS</a>
+                <a href="index.html#patreon" class="nav-link text-white hover:text-yellow-400 transition">PATREON</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank"
+                    class="hidden md:block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-bold transition shadow-[0_0_15px_rgba(229,57,57,0.4)]">
+                    <i class="fab fa-youtube mr-2"></i> SUBSCRIBE
+                </a>
+                <a href="index.html" class="md:hidden text-white font-bold text-sm">HOME</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════ -->
+    <section class="relative py-20 bg-gradient-to-b from-zinc-900 to-zinc-950 border-b border-zinc-800">
+        <div class="container mx-auto px-4 text-center">
+            <div class="inline-block px-4 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-yellow-500 text-sm font-bold mb-6 tracking-widest">
+                <i class="fas fa-football-ball mr-2"></i> 2026 NFL DRAFT
+            </div>
+            <h1 class="font-redzone text-5xl md:text-7xl text-white mb-6 tracking-tight">
+                DRAFT CENTRAL
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-8">
+                AFC North team needs, mock drafts, prospect rankings, and war room analysis for the Browns, Steelers, Bengals, and Ravens.
+            </p>
+            
+            <!-- Draft Countdown -->
+            <div class="flex justify-center gap-4 mb-12">
+                <div class="bg-zinc-800 rounded-lg px-6 py-4 border border-zinc-700">
+                    <div class="text-3xl font-bold text-white" id="draft-days">--</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest">Days</div>
+                </div>
+                <div class="bg-zinc-800 rounded-lg px-6 py-4 border border-zinc-700">
+                    <div class="text-3xl font-bold text-white" id="draft-hours">--</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest">Hours</div>
+                </div>
+                <div class="bg-zinc-800 rounded-lg px-6 py-4 border border-zinc-700">
+                    <div class="text-3xl font-bold text-white" id="draft-minutes">--</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest">Mins</div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-8">
+                <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-orange-600 mr-2"></span>Browns: Pick 6</span>
+                <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>Steelers: Pick 21</span>
+                <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-orange-500 mr-2"></span>Bengals: Pick 10</span>
+                <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-purple-700 mr-2"></span>Ravens: Pick 14</span>
+            </div>
+
+            <!-- Live Tracker CTA -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                <a href="draft-tracker.html" class="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold transition shadow-[0_0_20px_rgba(239,68,68,0.4)] animate-pulse">
+                    <i class="fas fa-broadcast-tower"></i> OPEN LIVE DRAFT TRACKER
+                </a>
+                <span class="text-gray-500 text-sm flex items-center">or continue reading prep content below</span>
+            </div>
+
+            <!-- Live Tracker Preview Panel -->
+            <div id="tracker-preview" class="max-w-2xl mx-auto bg-zinc-900/80 rounded-xl border border-zinc-700 p-6 backdrop-blur-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-yellow-500 font-bold uppercase tracking-wider text-sm flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Live Tracker Status
+                    </h3>
+                    <span class="text-xs text-gray-500" id="preview-last-updated">No data yet</span>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white" id="preview-hit-rate">--</div>
+                        <div class="text-xs text-gray-400 uppercase">AFC North Hit Rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white" id="preview-round">--</div>
+                        <div class="text-xs text-gray-400 uppercase">Current Round</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-yellow-400" id="preview-leader">--</div>
+                        <div class="text-xs text-gray-400 uppercase">Leading Host</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white" id="preview-total-picks">--</div>
+                        <div class="text-xs text-gray-400 uppercase">Picks Logged</div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-zinc-800 text-center">
+                    <a href="draft-tracker.html" class="text-yellow-500 hover:text-yellow-400 text-sm font-bold inline-flex items-center gap-2 transition">
+                        Open Full Tracker <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     TEAM NEEDS SECTION
+═══════════════════════════════════════ -->
+    <section class="py-16 bg-zinc-950">
+        <div class="container mx-auto px-4">
+            <h2 class="anton-font text-3xl md:text-4xl text-white text-center mb-10">AFC NORTH TEAM NEEDS</h2>
+            
+            <!-- Team Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8 border-b border-zinc-800">
+                <button onclick="showTeam('browns')" id="tab-browns" class="team-tab browns-tab px-6 py-3 font-browns text-lg text-gray-400 hover:text-orange-500 transition active">
+                    BROWNS
+                </button>
+                <button onclick="showTeam('steelers')" id="tab-steelers" class="team-tab steelers-tab px-6 py-3 font-steelers text-lg text-gray-400 hover:text-yellow-500 transition">
+                    STEELERS
+                </button>
+                <button onclick="showTeam('bengals')" id="tab-bengals" class="team-tab bengals-tab px-6 py-3 font-bengals text-lg text-gray-400 hover:text-orange-400 transition">
+                    BENGALS
+                </button>
+                <button onclick="showTeam('ravens')" id="tab-ravens" class="team-tab ravens-tab px-6 py-3 font-ravens text-lg text-gray-400 hover:text-purple-400 transition">
+                    RAVENS
+                </button>
+            </div>
+
+            <!-- Browns Content -->
+            <div id="content-browns" class="team-content max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-zinc-900 rounded-xl p-6 border border-zinc-800">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full bg-orange-600 flex items-center justify-center mr-4">
+                                <span class="font-browns text-2xl text-white">CLE</span>
+                            </div>
+                            <div>
+                                <h3 class="font-browns text-2xl text-white">CLEVELAND BROWNS</h3>
+                                <p class="text-gray-400 text-sm">Projected Cap Space: $45M+ | 2026 Picks: 9</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-orange-500 font-bold mb-4 uppercase tracking-wider text-sm">Top Needs</h4>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-high"></span>
+                                <span class="flex-grow">Edge Rusher (Premium)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-high"></span>
+                                <span class="flex-grow">Wide Receiver (X)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-med"></span>
+                                <span class="flex-grow">Offensive Tackle (RT)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-med"></span>
+                                <span class="flex-grow">Linebacker (ILB)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-low"></span>
+                                <span class="flex-grow">Safety (Depth)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                        </ul>
+
+                        <div class="bg-zinc-800 rounded-lg p-4 border border-zinc-700">
+                            <h5 class="text-white font-bold mb-2 text-sm">War Room Notes</h5>
+                            <p class="text-gray-400 text-sm italic">"Myles needs help on the other side. At pick 6, if a blue-chip edge is there, you run the card up. Also can't ignore the WR room after the departure of Cooper." — Dave Green</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+                        <div class="bg-gradient-to-br from-orange-900/40 to-zinc-900 p-4 border-b border-zinc-800">
+                            <h4 class="text-orange-400 font-bold uppercase tracking-wider">Browns Big Board Targets</h4>
+                        </div>
+                        <div class="p-4 space-y-3" id="browns-targets">
+                            <div class="draft-card bg-zinc-800 p-4 rounded-lg border border-zinc-700 flex items-center gap-4">
+                                <div class="pick-badge w-12 h-12 rounded-full flex items-center justify-center text-yellow-400 font-bold">1</div>
+                                <div class="w-12 h-12 rounded-full bg-orange-900/50 flex items-center justify-center text-orange-400 font-bold text-lg border border-orange-600/30">AC</div>
+                                <div class="flex-grow">
+                                    <h5 class="text-white font-bold">Abdul Carter</h5>
+                                    <p class="text-gray-400 text-xs">Edge | Penn State | Jr</p>
+                                    <p class="text-orange-400 text-xs mt-1">Perfect complement to Myles</p>
+                                </div>
+                                <span class="text-orange-500 font-bold text-sm">EDGE</span>
+                            </div>
+
+                            <div class="draft-card bg-zinc-800 p-4 rounded-lg border border-zinc-700 flex items-center gap-4">
+                                <div class="pick-badge w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                                <div class="w-12 h-12 rounded-full bg-orange-900/50 flex items-center justify-center text-orange-400 font-bold text-lg border border-orange-600/30">TH</div>
+                                <div class="flex-grow">
+                                    <h5 class="text-white font-bold">Travis Hunter</h5>
+                                    <p class="text-gray-400 text-xs">WR/CB | Colorado | Jr</p>
+                                    <p class="text-orange-400 text-xs mt-1">Two-way star, instant WR1</p>
+                                </div>
+                                <span class="text-orange-500 font-bold text-sm">WR</span>
+                            </div>
+
+                            <div class="draft-card bg-zinc-800 p-4 rounded-lg border border-zinc-700 flex items-center gap-4">
+                                <div class="pick-badge w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                                <div class="w-12 h-12 rounded-full bg-orange-900/50 flex items-center justify-center text-orange-400 font-bold text-lg border border-orange-600/30">WC</div>
+                                <div class="flex-grow">
+                                    <h5 class="text-white font-bold">Will Campbell</h5>
+                                    <p class="text-gray-400 text-xs">OT | LSU | Jr</p>
+                                    <p class="text-orange-400 text-xs mt-1">Plug-and-play RT</p>
+                                </div>
+                                <span class="text-orange-500 font-bold text-sm">OT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steelers Content (Hidden by default) -->
+            <div id="content-steelers" class="team-content max-w-5xl mx-auto hidden">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-zinc-900 rounded-xl p-6 border border-zinc-800">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center mr-4">
+                                <span class="font-steelers text-2xl text-black">PIT</span>
+                            </div>
+                            <div>
+                                <h3 class="font-steelers text-2xl text-white">PITTSBURGH STEELERS</h3>
+                                <p class="text-gray-400 text-sm">Projected Cap Space: $25M | 2026 Picks: 12</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-yellow-500 font-bold mb-4 uppercase tracking-wider text-sm">Top Needs</h4>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-high"></span>
+                                <span class="flex-grow">Quarterback (Future)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-high"></span>
+                                <span class="flex-grow">Defensive Line (3T/NT)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-med"></span>
+                                <span class="flex-grow">Cornerback (Outside)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-med"></span>
+                                <span class="flex-grow">Tight End (Y-Blocker)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                        </ul>
+
+                        <div class="bg-zinc-800 rounded-lg p-4 border border-zinc-700">
+                            <h5 class="text-white font-bold mb-2 text-sm">War Room Notes</h5>
+                            <p class="text-gray-400 text-sm italic">"Tomlin won't reach for a QB, but at pick 21, if the right one is there, you bet they'll pull the trigger. DL is the sneaky need with Heyward aging." — Chris Adkins</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+                        <div class="bg-gradient-to-br from-yellow-900/40 to-zinc-900 p-4 border-b border-zinc-800">
+                            <h4 class="text-yellow-400 font-bold uppercase tracking-wider">Steelers Big Board Targets</h4>
+                        </div>
+                        <div class="p-4 space-y-3">
+                            <div class="draft-card bg-zinc-800 p-4 rounded-lg border border-zinc-700 flex items-center gap-4">
+                                <div class="pick-badge w-12 h-12 rounded-full flex items-center justify-center text-yellow-400 font-bold">1</div>
+                                <div class="w-12 h-12 rounded-full bg-yellow-900/50 flex items-center justify-center text-yellow-400 font-bold text-lg border border-yellow-500/30">JD</div>
+                                <div class="flex-grow">
+                                    <h5 class="text-white font-bold">Jaxson Dart</h5>
+                                    <p class="text-gray-400 text-xs">QB | Ole Miss | Sr</p>
+                                    <p class="text-yellow-400 text-xs mt-1">Pick 21 target, arm talent</p>
+                                </div>
+                                <span class="text-yellow-500 font-bold text-sm">QB</span>
+                            </div>
+
+                            <div class="draft-card bg-zinc-800 p-4 rounded-lg border border-zinc-700 flex items-center gap-4">
+                                <div class="pick-badge w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                                <div class="w-12 h-12 rounded-full bg-yellow-900/50 flex items-center justify-center text-yellow-400 font-bold text-lg border border-yellow-500/30">MG</div>
+                                <div class="flex-grow">
+                                    <h5 class="text-white font-bold">Mason Graham</h5>
+                                    <p class="text-gray-400 text-xs">DL | Michigan | Jr</p>
+                                    <p class="text-yellow-400 text-xs mt-1">Perfect 3-tech in Pittsburgh</p>
+                                </div>
+                                <span class="text-yellow-500 font-bold text-sm">DL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bengals Content (Hidden by default) -->
+            <div id="content-bengals" class="team-content max-w-5xl mx-auto hidden">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-zinc-900 rounded-xl p-6 border border-zinc-800">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center mr-4">
+                                <span class="font-bengals text-2xl text-white">CIN</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bengals text-2xl text-white">CINCINNATI BENGALS</h3>
+                                <p class="text-gray-400 text-sm">Projected Cap Space: $60M+ | 2026 Picks: 8</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-orange-400 font-bold mb-4 uppercase tracking-wider text-sm">Top Needs</h4>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-high"></span>
+                                <span class="flex-grow">Edge Rusher (Rotation)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-high"></span>
+                                <span class="flex-grow">Safety (FS/SS Hybrid)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-med"></span>
+                                <span class="flex-grow">Defensive Tackle (Run Stop)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-med"></span>
+                                <span class="flex-grow">Running Back (Bell Cow)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                        </ul>
+
+                        <div class="bg-zinc-800 rounded-lg p-4 border border-zinc-700">
+                            <h5 class="text-white font-bold mb-2 text-sm">War Room Notes</h5>
+                            <p class="text-gray-400 text-sm italic">"Defense. Defense. Defense. Lou Anarumo needs toys. With $60M in space, we can be aggressive in FA too, but draft capital is where you build the trenches." — Rob Gressis</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+                        <div class="bg-gradient-to-br from-orange-900/40 to-zinc-900 p-4 border-b border-zinc-800">
+                            <h4 class="text-orange-400 font-bold uppercase tracking-wider">Bengals Big Board Targets</h4>
+                        </div>
+                        <div class="p-4 space-y-3">
+                            <div class="draft-card bg-zinc-800 p-4 rounded-lg border border-zinc-700 flex items-center gap-4">
+                                <div class="pick-badge w-12 h-12 rounded-full flex items-center justify-center text-orange-400 font-bold">1</div>
+                                <div class="w-12 h-12 rounded-full bg-orange-900/50 flex items-center justify-center text-orange-400 font-bold text-lg border border-orange-500/30">WN</div>
+                                <div class="flex-grow">
+                                    <h5 class="text-white font-bold">Walter Nolen</h5>
+                                    <p class="text-gray-400 text-xs">DL | Ole Miss | Jr</p>
+                                    <p class="text-orange-400 text-xs mt-1">Interior pass rush help</p>
+                                </div>
+                                <span class="text-orange-500 font-bold text-sm">DL</span>
+                            </div>
+
+                            <div class="draft-card bg-zinc-800 p-4 rounded-lg border border-zinc-700 flex items-center gap-4">
+                                <div class="pick-badge w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                                <div class="w-12 h-12 rounded-full bg-orange-900/50 flex items-center justify-center text-orange-400 font-bold text-lg border border-orange-500/30">MS</div>
+                                <div class="flex-grow">
+                                    <h5 class="text-white font-bold">Malaki Starks</h5>
+                                    <p class="text-gray-400 text-xs">S | Georgia | Jr</p>
+                                    <p class="text-orange-400 text-xs mt-1">Ballhawk to pair with Bates</p>
+                                </div>
+                                <span class="text-orange-500 font-bold text-sm">S</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ravens Content (Hidden by default) -->
+            <div id="content-ravens" class="team-content max-w-5xl mx-auto hidden">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-zinc-900 rounded-xl p-6 border border-zinc-800">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full bg-purple-700 flex items-center justify-center mr-4">
+                                <span class="font-ravens text-2xl text-white">BAL</span>
+                            </div>
+                            <div>
+                                <h3 class="font-ravens text-2xl text-white">BALTIMORE RAVENS</h3>
+                                <p class="text-gray-400 text-sm">Projected Cap Space: $35M | 2026 Picks: 11</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-purple-400 font-bold mb-4 uppercase tracking-wider text-sm">Top Needs</h4>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-high"></span>
+                                <span class="flex-grow">Edge Rusher (OLB)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-high"></span>
+                                <span class="flex-grow">Cornerback (Outside)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-med"></span>
+                                <span class="flex-grow">Wide Receiver (Speed)</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                            <li class="flex items-center text-gray-300 prospect-row p-2 rounded cursor-pointer" onclick="highlightNeed(this)">
+                                <span class="need-priority priority-med"></span>
+                                <span class="flex-grow">Interior Offensive Line</span>
+                                <i class="fas fa-chevron-right text-gray-600"></i>
+                            </li>
+                        </ul>
+
+                        <div class="bg-zinc-800 rounded-lg p-4 border border-zinc-700">
+                            <h5 class="text-white font-bold mb-2 text-sm">War Room Notes</h5>
+                            <p class="text-gray-400 text-sm italic">"Eric DeCosta always trades back. But if a corner like Johnson or an edge like Pearce is there at 14, don't get cute. Lamar needs a burner too." — Jan-David Soutar</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+                        <div class="bg-gradient-to-br from-purple-900/40 to-zinc-900 p-4 border-b border-zinc-800">
+                            <h4 class="text-purple-400 font-bold uppercase tracking-wider">Ravens Big Board Targets</h4>
+                        </div>
+                        <div class="p-4 space-y-3">
+                            <div class="draft-card bg-zinc-800 p-4 rounded-lg border border-zinc-700 flex items-center gap-4">
+                                <div class="pick-badge w-12 h-12 rounded-full flex items-center justify-center text-purple-400 font-bold">1</div>
+                                <div class="w-12 h-12 rounded-full bg-purple-900/50 flex items-center justify-center text-purple-400 font-bold text-lg border border-purple-500/30">JB</div>
+                                <div class="flex-grow">
+                                    <h5 class="text-white font-bold">Jahdae Barron</h5>
+                                    <p class="text-gray-400 text-xs">CB | Texas | Sr</p>
+                                    <p class="text-purple-400 text-xs mt-1">Versatile, fits Raven way</p>
+                                </div>
+                                <span class="text-purple-400 font-bold text-sm">CB</span>
+                            </div>
+
+                            <div class="draft-card bg-zinc-800 p-4 rounded-lg border border-zinc-700 flex items-center gap-4">
+                                <div class="pick-badge w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                                <div class="w-12 h-12 rounded-full bg-purple-900/50 flex items-center justify-center text-purple-400 font-bold text-lg border border-purple-500/30">NS</div>
+                                <div class="flex-grow">
+                                    <h5 class="text-white font-bold">Nic Scourton</h5>
+                                    <p class="text-gray-400 text-xs">Edge | Texas A&M | So</p>
+                                    <p class="text-purple-400 text-xs mt-1">Perfect 3-4 OLB</p>
+                                </div>
+                                <span class="text-purple-400 font-bold text-sm">EDGE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     MOCK DRAFT SIMULATOR
+═══════════════════════════════════════ -->
+    <section class="py-16 bg-zinc-900 border-t border-zinc-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="anton-font text-3xl md:text-4xl text-white mb-4">AFC NORTH MOCK DRAFT 1.0</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Based on current standings and team needs. Updated weekly as the draft process unfolds.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Browns Pick -->
+                <div class="bg-zinc-900 rounded-xl p-6 mb-4 border border-orange-600/30 draft-card">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 text-center">
+                            <div class="w-16 h-16 rounded-full bg-orange-600 flex items-center justify-center mb-2">
+                                <span class="font-browns text-2xl text-white">6</span>
+                            </div>
+                            <span class="text-orange-500 text-xs font-bold">CLE</span>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Abdul Carter</h3>
+                                    <p class="text-gray-400 text-sm">Edge Rusher | Penn State</p>
+                                </div>
+                                <span class="bg-orange-600 text-white text-xs px-2 py-1 rounded font-bold">EDGE</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">Myles Garrett finally gets his running mate. Carter is a blue-chip talent who can play SAM or rush opposite Myles. Browns defense becomes elite.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center"><i class="fas fa-user mr-1"></i> Dave Green's Pick</span>
+                                <span class="flex items-center"><i class="fas fa-fire mr-1 text-orange-500"></i> Confidence: 85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Steelers Pick -->
+                <div class="bg-zinc-900 rounded-xl p-6 mb-4 border border-yellow-500/30 draft-card">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 text-center">
+                            <div class="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center mb-2">
+                                <span class="font-steelers text-2xl text-black">21</span>
+                            </div>
+                            <span class="text-yellow-500 text-xs font-bold">PIT</span>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Jaxson Dart</h3>
+                                    <p class="text-gray-400 text-sm">QB | Ole Miss</p>
+                                </div>
+                                <span class="bg-yellow-500 text-black text-xs px-2 py-1 rounded font-bold">QB</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">Steelers finally take the QB plunge at pick 21. Dart has the arm and mobility to thrive in Arthur Smith's offense. Redshirt year behind Wilson/Fields possible.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center"><i class="fas fa-user mr-1"></i> Chris Adkins' Pick</span>
+                                <span class="flex items-center"><i class="fas fa-fire mr-1 text-yellow-500"></i> Confidence: 60%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bengals Pick -->
+                <div class="bg-zinc-900 rounded-xl p-6 mb-4 border border-orange-500/30 draft-card">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 text-center">
+                            <div class="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center mb-2">
+                                <span class="font-bengals text-2xl text-white">10</span>
+                            </div>
+                            <span class="text-orange-500 text-xs font-bold">CIN</span>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Malaki Starks</h3>
+                                    <p class="text-gray-400 text-sm">Safety | Georgia</p>
+                                </div>
+                                <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded font-bold">S</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">At pick 10, the Bengals get a versatile safety who can play single-high or in the box. Exactly what Lou Anarumo needs to fix the backend of this defense.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center"><i class="fas fa-user mr-1"></i> Rob Gressis' Pick</span>
+                                <span class="flex items-center"><i class="fas fa-fire mr-1 text-orange-500"></i> Confidence: 75%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ravens Pick -->
+                <div class="bg-zinc-900 rounded-xl p-6 mb-4 border border-purple-700/30 draft-card">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 text-center">
+                            <div class="w-16 h-16 rounded-full bg-purple-700 flex items-center justify-center mb-2">
+                                <span class="font-ravens text-2xl text-white">14</span>
+                            </div>
+                            <span class="text-purple-400 text-xs font-bold">BAL</span>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Jahdae Barron</h3>
+                                    <p class="text-gray-400 text-sm">CB | Texas</p>
+                                </div>
+                                <span class="bg-purple-700 text-white text-xs px-2 py-1 rounded font-bold">CB</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-3">At pick 14, Ravens get a steal. Barron is a perfect fit for Baltimore's press-man scheme. DeCosta does it again.</p>
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <span class="flex items-center"><i class="fas fa-user mr-1"></i> Jan-David Soutar's Pick</span>
+                                <span class="flex items-center"><i class="fas fa-fire mr-1 text-purple-400"></i> Confidence: 70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <button onclick="alert('Full 7-round mock coming soon! Follow @afcnortherners for updates.')" class="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-3 rounded-lg font-bold transition border border-zinc-600">
+                    <i class="fas fa-scroll mr-2"></i> VIEW FULL 7-ROUND MOCK
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     PROSPECT RANKINGS
+═══════════════════════════════════════ -->
+    <section class="py-16 bg-zinc-950">
+        <div class="container mx-auto px-4">
+            <h2 class="anton-font text-3xl md:text-4xl text-white text-center mb-10">TOP PROSPECTS BY POSITION</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- QB Rankings -->
+                <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+                    <div class="bg-zinc-800 p-4 border-b border-zinc-700 flex items-center justify-between">
+                        <h3 class="text-white font-bold">Quarterbacks</h3>
+                        <i class="fas fa-football-ball text-gray-500"></i>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div class="flex items-center gap-3 p-2 bg-zinc-800/50 rounded">
+                            <span class="text-yellow-500 font-bold font-redzone w-6">1</span>
+                            <div class="flex-grow">
+                                <div class="text-white font-medium text-sm">Cam Ward</div>
+                                <div class="text-gray-500 text-xs">Miami</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-2 rounded">
+                            <span class="text-gray-400 font-bold font-redzone w-6">2</span>
+                            <div class="flex-grow">
+                                <div class="text-white font-medium text-sm">Shedeur Sanders</div>
+                                <div class="text-gray-500 text-xs">Colorado</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-2 rounded">
+                            <span class="text-gray-400 font-bold font-redzone w-6">3</span>
+                            <div class="flex-grow">
+                                <div class="text-white font-medium text-sm">Jaxson Dart</div>
+                                <div class="text-gray-500 text-xs">Ole Miss</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edge Rankings -->
+                <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+                    <div class="bg-zinc-800 p-4 border-b border-zinc-700 flex items-center justify-between">
+                        <h3 class="text-white font-bold">Edge Rushers</h3>
+                        <i class="fas fa-bolt text-gray-500"></i>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div class="flex items-center gap-3 p-2 bg-zinc-800/50 rounded">
+                            <span class="text-yellow-500 font-bold font-redzone w-6">1</span>
+                            <div class="flex-grow">
+                                <div class="text-white font-medium text-sm">Abdul Carter</div>
+                                <div class="text-gray-500 text-xs">Penn State</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-2 rounded">
+                            <span class="text-gray-400 font-bold font-redzone w-6">2</span>
+                            <div class="flex-grow">
+                                <div class="text-white font-medium text-sm">Mykel Williams</div>
+                                <div class="text-gray-500 text-xs">Georgia</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-2 rounded">
+                            <span class="text-gray-400 font-bold font-redzone w-6">3</span>
+                            <div class="flex-grow">
+                                <div class="text-white font-medium text-sm">Kyle Kennard</div>
+                                <div class="text-gray-500 text-xs">South Carolina</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WR Rankings -->
+                <div class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800">
+                    <div class="bg-zinc-800 p-4 border-b border-zinc-700 flex items-center justify-between">
+                        <h3 class="text-white font-bold">Wide Receivers</h3>
+                        <i class="fas fa-running text-gray-500"></i>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div class="flex items-center gap-3 p-2 bg-zinc-800/50 rounded">
+                            <span class="text-yellow-500 font-bold font-redzone w-6">1</span>
+                            <div class="flex-grow">
+                                <div class="text-white font-medium text-sm">Travis Hunter</div>
+                                <div class="text-gray-500 text-xs">Colorado</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-2 rounded">
+                            <span class="text-gray-400 font-bold font-redzone w-6">2</span>
+                            <div class="flex-grow">
+                                <div class="text-white font-medium text-sm">Tetairoa McMillan</div>
+                                <div class="text-gray-500 text-xs">Arizona</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-2 rounded">
+                            <span class="text-gray-400 font-bold font-redzone w-6">3</span>
+                            <div class="flex-grow">
+                                <div class="text-white font-medium text-sm">Luther Burden III</div>
+                                <div class="text-gray-500 text-xs">Missouri</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" class="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold transition shadow-lg">
+                    <i class="fab fa-youtube"></i> WATCH DRAFT ANALYSIS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+    <footer class="bg-black pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20NOTHERNERS%20YT%20LOGO%20(With%20Rob-Bengal).png"
+                            alt="AFC Northerners Logo"
+                            class="h-10 w-auto object-contain rounded-full" />
+                        <h3 class="font-redzone text-sm text-white">AFC NORTHERNERS</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm">Four AFC North superfans arguing ball at the bar. Zero filters, all passion.</p>
+                </div>
+                <div>
+                    <h4 class="anton-font text-lg text-white mb-4">NAVIGATION</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="draft.html" class="text-gray-400 hover:text-white transition">NFL Draft</a></li>
+                        <li><a href="index.html#episodes" class="text-gray-400 hover:text-white transition">Episodes</a></li>
+                        <li><a href="index.html#hosts" class="text-gray-400 hover:text-white transition">Hosts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="anton-font text-lg text-white mb-4">DRAFT HQ</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" onclick="showTeam('browns')" class="text-gray-400 hover:text-orange-500 transition">Browns Needs</a></li>
+                        <li><a href="#" onclick="showTeam('steelers')" class="text-gray-400 hover:text-yellow-500 transition">Steelers Needs</a></li>
+                        <li><a href="#" onclick="showTeam('bengals')" class="text-gray-400 hover:text-orange-400 transition">Bengals Needs</a></li>
+                        <li><a href="#" onclick="showTeam('ravens')" class="text-gray-400 hover:text-purple-400 transition">Ravens Needs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="anton-font text-lg text-white mb-4">CONNECT</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="https://x.com/afcnortherners" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fab fa-x-twitter text-xl"></i></a>
+                        <a href="https://www.patreon.com/c/afcnortherners" target="_blank" class="text-gray-400 hover:text-red-400 transition"><i class="fab fa-patreon text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2026 AFC Northerners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Live Tracker Preview Data
+        function updateTrackerPreview() {
+            const STORAGE_KEY = 'afcNorthernersDraftTracker2026';
+            const saved = localStorage.getItem(STORAGE_KEY);
+            
+            if (!saved) {
+                document.getElementById('preview-hit-rate').textContent = '0%';
+                document.getElementById('preview-round').textContent = '1';
+                document.getElementById('preview-leader').textContent = 'TBD';
+                document.getElementById('preview-total-picks').textContent = '0';
+                document.getElementById('preview-last-updated').textContent = 'No live data yet - open tracker to start';
+                return;
+            }
+            
+            try {
+                const picks = JSON.parse(saved);
+                const afcNorthTeams = ['CLE', 'PIT', 'CIN', 'BAL'];
+                
+                // Calculate hit rate for AFC North
+                let afcNorthCorrect = 0;
+                let afcNorthTotal = 0;
+                const hostStats = { Dave: 0, Chris: 0, Rob: 0, Jan: 0 };
+                let totalPicks = 0;
+                let currentRound = 1;
+                
+                picks.forEach(pick => {
+                    if (pick.actualPlayer && pick.predictedPlayer) {
+                        totalPicks++;
+                        const isCorrect = pick.actualPlayer.toLowerCase().trim() === pick.predictedPlayer.toLowerCase().trim();
+                        
+                        if (afcNorthTeams.includes(pick.team)) {
+                            afcNorthTotal++;
+                            if (isCorrect) afcNorthCorrect++;
+                        }
+                        
+                        if (pick.predictedHost && isCorrect) {
+                            hostStats[pick.predictedHost]++;
+                        }
+                    }
+                    
+                    // Determine current round from actual picks made
+                    if (pick.actualPlayer) {
+                        currentRound = Math.max(currentRound, pick.round);
+                    }
+                });
+                
+                // Find leader
+                let leader = 'TBD';
+                let maxScore = -1;
+                Object.entries(hostStats).forEach(([host, score]) => {
+                    if (score > maxScore) {
+                        maxScore = score;
+                        leader = host;
+                    }
+                });
+                
+                const hitRate = afcNorthTotal > 0 ? Math.round((afcNorthCorrect / afcNorthTotal) * 100) : 0;
+                
+                document.getElementById('preview-hit-rate').textContent = hitRate + '%';
+                document.getElementById('preview-round').textContent = currentRound;
+                document.getElementById('preview-leader').textContent = leader;
+                document.getElementById('preview-total-picks').textContent = totalPicks;
+                document.getElementById('preview-last-updated').textContent = 'Live data available';
+                
+            } catch (e) {
+                console.error('Error reading tracker data:', e);
+            }
+        }
+        
+        // Update preview every 5 seconds
+        updateTrackerPreview();
+        setInterval(updateTrackerPreview, 5000);
+
+        // Draft Countdown (April 2026)
+        function updateDraftCountdown() {
+            const now = new Date();
+            const draftDate = new Date('2026-04-23T20:00:00'); // Draft Day 1
+            const diff = draftDate - now;
+            
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                
+                document.getElementById('draft-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('draft-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('draft-minutes').textContent = String(minutes).padStart(2, '0');
+            } else {
+                document.getElementById('draft-days').textContent = '00';
+                document.getElementById('draft-hours').textContent = '00';
+                document.getElementById('draft-minutes').textContent = '00';
+            }
+        }
+        setInterval(updateDraftCountdown, 60000);
+        updateDraftCountdown();
+
+        // Team Tab Switching
+        function showTeam(team) {
+            // Hide all content
+            document.querySelectorAll('.team-content').forEach(el => el.classList.add('hidden'));
+            // Show selected
+            document.getElementById('content-' + team).classList.remove('hidden');
+            
+            // Update tabs
+            document.querySelectorAll('.team-tab').forEach(tab => tab.classList.remove('active'));
+            document.getElementById('tab-' + team).classList.add('active');
+        }
+
+        // Highlight need rows
+        function highlightNeed(element) {
+            element.classList.toggle('bg-zinc-800');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            showTeam('browns');
+        });
+    </script>
+</body>
+</html>

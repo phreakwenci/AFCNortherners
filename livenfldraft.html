@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFC Northerners - Draft Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom AFC Northerners branding */
+        :root {
+            --ravens-purple: #241773;
+            --ravens-gold: #9E7C0C;
+            --bengals-orange: #FB4F14;
+            --bengals-black: #000000;
+            --browns-orange: #FF3C00;
+            --browns-brown: #311D00;
+            --steelers-gold: #FFB612;
+            --steelers-black: #000000;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --accent-yellow: #FFD700;
+            --accent-orange: #FF6B35;
+            --accent-purple: #8B5CF6;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .bg-dark-custom {
+            background: var(--bg-dark);
+        }
+
+        .bg-card-custom {
+            background: var(--bg-card);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px currentColor;
+        }
+
+        .team-ravens { border-left: 4px solid var(--ravens-purple); }
+        .team-bengals { border-left: 4px solid var(--bengals-orange); }
+        .team-browns { border-left: 4px solid var(--browns-orange); }
+        .team-steelers { border-left: 4px solid var(--steelers-gold); }
+
+        .status-correct { 
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+        }
+        
+        .status-wrong { 
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+            color: white;
+        }
+        
+        .status-pending { 
+            background: linear-gradient(135deg, #6B7280, #4B5563);
+            color: white;
+        }
+
+        .afc-north-highlight {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 107, 53, 0.1));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .tab-active {
+            background: var(--accent-yellow);
+            color: black;
+            font-weight: bold;
+        }
+
+        .editable:hover {
+            background: rgba(255, 215, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .dragging {
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+
+        .drag-over {
+            background: rgba(255, 215, 0, 0.2);
+            border: 2px dashed var(--accent-yellow);
+        }
+
+        @keyframes pulse-live {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .live-indicator {
+            animation: pulse-live 2s infinite;
+        }
+
+        .scoreboard-number {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .filter-chip {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .filter-chip:hover,
+        .filter-chip.active {
+            background: var(--accent-yellow);
+            color: black;
+            border-color: var(--accent-yellow);
+        }
+
+        .table-row {
+            transition: all 0.3s ease;
+        }
+
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+            color: black;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .scoreboard-number { font-size: 1.5rem; }
+            .table-container { font-size: 0.875rem; }
+            .tab-button { padding: 0.5rem 1rem; font-size: 0.875rem; }
+        }
+    </style>
+</head>
+<body class="bg-dark-custom min-h-screen">
+    <!-- Navigation (add this to your existing nav) -->
+    <nav class="bg-card-custom border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold text-glow" style="color: var(--accent-yellow);">
+                        <i class="fas fa-football-ball mr-2"></i>AFC Northerners
+                    </h1>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="/" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        <i class="fas fa-home mr-1"></i> Home
+                    </a>
+                    <a href="/draft-tracker" class="text-white bg-yellow-600 px-3 py-2 rounded-md text-sm font-medium">
+                        <i class="fas fa-trophy mr-1"></i> Draft Tracker
+                    </a>
+                    <!-- Add your other nav links here -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-black text-glow mb-4" style="color: var(--accent-yellow);">
+                <i class="fas fa-trophy mr-3"></i>NFL DRAFT TRACKER
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Live draft board and prediction tracker for the AFC Northerners. Track our predictions vs. actual picks in real-time.
+            </p>
+            <div class="mt-4 flex items-center justify-center space-x-4 text-sm">
+                <span class="flex items-center text-green-400">
+                    <i class="fas fa-circle live-indicator mr-2"></i>LIVE
+                </span>
+                <span class="text-gray-400">
+                    <i class="fas fa-calendar mr-1"></i>2026 NFL Draft
+                </span>
+                <span class="text-gray-400">
+                    <i class="fas fa-users mr-1"></i>AFC North Focus
+                </span>
+            </div>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="bg-card-custom rounded-xl p-6 mb-8 border border-gray-700">
+            <h2 class="text-2xl font-bold mb-6 text-center" style="color: var(--accent-yellow);">
+                <i class="fas fa-chart-line mr-2"></i>HOST LEADERBOARD
+            </h2>
+            <div id="scoreboard" class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Scoreboard content will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- AFC North Summary -->
+        <div class="bg-card-custom rounded-xl p-6 mb-8 border border-yellow-600 afc-north-highlight">
+            <h2 class="text-xl font-bold mb-4" style="color: var(--accent-yellow);">
+                <i class="fas fa-star mr-2"></i>AFC North Tracker
+            </h2>
+            <div id="afcNorthSummary" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- AFC North summary will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="bg-card-custom rounded-xl p-6 mb-8 border border-gray-700">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <!-- Tabs -->
+                <div class="flex space-x-2">
+                    <button onclick="switchTab('round1')" class="tab-button tab-active px-4 py-2 rounded-lg font-bold transition-all">
+                        ROUND 1
+                    </button>
+                    <button onclick="switchTab('round2')" class="tab-button px-4 py-2 rounded-lg font-bold transition-all bg-gray-700 text-white hover:bg-gray-600">
+                        ROUND 2
+                    </button>
+                    <button onclick="switchTab('round3')" class="tab-button px-4 py-2 rounded-lg font-bold transition-all bg-gray-700 text-white hover:bg-gray-600">
+                        ROUND 3
+                    </button>
+                    <button onclick="switchTab('all')" class="tab-button px-4 py-2 rounded-lg font-bold transition-all bg-gray-700 text-white hover:bg-gray-600">
+                        ALL PICKS
+                    </button>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <span class="text-sm text-gray-300 mr-2">Filters:</span>
+                    <button onclick="toggleFilter('afcNorth')" class="filter-chip px-3 py-1 rounded-full text-sm">
+                        AFC North Only
+                    </button>
+                    <button onclick="toggleFilter('correct')" class="filter-chip px-3 py-1 rounded-full text-sm">
+                        Correct Only
+                    </button>
+                    <button onclick="toggleFilter('wrong')" class="filter-chip px-3 py-1 rounded-full text-sm">
+                        Wrong Only
+                    </button>
+                    <select id="hostFilter" onchange="applyFilters()" class="bg-gray-700 text-white px-3 py-1 rounded text-sm border border-gray-600">
+                        <option value="">All Hosts</option>
+                        <option value="Host1">Host 1</option>
+                        <option value="Host2">Host 2</option>
+                        <option value="Host3">Host 3</option>
+                        <option value="Host4">Host 4</option>
+                    </select>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex space-x-2">
+                    <button onclick="exportData()" class="btn-secondary px-3 py-2 rounded text-sm">
+                        <i class="fas fa-download mr-1"></i>Export
+                    </button>
+                    <button onclick="importData()" class="btn-secondary px-3 py-2 rounded text-sm">
+                        <i class="fas fa-upload mr-1"></i>Import
+                    </button>
+                    <button onclick="resetPredictions()" class="btn-secondary px-3 py-2 rounded text-sm">
+                        <i class="fas fa-undo mr-1"></i>Reset Predictions
+                    </button>
+                    <button onclick="clearActualPicks()" class="btn-secondary px-3 py-2 rounded text-sm">
+                        <i class="fas fa-trash mr-1"></i>Clear Actual
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Draft Board -->
+        <div class="bg-card-custom rounded-xl border border-gray-700 overflow-hidden">
+            <div class="p-6 border-b border-gray-700">
+                <h2 id="boardTitle" class="text-2xl font-bold" style="color: var(--accent-yellow);">
+                    <i class="fas fa-list mr-2"></i>ROUND 1 DRAFT BOARD
+                </h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-800">
+                        <tr>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Pick</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Team</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Predicted Player</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Predicted By</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Actual Player</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Status</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="draftTable" class="divide-y divide-gray-700">
+                        <!-- Draft picks will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Hidden file input for import -->
+        <input type="file" id="fileInput" accept=".json" style="display: none;" onchange="handleFileImport(event)">
+    </div>
+
+    <script>
+        // Draft data structure
+        let draftData = {
+            round1: [],
+            round2: [],
+            round3: [],
+            hosts: ['Host1', 'Host2', 'Host3', 'Host4']
+        };
+
+        // Current state
+        let currentTab = 'round1';
+        let filters = {
+            afcNorth: false,
+            correct: false,
+            wrong: false,
+            host: ''
+        };
+
+        // NFL Teams data
+        const nflTeams = {
+            'Arizona Cardinals': { color: '#97233F', conference: 'NFC' },
+            'Atlanta Falcons': { color: '#A71930', conference: 'NFC' },
+            'Baltimore Ravens': { color: '#241773', conference: 'AFC', division: 'North' },
+            'Buffalo Bills': { color: '#00338D', conference: 'AFC' },
+            'Carolina Panthers': { color: '#0085CA', conference: 'NFC' },
+            'Chicago Bears': { color: '#C83803', conference: 'NFC' },
+            'Cincinnati Bengals': { color: '#FB4F14', conference: 'AFC', division: 'North' },
+            'Cleveland Browns': { color: '#311D00', conference: 'AFC', division: 'North' },
+            'Dallas Cowboys': { color: '#003594', conference: 'NFC' },
+            'Denver Broncos': { color: '#FB4F14', conference: 'AFC' },
+            'Detroit Lions': { color: '#0076B6', conference: 'NFC' },
+            'Green Bay Packers': { color: '#203731', conference: 'NFC' },
+            'Houston Texans': { color: '#03202F', conference: 'AFC' },
+            'Indianapolis Colts': { color: '#002C5F', conference: 'AFC' },
+            'Jacksonville Jaguars': { color: '#006778', conference: 'AFC' },
+            'Kansas City Chiefs': { color: '#E31837', conference: 'AFC' },
+            'Las Vegas Raiders': { color: '#000000', conference: 'AFC' },
+            'Los Angeles Chargers': { color: '#0080C6', conference: 'AFC' },
+            'Los Angeles Rams': { color: '#002244', conference: 'NFC' },
+            'Miami Dolphins': { color: '#008E97', conference: 'AFC' },
+            'Minnesota Vikings': { color: '#4F2683', conference: 'NFC' },
+            'New England Patriots': { color: '#002244', conference: 'AFC' },
+            'New Orleans Saints': { color: '#D3BC8D', conference: 'NFC' },
+            'New York Giants': { color: '#0B2265', conference: 'NFC' },
+            'New York Jets': { color: '#125740', conference: 'AFC' },
+            'Philadelphia Eagles': { color: '#004C54', conference: 'NFC' },
+            'Pittsburgh Steelers': { color: '#000000', conference: 'AFC', division: 'North' },
+            'San Francisco 49ers': { color: '#AA0000', conference: 'NFC' },
+            'Seattle Seahawks': { color: '#002244', conference: 'NFC' },
+            'Tampa Bay Buccaneers': { color: '#D50A0A', conference: 'NFC' },
+            'Tennessee Titans':
