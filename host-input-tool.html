@@ -2,78 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Host Prediction Entry Tool - AFC Northerners</title>
+    <title>Host Entry Tool - AFC Northerners</title>
     <script src="draft-order-2026.js"></script>
-    <script src="host-picks-2026.js"></script>
     <style>
-        body { font-family: sans-serif; padding: 20px; background: #1a1a1a; color: white; }
-        .pick-row { display: grid; grid-template-columns: 80px 150px 1fr 1fr 1fr 1fr; gap: 10px; margin-bottom: 5px; padding: 10px; background: #2d2d2d; align-items: center; }
-        .header { font-weight: bold; background: #444; position: sticky; top: 0; z-index: 10; }
-        input { background: #333; color: white; border: 1px solid #555; padding: 5px; width: 90%; }
-        button { padding: 10px 20px; background: #d50a0a; color: white; border: none; cursor: pointer; font-weight: bold; margin: 20px 0; }
-        textarea { width: 100%; height: 200px; background: #000; color: #0f0; font-family: monospace; }
-        .controls { position: sticky; bottom: 0; background: #1a1a1a; padding: 20px; border-top: 1px solid #444; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f0f; color: #eee; padding: 40px; }
+        .card { background: #1a1a1a; border-radius: 8px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .grid-header { display: grid; grid-template-columns: 80px 100px 1fr 1fr 1fr 1fr; gap: 15px; font-weight: bold; padding: 10px; border-bottom: 2px solid #333; position: sticky; top: 0; background: #1a1a1a; }
+        .pick-row { display: grid; grid-template-columns: 80px 100px 1fr 1fr 1fr 1fr; gap: 15px; padding: 10px; border-bottom: 1px solid #222; align-items: center; }
+        input { background: #222; border: 1px solid #444; color: white; padding: 8px; border-radius: 4px; width: 90%; }
+        input:focus { border-color: #d50a0a; outline: none; }
+        .controls { margin-top: 30px; border-top: 2px solid #333; padding-top: 20px; }
+        textarea { width: 100%; height: 150px; background: #000; color: #00ff00; font-family: monospace; padding: 10px; margin-top: 10px; }
+        .btn { background: #d50a0a; color: white; border: none; padding: 12px 25px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .filter-box { margin-bottom: 20px; padding: 10px; width: 300px; }
     </style>
 </head>
 <body>
-    <h1>Host Prediction Input Tool</h1>
-    <p>Fill out the picks below and click "Generate Code" at the bottom.</p>
-    
-    <div id="input-grid">
-        <div class="pick-row header">
-            <div>Pick #</div><div>Team</div><div>Dave</div><div>Chris</div><div>Rob</div><div>Jan</div>
-        </div>
-        <div id="rows-container"></div>
-    </div>
+    <div class="card">
+        <h1>Host Prediction Generator</h1>
+        <p>Enter predictions. Search for your team (e.g., "CLE") to find specific picks.</p>
+        
+        <input type="text" id="filter" class="filter-box" placeholder="Search by Team (CLE, PIT, etc)..." onkeyup="filterPicks()">
 
-    <div class="controls">
-        <button onclick="generateCode()">GENERATE JS CODE</button>
-        <h3>Copy this into host-picks-2026.js:</h3>
-        <textarea id="output-code" readonly onclick="this.select()"></textarea>
+        <div class="grid-header">
+            <div>Pick</div><div>Team</div><div>Dave</div><div>Chris</div><div>Rob</div><div>Jan</div>
+        </div>
+        <div id="editor-container"></div>
+
+        <div class="controls">
+            <button class="btn" onclick="generateCode()">GENERATE JS CODE</button>
+            <h3>Generated Code:</h3>
+            <textarea id="output" readonly placeholder="The code will appear here..."></textarea>
+        </div>
     </div>
 
     <script>
-        // Use the DRAFT_ORDER from draft-order-2026.js
-        const container = document.getElementById('rows-container');
-        const hosts = ['Dave', 'Chris', 'Rob', 'Jan'];
-        const existingPicks = window.HOST_PICKS_2026 || {};
+        const container = document.getElementById('editor-container');
+        const order = window.DRAFT_ORDER_2026 || [];
 
-        // Build the UI
-        window.DRAFT_ORDER.forEach(pick => {
-            const row = document.createElement('div');
-            row.className = 'pick-row';
-            const pickKey = `pick-${pick.overall}`;
-            const hostData = existingPicks[pickKey] || {};
+        function init() {
+            order.forEach(pick => {
+                const row = document.createElement('div');
+                row.className = 'pick-row';
+                row.dataset.team = pick.team;
+                row.innerHTML = `
+                    <div>#${pick.overall}</div>
+                    <div style="font-weight:bold; color:#ff3c00">${pick.team}</div>
+                    <input type="text" class="p-input" data-pick="${pick.overall}" data-host="Dave">
+                    <input type="text" class="p-input" data-pick="${pick.overall}" data-host="Chris">
+                    <input type="text" class="p-input" data-pick="${pick.overall}" data-host="Rob">
+                    <input type="text" class="p-input" data-pick="${pick.overall}" data-host="Jan">
+                `;
+                container.appendChild(row);
+            });
+        }
 
-            row.innerHTML = `
-                <div>#${pick.overall}</div>
-                <div>${pick.team}</div>
-                ${hosts.map(h => `<input type="text" data-pick="${pick.overall}" data-host="${h}" value="${hostData[h] || ''}" placeholder="${h}'s pick...">`).join('')}
-            `;
-            container.appendChild(row);
-        });
+        function filterPicks() {
+            const q = document.getElementById('filter').value.toUpperCase();
+            document.querySelectorAll('.pick-row').forEach(row => {
+                row.style.display = row.dataset.team.includes(q) ? 'grid' : 'none';
+            });
+        }
 
         function generateCode() {
-            const results = {};
-            const inputs = document.querySelectorAll('input[data-pick]');
-            
-            inputs.forEach(input => {
-                const pickNum = input.dataset.pick;
-                const host = input.dataset.host;
+            const picks = {};
+            document.querySelectorAll('.p-input').forEach(input => {
                 const val = input.value.trim();
-                
                 if (val) {
-                    if (!results[`pick-${pickNum}`]) results[`pick-${pickNum}`] = {};
-                    results[`pick-${pickNum}`][host] = val;
+                    const id = 'pick-' + input.dataset.pick;
+                    if (!picks[id]) picks[id] = {};
+                    picks[id][input.dataset.host] = val;
                 }
             });
 
-            const code = `// OFFICIAL 2026 HOST PREDICTIONS - Generated ${new Date().toLocaleDateString()}\n` +
-                         `window.HOST_PICKS_2026_VERSION = '${new Date().toISOString()}';\n\n` +
-                         `window.HOST_PICKS_2026 = ${JSON.stringify(results, null, 4)};`;
-            
-            document.getElementById('output-code').value = code;
+            const output = `window.HOST_PICKS_2026_VERSION = 'v1-${Date.now()}';\n\nwindow.HOST_PICKS_2026 = ${JSON.stringify(picks, null, 4)};`;
+            document.getElementById('output').value = output;
         }
+
+        init();
     </script>
 </body>
 </html>
