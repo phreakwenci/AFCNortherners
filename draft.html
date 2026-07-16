@@ -228,7 +228,7 @@
             <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-8">
                 <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-orange-600 mr-2"></span>Browns: Pick 6</span>
                 <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>Steelers: Pick 21</span>
-                <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-orange-500 mr-2"></span>Bengals: Pick 10</span>
+                <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-orange-500 mr-2"></span>Bengals: Pick 41 (no R1)</span>
                 <span class="flex items-center"><span class="w-3 h-3 rounded-full bg-purple-700 mr-2"></span>Ravens: Pick 14</span>
             </div>
 
@@ -899,12 +899,14 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="draft-order-2026.js"></script>
+    <script src="host-picks-2026.js"></script>
     <script>
-        // Live Tracker Preview Data
+        // Live Tracker Preview Data — reads the tracker's overlay storage
         function updateTrackerPreview() {
-            const STORAGE_KEY = 'afcNorthernersDraftTracker2026';
+            const STORAGE_KEY = 'afcNorthernersDraftOverlay2026';
             const saved = localStorage.getItem(STORAGE_KEY);
-            
+
             if (!saved) {
                 document.getElementById('preview-hit-rate').textContent = '0%';
                 document.getElementById('preview-round').textContent = '1';
@@ -913,36 +915,48 @@
                 document.getElementById('preview-last-updated').textContent = 'No live data yet - open tracker to start';
                 return;
             }
-            
+
             try {
-                const picks = JSON.parse(saved);
+                const data = JSON.parse(saved);
+                const overlay = data.overlay || {};
+                const draftOrder = window.DRAFT_ORDER_2026 || [];
+                const hostPicks = window.HOST_PICKS_2026 || {};
+                const pickInfo = {};
+                draftOrder.forEach(p => { pickInfo[p.id || ('pick-' + p.overall)] = p; });
                 const afcNorthTeams = ['CLE', 'PIT', 'CIN', 'BAL'];
-                
-                // Calculate hit rate for AFC North
+
+                // Calculate hit rate for AFC North from host predictions
                 let afcNorthCorrect = 0;
                 let afcNorthTotal = 0;
                 const hostStats = { Dave: 0, Chris: 0, Rob: 0, Jan: 0 };
                 let totalPicks = 0;
                 let currentRound = 1;
-                
-                picks.forEach(pick => {
-                    if (pick.actualPlayer && pick.predictedPlayer) {
-                        totalPicks++;
-                        const isCorrect = pick.actualPlayer.toLowerCase().trim() === pick.predictedPlayer.toLowerCase().trim();
-                        
-                        if (afcNorthTeams.includes(pick.team)) {
-                            afcNorthTotal++;
-                            if (isCorrect) afcNorthCorrect++;
-                        }
-                        
-                        if (pick.predictedHost && isCorrect) {
-                            hostStats[pick.predictedHost]++;
-                        }
-                    }
-                    
-                    // Determine current round from actual picks made
+
+                Object.entries(overlay).forEach(([pickId, pick]) => {
+                    const order = pickInfo[pickId];
+                    if (!order) return;
+
                     if (pick.actualPlayer) {
-                        currentRound = Math.max(currentRound, pick.round);
+                        totalPicks++;
+                        const actual = pick.actualPlayer.toLowerCase().trim();
+                        const preds = hostPicks[pickId] || {};
+                        let anyCorrect = false;
+                        Object.entries(preds).forEach(([host, pred]) => {
+                            if (pred && actual === pred.toLowerCase().trim()) {
+                                hostStats[host] = (hostStats[host] || 0) + 1;
+                                anyCorrect = true;
+                            }
+                        });
+
+                        if (afcNorthTeams.includes(order.team)) {
+                            afcNorthTotal++;
+                            if (anyCorrect) afcNorthCorrect++;
+                        }
+
+                        // Determine current round from actual picks made
+                        if (order.round) {
+                            currentRound = Math.max(currentRound, order.round);
+                        }
                     }
                 });
                 

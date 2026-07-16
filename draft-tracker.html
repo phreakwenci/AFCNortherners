@@ -215,7 +215,7 @@
     <!-- Stats Summary Bar -->
     <section class="bg-zinc-900 border-b border-zinc-800 py-4">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
                 <!-- AFC North Hit Rate -->
                 <div class="stat-card rounded-lg p-3 text-center">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">AFC North Hit Rate</div>
@@ -249,6 +249,13 @@
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-1 font-ravens">Jan</div>
                     <div class="text-2xl font-bold host-jan" id="scoreJan">0</div>
                     <div class="text-xs text-gray-400 mt-1" id="pctJan">0%</div>
+                </div>
+
+                <!-- Your Score -->
+                <div class="stat-card rounded-lg p-3 text-center border-l-4 border-blue-500">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">You</div>
+                    <div class="text-2xl font-bold text-blue-400" id="scoreYou">0</div>
+                    <div class="text-xs text-gray-400 mt-1" id="pctYou">0%</div>
                 </div>
             </div>
         </div>
@@ -288,26 +295,23 @@
                     </select>
                     
                     <select id="filterHost" onchange="applyFilters()" class="bg-zinc-800 border border-zinc-700 rounded px-3 py-1.5 text-sm text-white focus:border-yellow-500 outline-none">
-                        <option value="all">All Hosts</option>
-                        <option value="Dave">Dave (Browns)</option>
-                        <option value="Chris">Chris (Steelers)</option>
-                        <option value="Rob">Rob (Bengals)</option>
-                        <option value="Jan">Jan (Ravens)</option>
+                        <option value="all">All Host Picks</option>
+                        <option value="Dave">Dave's Picks</option>
+                        <option value="Chris">Chris's Picks</option>
+                        <option value="Rob">Rob's Picks</option>
+                        <option value="Jan">Jan's Picks</option>
                     </select>
-                    
+
                     <select id="filterResult" onchange="applyFilters()" class="bg-zinc-800 border border-zinc-700 rounded px-3 py-1.5 text-sm text-white focus:border-yellow-500 outline-none">
                         <option value="all">All Results</option>
-                        <option value="correct">Correct Only</option>
-                        <option value="wrong">Wrong Only</option>
+                        <option value="correct">Any Host Correct</option>
+                        <option value="wrong">All Hosts Wrong</option>
                         <option value="pending">Pending Only</option>
                     </select>
                 </div>
 
                 <!-- Action Buttons -->
                 <div class="flex gap-2">
-                    <button onclick="resetPredictions()" class="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded text-xs font-bold text-gray-300 transition" title="Clear all predictions">
-                        <i class="fas fa-undo mr-1"></i>Reset Picks
-                    </button>
                     <button onclick="clearActuals()" class="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded text-xs font-bold text-gray-300 transition" title="Clear actual drafted players">
                         <i class="fas fa-eraser mr-1"></i>Clear Actuals
                     </button>
@@ -333,80 +337,23 @@
         </div>
     </footer>
 <script src="draft-order-2026.js"></script>
+<!-- Prospects autocomplete — populated by prospects-2026.js if present -->
+<datalist id="prospects-list"></datalist>
+<script src="host-picks-2026.js"></script>
+<script src="draft-results-2026.js" onerror="void 0"></script>
+<script src="prospects-2026.js" onerror="void 0"></script>
 <script>
-    ======= ==========================================
-           DRAFT TRACKER CONFIGURATION
-           ========================================== */
-        
-        // Host configuration
-        const HOSTS = {
-            'Dave': { team: 'CLE', color: 'host-dave', name: 'Dave Green' },
-            'Chris': { team: 'PIT', color: 'host-chris', name: 'Chris Adkins' },
-            'Rob': { team: 'CIN', color: 'host-rob', name: 'Rob Gressis' },
-            'Jan': { team: 'BAL', color: 'host-jan', name: 'Jan-David Soutar' }
-        };
-
-        // AFC North teams
-        const AFC_NORTH = ['CLE', 'PIT', 'CIN', 'BAL'];
-        
-        // Team display config for all 32 NFL teams
-        const TEAMS = {
-            // AFC North
-            'CLE': { name: 'Browns', class: 'team-browns', text: 'text-browns', font: 'font-browns', afcNorth: true },
-            'PIT': { name: 'Steelers', class: 'team-steelers', text: 'text-steelers', font: 'font-steelers', afcNorth: true },
-            'CIN': { name: 'Bengals', class: 'team-bengals', text: 'text-bengals', font: 'font-bengals', afcNorth: true },
-            'BAL': { name: 'Ravens', class: 'team-ravens', text: 'text-ravens', font: 'font-ravens', afcNorth: true },
-            // NFC West
-            'ARI': { name: 'Cardinals', class: 'team-cardinals', text: 'text-cardinals', font: '', afcNorth: false },
-            'ATL': { name: 'Falcons', class: 'team-falcons', text: 'text-falcons', font: '', afcNorth: false },
-            'CAR': { name: 'Panthers', class: 'team-panthers', text: 'text-panthers', font: '', afcNorth: false },
-            'CHI': { name: 'Bears', class: 'team-bears', text: 'text-bears', font: '', afcNorth: false },
-            'DAL': { name: 'Cowboys', class: 'team-cowboys', text: 'text-cowboys', font: '', afcNorth: false },
-            'DET': { name: 'Lions', class: 'team-lions', text: 'text-lions', font: '', afcNorth: false },
-            'GB': { name: 'Packers', class: 'team-packers', text: 'text-packers', font: '', afcNorth: false },
-            'LA': { name: 'Rams', class: 'team-rams', text: 'text-rams', font: '', afcNorth: false },
-            'MIN': { name: 'Vikings', class: 'team-vikings', text: 'text-vikings', font: '', afcNorth: false },
-            'NO': { name: 'Saints', class: 'team-saints', text: 'text-saints', font: '', afcNorth: false },
-            'NYG': { name: 'Giants', class: 'team-giants', text: 'text-giants', font: '', afcNorth: false },
-            'PHI': { name: 'Eagles', class: 'team-eagles', text: 'text-eagles', font: '', afcNorth: false },
-            'SF': { name: '49ers', class: 'team-49ers', text: 'text-49ers', font: '', afcNorth: false },
-            'SEA': { name: 'Seahawks', class: 'team-seahawks', text: 'text-seahawks', font: '', afcNorth: false },
-            'TB': { name: 'Buccaneers', class: 'team-buccaneers', text: 'text-buccaneers', font: '', afcNorth: false },
-            'WAS': { name: 'Commanders', class: 'team-commanders', text: 'text-commanders', font: '', afcNorth: false },
-            // AFC
-            'DEN': { name: 'Broncos', class: 'team-broncos', text: 'text-broncos', font: '', afcNorth: false },
-            'KC': { name: 'Chiefs', class: 'team-chiefs', text: 'text-chiefs', font: '', afcNorth: false },
-            'LV': { name: 'Raiders', class: 'team-raiders', text: 'text-raiders', font: '', afcNorth: false },
-            'LAC': { name: 'Chargers', class: 'team-chargers', text: 'text-chargers', font: '', afcNorth: false },
-            'IND': { name: 'Colts', class: 'team-colts', text: 'text-colts', font: '', afcNorth: false },
-            'JAC': { name: 'Jaguars', class: 'team-jaguars', text: 'text-jaguars', font: '', afcNorth: false },
-            'HOU': { name: 'Texans', class: 'team-texans', text: 'text-texans', font: '', afcNorth: false },
-            'TEN': { name: 'Titans', class: 'team-titans', text: 'text-titans', font: '', afcNorth: false },
-            'BUF': { name: 'Bills', class: 'team-bills', text: 'text-bills', font: '', afcNorth: false },
-            'MIA': { name: 'Dolphins', class: 'team-dolphins', text: 'text-dolphins', font: '', afcNorth: false },
-            'NE': { name: 'Patriots', class: 'team-patriots', text: 'text-patriots', font: '', afcNorth: false },
-            'NYJ': { name: 'Jets', class: 'team-jets', text: 'text-jets', font: '', afcNorth: false }
-        };
-
-        // Reference external draft order data (loaded from draft-order-2026.js)
-        const OFFICIAL_DRAFT_ORDER = window.DRAFT_ORDER_2026 || [];
-        
-        const generateDraftPicks = () => {
-            return OFFICIAL_DRAFT_ORDER.map(base => ({
-                ...base,
-                isAFCNorth: AFC_NORTH.includes(base.team),
-                predictedPlayer: '',
-                predictedHost: '',
-                actualPlayer: '',
-                notes: '',
-                id: `pick-${base.overall}`
-            }));
-        };
-
-        // State management for 2026 NFL Draft
-        let draftPicks = [];
-        let currentRound = 1;
-        let filters = { team: 'all', host: 'all', result: 'all' };
-        const STORAGE_KEY = 'afcn_draft_tracker_2026';
-const VERSION_KEY = 'afcn_draft_version';
-const DATA_VERSION = '2026-v1';
+    // If prospects-2026.js loaded window.PROSPECTS_2026, fill the datalist
+    (function() {
+        const list = document.getElementById('prospects-list');
+        const prospects = window.PROSPECTS_2026 || [];
+        prospects.forEach(name => {
+            const opt = document.createElement('option');
+            opt.value = name;
+            list.appendChild(opt);
+        });
+    })();
+</script>
+<script src="draft-tracker-updated.js"></script>
+</body>
+</html>
