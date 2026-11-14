@@ -88,6 +88,50 @@ def scraper_transcript(vid):
     return [(s.start, s.text) for s in YouTubeTranscriptApi().fetch(vid, languages=["en"])]
 
 
+# ---------- homepage hero video ----------
+HERO = os.path.join(os.path.dirname(__file__), "..", "data", "hero.json")
+GREETING = re.compile(r"welcome|like button|subscribe|notification bell|darkest corner", re.I)
+
+
+def clock_to_sec(c):
+    parts = [int(x) for x in c.split(":")]
+    while len(parts) < 3:
+        parts.insert(0, 0)
+    return parts[0] * 3600 + parts[1] * 60 + parts[2]
+
+
+def show_start(path):
+    """Seconds into the stream where the hosts actually start talking (skips the pre-show wait)."""
+    first_any = None
+    for line in open(path):
+        m = re.match(r"\[([\d:]+)\] (.*)", line)
+        if not m:
+            continue
+        t = clock_to_sec(m.group(1))
+        if t > 30 * 60:
+            break
+        if first_any is None:
+            first_any = t
+        if GREETING.search(m.group(2)):
+            return max(0, t - 3)
+    return max(0, (first_any or 0))
+
+
+def update_hero(index):
+    """Point the homepage hero at the newest full episode. Only rewrites the file when something changed."""
+    dated = [(m["published"], vid, m) for vid, m in index.items() if m.get("published")]
+    if not dated:
+        return
+    _, vid, m = max(dated)
+    start = show_start(os.path.join(OUT, m["file"]))
+    new = {"videoId": vid, "title": m["title"], "start": start, "end": start + 90}
+    old = json.load(open(HERO)) if os.path.exists(HERO) else None
+    if old != new:
+        os.makedirs(os.path.dirname(HERO), exist_ok=True)
+        json.dump(new, open(HERO, "w"), indent=1)
+        print("hero ->", new)
+
+
 def wanted():
     path = os.path.join(OUT, "wanted.txt")
     if not os.path.exists(path):
@@ -135,6 +179,10 @@ def main():
         print("saved", path)
 
     json.dump(index, open(index_path, "w"), indent=1)
+    try:
+        update_hero(index)
+    except Exception as e:
+        print("hero update skipped:", e)
 
 
 if __name__ == "__main__":

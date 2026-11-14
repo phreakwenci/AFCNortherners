@@ -16,6 +16,7 @@ Humans: edit this file to change how the jobs behave.
     Captions have **no speaker names**; `>>` marks a speaker change. Infer speakers from names used in conversation.
   - `data/picks.json` — built by these jobs from the Airtable Weekly Picks table (format below).
   - `data/draft-pundits.json` — built by the Draft HQ job (format below).
+  - `data/hero.json` — homepage hero video = newest full episode, start/end seconds skip the pre-show (auto, from the transcript job).
   - `data/draft-history.json` — every AFC North pick since 2000 (auto, from nflverse). `data/draft-live.json` — draft-night picks + host mocks.
 - **Publishing rule:** commit ONLY files under `data/` (and `transcripts/` if needed), rebase on `origin/main`,
   push to `main`. Never change any other file on main. Use commit messages like `Picks update Wk11`.
@@ -76,8 +77,28 @@ the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) 
 2. **On-air picks:** log every winner/score prediction a host made on an AFC North game as an Airtable Weekly Picks record:
    Source=On-air, Verified unchecked, Result=Pending, Episode=YouTube URL, Quote=the transcript lines (with timestamps)
    it came from, Entry="Wk<N> — <Host> — <Game>". Only log when the speaker is reasonably clear. Never overwrite Email rows.
-3. **Hot Take Meter:** pick the 3–5 spiciest, most debatable takes from the show; rewrite each as one vote-able
-   sentence; add to Airtable (Active checked, Team, matching Week Label, votes 0). Uncheck Active on takes 3+ weeks old.
+3. **Hot Take Meter:** (public on the homepage — fans vote Fire 🔥 / Cap ❄️.)
+   - Pick the 4–5 most debatable, *prediction-style* takes from the show (a team's season, a player's future, a coach, a
+     game outcome, a trade/draft call). Rewrite each as ONE punchy, vote-able sentence a fan can agree or disagree with,
+     e.g. "The Steelers win the AFC North." No hedging, no "the hosts think".
+   - **Never** attribute a take to a specific host, and never turn into a take: accusations or jokes about crimes or
+     off-field conduct, personal attacks, injuries/medical speculation about named players, slurs, or anything a host
+     said as crude banter. If in doubt, leave it out — 4 clean takes beats 5.
+   - Add each to Airtable `Hot Takes`: Take Text, Team (the team it's about, or `All`), Week Label (`Week <N>` for the
+     upcoming NFL week, e.g. `Week 11`; create the option if missing), Active ✔, Yes/No votes 0, Sort Order 1–5
+     (spiciest first).
+   - Keep the meter fresh: afterwards no more than 8 takes may be Active. Uncheck Active on the oldest first (never
+     delete — votes are history). Skip a take if an Active or recent one already says the same thing.
+   - List the takes you added in the note to Jan (step 6) so a bad one can be unticked in Airtable in seconds.
+   - **Fan submissions:** fans suggest takes through the site's Submit Your Hot Take form, which creates rows in the
+     same Hot Takes table with **Active unchecked, no Sort Order, and 0/blank votes** (anything with Active unchecked and a
+     `createdTime` since the last Wednesday that you didn't create yourself). Review them each Wednesday:
+     pick up to **2** that are the most fun and debatable, apply the same safety rules as above, lightly tidy spelling and
+     make them a single vote-able sentence (keep the fan's idea), then tick Active, set Week Label to the upcoming week,
+     and Sort Order after your own takes. Leave the rest inactive — never delete a fan's submission. If none are usable,
+     add none; never invent a fan take.
+   - In the note to Jan, list the fan takes you promoted and a count of the others ("6 fan submissions, 2 used"),
+     with the rejected ones' text so Jan can overrule you.
 4. **6-Pack Friday issue:** create this week's issue page in Notion if missing (Status Draft, next Issue Number,
    Send Date this Friday, Week Label), following the style guide. Fill the four team News fields, Around the League
    and Odds note from current reporting; sources in Notes.
@@ -118,6 +139,11 @@ the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) 
 2. Rebuild and publish `data/picks.json`.
 3. Email Jan a 5-line prep note for tonight's show: this week's pick standings (who went 3-0, who went 0-3), the season
    leaderboard top/bottom, and any unverified on-air picks still waiting for a check.
+   Add a **"Hot Take Meter — read these on air"** block: for each Active take, its Fire % and vote count (Yes Votes vs
+   No Votes from Airtable), flagging the most lopsided ("92% say Fire") and the most split (closest to 50/50, the best
+   debates). Give the host a one-line suggested read for the top 2 ("Fans are split 51/49 on: ...").
+   Also list the fan-submitted takes that are still unused so the hosts can read a few live and Jan can tick Active
+   on any he likes. Keep it short; if there are fewer than 10 total votes this week, say so instead of making a trend up.
 
 ## Job: DRAFT HQ — pundit roundup
 1. Search the web for the latest NFL mock drafts and big boards for the next draft from every major pundit/outlet you
