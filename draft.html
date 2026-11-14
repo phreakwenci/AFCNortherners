@@ -210,7 +210,7 @@ function renderBoard() {
 function renderLive() {
     const el = document.getElementById('live-body');
     const status = LIVE?.status || 'pre';
-    document.getElementById('live-status').innerHTML = status === 'live' ? '<span class="text-green-400">● ON THE CLOCK</span>' : status === 'final' ? 'Final' : `${LIVE?.draftYear || ''} draft`;
+    document.getElementById('live-status').innerHTML = LIVE?.test ? `<span class="text-yellow-400">TEST REPLAY · ${LIVE.draftYear} DRAFT</span>` : status === 'live' ? '<span class="text-green-400">● LIVE · auto-updating</span>' : status === 'final' ? 'Final' : `${LIVE?.draftYear || ''} draft`;
     const hosts = Object.keys(LIVE?.hostPicks || {});
     if (status === 'pre' || !(LIVE?.picks || []).length) {
         el.innerHTML = `<div class="panel p-6 text-center">
@@ -277,13 +277,73 @@ function renderHistory() {
     document.getElementById('hist-note').textContent = HIST.note + ` Graded through the ${HIST.judgedThrough} draft.`;
 }
 
+
+// ================= LIVE DRAFT FEED (ESPN public draft API, read from the visitor's browser) =================
+// ESPN team ids -> site abbreviations
+const ESPN_TEAMS = {1:'ATL',2:'BUF',3:'CHI',4:'CIN',5:'CLE',6:'DAL',7:'DEN',8:'DET',9:'GB',10:'TEN',11:'IND',12:'KC',13:'LV',14:'LAR',15:'MIA',16:'MIN',17:'NE',18:'NO',19:'NYG',20:'NYJ',21:'PHI',22:'ARI',23:'PIT',24:'LAC',25:'SF',26:'SEA',27:'TB',28:'WSH',29:'CAR',30:'JAX',33:'BAL',34:'HOU'};
+const CORE = 'https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons';
+const https = u => String(u || '').replace(/^http:/, 'https:');
+const athleteCache = (() => { try { return JSON.parse(localStorage.getItem('an-draft-athletes') || '{}'); } catch { return {}; } })();
+function saveAthletes() { try { localStorage.setItem('an-draft-athletes', JSON.stringify(athleteCache)); } catch {} }
+
+async function resolveAthlete(ref) {
+    const key = https(ref).split('?')[0];
+    if (athleteCache[key]) return athleteCache[key];
+    try {
+        const a = await (await fetch(https(ref))).json();
+        let school = a.college?.name || a.college?.shortName || '';
+        if (!school && a.college?.$ref) { try { const c = await (await fetch(https(a.college.$ref))).json(); school = c.shortName || c.name || ''; } catch {} }
+        const out = {player: a.displayName || a.fullName || [a.firstName, a.lastName].filter(Boolean).join(' '),
+                     pos: a.position?.abbreviation || a.position?.name || '', school};
+        athleteCache[key] = out; return out;
+    } catch { return null; }
+}
+
+async function pool(items, n, fn) { const out = []; let i = 0;
+    await Promise.all(Array.from({length: n}, async () => { while (i < items.length) { const k = i++; out[k] = await fn(items[k]); } })); return out; }
+
+// Returns {status:'pre'|'live'|'final', picks:[...]} or null if the feed can't be read.
+async function fetchEspnDraft(year, maxRound) {
+    try {
+        const st = await (await fetch(`${CORE}/${year}/draft/status?lang=en&region=us`)).json();
+        const state = st.type?.state === 'in' ? 'live' : st.type?.state === 'post' ? 'final' : 'pre';
+        if (state === 'pre') return {status: 'pre', picks: [], round: st.round};
+        const rounds = await (await fetch(`${CORE}/${year}/draft/rounds?lang=en&region=us`)).json();
+        const made = [];
+        (rounds.items || []).forEach(r => (r.picks || []).forEach(p => {
+            if (p.round > maxRound || !p.athlete?.$ref || !/SELECTION_MADE/.test(p.status?.name || '')) return;
+            const tid = +(String(p.team?.$ref || '').match(/teams\/(\d+)/) || [])[1];
+            made.push({pick: p.overall, round: p.round, team: ESPN_TEAMS[tid] || String(tid), traded: p.traded, ref: p.athlete.$ref});
+        }));
+        const people = await pool(made, 6, m => resolveAthlete(m.ref));
+        saveAthletes();
+        return {status: state, round: st.round, picks: made.map((m, i) => ({...m, ...(people[i] || {player: '(loading…)'})}))};
+    } catch (e) { console.warn('ESPN draft feed unavailable', e); return null; }
+}
+
+async function startLiveFeed() {
+    const params = new URLSearchParams(location.search);
+    const test = params.get('livetest');               // e.g. ?livetest=2026 replays last year's draft
+    const year = test || LIVE?.draftYear || 2027;
+    const maxRound = test ? 3 : 7;
+    const tick = async () => {
+        const feed = await fetchEspnDraft(year, maxRound);
+        if (!feed || (feed.status === 'pre' && !test)) return false;
+        LIVE = {...(LIVE || {}), draftYear: +year, status: test ? 'live' : feed.status, picks: feed.picks, source: 'ESPN', test: !!test};
+        renderLive();
+        return feed.status === 'live';
+    };
+    const live = await tick();
+    if (live || test) setInterval(tick, test ? 60000 : 20000);
+}
+
 (async function init() {
     [ORDER, PUNDITS, LIVE, HIST] = await Promise.all(['data/draft-order.json','data/draft-pundits.json','data/draft-live.json','data/draft-history.json'].map(getJSON));
     const yr = ORDER?.draftYear || LIVE?.draftYear || 2027;
     document.getElementById('dq-eyebrow').textContent = `${yr} NFL Draft HQ`;
     if (ORDER?.updated) document.getElementById('dq-updated').textContent = 'Draft order updated ' + new Date(ORDER.updated).toLocaleString([], {month:'short', day:'numeric', hour:'numeric', minute:'2-digit'});
     renderNorth(); renderPunditTabs(); renderBoard(); renderLive(); renderHistory();
-    if (LIVE?.status === 'live') setInterval(async () => { LIVE = await getJSON('data/draft-live.json') || LIVE; renderLive(); }, 30000);
+    startLiveFeed();   // goes live automatically when ESPN's draft status flips to in-progress
 })();
 
 // ---- Live-feed probe: open draft.html?probe=1 in a normal browser to test which public draft feeds

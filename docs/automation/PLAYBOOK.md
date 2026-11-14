@@ -14,7 +14,7 @@ Humans: edit this file to change how the jobs behave.
     "Update site data" GitHub Action from nflverse (open NFL data). Never hand-edit.
   - `transcripts/*.txt` + `transcripts/index.json` — YouTube auto-captions of each show, saved by the same Action.
     Captions have **no speaker names**; `>>` marks a speaker change. Infer speakers from names used in conversation.
-  - `data/picks.json` — built by these jobs from Notion (format below).
+  - `data/picks.json` — built by these jobs from the Airtable Weekly Picks table (format below).
   - `data/draft-pundits.json` — built by the Draft HQ job (format below).
   - `data/draft-history.json` — every AFC North pick since 2000 (auto, from nflverse). `data/draft-live.json` — draft-night picks + host mocks.
 - **Publishing rule:** commit ONLY files under `data/` (and `transcripts/` if needed), rebase on `origin/main`,
@@ -30,13 +30,16 @@ Humans: edit this file to change how the jobs behave.
   | Dave ("DGBG", Dave Green) | CLE | dgbrowns1975@gmail.com |
   Alternates (John, Ace) are not emailed.
 - **Notion (AFC Northerners HQ):**
-  - 🏈 Weekly Picks — `collection://4182a1b0-cda8-8156-a5d1-000bff65d5e7`
     (Entry, Week, Game "AWAY @ HOME", Host, Pick, Predicted Score, Source Email|On-air, Result Pending|Correct|Wrong|Tie, Verified, Episode, Quote)
   - 📥 Takes Submissions — `collection://8370d0f4-2c4a-4b33-93ad-641754e1db0b`
   - 6-Pack Friday Newsletter — `collection://c1c11f6a-2a50-4f07-86e9-bcc3938f3293`
   - 6-Pack Friday Layout & Style Guide — page `3252a1b0cda88149b96ef36cbed590a9` (read it before building an issue)
   - Public takes form: https://brook-nova-9f7.notion.site/3252a1b0cda88025a083e33783c6b6b1
-- **Airtable:** base "Hot Takes" `appnddOLSU3eJWA0M`, table `tblt6oqNTT99SLQqm`
+- **Airtable — Weekly Picks (source of truth for picks):** base `appnddOLSU3eJWA0M`, table `tblLKa319Hw12RYuf`
+  (Entry, Week, Game "AWAY @ HOME", Host Jan|Justen|Chris|Gabe|Rob|Dave, Pick, Predicted Score, Source Email|On-air,
+  Result Pending|Correct|Wrong|Tie, Verified, Episode, Quote). Picks moved here from Notion on 2026-11-14 because the
+  Notion workspace hit its free block limit — do NOT write picks to Notion.
+- **Airtable — Hot Takes:** base `appnddOLSU3eJWA0M`, table `tblt6oqNTT99SLQqm`
   (Take Text, Team, Active, Week Label, Sort Order, Yes Votes, No Votes) — feeds the site's Hot Take Meter.
 - **MailerLite:** the 6-Pack Friday newsletter is a MailerLite campaign (account 2194589).
 - **Team codes:** ESPN abbreviations everywhere (BAL CIN CLE PIT, JAX, LAR, WSH…).
@@ -48,13 +51,13 @@ Humans: edit this file to change how the jobs behave.
   subscribers is NEVER sent automatically — build it and ask Jan to approve.
 
 ### data/picks.json format
-Keep existing `season`, `note`, `hosts`. Set `updated` to now (ISO). `games` = one object per (Week, Game) from Weekly Picks:
+Keep existing `season`, `note`, `hosts`. Set `updated` to now (ISO). `games` = one object per (Week, Game) from the Airtable Weekly Picks table:
 ```json
 {"week": 11, "away": "PIT", "home": "CIN", "picks": {"Jan": "CIN", "Chris": "PIT"}, "scores": {"Jan": "30-27"}, "unconfirmed": ["Chris"]}
 ```
 Include every row. If a host has both an Email and an On-air pick for a game, Email wins. For On-air rows whose
 `Verified` is unchecked (speaker attribution uncertain), add the host's name to that game's `"unconfirmed": []` list —
-the site shows those with a "?" until Jan confirms (ticks Verified) or corrects them. Omit empty `scores`. The website grades picks itself against `data/schedule.json`.
+the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) or corrects them. Omit empty `scores`. The website grades picks itself against `data/schedule.json`.
 
 ### data/draft-pundits.json format
 ```json
@@ -70,7 +73,7 @@ the site shows those with a "?" until Jan confirms (ticks Verified) or corrects 
 
 ## Job: WEDNESDAY — show recap + takes & picks email
 1. Find last night's show in `transcripts/` (newest file). If absent, skip 2–3 and note it.
-2. **On-air picks:** log every winner/score prediction a host made on an AFC North game as a Weekly Picks row:
+2. **On-air picks:** log every winner/score prediction a host made on an AFC North game as an Airtable Weekly Picks record:
    Source=On-air, Verified unchecked, Result=Pending, Episode=YouTube URL, Quote=the transcript lines (with timestamps)
    it came from, Entry="Wk<N> — <Host> — <Game>". Only log when the speaker is reasonably clear. Never overwrite Email rows.
 3. **Hot Take Meter:** pick the 3–5 spiciest, most debatable takes from the show; rewrite each as one vote-able
@@ -89,7 +92,7 @@ the site shows those with a "?" until Jan confirms (ticks Verified) or corrects 
 
 ## Job: THURSDAY — collect picks + reminders
 1. Read replies to this week's Wednesday email thread (and any direct replies from the six hosts since then).
-2. For each pick in a reply, create/update a Weekly Picks row (Source=Email, Verified checked, Result=Pending),
+2. For each pick in a reply, create/update an Airtable Weekly Picks record (Source=Email, Verified checked, Result=Pending),
    only if received before that game's kickoff. Corrections to on-air picks: fix the row and check Verified.
 3. Check Takes Submissions for this week.
 4. Email only the hosts still missing picks and/or a take: a short nudge with what's missing and the deadline
@@ -111,7 +114,7 @@ the site shows those with a "?" until Jan confirms (ticks Verified) or corrects 
 2. Rebuild and publish `data/picks.json`. No emails unless something is broken.
 
 ## Job: TUESDAY — grade the week
-1. Using `data/schedule.json`, set Result (Correct/Wrong/Tie) on every Pending Weekly Picks row whose game is final.
+1. Using `data/schedule.json`, set Result (Correct/Wrong/Tie) on every Pending Airtable Weekly Picks record whose game is final.
 2. Rebuild and publish `data/picks.json`.
 3. Email Jan a 5-line prep note for tonight's show: this week's pick standings (who went 3-0, who went 0-3), the season
    leaderboard top/bottom, and any unverified on-air picks still waiting for a check.
@@ -130,4 +133,4 @@ the site shows those with a "?" until Jan confirms (ticks Verified) or corrects 
 ## Job: BACKFILL — season picks history (one-time)
 For each 2026 show transcript in `transcripts/` (weeks 1–9 are listed in `transcripts/wanted.txt`), run the
 Wednesday step 2 (on-air picks, Verified unchecked). Then email Jan a review list grouped by week with quotes so he
-can tick Verified in Notion, and publish `data/picks.json`.
+can tick Verified in Airtable, and publish `data/picks.json`.
