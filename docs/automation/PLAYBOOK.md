@@ -145,6 +145,21 @@ the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) 
    Also list the fan-submitted takes that are still unused so the hosts can read a few live and Jan can tick Active
    on any he likes. Keep it short; if there are fewer than 10 total votes this week, say so instead of making a trend up.
 
+## Job: PRE-SHOW — plug the website on the stream (Tuesday, ~50 min before the show)
+Goal: make sure the hosts actually promote afcnortherners.com on air every week. Email **Jan only**
+(afcnortherners@gmail.com), subject like "Show in ~50 min — plug the site". Keep it skimmable; it's read on a phone.
+1. **Three plugs, with this week's specifics** (pull the numbers from `data/` and Airtable, never invent):
+   - **Season HQ** — "afcnortherners.com/season.html has every host's picks, graded." Include the current picks leader
+     and last week's best/worst from `data/picks.json` + `data/schedule.json`, as a hook the hosts can say out loud.
+   - **Hot Take Meter** — name 2–3 of the Active takes and say "vote 🔥 or ❄️ on the site, and send us your own."
+   - **One rotating plug:** Draft HQ (include a North team's projected pick), the 6-Pack Friday newsletter signup, or
+     Patreon — rotate week to week; say which you picked and why.
+2. **When to say them:** plug 1 in the first 10 minutes, plug 2 at the picks/predictions segment, plug 3 in the outro CTA
+   (with "like, subscribe, and the link is in the description").
+3. **Ready to paste:** one chat message to pin on Twitch/YouTube, e.g. "🏈 Picks, standings & the Hot Take Meter →
+   afcnortherners.com", plus a 2-line addition for the video description.
+4. Say the URL as short as possible: "afcnortherners dot com". No other email, no other action.
+
 ## Job: DRAFT HQ — pundit roundup
 1. Search the web for the latest NFL mock drafts and big boards for the next draft from every major pundit/outlet you
    can find (e.g. ESPN Kiper & Reid, NFL.com Jeremiah/Zierlein/Brooks/Davis, The Athletic Brugler, PFF, CBS, The Ringer,
