@@ -19,6 +19,17 @@ def feed():
         yield e.find("yt:videoId", NS).text, e.find("a:title", NS).text, e.find("a:published", NS).text
 
 
+def wanted():
+    path = os.path.join(OUT, "wanted.txt")
+    if not os.path.exists(path):
+        return
+    for line in open(path):
+        line = line.strip()
+        if line and not line.startswith("#"):
+            vid, _, title = line.partition(" ")
+            yield vid, title or vid, "0000-00-00"
+
+
 def ts(sec):
     sec = int(sec); h, m, s = sec // 3600, sec % 3600 // 60, sec % 60
     return f"{h}:{m:02d}:{s:02d}" if h else f"{m}:{s:02d}"
@@ -31,7 +42,11 @@ def main():
     index_path = os.path.join(OUT, "index.json")
     index = json.load(open(index_path)) if os.path.exists(index_path) else {}
     failures = 0
-    for vid, title, published in feed():
+    try:
+        recent = list(feed())
+    except Exception as e:
+        print("RSS feed failed:", e); recent = []
+    for vid, title, published in recent + list(wanted()):
         path = os.path.join(OUT, f"{published[:10]}_{vid}.txt")
         if vid in index or os.path.exists(path):
             continue

@@ -1,0 +1,11 @@
+# Extra YouTube video IDs to fetch transcripts for (one per line, optional title after a space).
+# The channel RSS feed only covers the latest ~15 uploads, so older shows go here.
+1bsmlJc-YCQ 2026 Week 1 Recap
+Ls6lFjWxkHs 2026 Week 2 Recap
+nWyOsw51d-w 2026 Week 3 Recap
+MVmTnWMeeC8 2026 Week 4 Recap
+7FB0BzIKimM 2026 Week 5 Review & Week 6 Picks
+GgBMYg8MD1c 2026 Week 6 Recap
+et_dcqsCBLg 2026 Week 7 Recap
+zzbG9zjNGHk 2026 Week 8 Recap
+YjltQ3Wus9Q 2026 Week 9 Recap
