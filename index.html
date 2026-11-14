@@ -320,6 +320,7 @@
                 <a href="#newsletter" class="nav-link text-white hover:text-yellow-400 transition">COMMUNITY</a>
                 <a href="#hosts" class="nav-link text-white hover:text-yellow-400 transition">HOSTS</a>
                 <a href="#patreon" class="nav-link text-white hover:text-yellow-400 transition">PATREON</a>
+                <a href="season.html" class="nav-link text-white hover:text-yellow-400 transition text-sm" style="font-family:'Archivo Narrow',sans-serif;font-weight:700;">Season HQ</a>
                 <button onclick="openStandings()" class="nav-link text-white hover:text-yellow-400 transition cursor-pointer bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">STANDINGS</button>
             </nav>
             <div class="flex items-center space-x-4">
@@ -351,7 +352,8 @@
                     onerror="this.style.display='none';"
                 />
                     <div>
-                        <div class="anton-font text-2xl text-white tracking-widest">2025 NFL STANDINGS</div>
+                        <div class="anton-font text-2xl text-white tracking-widest" id="standings-title">NFL STANDINGS</div>
+                        <div class="text-xs text-gray-500" id="standings-updated"></div>
                         <div class="text-yellow-500 text-xs mt-1 tracking-widest">AFC NORTH TEAMS HIGHLIGHTED IN GOLD
                         </div>
                     </div>
@@ -1071,7 +1073,7 @@ frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media
                                 <i class="far fa-calendar-alt mr-2"></i><span>Every Tuesday</span>
                             </div>
                             <div class="flex items-center text-yellow-500">
-                                <i class="far fa-clock mr-2"></i><span>6:00 PM PST</span>
+                                <i class="far fa-clock mr-2"></i><span>6:30 PM PT</span>
                             </div>
                         </div>
                         <div class="grid grid-cols-4 gap-2 mb-8">
@@ -1447,10 +1449,10 @@ function updateCountdown() {
     const currentDay = pacificTemp.getDay();
     const currentHour = parts.hour;
     let daysUntil = (2 - currentDay + 7) % 7;
-    if (daysUntil === 0 && currentHour >= 18) daysUntil = 7;
+    if (daysUntil === 0 && (currentHour > 18 || (currentHour === 18 && parts.minute >= 30))) daysUntil = 7;
     const isDST = (parts.month > 3 && parts.month < 11) || (parts.month === 3 && parts.day > 13) || (parts.month === 11 && parts.day < 6);
     const offsetHours = isDST ? 7 : 8;
-    const targetUTC = Date.UTC(parts.year, parts.month - 1, parts.day + daysUntil, 18 + offsetHours, 0, 0);
+    const targetUTC = Date.UTC(parts.year, parts.month - 1, parts.day + daysUntil, 18 + offsetHours, 30, 0);
     const diff = targetUTC - now.getTime();
     const d = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000),
           m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
@@ -1515,10 +1517,31 @@ const STANDINGS = [
 
 const AFC_NORTH = new Set(['PIT','BAL','CIN','CLE']);
 const TEAM_COLORS = {PIT:'#FFB612',BAL:'#9333ea',CIN:'#f97316',CLE:'#e85a2a',NE:'#4b5563',BUF:'#1d4ed8',MIA:'#0891b2',NYJ:'#166534',JAC:'#0e7490',HOU:'#7e22ce',IND:'#1e3a5f',TEN:'#3b82f6',DEN:'#ea580c',LAC:'#0284c7',KC:'#b91c1c',LV:'#6b7280',PHI:'#065f46',DAL:'#1e40af',WAS:'#991b1b',NYG:'#1e3a5f',CAR:'#0284c7',TB:'#b91c1c',ATL:'#dc2626',NO:'#d97706',SEA:'#065f46',LA:'#1e40af',SF:'#991b1b',ARI:'#b91c1c',CHI:'#1e3a5f',GB:'#166534',MIN:'#7e22ce',DET:'#0284c7'};
+['JAX:JAC','LAR:LA','WSH:WAS'].forEach(p=>{const [a,b]=p.split(':'); if(!TEAM_COLORS[a]) TEAM_COLORS[a]=TEAM_COLORS[b];});
 const DIV_ORDER = {AFC:['AFC North','AFC East','AFC South','AFC West'],NFC:['NFC North','NFC East','NFC South','NFC West']};
 let currentConf = 'AFC';
 
-function openStandings() { document.getElementById('standings-modal').classList.add('open'); renderStandings(currentConf); }
+// Live standings: data/standings.json is refreshed by a GitHub Action (scripts/fetch_nfl.py).
+// The hardcoded STANDINGS list above is only a fallback if that file can't load.
+let standingsLoaded = false;
+async function loadStandings() {
+    if (standingsLoaded) return;
+    try {
+        const r = await fetch('data/standings.json', {cache: 'no-cache'});
+        if (!r.ok) throw new Error(r.status);
+        const d = await r.json();
+        const code = c => ({z:'conference','*':'conference',y:'division',x:'wildcard',e:'eliminated'})[c] || '';
+        STANDINGS.length = 0;
+        d.teams.forEach(t => STANDINGS.push({team:t.team, abbr:t.abbr, conf:t.conf, div:t.div, w:t.w, l:t.l, t:t.t, pct:t.pct, clinched:code(t.clincher)}));
+        document.getElementById('standings-title').textContent = d.season + ' NFL STANDINGS';
+        document.getElementById('standings-updated').textContent = 'Updated ' + new Date(d.updated).toLocaleString([], {month:'short', day:'numeric', hour:'numeric', minute:'2-digit'});
+        standingsLoaded = true;
+    } catch (e) {
+        document.getElementById('standings-title').textContent = '2025 FINAL STANDINGS';
+        console.warn('Live standings unavailable, showing fallback', e);
+    }
+}
+async function openStandings() { document.getElementById('standings-modal').classList.add('open'); renderStandings(currentConf); await loadStandings(); renderStandings(currentConf); }
 function closeStandings() { document.getElementById('standings-modal').classList.remove('open'); }
 function closeStandingsIfOutside(e) { if (e.target===document.getElementById('standings-modal')) closeStandings(); }
 document.addEventListener('keydown', e => { if (e.key==='Escape') closeStandings(); });
@@ -1543,7 +1566,7 @@ function badge(c) {
 function renderStandings(conf) {
     const body = document.getElementById('standings-body');
     body.innerHTML = DIV_ORDER[conf].map(div => {
-        const teams = STANDINGS.filter(t=>t.conf===conf&&t.div===div).sort((a,b)=>b.w-a.w);
+        const teams = STANDINGS.filter(t=>t.conf===conf&&t.div===div).sort((a,b)=>b.pct-a.pct||b.w-a.w);
         const isNorth = div==='AFC North';
         return `
         <div class="division-block">
@@ -1554,7 +1577,7 @@ function renderStandings(conf) {
                 <span class="team-color-dot" style="background:${TEAM_COLORS[t.abbr]||'#888'}"></span>
                 <span class="text-white text-sm truncate">${t.team}${badge(t.clinched)}</span>
                 <span class="text-green-400 text-xs text-center font-bold">${t.w}</span>
-                <span class="text-red-400 text-xs text-center font-bold">${t.l}</span>
+                <span class="text-red-400 text-xs text-center font-bold">${t.l}${t.t?'-'+t.t:''}</span>
                 <span class="text-gray-400 text-xs text-center">${t.pct.toFixed(3).slice(1)}</span>
             </div>`).join('')}
         </div>`;
