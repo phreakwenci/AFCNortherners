@@ -263,7 +263,7 @@ function renderHistory() {
         ${H.year === 'all' ? '<div class="px-3 py-2 text-xs text-gray-600">Showing every first-rounder plus every steal. Pick a year to see a full class.</div>' : ''}`;
     const judged = mine.filter(p => p.grade);
     const top = (arr, n) => arr.slice(0, n).map(p => `<div class="flex justify-between gap-2 text-sm py-1"><span><b>${esc(p.player)}</b> <span class="text-gray-500">${p.season} · #${p.pick}</span></span><span class="mono text-xs text-gray-400">${p.av} vs ${p.expectedAv}</span></div>`).join('');
-    const steals = [...judged].sort((a,b) => (b.av - b.expectedAv) - (a.av - a.expectedAv));
+    const steals = judged.filter(p => p.grade === 'steal').sort((a,b) => (b.av - b.expectedAv) - (a.av - a.expectedAv));
     const busts = judged.filter(p => p.grade === 'bust').sort((a,b) => (a.av - a.expectedAv) - (b.av - b.expectedAv));
     const firsts = judged.filter(p => p.round === 1), hitRate = firsts.length ? Math.round(100 * firsts.filter(p => p.grade === 'steal' || p.grade === 'hit').length / firsts.length) : 0;
     const pb = mine.filter(p => p.probowls).length;

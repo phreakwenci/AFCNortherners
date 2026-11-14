@@ -209,43 +209,63 @@ NORTH = ("BAL", "CIN", "CLE", "PIT")
 
 
 def build_draft_history(text, first=2000):
+    """Grade every AFC North pick by career value PER SEASON vs. the typical player at that draft slot,
+    so a 4-year pro isn't compared with 15-year careers. Honors set a floor on the grade."""
     rows = list(csv.DictReader(io.StringIO(text)))
-    latest = max(to_int(r["season"]) or 0 for r in rows)
-    matured = latest - 4  # careers from drafts 4+ years old are judged; newer ones are "too early"
+    latest = max(to_int(r["season"]) or 0 for r in rows)  # newest draft = season in progress
+    judged_through = latest - 3                          # need 3 seasons before judging
 
-    # Expected career value by pick slot: median w_av of nearby picks in matured drafts
+    def seasons(r):
+        s, to = to_int(r["season"]), to_int(r.get("to"))
+        if not to:                       # never played / no record
+            return max(1.0, min(3.0, latest - s))
+        yrs = to - s + 1
+        if to >= latest:                 # still active: current season is only partly played
+            return yrs - 0.5
+        # Career over: a short career counts against the pick (washing out early is the bust)
+        return float(max(yrs, min(latest - s, 6)))
+
+    def rate(r):
+        return (to_int(r.get("w_av")) or 0) / max(1.0, seasons(r))
+
     by_pick = {}
     for r in rows:
-        s, p, av = to_int(r["season"]), to_int(r["pick"]), to_int(r.get("w_av"))
-        if s and p and first <= s <= matured:
-            by_pick.setdefault(p, []).append(av or 0)
+        s, p = to_int(r["season"]), to_int(r["pick"])
+        if s and p and first <= s <= judged_through:
+            by_pick.setdefault(p, []).append(rate(r))
 
-    def expected(p):
+    def expected_rate(p):
         vals = sorted(v for q in range(max(1, p - 3), p + 4) for v in by_pick.get(q, []))
-        return vals[len(vals) // 2] if vals else 0
+        return vals[len(vals) // 2] if vals else 0.1
 
+    order = ["bust", "miss", "hit", "steal"]
     picks = []
     for r in rows:
         s = to_int(r["season"])
         if not s or s < first or r["team"] not in NORTH:
             continue
         p, av = to_int(r["pick"]), to_int(r.get("w_av")) or 0
-        exp = expected(p)
+        pb, ap, hof = to_int(r.get("probowls")) or 0, to_int(r.get("allpro")) or 0, r.get("hof") == "TRUE"
+        yrs, er = seasons(r), max(0.1, expected_rate(p))
+        ratio = rate(r) / er
         grade = None
-        if s <= matured:
-            diff = av - exp
-            grade = "steal" if diff >= max(15, exp) else "hit" if diff >= 0 else "bust" if p <= 64 and av < exp * 0.35 else "miss"
+        if s <= judged_through:
+            grade = "steal" if ratio >= 1.8 else "hit" if ratio >= 0.9 else "bust" if ((p <= 32 and ratio < 0.55) or (p <= 64 and ratio < 0.4)) else "miss"
+            floor = "steal" if (hof or ap >= 2 or pb >= 4) else "hit" if (ap >= 1 or pb >= 2) else None
+            if floor and order.index(floor) > order.index(grade):
+                grade = floor
         picks.append({
             "season": s, "round": to_int(r["round"]), "pick": p, "team": r["team"],
             "player": r.get("pfr_player_name"), "pos": r.get("position"), "college": r.get("college"),
             "games": to_int(r.get("games")), "starts": to_int(r.get("seasons_started")),
-            "probowls": to_int(r.get("probowls")) or 0, "allpro": to_int(r.get("allpro")) or 0,
-            "hof": r.get("hof") == "TRUE", "av": av, "expectedAv": exp, "grade": grade,
+            "probowls": pb, "allpro": ap, "hof": hof, "av": av,
+            "expectedAv": round(er * yrs), "valueScore": round(ratio, 2), "grade": grade,
         })
     picks.sort(key=lambda x: (-x["season"], x["pick"] or 999))
-    return {"latestDraft": latest, "judgedThrough": matured, "picks": picks,
+    return {"latestDraft": latest, "judgedThrough": judged_through, "picks": picks,
             "note": "Career value = Pro Football Reference weighted Approximate Value (AV) via nflverse. "
-                    "Grades compare a player's AV with the typical AV for his draft slot; drafts under 4 years old aren't graded."}
+                    "Grades compare value per season played with the typical player taken at that slot; "
+                    "All-Pro / multiple Pro Bowl players can't grade below a hit. Drafts under 3 years old aren't graded."}
 
 
 def update_draft_history(stamp):
