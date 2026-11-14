@@ -16,6 +16,7 @@ Humans: edit this file to change how the jobs behave.
     Captions have **no speaker names**; `>>` marks a speaker change. Infer speakers from names used in conversation.
   - `data/picks.json` — built by these jobs from the Airtable Weekly Picks table (format below).
   - `data/draft-pundits.json` — built by the Draft HQ job (format below).
+  - `data/hero.json` — homepage hero video = newest full episode, start/end seconds skip the pre-show (auto, from the transcript job).
   - `data/draft-history.json` — every AFC North pick since 2000 (auto, from nflverse). `data/draft-live.json` — draft-night picks + host mocks.
 - **Publishing rule:** commit ONLY files under `data/` (and `transcripts/` if needed), rebase on `origin/main`,
   push to `main`. Never change any other file on main. Use commit messages like `Picks update Wk11`.

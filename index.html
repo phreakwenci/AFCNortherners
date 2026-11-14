@@ -362,6 +362,17 @@
         .mm-link:active, .mm-link:hover { color:#facc15; }
     </style>
     <script>
+        // Hero background = newest full episode, from data/hero.json (kept current by the GitHub Action).
+        (async function setHero() {
+            let v = {videoId: 'izfj0GMiV9s', start: 0, end: 0};   // fallback if the data file can't load
+            try { const r = await fetch('data/hero.json', {cache: 'no-cache'}); if (r.ok) { const j = await r.json(); if (j.videoId) v = j; } } catch (e) {}
+            const q = new URLSearchParams({autoplay: 1, mute: 1, loop: 1, playlist: v.videoId, controls: 0, rel: 0, modestbranding: 1, playsinline: 1});
+            if (v.start) q.set('start', v.start);
+            if (v.end && v.end > v.start) q.set('end', v.end);
+            document.getElementById('hero-video').src = 'https://www.youtube.com/embed/' + v.videoId + '?' + q.toString();
+        })();
+    </script>
+    <script>
         function toggleMobileMenu(force) {
             const menu = document.getElementById('mobile-menu');
             const open = typeof force === 'boolean' ? force : menu.classList.contains('hidden');
@@ -414,8 +425,8 @@
         <div class="beer-stain bottom-1/4 right-1/4"></div>
         <!-- YouTube video background -->
         <div class="absolute inset-0 z-0">
-            <iframe id="hero-video" class="w-full h-full"
-                src="https://www.youtube.com/embed/izfj0GMiV9s?autoplay=1&mute=1&loop=1&playlist=izfj0GMiV9s&controls=0&rel=0&modestbranding=1"
+            <!-- src is set by the script below from data/hero.json (newest episode, updated automatically) -->
+            <iframe id="hero-video" class="w-full h-full" title="AFC Northerners latest episode"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
