@@ -2541,7 +2541,9 @@ async function submitContact() {
 const N8N_WEBHOOK = 'https://afcnortherners.app.n8n.cloud/webhook/airtable-records';
 
 let HOT_TAKES = [];
-const htVoted = {};
+// Remember this browser's votes so a refresh can't vote twice (best effort; private windows can still re-vote)
+const htVoted = (() => { try { return JSON.parse(localStorage.getItem('an-ht-voted') || '{}'); } catch (e) { return {}; } })();
+function saveHtVoted() { try { localStorage.setItem('an-ht-voted', JSON.stringify(htVoted)); } catch (e) {} }
 
 async function fetchHotTakes() {
     try {
@@ -2604,6 +2606,7 @@ function renderHotTakes() {
 async function htVote(id, vote) {
     if (htVoted[id]) return;
     htVoted[id] = vote;
+    saveHtVoted();
     const take = HOT_TAKES.find(t => t.id === id);
     if (!take) return;
     take[vote === 'yes' ? 'yes' : 'no']++;

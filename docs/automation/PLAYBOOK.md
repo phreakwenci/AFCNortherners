@@ -90,6 +90,15 @@ the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) 
    - Keep the meter fresh: afterwards no more than 8 takes may be Active. Uncheck Active on the oldest first (never
      delete — votes are history). Skip a take if an Active or recent one already says the same thing.
    - List the takes you added in the note to Jan (step 6) so a bad one can be unticked in Airtable in seconds.
+   - **Fan submissions:** fans suggest takes through the site's Submit Your Hot Take form, which creates rows in the
+     same Hot Takes table with **Active unchecked, no Sort Order, and 0/blank votes** (anything with Active unchecked and a
+     `createdTime` since the last Wednesday that you didn't create yourself). Review them each Wednesday:
+     pick up to **2** that are the most fun and debatable, apply the same safety rules as above, lightly tidy spelling and
+     make them a single vote-able sentence (keep the fan's idea), then tick Active, set Week Label to the upcoming week,
+     and Sort Order after your own takes. Leave the rest inactive — never delete a fan's submission. If none are usable,
+     add none; never invent a fan take.
+   - In the note to Jan, list the fan takes you promoted and a count of the others ("6 fan submissions, 2 used"),
+     with the rejected ones' text so Jan can overrule you.
 4. **6-Pack Friday issue:** create this week's issue page in Notion if missing (Status Draft, next Issue Number,
    Send Date this Friday, Week Label), following the style guide. Fill the four team News fields, Around the League
    and Odds note from current reporting; sources in Notes.
@@ -130,6 +139,11 @@ the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) 
 2. Rebuild and publish `data/picks.json`.
 3. Email Jan a 5-line prep note for tonight's show: this week's pick standings (who went 3-0, who went 0-3), the season
    leaderboard top/bottom, and any unverified on-air picks still waiting for a check.
+   Add a **"Hot Take Meter — read these on air"** block: for each Active take, its Fire % and vote count (Yes Votes vs
+   No Votes from Airtable), flagging the most lopsided ("92% say Fire") and the most split (closest to 50/50, the best
+   debates). Give the host a one-line suggested read for the top 2 ("Fans are split 51/49 on: ...").
+   Also list the fan-submitted takes that are still unused so the hosts can read a few live and Jan can tick Active
+   on any he likes. Keep it short; if there are fewer than 10 total votes this week, say so instead of making a trend up.
 
 ## Job: DRAFT HQ — pundit roundup
 1. Search the web for the latest NFL mock drafts and big boards for the next draft from every major pundit/outlet you
