@@ -89,6 +89,12 @@
                 </table>
             </div>
             <p class="text-xs text-gray-600 mt-2">Picks come from the weekly picks email and from predictions made live on the show. "Own team" is how often a host's pick on their own team's game came true.</p>
+
+            <div class="flex items-baseline justify-between mt-8 mb-3">
+                <h3 class="anton text-xl">EVERY PICK, WEEK BY WEEK</h3>
+                <span class="eyebrow">✓ right · ✗ wrong · ? unconfirmed</span>
+            </div>
+            <div class="panel overflow-x-auto" id="picks-grid"><div class="p-4 skeleton">Loading picks…</div></div>
         </section>
 
         <!-- Playoff picture -->
@@ -154,7 +160,8 @@ function renderWeek() {
         const chips = p ? Object.entries(p.picks).map(([host, team]) => {
             const cls = g.winner ? (team === g.winner ? 'ok' : 'no') : '';
             const pred = p.scores?.[host] ? ` <span class="text-gray-500">${esc(p.scores[host])}</span>` : '';
-            return `<span class="chip ${cls}">${esc(host)}: <b>${esc(team)}</b>${pred}</span>`;
+            const q = (p.unconfirmed || []).includes(host) ? '<span class="text-gray-500" title="Attribution unconfirmed">?</span>' : '';
+            return `<span class="chip ${cls}">${esc(host)}${q}: <b>${esc(team)}</b>${pred}</span>`;
         }).join('') : '<span class="text-xs text-gray-600">Host picks not in yet</span>';
         const side = (ab, s) => `<div class="flex items-center gap-2 ${g.winner && g.winner !== ab ? 'opacity-50' : ''}">
                 <span class="anton text-2xl" style="color:${tc(ab)}">${esc(ab)}</span></div>`;
@@ -182,9 +189,11 @@ function renderLeaderboard() {
     const lastDone = Math.max(0, ...SCHED.games.filter(g => g.completed && g.afcNorth).map(g => g.week));
     const tally = {};
     PICKS.games.forEach(p => {
-        const g = results[gameKey(p)]; if (!g || g.winner === 'TIE') return;
+        const g = results[gameKey(p)];
         Object.entries(p.picks).forEach(([host, pick]) => {
-            const t = tally[host] ||= {w:0, l:0, lw:0, ll:0, ow:0, on:0};
+            const t = tally[host] ||= {w:0, l:0, lw:0, ll:0, ow:0, on:0, pending:0};
+            if (!g) { t.pending++; return; }
+            if (g.winner === 'TIE') return;
             const hit = pick === g.winner;
             hit ? t.w++ : t.l++;
             if (p.week === lastDone) hit ? t.lw++ : t.ll++;
@@ -196,11 +205,40 @@ function renderLeaderboard() {
     body.innerHTML = rows.map((r, i) => `<tr class="border-b border-zinc-900">
         <td class="py-3 pl-4 pr-2 mono text-gray-500">${i + 1}</td>
         <td class="py-3 px-2 font-bold"><span class="inline-block w-2 h-2 rounded-full mr-2" style="background:${tc(team[r.h])}"></span>${esc(r.h)}</td>
-        <td class="py-3 px-2 mono text-right">${r.w}-${r.l}</td>
-        <td class="py-3 px-2 mono text-right">${(r.pct * 100).toFixed(0)}%</td>
+        <td class="py-3 px-2 mono text-right">${r.w}-${r.l}${r.pending ? `<span class="text-gray-600 text-xs"> +${r.pending} pending</span>` : ''}</td>
+        <td class="py-3 px-2 mono text-right">${r.w + r.l ? (r.pct * 100).toFixed(0) + '%' : '—'}</td>
         <td class="py-3 px-2 mono text-right hidden sm:table-cell text-gray-400">${r.lw + r.ll ? r.lw + '-' + r.ll : '—'}</td>
         <td class="py-3 pl-2 pr-4 mono text-right hidden sm:table-cell text-gray-400">${r.on ? r.ow + '/' + r.on : '—'}</td>
-    </tr>`).join('') || '<tr><td colspan="6" class="p-4 skeleton">No graded picks yet.</td></tr>';
+    </tr>`).join('') || '<tr><td colspan="6" class="p-4 skeleton">No picks logged yet.</td></tr>';
+    renderPicksGrid(results, team);
+}
+
+function renderPicksGrid(results, team) {
+    const el = document.getElementById('picks-grid');
+    const games = [...(PICKS?.games || [])].sort((a,b) => b.week - a.week);
+    if (!games.length) { el.innerHTML = '<div class="p-4 skeleton">No picks logged yet.</div>'; return; }
+    const hosts = (PICKS.hosts || []).map(h => h.name).filter(h => games.some(g => g.picks[h]));
+    const sched = {}; (SCHED?.games || []).forEach(g => sched[gameKey(g)] = g);
+    let lastWeek = null;
+    const rows = games.map(p => {
+        const g = sched[gameKey(p)] || {}, done = results[gameKey(p)];
+        const sep = p.week !== lastWeek ? `<tr><td colspan="${hosts.length + 2}" class="pt-4 pb-1 pl-4 eyebrow">Week ${p.week}</td></tr>` : '';
+        lastWeek = p.week;
+        const final = done ? `${done.away} ${done.awayScore}–${done.homeScore} ${done.home}` : (g.date ? new Date(g.date).toLocaleDateString([], {weekday:'short', month:'short', day:'numeric'}) : '');
+        const cells = hosts.map(h => {
+            const pick = p.picks[h]; if (!pick) return '<td class="px-2 py-2 text-center text-gray-700">—</td>';
+            const unsure = (p.unconfirmed || []).includes(h);
+            const mark = done && done.winner !== 'TIE' ? (pick === done.winner ? '<span class="text-green-400">✓</span>' : '<span class="text-red-400">✗</span>') : '';
+            const sc = p.scores?.[h] ? `<div class="text-[10px] text-gray-500">${esc(p.scores[h])}</div>` : '';
+            return `<td class="px-2 py-2 text-center whitespace-nowrap"><span class="mono font-bold" style="color:${tc(pick)}">${esc(pick)}</span>${unsure ? '<span class="text-gray-500">?</span>' : ''} ${mark}${sc}</td>`;
+        }).join('');
+        return `${sep}<tr class="border-t border-zinc-900"><td class="pl-4 pr-2 py-2 whitespace-nowrap"><span class="mono font-bold">${esc(p.away)} @ ${esc(p.home)}</span></td>
+            <td class="px-2 py-2 mono text-xs text-gray-500 whitespace-nowrap">${esc(final)}</td>${cells}</tr>`;
+    }).join('');
+    el.innerHTML = `<table class="w-full text-sm"><thead><tr class="border-b border-zinc-800 text-left">
+        <th class="py-3 pl-4 pr-2 eyebrow">Game</th><th class="px-2 eyebrow">Result</th>
+        ${hosts.map(h => `<th class="px-2 eyebrow text-center"><span class="inline-block w-2 h-2 rounded-full mr-1" style="background:${tc(team[h])}"></span>${esc(h)}</th>`).join('')}
+        </tr></thead><tbody>${rows}</tbody></table>`;
 }
 
 function renderPlayoffs() {

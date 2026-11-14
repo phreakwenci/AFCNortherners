@@ -201,3 +201,63 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ---------------------------------------------------------------- draft history
+DRAFT_SOURCE = "https://github.com/nflverse/nflverse-data/releases/download/draft_picks/draft_picks.csv"
+NORTH = ("BAL", "CIN", "CLE", "PIT")
+
+
+def build_draft_history(text, first=2000):
+    rows = list(csv.DictReader(io.StringIO(text)))
+    latest = max(to_int(r["season"]) or 0 for r in rows)
+    matured = latest - 4  # careers from drafts 4+ years old are judged; newer ones are "too early"
+
+    # Expected career value by pick slot: median w_av of nearby picks in matured drafts
+    by_pick = {}
+    for r in rows:
+        s, p, av = to_int(r["season"]), to_int(r["pick"]), to_int(r.get("w_av"))
+        if s and p and first <= s <= matured:
+            by_pick.setdefault(p, []).append(av or 0)
+
+    def expected(p):
+        vals = sorted(v for q in range(max(1, p - 3), p + 4) for v in by_pick.get(q, []))
+        return vals[len(vals) // 2] if vals else 0
+
+    picks = []
+    for r in rows:
+        s = to_int(r["season"])
+        if not s or s < first or r["team"] not in NORTH:
+            continue
+        p, av = to_int(r["pick"]), to_int(r.get("w_av")) or 0
+        exp = expected(p)
+        grade = None
+        if s <= matured:
+            diff = av - exp
+            grade = "steal" if diff >= max(15, exp) else "hit" if diff >= 0 else "bust" if p <= 64 and av < exp * 0.35 else "miss"
+        picks.append({
+            "season": s, "round": to_int(r["round"]), "pick": p, "team": r["team"],
+            "player": r.get("pfr_player_name"), "pos": r.get("position"), "college": r.get("college"),
+            "games": to_int(r.get("games")), "starts": to_int(r.get("seasons_started")),
+            "probowls": to_int(r.get("probowls")) or 0, "allpro": to_int(r.get("allpro")) or 0,
+            "hof": r.get("hof") == "TRUE", "av": av, "expectedAv": exp, "grade": grade,
+        })
+    picks.sort(key=lambda x: (-x["season"], x["pick"] or 999))
+    return {"latestDraft": latest, "judgedThrough": matured, "picks": picks,
+            "note": "Career value = Pro Football Reference weighted Approximate Value (AV) via nflverse. "
+                    "Grades compare a player's AV with the typical AV for his draft slot; drafts under 4 years old aren't graded."}
+
+
+def update_draft_history(stamp):
+    req = urllib.request.Request(DRAFT_SOURCE, headers={"User-Agent": "afcnortherners-site-data (GitHub Actions)"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        hist = build_draft_history(r.read().decode("utf-8"))
+    hist["updated"] = stamp
+    write("draft-history.json", hist)
+
+
+if __name__ == "__main__" and os.environ.get("SKIP_DRAFT_HISTORY") != "1":
+    try:
+        update_draft_history(dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"))
+    except Exception as e:
+        print("DRAFT HISTORY FAILED (kept old file):", e, file=sys.stderr)

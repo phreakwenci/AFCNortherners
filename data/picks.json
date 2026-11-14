@@ -1,14 +1,78 @@
 {
  "season": 2026,
- "updated": null,
- "note": "Maintained by the weekly picks scheduled task from the Notion 'Weekly Picks' database. One entry per AFC North game; picks are team abbreviations (ESPN style), scores are optional predicted finals.",
+ "updated": "2026-11-14T07:55:49+00:00",
+ "note": "Maintained by the weekly picks jobs from the Notion 'Weekly Picks' database. One entry per AFC North game; picks are team abbreviations, scores optional. 'unconfirmed' lists hosts whose on-air pick attribution hasn't been confirmed yet.",
  "hosts": [
-  {"name": "Dave", "team": "CLE"},
-  {"name": "Chris", "team": "PIT"},
-  {"name": "Gabe", "team": "PIT"},
-  {"name": "Rob", "team": "CIN"},
-  {"name": "Jan", "team": "BAL"},
-  {"name": "Justen", "team": "BAL"}
+  {
+   "name": "Dave",
+   "team": "CLE"
+  },
+  {
+   "name": "Chris",
+   "team": "PIT"
+  },
+  {
+   "name": "Gabe",
+   "team": "PIT"
+  },
+  {
+   "name": "Rob",
+   "team": "CIN"
+  },
+  {
+   "name": "Jan",
+   "team": "BAL"
+  },
+  {
+   "name": "Justen",
+   "team": "BAL"
+  }
  ],
- "games": []
+ "games": [
+  {
+   "week": 10,
+   "away": "HOU",
+   "home": "CLE",
+   "picks": {
+    "Jan": "CLE",
+    "Rob": "HOU",
+    "Chris": "HOU"
+   },
+   "scores": {
+    "Jan": "26-13",
+    "Rob": "21-16",
+    "Chris": "29-24"
+   },
+   "unconfirmed": [
+    "Jan",
+    "Rob"
+   ]
+  },
+  {
+   "week": 10,
+   "away": "PIT",
+   "home": "CIN",
+   "picks": {
+    "Jan": "CIN",
+    "Rob": "CIN",
+    "Chris": "PIT"
+   },
+   "scores": {
+    "Jan": "30-27"
+   }
+  },
+  {
+   "week": 10,
+   "away": "LAC",
+   "home": "BAL",
+   "picks": {
+    "Rob": "BAL",
+    "Chris": "LAC"
+   },
+   "scores": {
+    "Rob": "14-10",
+    "Chris": "17-10"
+   }
+  }
+ ]
 }

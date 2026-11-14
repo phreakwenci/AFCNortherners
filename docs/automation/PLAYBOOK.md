@@ -16,6 +16,7 @@ Humans: edit this file to change how the jobs behave.
     Captions have **no speaker names**; `>>` marks a speaker change. Infer speakers from names used in conversation.
   - `data/picks.json` — built by these jobs from Notion (format below).
   - `data/draft-pundits.json` — built by the Draft HQ job (format below).
+  - `data/draft-history.json` — every AFC North pick since 2000 (auto, from nflverse). `data/draft-live.json` — draft-night picks + host mocks.
 - **Publishing rule:** commit ONLY files under `data/` (and `transcripts/` if needed), rebase on `origin/main`,
   push to `main`. Never change any other file on main. Use commit messages like `Picks update Wk11`.
 - **Hosts (the main six)** — name / team / email:
@@ -49,10 +50,11 @@ Humans: edit this file to change how the jobs behave.
 ### data/picks.json format
 Keep existing `season`, `note`, `hosts`. Set `updated` to now (ISO). `games` = one object per (Week, Game) from Weekly Picks:
 ```json
-{"week": 11, "away": "PIT", "home": "CIN", "picks": {"Jan": "CIN", "Chris": "PIT"}, "scores": {"Jan": "30-27"}}
+{"week": 11, "away": "PIT", "home": "CIN", "picks": {"Jan": "CIN", "Chris": "PIT"}, "scores": {"Jan": "30-27"}, "unconfirmed": ["Chris"]}
 ```
-Include `Source=Email` rows always; `Source=On-air` rows only when `Verified` is checked. If a host has both for a
-game, Email wins. Omit empty `scores`. The website grades picks itself against `data/schedule.json`.
+Include every row. If a host has both an Email and an On-air pick for a game, Email wins. For On-air rows whose
+`Verified` is unchecked (speaker attribution uncertain), add the host's name to that game's `"unconfirmed": []` list —
+the site shows those with a "?" until Jan confirms (ticks Verified) or corrects them. Omit empty `scores`. The website grades picks itself against `data/schedule.json`.
 
 ### data/draft-pundits.json format
 ```json
