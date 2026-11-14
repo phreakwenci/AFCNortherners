@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-14T07:55:49+00:00",
+ "updated": "2026-11-14T08:05:31+00:00",
  "note": "Maintained by the weekly picks jobs from the Notion 'Weekly Picks' database. One entry per AFC North game; picks are team abbreviations, scores optional. 'unconfirmed' lists hosts whose on-air pick attribution hasn't been confirmed yet.",
  "hosts": [
   {
@@ -31,22 +31,18 @@
  "games": [
   {
    "week": 10,
-   "away": "HOU",
-   "home": "CLE",
+   "away": "LAC",
+   "home": "BAL",
    "picks": {
-    "Jan": "CLE",
-    "Rob": "HOU",
-    "Chris": "HOU"
+    "Rob": "BAL",
+    "Chris": "LAC",
+    "Jan": "LAC"
    },
    "scores": {
-    "Jan": "26-13",
-    "Rob": "21-16",
-    "Chris": "29-24"
-   },
-   "unconfirmed": [
-    "Jan",
-    "Rob"
-   ]
+    "Rob": "14-10",
+    "Chris": "17-10",
+    "Jan": "23-21"
+   }
   },
   {
    "week": 10,
@@ -63,16 +59,259 @@
   },
   {
    "week": 10,
-   "away": "LAC",
+   "away": "HOU",
+   "home": "CLE",
+   "picks": {
+    "Jan": "CLE",
+    "Rob": "HOU",
+    "Chris": "HOU"
+   },
+   "scores": {
+    "Jan": "26-13",
+    "Rob": "21-16",
+    "Chris": "29-24"
+   }
+  },
+  {
+   "week": 9,
+   "away": "CIN",
+   "home": "ATL",
+   "picks": {
+    "Rob": "CIN"
+   },
+   "scores": {
+    "Rob": "34-27"
+   }
+  },
+  {
+   "week": 9,
+   "away": "JAX",
+   "home": "BAL",
+   "picks": {
+    "Jan": "JAX"
+   },
+   "scores": {
+    "Jan": "34-10"
+   }
+  },
+  {
+   "week": 8,
+   "away": "CLE",
+   "home": "PIT",
+   "picks": {
+    "Jan": "CLE",
+    "Rob": "PIT"
+   },
+   "scores": {
+    "Jan": "31-13",
+    "Rob": "16-13"
+   }
+  },
+  {
+   "week": 7,
+   "away": "CIN",
+   "home": "BAL",
+   "picks": {
+    "Jan": "BAL",
+    "Rob": "CIN"
+   },
+   "scores": {
+    "Jan": "27-20",
+    "Rob": "41-38"
+   },
+   "unconfirmed": [
+    "Rob"
+   ]
+  },
+  {
+   "week": 7,
+   "away": "PIT",
+   "home": "NO",
+   "picks": {
+    "Chris": "PIT",
+    "Rob": "PIT"
+   },
+   "scores": {
+    "Chris": "31-27",
+    "Rob": "24-21"
+   }
+  },
+  {
+   "week": 6,
+   "away": "BAL",
+   "home": "CLE",
+   "picks": {
+    "Jan": "BAL",
+    "Rob": "BAL"
+   },
+   "scores": {
+    "Jan": "27-17"
+   },
+   "unconfirmed": [
+    "Jan",
+    "Rob"
+   ]
+  },
+  {
+   "week": 6,
+   "away": "PIT",
+   "home": "TB",
+   "picks": {
+    "Rob": "PIT",
+    "Chris": "PIT"
+   },
+   "scores": {
+    "Rob": "24-14",
+    "Chris": "37-13"
+   },
+   "unconfirmed": [
+    "Chris"
+   ]
+  },
+  {
+   "week": 5,
+   "away": "IND",
+   "home": "PIT",
+   "picks": {
+    "Jan": "PIT"
+   },
+   "scores": {},
+   "unconfirmed": [
+    "Jan"
+   ]
+  },
+  {
+   "week": 4,
+   "away": "TEN",
+   "home": "BAL",
+   "picks": {
+    "Jan": "BAL"
+   },
+   "scores": {
+    "Jan": "31-13"
+   }
+  },
+  {
+   "week": 4,
+   "away": "JAX",
+   "home": "CIN",
+   "picks": {
+    "Rob": "CIN"
+   },
+   "scores": {
+    "Rob": "27-24"
+   }
+  },
+  {
+   "week": 4,
+   "away": "PIT",
+   "home": "CLE",
+   "picks": {
+    "Chris": "PIT"
+   },
+   "scores": {
+    "Chris": "27-13"
+   }
+  },
+  {
+   "week": 3,
+   "away": "CAR",
+   "home": "CLE",
+   "picks": {
+    "Rob": "CAR",
+    "Jan": "CLE"
+   },
+   "scores": {
+    "Rob": "30-17",
+    "Jan": "24-20"
+   },
+   "unconfirmed": [
+    "Jan"
+   ]
+  },
+  {
+   "week": 3,
+   "away": "BAL",
+   "home": "DAL",
+   "picks": {
+    "Rob": "DAL"
+   },
+   "scores": {
+    "Rob": "34-33"
+   }
+  },
+  {
+   "week": 3,
+   "away": "CIN",
+   "home": "PIT",
+   "picks": {
+    "Rob": "CIN"
+   },
+   "scores": {
+    "Rob": "27-10"
+   }
+  },
+  {
+   "week": 2,
+   "away": "NO",
    "home": "BAL",
    "picks": {
     "Rob": "BAL",
-    "Chris": "LAC"
+    "Jan": "BAL"
    },
    "scores": {
-    "Rob": "14-10",
-    "Chris": "17-10"
-   }
+    "Rob": "27-13",
+    "Jan": "27-17"
+   },
+   "unconfirmed": [
+    "Jan"
+   ]
+  },
+  {
+   "week": 2,
+   "away": "CIN",
+   "home": "HOU",
+   "picks": {
+    "Rob": "CIN"
+   },
+   "scores": {
+    "Rob": "13-9"
+   },
+   "unconfirmed": [
+    "Rob"
+   ]
+  },
+  {
+   "week": 2,
+   "away": "PIT",
+   "home": "NE",
+   "picks": {
+    "Jan": "NE",
+    "Rob": "PIT"
+   },
+   "scores": {
+    "Jan": "21-6"
+   },
+   "unconfirmed": [
+    "Jan",
+    "Rob"
+   ]
+  },
+  {
+   "week": 2,
+   "away": "CLE",
+   "home": "TB",
+   "picks": {
+    "Rob": "TB",
+    "Jan": "TB"
+   },
+   "scores": {
+    "Rob": "24-7",
+    "Jan": "24-13"
+   },
+   "unconfirmed": [
+    "Jan"
+   ]
   }
  ]
 }
