@@ -11,7 +11,7 @@ Humans: edit this file to change how the jobs behave.
   Before any job: `git fetch origin main` and work from the latest `origin/main` copy of `data/`, `transcripts/`, and this playbook.
 - **Data files (on main):**
   - `data/standings.json`, `data/schedule.json`, `data/draft-order.json` — refreshed automatically by the
-    "Update site data" GitHub Action from ESPN. Never hand-edit.
+    "Update site data" GitHub Action from nflverse (open NFL data). Never hand-edit.
   - `transcripts/*.txt` + `transcripts/index.json` — YouTube auto-captions of each show, saved by the same Action.
     Captions have **no speaker names**; `>>` marks a speaker change. Infer speakers from names used in conversation.
   - `data/picks.json` — built by these jobs from Notion (format below).

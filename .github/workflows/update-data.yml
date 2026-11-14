@@ -26,6 +26,8 @@ jobs:
         with:
           python-version: "3.12"
       - name: Standings, schedule, scores, draft order
+        id: nfl
+        continue-on-error: true
         run: python scripts/fetch_nfl.py
       - name: Show transcripts
         continue-on-error: true
@@ -41,3 +43,8 @@ jobs:
           git commit -m "Data update $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push
+      - name: Flag a failed stats update
+        if: steps.nfl.outcome == 'failure'
+        run: |
+          echo "::error::NFL data fetch failed - see the 'Standings, schedule, scores' step. The site keeps the last good data."
+          exit 1

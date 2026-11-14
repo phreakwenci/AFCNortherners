@@ -1,0 +1,232 @@
+{
+ "draftYear": 2027,
+ "updated": "2026-11-14T06:56:56+00:00",
+ "projected": true,
+ "note": "If the season ended today. Tiebreakers approximate.",
+ "order": [
+  {
+   "pick": 1,
+   "abbr": "LAC",
+   "team": "Los Angeles Chargers",
+   "record": "0-8",
+   "afcNorth": false
+  },
+  {
+   "pick": 2,
+   "abbr": "MIA",
+   "team": "Miami Dolphins",
+   "record": "1-7",
+   "afcNorth": false
+  },
+  {
+   "pick": 3,
+   "abbr": "TEN",
+   "team": "Tennessee Titans",
+   "record": "1-7",
+   "afcNorth": false
+  },
+  {
+   "pick": 4,
+   "abbr": "PHI",
+   "team": "Philadelphia Eagles",
+   "record": "2-7",
+   "afcNorth": false
+  },
+  {
+   "pick": 5,
+   "abbr": "IND",
+   "team": "Indianapolis Colts",
+   "record": "2-7",
+   "afcNorth": false
+  },
+  {
+   "pick": 6,
+   "abbr": "NYJ",
+   "team": "New York Jets",
+   "record": "2-7",
+   "afcNorth": false
+  },
+  {
+   "pick": 7,
+   "abbr": "ARI",
+   "team": "Arizona Cardinals",
+   "record": "3-6",
+   "afcNorth": false
+  },
+  {
+   "pick": 8,
+   "abbr": "ATL",
+   "team": "Atlanta Falcons",
+   "record": "3-6",
+   "afcNorth": false
+  },
+  {
+   "pick": 9,
+   "abbr": "TB",
+   "team": "Tampa Bay Buccaneers",
+   "record": "3-6",
+   "afcNorth": false
+  },
+  {
+   "pick": 10,
+   "abbr": "NO",
+   "team": "New Orleans Saints",
+   "record": "3-5",
+   "afcNorth": false
+  },
+  {
+   "pick": 11,
+   "abbr": "HOU",
+   "team": "Houston Texans",
+   "record": "3-5",
+   "afcNorth": false
+  },
+  {
+   "pick": 12,
+   "abbr": "WSH",
+   "team": "Washington Commanders",
+   "record": "3-5-1",
+   "afcNorth": false
+  },
+  {
+   "pick": 13,
+   "abbr": "BAL",
+   "team": "Baltimore Ravens",
+   "record": "4-5",
+   "afcNorth": true
+  },
+  {
+   "pick": 14,
+   "abbr": "LV",
+   "team": "Las Vegas Raiders",
+   "record": "4-5",
+   "afcNorth": false
+  },
+  {
+   "pick": 15,
+   "abbr": "DAL",
+   "team": "Dallas Cowboys",
+   "record": "4-5",
+   "afcNorth": false
+  },
+  {
+   "pick": 16,
+   "abbr": "CLE",
+   "team": "Cleveland Browns",
+   "record": "5-4",
+   "afcNorth": true
+  },
+  {
+   "pick": 17,
+   "abbr": "LAR",
+   "team": "Los Angeles Rams",
+   "record": "5-4",
+   "afcNorth": false
+  },
+  {
+   "pick": 18,
+   "abbr": "SEA",
+   "team": "Seattle Seahawks",
+   "record": "5-4",
+   "afcNorth": false
+  },
+  {
+   "pick": 19,
+   "abbr": "CAR",
+   "team": "Carolina Panthers",
+   "record": "3-5",
+   "afcNorth": false
+  },
+  {
+   "pick": 20,
+   "abbr": "NE",
+   "team": "New England Patriots",
+   "record": "5-4",
+   "afcNorth": false
+  },
+  {
+   "pick": 21,
+   "abbr": "NYG",
+   "team": "New York Giants",
+   "record": "5-3-1",
+   "afcNorth": false
+  },
+  {
+   "pick": 22,
+   "abbr": "GB",
+   "team": "Green Bay Packers",
+   "record": "6-3",
+   "afcNorth": false
+  },
+  {
+   "pick": 23,
+   "abbr": "MIN",
+   "team": "Minnesota Vikings",
+   "record": "6-2",
+   "afcNorth": false
+  },
+  {
+   "pick": 24,
+   "abbr": "DET",
+   "team": "Detroit Lions",
+   "record": "6-2",
+   "afcNorth": false
+  },
+  {
+   "pick": 25,
+   "abbr": "PIT",
+   "team": "Pittsburgh Steelers",
+   "record": "6-2",
+   "afcNorth": true
+  },
+  {
+   "pick": 26,
+   "abbr": "KC",
+   "team": "Kansas City Chiefs",
+   "record": "6-2",
+   "afcNorth": false
+  },
+  {
+   "pick": 27,
+   "abbr": "CIN",
+   "team": "Cincinnati Bengals",
+   "record": "6-2",
+   "afcNorth": true
+  },
+  {
+   "pick": 28,
+   "abbr": "JAX",
+   "team": "Jacksonville Jaguars",
+   "record": "6-2",
+   "afcNorth": false
+  },
+  {
+   "pick": 29,
+   "abbr": "DEN",
+   "team": "Denver Broncos",
+   "record": "7-2",
+   "afcNorth": false
+  },
+  {
+   "pick": 30,
+   "abbr": "CHI",
+   "team": "Chicago Bears",
+   "record": "7-2",
+   "afcNorth": false
+  },
+  {
+   "pick": 31,
+   "abbr": "BUF",
+   "team": "Buffalo Bills",
+   "record": "7-1",
+   "afcNorth": false
+  },
+  {
+   "pick": 32,
+   "abbr": "SF",
+   "team": "San Francisco 49ers",
+   "record": "7-1",
+   "afcNorth": false
+  }
+ ]
+}
