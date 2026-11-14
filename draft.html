@@ -285,6 +285,30 @@ function renderHistory() {
     renderNorth(); renderPunditTabs(); renderBoard(); renderLive(); renderHistory();
     if (LIVE?.status === 'live') setInterval(async () => { LIVE = await getJSON('data/draft-live.json') || LIVE; renderLive(); }, 30000);
 })();
+
+// ---- Live-feed probe: open draft.html?probe=1 in a normal browser to test which public draft feeds
+// this site can read directly (the data comes from the viewer's browser, so this can't be tested server-side).
+if (new URLSearchParams(location.search).has('probe')) (async () => {
+    const yr = new URLSearchParams(location.search).get('year') || '2026';
+    const urls = [
+        `https://site.api.espn.com/apis/site/v2/sports/football/nfl/draft?season=${yr}`,
+        `https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/draft?season=${yr}`,
+        `https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/${yr}/draft/rounds?lang=en&region=us`,
+        `https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/${yr}/draft/status`,
+    ];
+    const box = document.createElement('div');
+    box.style.cssText = 'position:fixed;inset:auto 8px 8px 8px;max-height:70vh;overflow:auto;z-index:99;background:#000;border:2px solid #FFB612;border-radius:10px;padding:12px;font:12px/1.4 monospace;color:#ddd;white-space:pre-wrap';
+    box.textContent = `Draft feed probe (season ${yr})… screenshot this box for Claude.\n`;
+    document.body.appendChild(box);
+    for (const u of urls) {
+        try {
+            const r = await fetch(u); const t = await r.text(); let keys = '', sample = '';
+            try { const j = JSON.parse(t); keys = Object.keys(j).join(', ');
+                  const first = (j.picks || j.items || [])[0]; sample = first ? JSON.stringify(first).slice(0, 400) : t.slice(0, 300); } catch { sample = t.slice(0, 200); }
+            box.textContent += `\n✅ ${r.status} ${u}\n   keys: ${keys}\n   first: ${sample}\n`;
+        } catch (e) { box.textContent += `\n❌ BLOCKED ${u}\n   ${e.message}\n`; }
+    }
+})();
 </script>
 </body>
 </html>
