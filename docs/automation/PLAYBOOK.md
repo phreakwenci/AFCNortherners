@@ -77,8 +77,19 @@ the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) 
 2. **On-air picks:** log every winner/score prediction a host made on an AFC North game as an Airtable Weekly Picks record:
    Source=On-air, Verified unchecked, Result=Pending, Episode=YouTube URL, Quote=the transcript lines (with timestamps)
    it came from, Entry="Wk<N> — <Host> — <Game>". Only log when the speaker is reasonably clear. Never overwrite Email rows.
-3. **Hot Take Meter:** pick the 3–5 spiciest, most debatable takes from the show; rewrite each as one vote-able
-   sentence; add to Airtable (Active checked, Team, matching Week Label, votes 0). Uncheck Active on takes 3+ weeks old.
+3. **Hot Take Meter:** (public on the homepage — fans vote Fire 🔥 / Cap ❄️.)
+   - Pick the 4–5 most debatable, *prediction-style* takes from the show (a team's season, a player's future, a coach, a
+     game outcome, a trade/draft call). Rewrite each as ONE punchy, vote-able sentence a fan can agree or disagree with,
+     e.g. "The Steelers win the AFC North." No hedging, no "the hosts think".
+   - **Never** attribute a take to a specific host, and never turn into a take: accusations or jokes about crimes or
+     off-field conduct, personal attacks, injuries/medical speculation about named players, slurs, or anything a host
+     said as crude banter. If in doubt, leave it out — 4 clean takes beats 5.
+   - Add each to Airtable `Hot Takes`: Take Text, Team (the team it's about, or `All`), Week Label (`Week <N>` for the
+     upcoming NFL week, e.g. `Week 11`; create the option if missing), Active ✔, Yes/No votes 0, Sort Order 1–5
+     (spiciest first).
+   - Keep the meter fresh: afterwards no more than 8 takes may be Active. Uncheck Active on the oldest first (never
+     delete — votes are history). Skip a take if an Active or recent one already says the same thing.
+   - List the takes you added in the note to Jan (step 6) so a bad one can be unticked in Airtable in seconds.
 4. **6-Pack Friday issue:** create this week's issue page in Notion if missing (Status Draft, next Issue Number,
    Send Date this Friday, Week Label), following the style guide. Fill the four team News fields, Around the League
    and Odds note from current reporting; sources in Notes.
