@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Season HQ - AFC Northerners</title>
+    <meta name="description" content="AFC North standings, weekly host picks, and the season leaderboard from the AFC Northerners show.">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D45QW183ZD"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D45QW183ZD');</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink:#0b0b0d; --panel:#141417; --panel-2:#1b1b20; --line:#2a2a31;
+            --fg:#f2f2f4; --muted:#9a9aa6; --faint:#6a6a76;
+            --CLE:#FF3C00; --PIT:#FFB612; --CIN:#FB4F14; --BAL:#8b5cf6;
+            --good:#22c55e; --bad:#ef4444;
+        }
+        body { background:var(--ink); color:var(--fg); font-family:'Archivo Narrow',sans-serif; -webkit-font-smoothing:antialiased;
+               background-image:radial-gradient(1200px 500px at 50% -200px, rgba(255,182,18,.07), transparent); }
+        .anton { font-family:'Anton',sans-serif; letter-spacing:1px; }
+        .mono { font-family:'Roboto Mono',monospace; font-variant-numeric:tabular-nums; }
+        .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; }
+        .eyebrow { font-family:'Roboto Mono',monospace; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--faint); }
+        .team-bar { position:relative; overflow:hidden; }
+        .team-bar::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--tc,#555); }
+        .chip { font-family:'Roboto Mono',monospace; font-size:.75rem; padding:3px 8px; border-radius:6px; background:var(--panel-2); border:1px solid var(--line); white-space:nowrap; }
+        .chip.ok { border-color:rgba(34,197,94,.5); color:#86efac; }
+        .chip.no { border-color:rgba(239,68,68,.5); color:#fca5a5; text-decoration:line-through; text-decoration-color:rgba(239,68,68,.6); }
+        .weekbtn { font-family:'Roboto Mono',monospace; font-size:.72rem; background:var(--panel); color:var(--muted); border:1px solid var(--line); border-radius:7px; padding:6px 10px; }
+        .weekbtn.on { color:var(--fg); border-color:var(--PIT); background:var(--panel-2); }
+        .skeleton { color:var(--faint); font-family:'Roboto Mono',monospace; font-size:.8rem; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <header class="sticky top-0 z-20 border-b border-zinc-800" style="background:rgba(11,11,13,.85);backdrop-filter:blur(8px)">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+            <a href="index.html" class="anton text-lg" style="background:linear-gradient(90deg,#FFB612,#FB4F14 42%,#FF3C00 62%,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent">AFC NORTHERNERS</a>
+            <nav class="flex gap-4 text-sm font-bold">
+                <a href="index.html" class="text-gray-400 hover:text-white">Home</a>
+                <a href="season.html" class="text-yellow-400">Season HQ</a>
+                <a href="draft.html" class="text-gray-400 hover:text-white">Draft HQ</a>
+                <a href="index.html#live" class="text-gray-400 hover:text-white hidden sm:inline">Watch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4">
+        <section class="pt-10 pb-6 text-center">
+            <div class="eyebrow" id="hq-eyebrow">Season HQ</div>
+            <h1 class="anton text-5xl md:text-7xl mt-2" id="hq-title">THE NORTH, WEEK BY WEEK</h1>
+            <p class="text-gray-400 max-w-xl mx-auto mt-3">Live AFC North standings, every game, and the hosts' weekly picks graded against real results. Who actually knows ball?</p>
+            <p class="mono text-xs text-gray-600 mt-3" id="hq-updated"></p>
+        </section>
+
+        <!-- Division -->
+        <section class="py-6">
+            <div class="flex items-baseline justify-between mb-4">
+                <h2 class="anton text-2xl">AFC NORTH STANDINGS</h2>
+                <span class="eyebrow">W-L · Div · Streak</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="division"><div class="skeleton">Loading standings…</div></div>
+        </section>
+
+        <!-- This week -->
+        <section class="py-6">
+            <div class="flex items-baseline justify-between mb-4 flex-wrap gap-2">
+                <h2 class="anton text-2xl" id="week-title">THIS WEEK</h2>
+                <div class="flex flex-wrap gap-1.5" id="weekbar"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3" id="games"><div class="skeleton">Loading schedule…</div></div>
+        </section>
+
+        <!-- Leaderboard -->
+        <section class="py-6">
+            <div class="flex items-baseline justify-between mb-4">
+                <h2 class="anton text-2xl">HOST PICKS LEADERBOARD</h2>
+                <span class="eyebrow">AFC North games · straight up</span>
+            </div>
+            <div class="panel overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead><tr class="text-left text-gray-500 border-b border-zinc-800">
+                        <th class="py-3 pl-4 pr-2 eyebrow">#</th><th class="py-3 px-2 eyebrow">Host</th>
+                        <th class="py-3 px-2 eyebrow text-right">W-L</th><th class="py-3 px-2 eyebrow text-right">Win %</th>
+                        <th class="py-3 px-2 eyebrow text-right hidden sm:table-cell">Last week</th><th class="py-3 pl-2 pr-4 eyebrow text-right hidden sm:table-cell">Own team</th>
+                    </tr></thead>
+                    <tbody id="leaderboard"><tr><td colspan="6" class="p-4 skeleton">Loading picks…</td></tr></tbody>
+                </table>
+            </div>
+            <p class="text-xs text-gray-600 mt-2">Picks come from the weekly picks email and from predictions made live on the show. "Own team" is how often a host's pick on their own team's game came true.</p>
+        </section>
+
+        <!-- Playoff picture -->
+        <section class="py-6 pb-16">
+            <div class="flex items-baseline justify-between mb-4">
+                <h2 class="anton text-2xl">AFC PLAYOFF PICTURE</h2>
+                <span class="eyebrow">If the season ended today</span>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3" id="playoffs"><div class="skeleton">Loading…</div></div>
+        </section>
+    </main>
+
+    <footer class="border-t border-zinc-800 py-6 text-center text-xs text-gray-600">
+        &copy; 2026 AFC Northerners · Live Tuesdays 6:30 PM PT on <a class="text-purple-400" href="https://www.twitch.tv/afcnortherners" target="_blank" rel="noopener">Twitch</a> &amp; <a class="text-red-400" href="https://www.youtube.com/@afcnorthernersshow" target="_blank" rel="noopener">YouTube</a> · Stats via ESPN
+    </footer>
+
+<script>
+const NORTH = ['BAL','CIN','CLE','PIT'];
+const NAMES = {BAL:'Ravens',CIN:'Bengals',CLE:'Browns',PIT:'Steelers'};
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const tc = ab => NORTH.includes(ab) ? `var(--${ab})` : '#52525b';
+const fmtRec = t => `${t.w}-${t.l}${t.t ? '-' + t.t : ''}`;
+const getJSON = url => fetch(url, {cache:'no-cache'}).then(r => r.ok ? r.json() : null).catch(() => null);
+
+let S = null, SCHED = null, PICKS = null, viewWeek = null;
+
+function gameKey(g) { return `${g.week}|${g.away}|${g.home}`; }
+
+function renderDivision() {
+    const el = document.getElementById('division');
+    if (!S) { el.innerHTML = '<div class="skeleton col-span-4">Standings will appear once the season data feed runs.</div>'; return; }
+    const hostsByTeam = {};
+    (PICKS?.hosts || []).forEach(h => (hostsByTeam[h.team] ||= []).push(h.name));
+    const north = S.teams.filter(t => t.div === 'AFC North').sort((a,b) => b.pct - a.pct || b.w - a.w);
+    el.innerHTML = north.map((t, i) => `
+        <div class="panel team-bar p-4 pl-5" style="--tc:${tc(t.abbr)}">
+            <div class="flex items-center justify-between">
+                <span class="anton text-2xl" style="color:${tc(t.abbr)}">${t.abbr}</span>
+                <span class="mono text-xs text-gray-500">${i === 0 ? '1st' : ['','2nd','3rd','4th'][i]}${t.clincher ? ' · ' + esc(t.clincher.toUpperCase()) : ''}</span>
+            </div>
+            <div class="text-gray-400 text-sm">${NAMES[t.abbr]}</div>
+            <div class="mono text-2xl mt-2">${fmtRec(t)}</div>
+            <div class="mono text-xs text-gray-500 mt-1">Div ${esc(t.divRecord || '—')} · ${esc(t.streak || '—')}${t.seed ? ' · #' + t.seed + ' AFC' : ''}</div>
+            ${hostsByTeam[t.abbr] ? `<div class="text-xs text-gray-600 mt-2">${esc(hostsByTeam[t.abbr].join(' & '))}'s team</div>` : ''}
+        </div>`).join('');
+}
+
+function picksFor(g) {
+    return (PICKS?.games || []).find(p => p.week === g.week && p.away === g.away && p.home === g.home);
+}
+
+function renderWeek() {
+    const games = (SCHED?.games || []).filter(g => g.afcNorth && g.week === viewWeek).sort((a,b) => new Date(a.date) - new Date(b.date));
+    document.getElementById('week-title').textContent = `WEEK ${viewWeek}`;
+    const el = document.getElementById('games');
+    if (!games.length) { el.innerHTML = '<div class="skeleton">No AFC North games this week (bye week for everyone, or schedule not loaded yet).</div>'; return; }
+    el.innerHTML = games.map(g => {
+        const p = picksFor(g);
+        const kick = new Date(g.date);
+        const status = g.completed ? 'FINAL' : g.state === 'in' ? `<span class="text-green-400">LIVE · ${esc(g.detail)}</span>` :
+            kick.toLocaleString([], {weekday:'short', month:'short', day:'numeric', hour:'numeric', minute:'2-digit'});
+        const score = (g.completed || g.state === 'in') ? `${g.awayScore ?? 0} – ${g.homeScore ?? 0}` : '@';
+        const chips = p ? Object.entries(p.picks).map(([host, team]) => {
+            const cls = g.winner ? (team === g.winner ? 'ok' : 'no') : '';
+            const pred = p.scores?.[host] ? ` <span class="text-gray-500">${esc(p.scores[host])}</span>` : '';
+            return `<span class="chip ${cls}">${esc(host)}: <b>${esc(team)}</b>${pred}</span>`;
+        }).join('') : '<span class="text-xs text-gray-600">Host picks not in yet</span>';
+        const side = (ab, s) => `<div class="flex items-center gap-2 ${g.winner && g.winner !== ab ? 'opacity-50' : ''}">
+                <span class="anton text-2xl" style="color:${tc(ab)}">${esc(ab)}</span></div>`;
+        return `<div class="panel p-4">
+            <div class="flex items-center justify-between">
+                ${side(g.away)}<span class="mono text-lg text-gray-300">${score}</span>${side(g.home)}
+            </div>
+            <div class="mono text-xs text-gray-500 mt-1 text-center">${status}</div>
+            <div class="flex flex-wrap gap-1.5 mt-3">${chips}</div>
+        </div>`;
+    }).join('');
+}
+
+function renderWeekbar() {
+    const weeks = [...new Set((SCHED?.games || []).map(g => g.week))].sort((a,b) => a - b);
+    document.getElementById('weekbar').innerHTML = weeks.map(w =>
+        `<button class="weekbtn ${w === viewWeek ? 'on' : ''}" onclick="viewWeek=${w};renderWeekbar();renderWeek()">${w}</button>`).join('');
+}
+
+function renderLeaderboard() {
+    const body = document.getElementById('leaderboard');
+    if (!PICKS?.games?.length || !SCHED) { body.innerHTML = '<tr><td colspan="6" class="p-4 skeleton">The leaderboard fills in as picks are logged each week.</td></tr>'; return; }
+    const results = {}; SCHED.games.forEach(g => { if (g.completed) results[gameKey(g)] = g; });
+    const team = {}; (PICKS.hosts || []).forEach(h => team[h.name] = h.team);
+    const lastDone = Math.max(0, ...SCHED.games.filter(g => g.completed && g.afcNorth).map(g => g.week));
+    const tally = {};
+    PICKS.games.forEach(p => {
+        const g = results[gameKey(p)]; if (!g || g.winner === 'TIE') return;
+        Object.entries(p.picks).forEach(([host, pick]) => {
+            const t = tally[host] ||= {w:0, l:0, lw:0, ll:0, ow:0, on:0};
+            const hit = pick === g.winner;
+            hit ? t.w++ : t.l++;
+            if (p.week === lastDone) hit ? t.lw++ : t.ll++;
+            if ([p.away, p.home].includes(team[host])) { t.on++; if (hit) t.ow++; }
+        });
+    });
+    const rows = Object.entries(tally).map(([h, t]) => ({h, ...t, pct: t.w / Math.max(1, t.w + t.l)}))
+        .sort((a,b) => b.pct - a.pct || b.w - a.w);
+    body.innerHTML = rows.map((r, i) => `<tr class="border-b border-zinc-900">
+        <td class="py-3 pl-4 pr-2 mono text-gray-500">${i + 1}</td>
+        <td class="py-3 px-2 font-bold"><span class="inline-block w-2 h-2 rounded-full mr-2" style="background:${tc(team[r.h])}"></span>${esc(r.h)}</td>
+        <td class="py-3 px-2 mono text-right">${r.w}-${r.l}</td>
+        <td class="py-3 px-2 mono text-right">${(r.pct * 100).toFixed(0)}%</td>
+        <td class="py-3 px-2 mono text-right hidden sm:table-cell text-gray-400">${r.lw + r.ll ? r.lw + '-' + r.ll : '—'}</td>
+        <td class="py-3 pl-2 pr-4 mono text-right hidden sm:table-cell text-gray-400">${r.on ? r.ow + '/' + r.on : '—'}</td>
+    </tr>`).join('') || '<tr><td colspan="6" class="p-4 skeleton">No graded picks yet.</td></tr>';
+}
+
+function renderPlayoffs() {
+    const el = document.getElementById('playoffs');
+    if (!S) { el.innerHTML = ''; return; }
+    const afc = S.teams.filter(t => t.conf === 'AFC' && t.seed).sort((a,b) => a.seed - b.seed);
+    if (!afc.length) { el.innerHTML = '<div class="skeleton">Seeds appear once the season is underway.</div>'; return; }
+    const row = t => `<div class="flex items-center justify-between py-2 px-4 border-b border-zinc-900 ${NORTH.includes(t.abbr) ? 'bg-yellow-500/5' : ''}">
+        <span><span class="mono text-gray-500 w-6 inline-block">${t.seed}</span><span class="font-bold" style="color:${NORTH.includes(t.abbr) ? tc(t.abbr) : 'inherit'}">${esc(t.team)}</span></span>
+        <span class="mono text-sm text-gray-400">${fmtRec(t)}</span></div>`;
+    el.innerHTML = `<div class="panel overflow-hidden"><div class="eyebrow px-4 pt-3 pb-2">In · seeds 1–7</div>${afc.filter(t => t.seed <= 7).map(row).join('')}</div>
+        <div class="panel overflow-hidden"><div class="eyebrow px-4 pt-3 pb-2">In the hunt</div>${afc.filter(t => t.seed > 7 && t.seed <= 12).map(row).join('')}</div>`;
+}
+
+(async function init() {
+    [S, SCHED, PICKS] = await Promise.all([getJSON('data/standings.json'), getJSON('data/schedule.json'), getJSON('data/picks.json')]);
+    const season = S?.season || SCHED?.season || 2026;
+    viewWeek = SCHED?.currentWeek || 1;
+    // Before Tuesday's show, keep showing last weekend's results
+    const prev = (SCHED?.games || []).filter(g => g.afcNorth && g.week === viewWeek - 1);
+    if (prev.length && (Date.now() - Math.max(...prev.map(g => +new Date(g.date)))) < 2.5 * 864e5) viewWeek -= 1;
+    document.getElementById('hq-eyebrow').textContent = `${season} Season HQ`;
+    if (S?.updated) document.getElementById('hq-updated').textContent = 'Stats updated ' + new Date(S.updated).toLocaleString([], {month:'short', day:'numeric', hour:'numeric', minute:'2-digit'});
+    renderDivision(); renderWeekbar(); renderWeek(); renderLeaderboard(); renderPlayoffs();
+})();
+</script>
+</body>
+</html>

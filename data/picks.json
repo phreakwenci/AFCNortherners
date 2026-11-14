@@ -1,0 +1,14 @@
+{
+ "season": 2026,
+ "updated": null,
+ "note": "Maintained by the weekly picks scheduled task from the Notion 'Weekly Picks' database. One entry per AFC North game; picks are team abbreviations (ESPN style), scores are optional predicted finals.",
+ "hosts": [
+  {"name": "Dave", "team": "CLE"},
+  {"name": "Chris", "team": "PIT"},
+  {"name": "Gabe", "team": "PIT"},
+  {"name": "Rob", "team": "CIN"},
+  {"name": "Jan", "team": "BAL"},
+  {"name": "Justen", "team": "BAL"}
+ ],
+ "games": []
+}
