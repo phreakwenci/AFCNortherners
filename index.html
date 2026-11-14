@@ -1071,7 +1071,7 @@ frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media
                                 <i class="far fa-calendar-alt mr-2"></i><span>Every Tuesday</span>
                             </div>
                             <div class="flex items-center text-yellow-500">
-                                <i class="far fa-clock mr-2"></i><span>6:00 PM PST</span>
+                                <i class="far fa-clock mr-2"></i><span>6:30 PM PT</span>
                             </div>
                         </div>
                         <div class="grid grid-cols-4 gap-2 mb-8">
@@ -1447,10 +1447,10 @@ function updateCountdown() {
     const currentDay = pacificTemp.getDay();
     const currentHour = parts.hour;
     let daysUntil = (2 - currentDay + 7) % 7;
-    if (daysUntil === 0 && currentHour >= 18) daysUntil = 7;
+    if (daysUntil === 0 && (currentHour > 18 || (currentHour === 18 && parts.minute >= 30))) daysUntil = 7;
     const isDST = (parts.month > 3 && parts.month < 11) || (parts.month === 3 && parts.day > 13) || (parts.month === 11 && parts.day < 6);
     const offsetHours = isDST ? 7 : 8;
-    const targetUTC = Date.UTC(parts.year, parts.month - 1, parts.day + daysUntil, 18 + offsetHours, 0, 0);
+    const targetUTC = Date.UTC(parts.year, parts.month - 1, parts.day + daysUntil, 18 + offsetHours, 30, 0);
     const diff = targetUTC - now.getTime();
     const d = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000),
           m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
