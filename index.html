@@ -293,7 +293,7 @@
 ═══════════════════════════════════════ -->
     <header class="sticky top-0 z-50 bg-black bg-opacity-90 border-b border-gray-800">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-2 min-w-0">
                 <img
                 src="https://raw.githubusercontent.com/phreakwenci/AFCNortherners/main/Assets/img/AFC%20NOTHERNERS%20YT%20LOGO%20(With%20Rob-Bengal).png"
                 alt="AFC Northerners Logo"
@@ -309,7 +309,7 @@
                         </div>
                     </div>
                 </div>
-                <h1 class="font-redzone text-lg md:text-xl bg-clip-text text-transparent"
+                <h1 class="font-redzone text-sm sm:text-lg md:text-xl bg-clip-text text-transparent py-1"
                     style="background-image: linear-gradient(to right, #FFB612 0%, #FFB612 20%, #FB4F14 40%, #FF3C00 60%, #241773 85%, #241773 100%);">
                     AFC NORTHERNERS</h1>
             </div>
@@ -324,7 +324,7 @@
                 <a href="draft.html" class="nav-link text-white hover:text-yellow-400 transition text-sm" style="font-family:'Archivo Narrow',sans-serif;font-weight:700;">Draft HQ</a>
                 <button onclick="openStandings()" class="nav-link text-white hover:text-yellow-400 transition cursor-pointer bg-transparent border-0 text-sm" style="font-family:'Archivo Narrow',sans-serif;">STANDINGS</button>
             </nav>
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-4 flex-shrink-0">
                 <a href="https://www.patreon.com/c/afcnortherners" target="_blank"
                     class="hidden md:block text-white px-4 py-2 rounded-md text-sm font-bold transition shadow-[0_0_15px_rgba(255,66,77,0.4)] hover:shadow-[0_0_20px_rgba(255,66,77,0.6)]"
                     style="background:#FF424D;">
@@ -334,10 +334,46 @@
                     class="hidden md:block bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-bold transition shadow-[0_0_15px_rgba(229,57,57,0.4)]">
                     <i class="fab fa-youtube mr-2"></i> SUBSCRIBE
                 </a>
-                <button class="md:hidden text-white"><i class="fas fa-bars text-xl"></i></button>
+                <button id="mobile-menu-btn" class="md:hidden text-white w-11 h-11 -mr-2 flex items-center justify-center"
+                    aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl" id="mobile-menu-icon"></i></button>
             </div>
         </div>
+        <!-- Mobile menu (phones/tablets) -->
+        <nav id="mobile-menu" class="md:hidden hidden border-t border-zinc-800" style="background:rgba(9,9,11,.97);">
+            <div class="container mx-auto px-4 py-3 flex flex-col">
+                <a href="https://www.youtube.com/@afcnorthernersshow" target="_blank" class="mm-link">WATCH</a>
+                <a href="#live" class="mm-link">LIVE</a>
+                <a href="season.html" class="mm-link">SEASON HQ</a>
+                <a href="draft.html" class="mm-link">DRAFT HQ</a>
+                <button type="button" class="mm-link text-left" onclick="toggleMobileMenu(false);openStandings()">STANDINGS</button>
+                <a href="#hosts" class="mm-link">HOSTS</a>
+                <a href="#newsletter" class="mm-link">COMMUNITY</a>
+                <a href="#patreon" class="mm-link">PATREON</a>
+                <div class="grid grid-cols-2 gap-3 pt-4 pb-2">
+                    <a href="https://www.patreon.com/c/afcnortherners" target="_blank" class="text-center text-white px-4 py-3 rounded-md text-sm font-bold" style="background:#FF424D;"><i class="fab fa-patreon mr-2"></i>JOIN</a>
+                    <a href="https://www.youtube.com/@afcnorthernersshow?sub_confirmation=1" target="_blank" class="text-center bg-red-600 text-white px-4 py-3 rounded-md text-sm font-bold"><i class="fab fa-youtube mr-2"></i>SUBSCRIBE</a>
+                </div>
+            </div>
+        </nav>
     </header>
+    <style>
+        .mm-link { display:block; color:#fff; padding:14px 4px; border-bottom:1px solid #27272a; font-family:'Anton',sans-serif; letter-spacing:1px; font-size:1.05rem; background:transparent; }
+        .mm-link:active, .mm-link:hover { color:#facc15; }
+    </style>
+    <script>
+        function toggleMobileMenu(force) {
+            const menu = document.getElementById('mobile-menu');
+            const open = typeof force === 'boolean' ? force : menu.classList.contains('hidden');
+            menu.classList.toggle('hidden', !open);
+            document.getElementById('mobile-menu-btn').setAttribute('aria-expanded', String(open));
+            document.getElementById('mobile-menu-icon').className = 'fas ' + (open ? 'fa-times' : 'fa-bars') + ' text-xl';
+        }
+        document.addEventListener('click', e => {
+            if (e.target.closest('#mobile-menu a')) toggleMobileMenu(false);
+        });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMobileMenu(false); });
+    </script>
 
     <!-- ═══════════════════════════════════════
      STANDINGS MODAL
