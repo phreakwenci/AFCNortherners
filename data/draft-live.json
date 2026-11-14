@@ -1,0 +1,8 @@
+{
+ "draftYear": 2027,
+ "status": "pre",
+ "updated": null,
+ "note": "status: pre | live | final. picks are filled in as they happen on draft night; hostPicks are each host's mock (pick number -> player name).",
+ "picks": [],
+ "hostPicks": {}
+}
