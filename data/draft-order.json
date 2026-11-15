@@ -1,6 +1,6 @@
 {
  "draftYear": 2027,
- "updated": "2026-11-14T22:50:00+00:00",
+ "updated": "2026-11-15T19:22:58+00:00",
  "projected": true,
  "note": "If the season ended today. Tiebreakers approximate.",
  "order": [
@@ -111,10 +111,10 @@
   },
   {
    "pick": 16,
-   "abbr": "CLE",
-   "team": "Cleveland Browns",
-   "record": "5-4",
-   "afcNorth": true
+   "abbr": "NE",
+   "team": "New England Patriots",
+   "record": "5-5",
+   "afcNorth": false
   },
   {
    "pick": 17,
@@ -139,10 +139,10 @@
   },
   {
    "pick": 20,
-   "abbr": "NE",
-   "team": "New England Patriots",
+   "abbr": "CLE",
+   "team": "Cleveland Browns",
    "record": "5-4",
-   "afcNorth": false
+   "afcNorth": true
   },
   {
    "pick": 21,
@@ -167,50 +167,50 @@
   },
   {
    "pick": 24,
-   "abbr": "DET",
-   "team": "Detroit Lions",
-   "record": "6-2",
-   "afcNorth": false
-  },
-  {
-   "pick": 25,
    "abbr": "PIT",
    "team": "Pittsburgh Steelers",
    "record": "6-2",
    "afcNorth": true
   },
   {
-   "pick": 26,
+   "pick": 25,
    "abbr": "KC",
    "team": "Kansas City Chiefs",
    "record": "6-2",
    "afcNorth": false
   },
   {
-   "pick": 27,
+   "pick": 26,
    "abbr": "CIN",
    "team": "Cincinnati Bengals",
    "record": "6-2",
    "afcNorth": true
   },
   {
-   "pick": 28,
+   "pick": 27,
    "abbr": "JAX",
    "team": "Jacksonville Jaguars",
    "record": "6-2",
    "afcNorth": false
   },
   {
-   "pick": 29,
+   "pick": 28,
    "abbr": "DEN",
    "team": "Denver Broncos",
    "record": "7-2",
    "afcNorth": false
   },
   {
-   "pick": 30,
+   "pick": 29,
    "abbr": "CHI",
    "team": "Chicago Bears",
+   "record": "7-2",
+   "afcNorth": false
+  },
+  {
+   "pick": 30,
+   "abbr": "DET",
+   "team": "Detroit Lions",
    "record": "7-2",
    "afcNorth": false
   },

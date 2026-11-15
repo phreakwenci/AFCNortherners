@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-14T22:50:00+00:00",
+ "updated": "2026-11-15T19:22:58+00:00",
  "source": "nflverse",
  "currentWeek": 10,
  "games": [
@@ -1928,12 +1928,12 @@
    "date": "2026-11-15T14:30:00Z",
    "away": "NE",
    "home": "DET",
-   "awayScore": null,
-   "homeScore": null,
-   "state": "pre",
-   "completed": false,
-   "winner": null,
-   "detail": "",
+   "awayScore": 10,
+   "homeScore": 35,
+   "state": "post",
+   "completed": true,
+   "winner": "DET",
+   "detail": "Final",
    "afcNorth": false
   },
   {
