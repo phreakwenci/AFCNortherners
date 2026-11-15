@@ -1,6 +1,6 @@
 {
  "draftYear": 2027,
- "updated": "2026-11-15T19:22:58+00:00",
+ "updated": "2026-11-15T21:25:25+00:00",
  "projected": true,
  "note": "If the season ended today. Tiebreakers approximate.",
  "order": [
@@ -15,70 +15,70 @@
    "pick": 2,
    "abbr": "MIA",
    "team": "Miami Dolphins",
-   "record": "1-7",
+   "record": "1-8",
    "afcNorth": false
   },
   {
    "pick": 3,
    "abbr": "TEN",
    "team": "Tennessee Titans",
-   "record": "1-7",
+   "record": "1-8",
    "afcNorth": false
   },
   {
    "pick": 4,
+   "abbr": "NYJ",
+   "team": "New York Jets",
+   "record": "2-8",
+   "afcNorth": false
+  },
+  {
+   "pick": 5,
    "abbr": "PHI",
    "team": "Philadelphia Eagles",
    "record": "2-7",
    "afcNorth": false
   },
   {
-   "pick": 5,
+   "pick": 6,
    "abbr": "IND",
    "team": "Indianapolis Colts",
-   "record": "2-7",
-   "afcNorth": false
-  },
-  {
-   "pick": 6,
-   "abbr": "NYJ",
-   "team": "New York Jets",
-   "record": "2-7",
+   "record": "3-7",
    "afcNorth": false
   },
   {
    "pick": 7,
+   "abbr": "ATL",
+   "team": "Atlanta Falcons",
+   "record": "3-7",
+   "afcNorth": false
+  },
+  {
+   "pick": 8,
    "abbr": "ARI",
    "team": "Arizona Cardinals",
    "record": "3-6",
    "afcNorth": false
   },
   {
-   "pick": 8,
-   "abbr": "ATL",
-   "team": "Atlanta Falcons",
-   "record": "3-6",
-   "afcNorth": false
-  },
-  {
    "pick": 9,
-   "abbr": "TB",
-   "team": "Tampa Bay Buccaneers",
+   "abbr": "NO",
+   "team": "New Orleans Saints",
    "record": "3-6",
    "afcNorth": false
   },
   {
    "pick": 10,
-   "abbr": "NO",
-   "team": "New Orleans Saints",
-   "record": "3-5",
+   "abbr": "HOU",
+   "team": "Houston Texans",
+   "record": "3-6",
    "afcNorth": false
   },
   {
    "pick": 11,
-   "abbr": "HOU",
-   "team": "Houston Texans",
-   "record": "3-5",
+   "abbr": "TB",
+   "team": "Tampa Bay Buccaneers",
+   "record": "3-6",
    "afcNorth": false
   },
   {
@@ -134,98 +134,98 @@
    "pick": 19,
    "abbr": "CAR",
    "team": "Carolina Panthers",
-   "record": "3-5",
+   "record": "4-5",
    "afcNorth": false
   },
   {
    "pick": 20,
    "abbr": "CLE",
    "team": "Cleveland Browns",
-   "record": "5-4",
+   "record": "6-4",
    "afcNorth": true
   },
   {
    "pick": 21,
+   "abbr": "GB",
+   "team": "Green Bay Packers",
+   "record": "6-4",
+   "afcNorth": false
+  },
+  {
+   "pick": 22,
    "abbr": "NYG",
    "team": "New York Giants",
    "record": "5-3-1",
    "afcNorth": false
   },
   {
-   "pick": 22,
-   "abbr": "GB",
-   "team": "Green Bay Packers",
-   "record": "6-3",
-   "afcNorth": false
-  },
-  {
    "pick": 23,
-   "abbr": "MIN",
-   "team": "Minnesota Vikings",
-   "record": "6-2",
-   "afcNorth": false
-  },
-  {
-   "pick": 24,
    "abbr": "PIT",
    "team": "Pittsburgh Steelers",
    "record": "6-2",
    "afcNorth": true
   },
   {
-   "pick": 25,
-   "abbr": "KC",
-   "team": "Kansas City Chiefs",
-   "record": "6-2",
-   "afcNorth": false
-  },
-  {
-   "pick": 26,
+   "pick": 24,
    "abbr": "CIN",
    "team": "Cincinnati Bengals",
    "record": "6-2",
    "afcNorth": true
   },
   {
-   "pick": 27,
-   "abbr": "JAX",
-   "team": "Jacksonville Jaguars",
-   "record": "6-2",
-   "afcNorth": false
-  },
-  {
-   "pick": 28,
+   "pick": 25,
    "abbr": "DEN",
    "team": "Denver Broncos",
    "record": "7-2",
    "afcNorth": false
   },
   {
-   "pick": 29,
+   "pick": 26,
+   "abbr": "MIN",
+   "team": "Minnesota Vikings",
+   "record": "7-2",
+   "afcNorth": false
+  },
+  {
+   "pick": 27,
    "abbr": "CHI",
    "team": "Chicago Bears",
    "record": "7-2",
    "afcNorth": false
   },
   {
-   "pick": 30,
+   "pick": 28,
    "abbr": "DET",
    "team": "Detroit Lions",
    "record": "7-2",
    "afcNorth": false
   },
   {
+   "pick": 29,
+   "abbr": "KC",
+   "team": "Kansas City Chiefs",
+   "record": "7-2",
+   "afcNorth": false
+  },
+  {
+   "pick": 30,
+   "abbr": "JAX",
+   "team": "Jacksonville Jaguars",
+   "record": "7-2",
+   "afcNorth": false
+  },
+  {
    "pick": 31,
-   "abbr": "BUF",
-   "team": "Buffalo Bills",
+   "abbr": "SF",
+   "team": "San Francisco 49ers",
    "record": "7-1",
    "afcNorth": false
   },
   {
    "pick": 32,
-   "abbr": "SF",
-   "team": "San Francisco 49ers",
-   "record": "7-1",
+   "abbr": "BUF",
+   "team": "Buffalo Bills",
+   "record": "8-1",
    "afcNorth": false
   }
  ]
