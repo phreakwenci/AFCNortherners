@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-16T01:15:04+00:00",
+ "updated": "2026-11-16T05:08:57+00:00",
  "source": "nflverse",
  "currentWeek": 10,
  "games": [
@@ -2082,12 +2082,12 @@
    "date": "2026-11-16T01:20:00Z",
    "away": "PIT",
    "home": "CIN",
-   "awayScore": null,
-   "homeScore": null,
-   "state": "pre",
-   "completed": false,
-   "winner": null,
-   "detail": "",
+   "awayScore": 18,
+   "homeScore": 38,
+   "state": "post",
+   "completed": true,
+   "winner": "CIN",
+   "detail": "Final",
    "afcNorth": true
   },
   {

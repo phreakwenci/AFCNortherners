@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-16T01:15:04+00:00",
+ "updated": "2026-11-16T05:08:57+00:00",
  "source": "nflverse",
  "note": "Computed from game results; NFL tiebreakers simplified.",
  "teams": [
@@ -77,17 +77,17 @@
    "team": "Cincinnati Bengals",
    "conf": "AFC",
    "div": "AFC North",
-   "w": 6,
+   "w": 7,
    "l": 2,
    "t": 0,
-   "pct": 0.75,
-   "seed": 6,
+   "pct": 0.778,
+   "seed": 4,
    "clincher": "",
-   "streak": "W4",
-   "pf": 240,
-   "pa": 175,
-   "divRecord": "1-1",
-   "confRecord": "4-2"
+   "streak": "W5",
+   "pf": 278,
+   "pa": 193,
+   "divRecord": "2-1",
+   "confRecord": "5-2"
   },
   {
    "abbr": "PIT",
@@ -95,16 +95,16 @@
    "conf": "AFC",
    "div": "AFC North",
    "w": 6,
-   "l": 2,
+   "l": 3,
    "t": 0,
-   "pct": 0.75,
-   "seed": 4,
+   "pct": 0.667,
+   "seed": 6,
    "clincher": "",
-   "streak": "W4",
-   "pf": 180,
-   "pa": 144,
-   "divRecord": "2-1",
-   "confRecord": "3-2"
+   "streak": "L1",
+   "pf": 198,
+   "pa": 182,
+   "divRecord": "2-2",
+   "confRecord": "3-3"
   },
   {
    "abbr": "CLE",

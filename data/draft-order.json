@@ -1,6 +1,6 @@
 {
  "draftYear": 2027,
- "updated": "2026-11-16T01:15:04+00:00",
+ "updated": "2026-11-16T05:08:57+00:00",
  "projected": true,
  "note": "If the season ended today. Tiebreakers approximate.",
  "order": [
@@ -162,50 +162,50 @@
    "pick": 23,
    "abbr": "PIT",
    "team": "Pittsburgh Steelers",
-   "record": "6-2",
+   "record": "6-3",
    "afcNorth": true
   },
   {
    "pick": 24,
-   "abbr": "CIN",
-   "team": "Cincinnati Bengals",
-   "record": "6-2",
-   "afcNorth": true
-  },
-  {
-   "pick": 25,
    "abbr": "DEN",
    "team": "Denver Broncos",
    "record": "7-2",
    "afcNorth": false
   },
   {
-   "pick": 26,
+   "pick": 25,
    "abbr": "MIN",
    "team": "Minnesota Vikings",
    "record": "7-2",
    "afcNorth": false
   },
   {
-   "pick": 27,
+   "pick": 26,
    "abbr": "CHI",
    "team": "Chicago Bears",
    "record": "7-2",
    "afcNorth": false
   },
   {
-   "pick": 28,
+   "pick": 27,
    "abbr": "DET",
    "team": "Detroit Lions",
    "record": "7-2",
    "afcNorth": false
   },
   {
-   "pick": 29,
+   "pick": 28,
    "abbr": "KC",
    "team": "Kansas City Chiefs",
    "record": "7-2",
    "afcNorth": false
+  },
+  {
+   "pick": 29,
+   "abbr": "CIN",
+   "team": "Cincinnati Bengals",
+   "record": "7-2",
+   "afcNorth": true
   },
   {
    "pick": 30,
