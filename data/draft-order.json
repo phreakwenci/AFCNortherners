@@ -1,6 +1,6 @@
 {
  "draftYear": 2027,
- "updated": "2026-11-15T21:25:25+00:00",
+ "updated": "2026-11-16T01:15:04+00:00",
  "projected": true,
  "note": "If the season ended today. Tiebreakers approximate.",
  "order": [
@@ -41,23 +41,23 @@
   },
   {
    "pick": 6,
+   "abbr": "ARI",
+   "team": "Arizona Cardinals",
+   "record": "3-7",
+   "afcNorth": false
+  },
+  {
+   "pick": 7,
    "abbr": "IND",
    "team": "Indianapolis Colts",
    "record": "3-7",
    "afcNorth": false
   },
   {
-   "pick": 7,
+   "pick": 8,
    "abbr": "ATL",
    "team": "Atlanta Falcons",
    "record": "3-7",
-   "afcNorth": false
-  },
-  {
-   "pick": 8,
-   "abbr": "ARI",
-   "team": "Arizona Cardinals",
-   "record": "3-6",
    "afcNorth": false
   },
   {
@@ -90,24 +90,24 @@
   },
   {
    "pick": 13,
-   "abbr": "BAL",
-   "team": "Baltimore Ravens",
-   "record": "4-5",
-   "afcNorth": true
+   "abbr": "LV",
+   "team": "Las Vegas Raiders",
+   "record": "4-6",
+   "afcNorth": false
   },
   {
    "pick": 14,
-   "abbr": "LV",
-   "team": "Las Vegas Raiders",
-   "record": "4-5",
+   "abbr": "DAL",
+   "team": "Dallas Cowboys",
+   "record": "4-6",
    "afcNorth": false
   },
   {
    "pick": 15,
-   "abbr": "DAL",
-   "team": "Dallas Cowboys",
+   "abbr": "BAL",
+   "team": "Baltimore Ravens",
    "record": "4-5",
-   "afcNorth": false
+   "afcNorth": true
   },
   {
    "pick": 16,
@@ -118,16 +118,16 @@
   },
   {
    "pick": 17,
-   "abbr": "LAR",
-   "team": "Los Angeles Rams",
-   "record": "5-4",
+   "abbr": "GB",
+   "team": "Green Bay Packers",
+   "record": "6-4",
    "afcNorth": false
   },
   {
    "pick": 18,
    "abbr": "SEA",
    "team": "Seattle Seahawks",
-   "record": "5-4",
+   "record": "6-4",
    "afcNorth": false
   },
   {
@@ -146,8 +146,8 @@
   },
   {
    "pick": 21,
-   "abbr": "GB",
-   "team": "Green Bay Packers",
+   "abbr": "LAR",
+   "team": "Los Angeles Rams",
    "record": "6-4",
    "afcNorth": false
   },
@@ -218,7 +218,7 @@
    "pick": 31,
    "abbr": "SF",
    "team": "San Francisco 49ers",
-   "record": "7-1",
+   "record": "8-1",
    "afcNorth": false
   },
   {
