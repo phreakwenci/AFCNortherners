@@ -1,6 +1,6 @@
 {
  "draftYear": 2027,
- "updated": "2026-11-16T22:54:22+00:00",
+ "updated": "2026-11-17T06:54:26+00:00",
  "projected": true,
  "note": "If the season ended today. Tiebreakers approximate.",
  "order": [
@@ -8,7 +8,7 @@
    "pick": 1,
    "abbr": "LAC",
    "team": "Los Angeles Chargers",
-   "record": "0-8",
+   "record": "1-8",
    "afcNorth": false
   },
   {
@@ -90,24 +90,24 @@
   },
   {
    "pick": 13,
+   "abbr": "BAL",
+   "team": "Baltimore Ravens",
+   "record": "4-6",
+   "afcNorth": true
+  },
+  {
+   "pick": 14,
    "abbr": "LV",
    "team": "Las Vegas Raiders",
    "record": "4-6",
    "afcNorth": false
   },
   {
-   "pick": 14,
+   "pick": 15,
    "abbr": "DAL",
    "team": "Dallas Cowboys",
    "record": "4-6",
    "afcNorth": false
-  },
-  {
-   "pick": 15,
-   "abbr": "BAL",
-   "team": "Baltimore Ravens",
-   "record": "4-5",
-   "afcNorth": true
   },
   {
    "pick": 16,
