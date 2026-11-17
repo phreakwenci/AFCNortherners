@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-17T06:54:26+00:00",
+ "updated": "2026-11-17T21:46:59+00:00",
  "source": "nflverse",
  "currentWeek": 11,
  "games": [
@@ -2371,20 +2371,6 @@
    "afcNorth": true
   },
   {
-   "id": "2026_12_LV_CLE",
-   "week": 12,
-   "date": "2026-11-29T18:00:00Z",
-   "away": "LV",
-   "home": "CLE",
-   "awayScore": null,
-   "homeScore": null,
-   "state": "pre",
-   "completed": false,
-   "winner": null,
-   "detail": "",
-   "afcNorth": true
-  },
-  {
    "id": "2026_12_BAL_HOU",
    "week": 12,
    "date": "2026-11-29T18:00:00Z",
@@ -2404,6 +2390,20 @@
    "date": "2026-11-29T18:00:00Z",
    "away": "NYG",
    "home": "IND",
+   "awayScore": null,
+   "homeScore": null,
+   "state": "pre",
+   "completed": false,
+   "winner": null,
+   "detail": "",
+   "afcNorth": false
+  },
+  {
+   "id": "2026_12_TEN_JAX",
+   "week": 12,
+   "date": "2026-11-29T18:00:00Z",
+   "away": "TEN",
+   "home": "JAX",
    "awayScore": null,
    "homeScore": null,
    "state": "pre",
@@ -2441,11 +2441,11 @@
    "afcNorth": false
   },
   {
-   "id": "2026_12_TEN_JAX",
+   "id": "2026_12_NE_LAC",
    "week": 12,
    "date": "2026-11-29T21:05:00Z",
-   "away": "TEN",
-   "home": "JAX",
+   "away": "NE",
+   "home": "LAC",
    "awayScore": null,
    "homeScore": null,
    "state": "pre",
@@ -2483,18 +2483,18 @@
    "afcNorth": false
   },
   {
-   "id": "2026_12_NE_LAC",
+   "id": "2026_12_LV_CLE",
    "week": 12,
    "date": "2026-11-30T01:20:00Z",
-   "away": "NE",
-   "home": "LAC",
+   "away": "LV",
+   "home": "CLE",
    "awayScore": null,
    "homeScore": null,
    "state": "pre",
    "completed": false,
    "winner": null,
    "detail": "",
-   "afcNorth": false
+   "afcNorth": true
   },
   {
    "id": "2026_12_CAR_TB",
