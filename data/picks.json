@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-14T08:05:31+00:00",
+ "updated": "2026-11-20T17:40:51+00:00",
  "note": "Maintained by the weekly picks jobs from the Notion 'Weekly Picks' database. One entry per AFC North game; picks are team abbreviations, scores optional. 'unconfirmed' lists hosts whose on-air pick attribution hasn't been confirmed yet.",
  "hosts": [
   {
@@ -312,6 +312,39 @@
    "unconfirmed": [
     "Jan"
    ]
+  },
+  {
+   "week": 11,
+   "away": "BAL",
+   "home": "CAR",
+   "picks": {
+    "Rob": "CAR"
+   },
+   "scores": {
+    "Rob": "26-17"
+   }
+  },
+  {
+   "week": 11,
+   "away": "PIT",
+   "home": "PHI",
+   "picks": {
+    "Rob": "PIT"
+   },
+   "scores": {
+    "Rob": "30-14"
+   }
+  },
+  {
+   "week": 11,
+   "away": "CIN",
+   "home": "WSH",
+   "picks": {
+    "Rob": "CIN"
+   },
+   "scores": {
+    "Rob": "27-20"
+   }
   }
  ]
 }
