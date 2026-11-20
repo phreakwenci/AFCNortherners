@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__MailerLite__list_campaigns",
+      "mcp__MailerLite__get_campaign",
+      "mcp__MailerLite__get_email",
+      "mcp__MailerLite__get_email_html",
+      "mcp__MailerLite__get_dashboard_link",
+      "mcp__MailerLite__get_subscriber_count",
+      "mcp__MailerLite__create_campaign",
+      "mcp__MailerLite__update_campaign"
+    ]
+  }
+}
