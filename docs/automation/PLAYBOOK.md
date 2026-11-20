@@ -46,6 +46,9 @@ Humans: edit this file to change how the jobs behave.
 - **Team codes:** ESPN abbreviations everywhere (BAL CIN CLE PIT, JAX, LAR, WSH…).
 - **Email voice:** short bar-talk. Open "Hello AFC Northerners," and sign off
   "Your friendly AI assistant, on behalf of AFC Northerners". Send from afcnortherners@gmail.com.
+- **Time zones:** Quote times to Jan in Pacific. Pacific is UTC-8 (PST) from the first Sunday in November to the second Sunday
+  in March, and UTC-7 (PDT) the rest of the year. Convert from UTC with the right offset for that date, and double-check
+  before writing "AM/PM PT" in any message (e.g. 19:24 UTC on Nov 20 = 11:24 AM PST).
 - **Honesty rule:** if a source is missing (no transcript yet, connector down, ESPN data stale), skip that part and
   say so in the note to Jan. Never invent picks, quotes, stats or takes.
 - **Sending rule:** emails to the six hosts are pre-approved for the jobs below. The 6-Pack Friday newsletter to
