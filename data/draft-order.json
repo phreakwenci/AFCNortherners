@@ -1,6 +1,6 @@
 {
  "draftYear": 2027,
- "updated": "2026-11-19T21:36:43+00:00",
+ "updated": "2026-11-20T06:00:16+00:00",
  "projected": true,
  "note": "If the season ended today. Tiebreakers approximate.",
  "order": [
@@ -41,15 +41,15 @@
   },
   {
    "pick": 6,
-   "abbr": "ARI",
-   "team": "Arizona Cardinals",
-   "record": "3-7",
+   "abbr": "IND",
+   "team": "Indianapolis Colts",
+   "record": "3-8",
    "afcNorth": false
   },
   {
    "pick": 7,
-   "abbr": "IND",
-   "team": "Indianapolis Colts",
+   "abbr": "ARI",
+   "team": "Arizona Cardinals",
    "record": "3-7",
    "afcNorth": false
   },
@@ -69,43 +69,43 @@
   },
   {
    "pick": 10,
-   "abbr": "HOU",
-   "team": "Houston Texans",
-   "record": "3-6",
-   "afcNorth": false
-  },
-  {
-   "pick": 11,
    "abbr": "TB",
    "team": "Tampa Bay Buccaneers",
    "record": "3-6",
    "afcNorth": false
   },
   {
-   "pick": 12,
+   "pick": 11,
    "abbr": "WSH",
    "team": "Washington Commanders",
    "record": "3-5-1",
    "afcNorth": false
   },
   {
-   "pick": 13,
+   "pick": 12,
    "abbr": "BAL",
    "team": "Baltimore Ravens",
    "record": "4-6",
    "afcNorth": true
   },
   {
-   "pick": 14,
+   "pick": 13,
    "abbr": "LV",
    "team": "Las Vegas Raiders",
    "record": "4-6",
    "afcNorth": false
   },
   {
-   "pick": 15,
+   "pick": 14,
    "abbr": "DAL",
    "team": "Dallas Cowboys",
+   "record": "4-6",
+   "afcNorth": false
+  },
+  {
+   "pick": 15,
+   "abbr": "HOU",
+   "team": "Houston Texans",
    "record": "4-6",
    "afcNorth": false
   },

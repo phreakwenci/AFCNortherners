@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-19T21:36:43+00:00",
+ "updated": "2026-11-20T06:00:16+00:00",
  "source": "nflverse",
  "currentWeek": 11,
  "games": [
@@ -2110,12 +2110,12 @@
    "date": "2026-11-20T01:15:00Z",
    "away": "IND",
    "home": "HOU",
-   "awayScore": null,
-   "homeScore": null,
-   "state": "pre",
-   "completed": false,
-   "winner": null,
-   "detail": "",
+   "awayScore": 3,
+   "homeScore": 26,
+   "state": "post",
+   "completed": true,
+   "winner": "HOU",
+   "detail": "Final",
    "afcNorth": false
   },
   {
