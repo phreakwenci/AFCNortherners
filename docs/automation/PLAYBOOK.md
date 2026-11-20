@@ -130,6 +130,49 @@ the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) 
    the campaign. If Jan has replied SEND to a previous Friday note in this session's inbox, send that campaign then.
 5. Rebuild and publish `data/picks.json`.
 
+### 6-Pack Friday newsletter rules (learned from issue #3 — follow every week)
+- **Look: copy the previous issues, never invent a layout.** Issues #1–#3 share one dark design: black page, dark card,
+  logo + orange-to-red "AFC NORTHERNERS" header with "🍺 6-PACK FRIDAY · ISSUE #N · DATE", an amber WEEK tag, big white
+  title + grey subtitle (the opening line), then team-colored bordered take cards (dot + emoji + "TEAM — HOST",
+  bold headline, body). Use `docs/automation/newsletter-template.html` as the starting HTML and fill it in.
+  MailerLite's "builder_html" emails can't be read back through the connector, so don't try to fetch an old issue's HTML;
+  the template file is the source of truth. Compare with the previous campaign's screenshot
+  (`screenshot_url` from `list_campaigns`) before telling Jan it's ready.
+- **Run each take as the host's FULL submission** (headline = their title, body = the whole "Supporting Argument"), the way
+  issues #1 and #2 did. Do NOT condense takes into short summaries. Fix only typos/markup; keep their words. If a
+  submission looks cut off mid-sentence (the Notion form can clip long text), end at the last complete paragraph/bullet,
+  never invent an ending, and tell Jan. Flag script-isms (like-button asks, internal "notebook" citations) and anything
+  claiming facts about real people for Jan to review before it goes out.
+- **Never build from the style guide's description alone: first look at what the last two issues actually did and copy that.**
+  Where the written guide and the sent issues disagree (e.g. "1-3 sentence takes" vs. full submissions), the sent issues win.
+  Compare your draft's screenshot to the previous issue's before reporting it ready.
+- **Which takes run (Notion → 📥 Takes Submissions).** Jan curates in the "🔥 Review Board" view (board grouped by Status),
+  not the Default view. Status **Selected** = running in an issue; **Passed** = rejected; **Submitted** = not reviewed yet.
+  Build from **Selected** takes only. The Newsletter Issue relation is often left empty, so decide which issue a Selected
+  take belongs to by date: Selected takes created after the previous issue's send date are this issue's; earlier ones already
+  ran. Never run Submitted or Passed takes; if nothing is Selected for a team, leave that team out. Don't change Status or
+  other fields on Jan's board unless asked.
+- **Website promo block goes right AFTER Clip of the Week (before the footer), not at the top (Jan's call):** "Have you checked out the website? If not, here's why
+  you should." with 3-4 screenshots that each link to the page (Season HQ, host picks leaderboard, Draft HQ, past drafts) and a
+  button to afcnortherners.com. Use stills (small JPEGs, ~60KB), not video; an animated GIF only if it's small. Refresh the
+  images each Friday with `scripts/newsletter-screenshots/` (see its README) so standings/picks are current, save them in
+  `Assets/img/newsletter/`, and reference them by raw.githubusercontent.com URL on `main` (once merged). Rotate which features
+  you show (e.g. the Hot Take Meter, Playbook, hosts) so it doesn't get stale.
+- **Only include what exists.** If a host's take is missing, leave that card out entirely — no "[TAKE MISSING]" placeholders
+  in the campaign. Say who's missing in the note to Jan instead.
+- **No repeats.** A take counts once. Takes already used in a previous issue (check the previous issue's Notion fields and
+  campaign screenshot; takes are usually dated before that issue's send date) must not be reused. If a host's newest
+  submission is for this week, use it, not their older one.
+- **Fill every section yourself** when it can be sourced: opening line, title (suggest one; Jan approves), team news,
+  Around the League, Odds & Lines (current spreads/totals from reputable sources, state when a line wasn't found, never guess),
+  and Clip of the Week.
+- **Clip of the Week:** find a standout moment in the latest show transcript (`transcripts/`), and link it with a timestamp
+  (`https://www.youtube.com/watch?v=<id>&t=<seconds>s`). Examples: a host eating crow, a hot take, a big call.
+  Jan may name the clip; if he does, use it.
+- **Draft only.** The campaign stays a draft until Jan replies SEND to the Friday note. Don't click or trigger sending.
+- MailerLite connector quirk: create/update/get campaign calls can return a "schema" error even though they worked.
+  Verify with `list_campaigns` (status draft) before retrying, so you don't create duplicates.
+
 ## Job: SUNDAY — final picks sweep
 1. Log any pick replies received before each game's kickoff (Sunday early games kick off 10 AM PT).
 2. Rebuild and publish `data/picks.json`. No emails unless something is broken.
