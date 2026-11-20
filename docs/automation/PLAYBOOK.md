@@ -152,6 +152,12 @@ the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) 
   take belongs to by date: Selected takes created after the previous issue's send date are this issue's; earlier ones already
   ran. Never run Submitted or Passed takes; if nothing is Selected for a team, leave that team out. Don't change Status or
   other fields on Jan's board unless asked.
+- **Website promo block at the top (after the title, before THE 6-PACK):** "Have you checked out the website? If not, here's why
+  you should." with 3-4 screenshots that each link to the page (Season HQ, host picks leaderboard, Draft HQ, past drafts) and a
+  button to afcnortherners.com. Use stills (small JPEGs, ~60KB), not video; an animated GIF only if it's small. Refresh the
+  images each Friday with `scripts/newsletter-screenshots/` (see its README) so standings/picks are current, save them in
+  `Assets/img/newsletter/`, and reference them by raw.githubusercontent.com URL on `main` (once merged). Rotate which features
+  you show (e.g. the Hot Take Meter, Playbook, hosts) so it doesn't get stale.
 - **Only include what exists.** If a host's take is missing, leave that card out entirely — no "[TAKE MISSING]" placeholders
   in the campaign. Say who's missing in the note to Jan instead.
 - **No repeats.** A take counts once. Takes already used in a previous issue (check the previous issue's Notion fields and
