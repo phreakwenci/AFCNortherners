@@ -138,6 +138,11 @@ the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) 
   MailerLite's "builder_html" emails can't be read back through the connector, so don't try to fetch an old issue's HTML;
   the template file is the source of truth. Compare with the previous campaign's screenshot
   (`screenshot_url` from `list_campaigns`) before telling Jan it's ready.
+- **Run each take as the host's FULL submission** (headline = their title, body = the whole "Supporting Argument"), the way
+  issues #1 and #2 did. Do NOT condense takes into short summaries. Fix only typos/markup; keep their words. If a
+  submission looks cut off mid-sentence (the Notion form can clip long text), end at the last complete paragraph/bullet,
+  never invent an ending, and tell Jan. Flag script-isms (like-button asks, internal "notebook" citations) and anything
+  claiming facts about real people for Jan to review before it goes out.
 - **Only include what exists.** If a host's take is missing, leave that card out entirely — no "[TAKE MISSING]" placeholders
   in the campaign. Say who's missing in the note to Jan instead.
 - **No repeats.** A take counts once. Takes already used in a previous issue (check the previous issue's Notion fields and
