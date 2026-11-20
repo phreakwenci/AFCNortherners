@@ -143,6 +143,15 @@ the site shows those with a "?" until Jan confirms (ticks Verified in Airtable) 
   submission looks cut off mid-sentence (the Notion form can clip long text), end at the last complete paragraph/bullet,
   never invent an ending, and tell Jan. Flag script-isms (like-button asks, internal "notebook" citations) and anything
   claiming facts about real people for Jan to review before it goes out.
+- **Never build from the style guide's description alone: first look at what the last two issues actually did and copy that.**
+  Where the written guide and the sent issues disagree (e.g. "1-3 sentence takes" vs. full submissions), the sent issues win.
+  Compare your draft's screenshot to the previous issue's before reporting it ready.
+- **Which takes run (Notion → 📥 Takes Submissions).** Jan curates in the "🔥 Review Board" view (board grouped by Status),
+  not the Default view. Status **Selected** = running in an issue; **Passed** = rejected; **Submitted** = not reviewed yet.
+  Build from **Selected** takes only. The Newsletter Issue relation is often left empty, so decide which issue a Selected
+  take belongs to by date: Selected takes created after the previous issue's send date are this issue's; earlier ones already
+  ran. Never run Submitted or Passed takes; if nothing is Selected for a team, leave that team out. Don't change Status or
+  other fields on Jan's board unless asked.
 - **Only include what exists.** If a host's take is missing, leave that card out entirely — no "[TAKE MISSING]" placeholders
   in the campaign. Say who's missing in the note to Jan instead.
 - **No repeats.** A take counts once. Takes already used in a previous issue (check the previous issue's Notion fields and
