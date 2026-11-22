@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-21T20:07:06+00:00",
+ "updated": "2026-11-22T20:22:28+00:00",
  "source": "nflverse",
  "currentWeek": 11,
  "games": [
@@ -2203,18 +2203,18 @@
    "afcNorth": false
   },
   {
-   "id": "2026_11_JAX_NYG",
+   "id": "2026_11_PIT_PHI",
    "week": 11,
    "date": "2026-11-22T18:00:00Z",
-   "away": "JAX",
-   "home": "NYG",
+   "away": "PIT",
+   "home": "PHI",
    "awayScore": null,
    "homeScore": null,
    "state": "pre",
    "completed": false,
    "winner": null,
    "detail": "",
-   "afcNorth": false
+   "afcNorth": true
   },
   {
    "id": "2026_11_NYJ_LAC",
@@ -2245,18 +2245,18 @@
    "afcNorth": false
   },
   {
-   "id": "2026_11_PIT_PHI",
+   "id": "2026_11_JAX_NYG",
    "week": 11,
    "date": "2026-11-22T21:25:00Z",
-   "away": "PIT",
-   "home": "PHI",
+   "away": "JAX",
+   "home": "NYG",
    "awayScore": null,
    "homeScore": null,
    "state": "pre",
    "completed": false,
    "winner": null,
    "detail": "",
-   "afcNorth": true
+   "afcNorth": false
   },
   {
    "id": "2026_11_MIN_SF",
