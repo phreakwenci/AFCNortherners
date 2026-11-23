@@ -1,48 +1,48 @@
 {
  "draftYear": 2027,
- "updated": "2026-11-22T22:15:44+00:00",
+ "updated": "2026-11-23T02:56:16+00:00",
  "projected": true,
  "note": "If the season ended today. Tiebreakers approximate.",
  "order": [
   {
    "pick": 1,
+   "abbr": "LAC",
+   "team": "Los Angeles Chargers",
+   "record": "1-9",
+   "afcNorth": false
+  },
+  {
+   "pick": 2,
    "abbr": "MIA",
    "team": "Miami Dolphins",
    "record": "1-9",
    "afcNorth": false
   },
   {
-   "pick": 2,
+   "pick": 3,
    "abbr": "TEN",
    "team": "Tennessee Titans",
    "record": "1-9",
    "afcNorth": false
   },
   {
-   "pick": 3,
-   "abbr": "LAC",
-   "team": "Los Angeles Chargers",
-   "record": "1-8",
-   "afcNorth": false
-  },
-  {
    "pick": 4,
-   "abbr": "NYJ",
-   "team": "New York Jets",
-   "record": "2-8",
-   "afcNorth": false
-  },
-  {
-   "pick": 5,
    "abbr": "ARI",
    "team": "Arizona Cardinals",
    "record": "3-8",
    "afcNorth": false
   },
   {
-   "pick": 6,
+   "pick": 5,
    "abbr": "IND",
    "team": "Indianapolis Colts",
+   "record": "3-8",
+   "afcNorth": false
+  },
+  {
+   "pick": 6,
+   "abbr": "NYJ",
+   "team": "New York Jets",
    "record": "3-8",
    "afcNorth": false
   },
@@ -83,16 +83,16 @@
   },
   {
    "pick": 12,
-   "abbr": "WSH",
-   "team": "Washington Commanders",
-   "record": "3-5-1",
+   "abbr": "LV",
+   "team": "Las Vegas Raiders",
+   "record": "4-7",
    "afcNorth": false
   },
   {
    "pick": 13,
-   "abbr": "LV",
-   "team": "Las Vegas Raiders",
-   "record": "4-6",
+   "abbr": "WSH",
+   "team": "Washington Commanders",
+   "record": "3-5-1",
    "afcNorth": false
   },
   {
@@ -162,14 +162,14 @@
    "pick": 23,
    "abbr": "NYG",
    "team": "New York Giants",
-   "record": "5-3-1",
+   "record": "6-3-1",
    "afcNorth": false
   },
   {
    "pick": 24,
-   "abbr": "DEN",
-   "team": "Denver Broncos",
-   "record": "7-2",
+   "abbr": "JAX",
+   "team": "Jacksonville Jaguars",
+   "record": "7-3",
    "afcNorth": false
   },
   {
@@ -188,9 +188,9 @@
   },
   {
    "pick": 27,
-   "abbr": "JAX",
-   "team": "Jacksonville Jaguars",
-   "record": "7-2",
+   "abbr": "DEN",
+   "team": "Denver Broncos",
+   "record": "8-2",
    "afcNorth": false
   },
   {
