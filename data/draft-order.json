@@ -1,6 +1,6 @@
 {
  "draftYear": 2027,
- "updated": "2026-11-23T02:56:16+00:00",
+ "updated": "2026-11-23T06:07:52+00:00",
  "projected": true,
  "note": "If the season ended today. Tiebreakers approximate.",
  "order": [
@@ -167,16 +167,16 @@
   },
   {
    "pick": 24,
-   "abbr": "JAX",
-   "team": "Jacksonville Jaguars",
+   "abbr": "MIN",
+   "team": "Minnesota Vikings",
    "record": "7-3",
    "afcNorth": false
   },
   {
    "pick": 25,
-   "abbr": "MIN",
-   "team": "Minnesota Vikings",
-   "record": "7-2",
+   "abbr": "JAX",
+   "team": "Jacksonville Jaguars",
+   "record": "7-3",
    "afcNorth": false
   },
   {
@@ -216,15 +216,15 @@
   },
   {
    "pick": 31,
-   "abbr": "SF",
-   "team": "San Francisco 49ers",
-   "record": "8-1",
+   "abbr": "BUF",
+   "team": "Buffalo Bills",
+   "record": "9-1",
    "afcNorth": false
   },
   {
    "pick": 32,
-   "abbr": "BUF",
-   "team": "Buffalo Bills",
+   "abbr": "SF",
+   "team": "San Francisco 49ers",
    "record": "9-1",
    "afcNorth": false
   }

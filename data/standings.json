@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-23T02:56:16+00:00",
+ "updated": "2026-11-23T06:07:52+00:00",
  "source": "nflverse",
  "note": "Computed from game results; NFL tiebreakers simplified.",
  "teams": [
@@ -384,16 +384,16 @@
    "conf": "NFC",
    "div": "NFC North",
    "w": 7,
-   "l": 2,
+   "l": 3,
    "t": 0,
-   "pct": 0.778,
+   "pct": 0.7,
    "seed": 6,
    "clincher": "",
-   "streak": "W1",
-   "pf": 176,
-   "pa": 126,
+   "streak": "L1",
+   "pf": 186,
+   "pa": 161,
    "divRecord": "3-1",
-   "confRecord": "5-1"
+   "confRecord": "5-2"
   },
   {
    "abbr": "GB",
@@ -485,17 +485,17 @@
    "team": "San Francisco 49ers",
    "conf": "NFC",
    "div": "NFC West",
-   "w": 8,
+   "w": 9,
    "l": 1,
    "t": 0,
-   "pct": 0.889,
+   "pct": 0.9,
    "seed": 1,
    "clincher": "",
-   "streak": "W2",
-   "pf": 281,
-   "pa": 196,
+   "streak": "W3",
+   "pf": 316,
+   "pa": 206,
    "divRecord": "3-0",
-   "confRecord": "5-1"
+   "confRecord": "6-1"
   },
   {
    "abbr": "LAR",
