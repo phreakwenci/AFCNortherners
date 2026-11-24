@@ -1,6 +1,6 @@
 {
  "draftYear": 2027,
- "updated": "2026-11-24T00:52:50+00:00",
+ "updated": "2026-11-24T08:45:53+00:00",
  "projected": true,
  "note": "If the season ended today. Tiebreakers approximate.",
  "order": [
@@ -90,16 +90,16 @@
   },
   {
    "pick": 13,
-   "abbr": "WSH",
-   "team": "Washington Commanders",
-   "record": "3-5-1",
+   "abbr": "HOU",
+   "team": "Houston Texans",
+   "record": "4-6",
    "afcNorth": false
   },
   {
    "pick": 14,
-   "abbr": "HOU",
-   "team": "Houston Texans",
-   "record": "4-6",
+   "abbr": "WSH",
+   "team": "Washington Commanders",
+   "record": "4-5-1",
    "afcNorth": false
   },
   {
@@ -174,17 +174,17 @@
   },
   {
    "pick": 25,
+   "abbr": "CIN",
+   "team": "Cincinnati Bengals",
+   "record": "7-3",
+   "afcNorth": true
+  },
+  {
+   "pick": 26,
    "abbr": "JAX",
    "team": "Jacksonville Jaguars",
    "record": "7-3",
    "afcNorth": false
-  },
-  {
-   "pick": 26,
-   "abbr": "CIN",
-   "team": "Cincinnati Bengals",
-   "record": "7-2",
-   "afcNorth": true
   },
   {
    "pick": 27,
