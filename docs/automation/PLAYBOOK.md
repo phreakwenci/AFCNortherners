@@ -49,6 +49,9 @@ Humans: edit this file to change how the jobs behave.
 - **Time zones:** Quote times to Jan in Pacific. Pacific is UTC-8 (PST) from the first Sunday in November to the second Sunday
   in March, and UTC-7 (PDT) the rest of the year. Convert from UTC with the right offset for that date, and double-check
   before writing "AM/PM PT" in any message (e.g. 19:24 UTC on Nov 20 = 11:24 AM PST).
+- **Dates and weekdays:** never work out a weekday in your head. Run `date -d YYYY-MM-DD +%A` (convert game times from UTC to
+  Pacific first) before writing "Thursday", "Friday", "Sunday" etc. in any message or Notion field. (Mistake to avoid: DEN @ PIT on
+  2026-11-27 is a FRIDAY, not Thanksgiving Thursday.)
 - **Honesty rule:** if a source is missing (no transcript yet, connector down, ESPN data stale), skip that part and
   say so in the note to Jan. Never invent picks, quotes, stats or takes.
 - **Sending rule:** emails to the six hosts are pre-approved for the jobs below. The 6-Pack Friday newsletter to
