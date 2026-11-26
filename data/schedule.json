@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-25T22:34:24+00:00",
+ "updated": "2026-11-26T22:22:25+00:00",
  "source": "nflverse",
  "currentWeek": 12,
  "games": [
@@ -2292,12 +2292,12 @@
    "date": "2026-11-26T01:00:00Z",
    "away": "GB",
    "home": "LAR",
-   "awayScore": null,
-   "homeScore": null,
-   "state": "pre",
-   "completed": false,
-   "winner": null,
-   "detail": "",
+   "awayScore": 13,
+   "homeScore": 26,
+   "state": "post",
+   "completed": true,
+   "winner": "LAR",
+   "detail": "Final",
    "afcNorth": false
   },
   {
@@ -2306,12 +2306,12 @@
    "date": "2026-11-26T18:00:00Z",
    "away": "CHI",
    "home": "DET",
-   "awayScore": null,
-   "homeScore": null,
-   "state": "pre",
-   "completed": false,
-   "winner": null,
-   "detail": "",
+   "awayScore": 39,
+   "homeScore": 35,
+   "state": "post",
+   "completed": true,
+   "winner": "CHI",
+   "detail": "Final",
    "afcNorth": false
   },
   {
