@@ -1,6 +1,6 @@
 {
  "draftYear": 2027,
- "updated": "2026-11-20T15:41:50+00:00",
+ "updated": "2026-11-25T22:34:24+00:00",
  "projected": true,
  "note": "If the season ended today. Tiebreakers approximate.",
  "order": [
@@ -8,48 +8,48 @@
    "pick": 1,
    "abbr": "LAC",
    "team": "Los Angeles Chargers",
-   "record": "1-8",
+   "record": "1-9",
    "afcNorth": false
   },
   {
    "pick": 2,
    "abbr": "MIA",
    "team": "Miami Dolphins",
-   "record": "1-8",
+   "record": "1-9",
    "afcNorth": false
   },
   {
    "pick": 3,
    "abbr": "TEN",
    "team": "Tennessee Titans",
-   "record": "1-8",
+   "record": "1-9",
    "afcNorth": false
   },
   {
    "pick": 4,
-   "abbr": "NYJ",
-   "team": "New York Jets",
-   "record": "2-8",
+   "abbr": "ARI",
+   "team": "Arizona Cardinals",
+   "record": "3-8",
    "afcNorth": false
   },
   {
    "pick": 5,
-   "abbr": "PHI",
-   "team": "Philadelphia Eagles",
-   "record": "2-7",
-   "afcNorth": false
-  },
-  {
-   "pick": 6,
    "abbr": "IND",
    "team": "Indianapolis Colts",
    "record": "3-8",
    "afcNorth": false
   },
   {
+   "pick": 6,
+   "abbr": "NYJ",
+   "team": "New York Jets",
+   "record": "3-8",
+   "afcNorth": false
+  },
+  {
    "pick": 7,
-   "abbr": "ARI",
-   "team": "Arizona Cardinals",
+   "abbr": "PHI",
+   "team": "Philadelphia Eagles",
    "record": "3-7",
    "afcNorth": false
   },
@@ -64,49 +64,49 @@
    "pick": 9,
    "abbr": "NO",
    "team": "New Orleans Saints",
-   "record": "3-6",
+   "record": "3-7",
    "afcNorth": false
   },
   {
    "pick": 10,
    "abbr": "TB",
    "team": "Tampa Bay Buccaneers",
-   "record": "3-6",
+   "record": "3-7",
    "afcNorth": false
   },
   {
    "pick": 11,
-   "abbr": "WSH",
-   "team": "Washington Commanders",
-   "record": "3-5-1",
-   "afcNorth": false
-  },
-  {
-   "pick": 12,
    "abbr": "BAL",
    "team": "Baltimore Ravens",
-   "record": "4-6",
+   "record": "4-7",
    "afcNorth": true
   },
   {
-   "pick": 13,
+   "pick": 12,
    "abbr": "LV",
    "team": "Las Vegas Raiders",
+   "record": "4-7",
+   "afcNorth": false
+  },
+  {
+   "pick": 13,
+   "abbr": "HOU",
+   "team": "Houston Texans",
    "record": "4-6",
    "afcNorth": false
   },
   {
    "pick": 14,
-   "abbr": "DAL",
-   "team": "Dallas Cowboys",
-   "record": "4-6",
+   "abbr": "WSH",
+   "team": "Washington Commanders",
+   "record": "4-5-1",
    "afcNorth": false
   },
   {
    "pick": 15,
-   "abbr": "HOU",
-   "team": "Houston Texans",
-   "record": "4-6",
+   "abbr": "DAL",
+   "team": "Dallas Cowboys",
+   "record": "5-6",
    "afcNorth": false
   },
   {
@@ -134,7 +134,7 @@
    "pick": 19,
    "abbr": "CAR",
    "team": "Carolina Panthers",
-   "record": "4-5",
+   "record": "5-5",
    "afcNorth": false
   },
   {
@@ -146,86 +146,86 @@
   },
   {
    "pick": 21,
+   "abbr": "PIT",
+   "team": "Pittsburgh Steelers",
+   "record": "6-4",
+   "afcNorth": true
+  },
+  {
+   "pick": 22,
    "abbr": "LAR",
    "team": "Los Angeles Rams",
    "record": "6-4",
    "afcNorth": false
   },
   {
-   "pick": 22,
+   "pick": 23,
    "abbr": "NYG",
    "team": "New York Giants",
-   "record": "5-3-1",
+   "record": "6-3-1",
    "afcNorth": false
   },
   {
-   "pick": 23,
-   "abbr": "PIT",
-   "team": "Pittsburgh Steelers",
-   "record": "6-3",
-   "afcNorth": true
-  },
-  {
    "pick": 24,
-   "abbr": "DEN",
-   "team": "Denver Broncos",
-   "record": "7-2",
+   "abbr": "MIN",
+   "team": "Minnesota Vikings",
+   "record": "7-3",
    "afcNorth": false
   },
   {
    "pick": 25,
-   "abbr": "MIN",
-   "team": "Minnesota Vikings",
-   "record": "7-2",
-   "afcNorth": false
+   "abbr": "CIN",
+   "team": "Cincinnati Bengals",
+   "record": "7-3",
+   "afcNorth": true
   },
   {
    "pick": 26,
-   "abbr": "CHI",
-   "team": "Chicago Bears",
-   "record": "7-2",
+   "abbr": "JAX",
+   "team": "Jacksonville Jaguars",
+   "record": "7-3",
    "afcNorth": false
   },
   {
    "pick": 27,
-   "abbr": "DET",
-   "team": "Detroit Lions",
-   "record": "7-2",
+   "abbr": "DEN",
+   "team": "Denver Broncos",
+   "record": "8-2",
    "afcNorth": false
   },
   {
    "pick": 28,
-   "abbr": "KC",
-   "team": "Kansas City Chiefs",
-   "record": "7-2",
+   "abbr": "CHI",
+   "team": "Chicago Bears",
+   "record": "8-2",
    "afcNorth": false
   },
   {
    "pick": 29,
-   "abbr": "CIN",
-   "team": "Cincinnati Bengals",
-   "record": "7-2",
-   "afcNorth": true
+   "abbr": "DET",
+   "team": "Detroit Lions",
+   "record": "8-2",
+   "afcNorth": false
   },
   {
    "pick": 30,
-   "abbr": "JAX",
-   "team": "Jacksonville Jaguars",
-   "record": "7-2",
+   "abbr": "KC",
+   "team": "Kansas City Chiefs",
+   "record": "8-2",
    "afcNorth": false
   },
   {
    "pick": 31,
-   "abbr": "SF",
-   "team": "San Francisco 49ers",
-   "record": "8-1",
+   "abbr": "BUF",
+   "team": "Buffalo Bills",
+   "record": "9-1",
    "afcNorth": false
   },
   {
    "pick": 32,
-   "abbr": "BUF",
-   "team": "Buffalo Bills",
-   "record": "8-1",
+   "abbr": "SF",
+   "team": "San Francisco 49ers",
+   "record": "9-1",
    "afcNorth": false
   }
  ]
