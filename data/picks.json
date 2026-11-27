@@ -1,6 +1,6 @@
 {
  "season": 2026,
- "updated": "2026-11-22T17:26:54+00:00",
+ "updated": "2026-11-27T17:39:51+00:00",
  "note": "Maintained by the weekly picks jobs from the Notion 'Weekly Picks' database. One entry per AFC North game; picks are team abbreviations, scores optional. 'unconfirmed' lists hosts whose on-air pick attribution hasn't been confirmed yet.",
  "hosts": [
   {
@@ -362,6 +362,77 @@
    },
    "unconfirmed": [
     "Jan"
+   ]
+  },
+  {
+   "week": 12,
+   "away": "DEN",
+   "home": "PIT",
+   "picks": {
+    "Rob": "PIT",
+    "Jan": "DEN",
+    "Chris": "TIE"
+   },
+   "scores": {
+    "Rob": "17-13",
+    "Jan": "24-13",
+    "Chris": "25-25"
+   },
+   "unconfirmed": [
+    "Rob",
+    "Jan",
+    "Chris"
+   ]
+  },
+  {
+   "week": 12,
+   "away": "NO",
+   "home": "CIN",
+   "picks": {
+    "Rob": "CIN",
+    "Chris": "CIN",
+    "Jan": "CIN"
+   },
+   "scores": {
+    "Rob": "33-20",
+    "Chris": "35-20",
+    "Jan": "31-20"
+   },
+   "unconfirmed": [
+    "Rob",
+    "Chris",
+    "Jan"
+   ]
+  },
+  {
+   "week": 12,
+   "away": "BAL",
+   "home": "HOU",
+   "picks": {
+    "Jan": "HOU",
+    "Chris": "HOU"
+   },
+   "scores": {
+    "Jan": "27-17",
+    "Chris": "27-13"
+   },
+   "unconfirmed": [
+    "Jan",
+    "Chris"
+   ]
+  },
+  {
+   "week": 12,
+   "away": "LV",
+   "home": "CLE",
+   "picks": {
+    "Chris": "CLE"
+   },
+   "scores": {
+    "Chris": "29-17"
+   },
+   "unconfirmed": [
+    "Chris"
    ]
   }
  ]
